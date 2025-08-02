@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@theme {
+  --font-dm-sans: "DM Sans", sans-serif;
+
+  --color-primary-black: oklch(0.1684 0 0);
+  --color-primary-dark: oklch(0.2293 0.0078 297.22);
+  --color-secondary-dark: oklch(0.2393 0 0);
+
+  --color-navbar-paragraph: oklch(0.8256 0.1985 127);
+}
 
 @custom-variant dark (&:is(.dark *));
 
