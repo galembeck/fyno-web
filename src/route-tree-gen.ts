@@ -9,44 +9,102 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './pages/__root'
+import { Route as LandingLayoutRouteImport } from './pages/_landing/layout'
 import { Route as AppLayoutRouteImport } from './pages/_app/layout'
-import { Route as AppIndexRouteImport } from './pages/_app/index'
+import { Route as LandingIndexRouteImport } from './pages/_landing/index'
+import { Route as AppDashboardIndexRouteImport } from './pages/_app/dashboard/index'
+import { Route as LandingChar126componentsSectionsIntroRouteImport } from './pages/_landing/~components/sections/intro'
+import { Route as LandingChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_landing/~components/sections/companies-marquee'
 
+const LandingLayoutRoute = LandingLayoutRouteImport.update({
+  id: '/_landing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppLayoutRoute = AppLayoutRouteImport.update({
   id: '/_app',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppIndexRoute = AppIndexRouteImport.update({
+const LandingIndexRoute = LandingIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => LandingLayoutRoute,
+} as any)
+const AppDashboardIndexRoute = AppDashboardIndexRouteImport.update({
+  id: '/dashboard/',
+  path: '/dashboard/',
   getParentRoute: () => AppLayoutRoute,
 } as any)
+const LandingChar126componentsSectionsIntroRoute =
+  LandingChar126componentsSectionsIntroRouteImport.update({
+    id: '/~components/sections/intro',
+    path: '/~components/sections/intro',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
+const LandingChar126componentsSectionsCompaniesMarqueeRoute =
+  LandingChar126componentsSectionsCompaniesMarqueeRouteImport.update({
+    id: '/~components/sections/companies-marquee',
+    path: '/~components/sections/companies-marquee',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof AppIndexRoute
+  '/': typeof LandingIndexRoute
+  '/dashboard': typeof AppDashboardIndexRoute
+  '/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
+  '/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof AppIndexRoute
+  '/': typeof LandingIndexRoute
+  '/dashboard': typeof AppDashboardIndexRoute
+  '/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
+  '/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppLayoutRouteWithChildren
-  '/_app/': typeof AppIndexRoute
+  '/_landing': typeof LandingLayoutRouteWithChildren
+  '/_landing/': typeof LandingIndexRoute
+  '/_app/dashboard/': typeof AppDashboardIndexRoute
+  '/_landing/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
+  '/_landing/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/dashboard'
+    | '/~components/sections/companies-marquee'
+    | '/~components/sections/intro'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/_app' | '/_app/'
+  to:
+    | '/'
+    | '/dashboard'
+    | '/~components/sections/companies-marquee'
+    | '/~components/sections/intro'
+  id:
+    | '__root__'
+    | '/_app'
+    | '/_landing'
+    | '/_landing/'
+    | '/_app/dashboard/'
+    | '/_landing/~components/sections/companies-marquee'
+    | '/_landing/~components/sections/intro'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   AppLayoutRoute: typeof AppLayoutRouteWithChildren
+  LandingLayoutRoute: typeof LandingLayoutRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/_landing': {
+      id: '/_landing'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof LandingLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_app': {
       id: '/_app'
       path: ''
@@ -54,30 +112,70 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_app/': {
-      id: '/_app/'
+    '/_landing/': {
+      id: '/_landing/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof AppIndexRouteImport
+      preLoaderRoute: typeof LandingIndexRouteImport
+      parentRoute: typeof LandingLayoutRoute
+    }
+    '/_app/dashboard/': {
+      id: '/_app/dashboard/'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AppDashboardIndexRouteImport
       parentRoute: typeof AppLayoutRoute
+    }
+    '/_landing/~components/sections/intro': {
+      id: '/_landing/~components/sections/intro'
+      path: '/~components/sections/intro'
+      fullPath: '/~components/sections/intro'
+      preLoaderRoute: typeof LandingChar126componentsSectionsIntroRouteImport
+      parentRoute: typeof LandingLayoutRoute
+    }
+    '/_landing/~components/sections/companies-marquee': {
+      id: '/_landing/~components/sections/companies-marquee'
+      path: '/~components/sections/companies-marquee'
+      fullPath: '/~components/sections/companies-marquee'
+      preLoaderRoute: typeof LandingChar126componentsSectionsCompaniesMarqueeRouteImport
+      parentRoute: typeof LandingLayoutRoute
     }
   }
 }
 
 interface AppLayoutRouteChildren {
-  AppIndexRoute: typeof AppIndexRoute
+  AppDashboardIndexRoute: typeof AppDashboardIndexRoute
 }
 
 const AppLayoutRouteChildren: AppLayoutRouteChildren = {
-  AppIndexRoute: AppIndexRoute,
+  AppDashboardIndexRoute: AppDashboardIndexRoute,
 }
 
 const AppLayoutRouteWithChildren = AppLayoutRoute._addFileChildren(
   AppLayoutRouteChildren,
 )
 
+interface LandingLayoutRouteChildren {
+  LandingIndexRoute: typeof LandingIndexRoute
+  LandingChar126componentsSectionsCompaniesMarqueeRoute: typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
+  LandingChar126componentsSectionsIntroRoute: typeof LandingChar126componentsSectionsIntroRoute
+}
+
+const LandingLayoutRouteChildren: LandingLayoutRouteChildren = {
+  LandingIndexRoute: LandingIndexRoute,
+  LandingChar126componentsSectionsCompaniesMarqueeRoute:
+    LandingChar126componentsSectionsCompaniesMarqueeRoute,
+  LandingChar126componentsSectionsIntroRoute:
+    LandingChar126componentsSectionsIntroRoute,
+}
+
+const LandingLayoutRouteWithChildren = LandingLayoutRoute._addFileChildren(
+  LandingLayoutRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   AppLayoutRoute: AppLayoutRouteWithChildren,
+  LandingLayoutRoute: LandingLayoutRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
