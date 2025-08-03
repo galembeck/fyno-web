@@ -1,5 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Headphones, Menu, X } from "lucide-react";
+import {
+	ArrowRight,
+	ChevronRight,
+	Headphones,
+	LogIn,
+	Menu,
+	X,
+} from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 
@@ -14,6 +21,13 @@ export function Navbar() {
 		setIsMenuOpen(false);
 	};
 
+	function scrollToSection(id: string) {
+		const el = document.getElementById(id);
+		if (el) {
+			el.scrollIntoView({ behavior: "smooth" });
+		}
+	}
+
 	return (
 		<nav className="sticky top-0 right-0 left-0 z-50 bg-primary-black shadow-lg">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -27,36 +41,41 @@ export function Navbar() {
 					</Link>
 
 					<div className="hidden items-center gap-8 lg:flex">
-						<Link
-							className="text-white transition-colors hover:text-gray-300"
-							to="/"
+						<Button
+							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("benefits")}
+							variant="link"
 						>
 							Benefícios
-						</Link>
-						<Link
-							className="text-white transition-colors hover:text-gray-300"
-							to="/"
+						</Button>
+						<Button
+							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("resources")}
+							variant="link"
 						>
 							Recursos
-						</Link>
-						<Link
-							className="text-white transition-colors hover:text-gray-300"
-							to="/"
+						</Button>
+						<Button
+							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("taxes")}
+							variant="link"
 						>
 							Taxas
-						</Link>
-						<Link
-							className="text-white transition-colors hover:text-gray-300"
-							to="/"
+						</Button>
+						<Button
+							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("awards")}
+							variant="link"
 						>
 							Premiações
-						</Link>
-						<Link
-							className="text-white transition-colors hover:text-gray-300"
-							to="/"
+						</Button>
+						<Button
+							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("blog")}
+							variant="link"
 						>
 							Blog
-						</Link>
+						</Button>
 					</div>
 
 					<div className="flex items-center gap-2">
@@ -65,9 +84,11 @@ export function Navbar() {
 							variant="secondary"
 						>
 							Entrar
+							<ChevronRight className="size-5" />
 						</Button>
-						<Button className="hidden cursor-pointer rounded-3xl bg-secondary-dark px-6 py-6 text-base hover:bg-secondary-dark/70 lg:flex">
+						<Button className="hidden cursor-pointer rounded-3xl bg-primary-green px-6 py-6 text-base text-black hover:bg-primary-green/80 lg:flex">
 							Criar conta
+							<LogIn className="size-5" />
 						</Button>
 
 						<Button
@@ -93,41 +114,41 @@ export function Navbar() {
 			>
 				<div className="border-gray-800 border-t bg-primary-black">
 					<div className="mx-auto max-w-7xl space-y-4 px-4 py-4">
-						<Link
-							className="block py-2 text-lg text-white transition-colors hover:text-gray-300"
-							onClick={closeMenu}
-							to="/"
+						<Button
+							className="-px-2 block cursor-pointer py-2 font-normal text-lg text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("benefits")}
+							variant="link"
 						>
 							Benefícios
-						</Link>
-						<Link
-							className="block py-2 text-lg text-white transition-colors hover:text-gray-300"
-							onClick={closeMenu}
-							to="/"
+						</Button>
+						<Button
+							className="-px-2 block cursor-pointer py-2 font-normal text-lg text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("resources")}
+							variant="link"
 						>
 							Recursos
-						</Link>
-						<Link
-							className="block py-2 text-lg text-white transition-colors hover:text-gray-300"
-							onClick={closeMenu}
-							to="/"
+						</Button>
+						<Button
+							className="-px-2 block cursor-pointer py-2 font-normal text-lg text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("taxes")}
+							variant="link"
 						>
 							Taxas
-						</Link>
-						<Link
-							className="block py-2 text-lg text-white transition-colors hover:text-gray-300"
-							onClick={closeMenu}
-							to="/"
+						</Button>
+						<Button
+							className="-px-2 block cursor-pointer py-2 font-normal text-lg text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("awards")}
+							variant="link"
 						>
 							Premiações
-						</Link>
-						<Link
-							className="block py-2 text-lg text-white transition-colors hover:text-gray-300"
-							onClick={closeMenu}
-							to="/"
+						</Button>
+						<Button
+							className="-px-2 block cursor-pointer py-2 font-normal text-lg text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("blog")}
+							variant="link"
 						>
 							Blog
-						</Link>
+						</Button>
 
 						<Button
 							className="w-full cursor-pointer py-6 font-semibold text-base"
@@ -135,19 +156,21 @@ export function Navbar() {
 							variant="secondary"
 						>
 							Entrar
+							<ChevronRight className="size-5" />
 						</Button>
 						<Button
-							className="w-full cursor-pointer bg-secondary-dark py-6 font-semibold text-base"
+							className="w-full cursor-pointer bg-primary-green py-6 font-semibold text-base text-black hover:bg-primary-green/80"
 							onClick={closeMenu}
 						>
 							Criar conta
+							<LogIn className="size-5" />
 						</Button>
 					</div>
 				</div>
 			</div>
 
 			<article className="flex items-center justify-center gap-4 bg-muted-foreground/30 px-6 py-2">
-				<p className="truncate text-navbar-paragraph">
+				<p className="truncate text-primary-green">
 					<span className="hidden md:inline">
 						Seu negócio fatura mais de R$50 mil mensais? Aproveite condições
 						exclusivas!
@@ -155,7 +178,7 @@ export function Navbar() {
 					<span className="md:hidden">Fatura mais de R$50 mil?</span>
 				</p>
 
-				<Button className="group relative flex cursor-pointer items-center overflow-hidden border-1 border-muted-foreground/50 bg-muted-foreground/10 text-navbar-paragraph transition-all hover:bg-muted-foreground/10">
+				<Button className="group relative flex cursor-pointer items-center overflow-hidden border-1 border-muted-foreground/50 bg-muted-foreground/10 text-primary-green transition-all hover:bg-muted-foreground/10">
 					<span className="transition-all duration-300 group-hover:translate-x-2 group-hover:opacity-0">
 						<Headphones className="size-3.5" />
 					</span>
