@@ -13,13 +13,13 @@ import {
 
 export const sidebarData = {
 	user: {
-		name: "shadcn",
-		email: "m@example.com",
+		name: "Pedro Galembeck",
+		email: "pedro.galembeck@mblabs.com.br",
 		avatar: "/avatars/shadcn.jpg",
 	},
 	teams: [
 		{
-			name: "Acme Inc",
+			name: "Galembeck's Coorp.",
 			logo: GalleryVerticalEnd,
 			plan: "Enterprise",
 		},
