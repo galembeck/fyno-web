@@ -19,5 +19,5 @@ function Layout() {
 				<Footer />
 			</div>
 		</main>
-	)
+	);
 }

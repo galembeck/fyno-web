@@ -12,18 +12,18 @@ export function Intro() {
 	return (
 		<div className="flex flex-col justify-center py-6 text-center lg:py-16">
 			<Link to="/">
-				<Badge className="items-center gap-2 rounded-full bg-secondary-green py-2">
+				<Badge className="items-center gap-2 rounded-full bg-primary-green-dark py-2">
 					<Badge className="rounded-full bg-primary-green font-normal text-sm">
-						New
+						Novo
 					</Badge>
 					<p className="flex items-center gap-2 font-light text-base text-primary-green">
-						Introducing AI Automation
+						Automação & Revisão com IA
 						<ArrowRight className="size-4" />
 					</p>
 				</Badge>
 			</Link>
 
-			<TypingAnimation className="py-6 font-semibold text-5xl leading-tight md:text-6xl lg:text-7xl xl:text-8xl">
+			<TypingAnimation className="pt-4 font-semibold text-5xl leading-tight tracking-tight md:pt-0 md:text-6xl lg:text-7xl xl:text-8xl">
 				Venda com segurança e receba com tranquilidade
 			</TypingAnimation>
 
@@ -58,7 +58,7 @@ export function Intro() {
 				garante pagamentos rápidos, seguros e sem complicação.
 			</p>
 
-			<div className="mt-9 flex justify-center gap-4 py-6 md:py-10 lg:py-6">
+			<div className="flex flex-col justify-center gap-4 py-10 md:flex-row md:py-16 lg:py-12">
 				<Button
 					className="cursor-pointer items-center rounded-full bg-primary-green px-8 py-6 text-lg hover:bg-primary-green/80"
 					variant="secondary"
@@ -72,6 +72,9 @@ export function Intro() {
 					<MessageCircleIcon className="size-5" />
 				</Button>
 			</div>
+
+			{/** biome-ignore lint/performance/noImgElement: required by @Vite */}
+			<img alt="Dashboard" src="/assets/images/dashboard.png" />
 		</div>
-	)
+	);
 }
