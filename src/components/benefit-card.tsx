@@ -31,7 +31,7 @@ export function BenefitCard({
 
 	return (
 		<section
-			className="flex flex-col items-center justify-center py-10 text-center lg:py-0 lg:text-left"
+			className="flex flex-col items-center justify-center py-10 text-center lg:text-left"
 			id="benefits"
 		>
 			<article className="flex flex-col items-center gap-6 md:max-w-lg lg:max-w-full lg:flex-row lg:items-center lg:gap-32">

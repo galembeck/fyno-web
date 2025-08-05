@@ -8,8 +8,9 @@
 
 	--color-primary-black: oklch(0.1684 0 0);
 	--color-primary-dark: oklch(0.2293 0.0078 297.22);
-	--color-secondary-dark: oklch(0.2393 0 0);
+	--color-secondary-dark: oklch(0.2071 0.006 301.02);
 
+	--color-primary-gray: oklch(0.2393 0 0);
 	--color-secondary-gray: oklch(0.7717 0.0068 17.3);
 
 	--color-primary-green: oklch(0.8256 0.1985 127);

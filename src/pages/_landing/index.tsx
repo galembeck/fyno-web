@@ -19,14 +19,36 @@ export const Route = createFileRoute("/_landing/")({
 
 function RouteComponent() {
 	return (
-		<main>
-			<div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:gap-32 lg:px-8">
-				<Intro />
-				<Benefits />
-				<Resources />
-				{/* <Rewards /> */}
-				<FrequentlyAskedQuestions />
-				<CallToAction />
+		<main className="flex flex-col">
+			<div className="bg-primary-dark">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<Intro />
+				</div>
+			</div>
+			<div className="bg-secondary-dark">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<Benefits />
+				</div>
+			</div>
+			<div className="bg-primary-dark">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<Resources />
+				</div>
+			</div>
+			{/* <div className="bg-primary-dark">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<Rewards />
+				</div>
+			</div> */}
+			<div className="bg-primary-black">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<FrequentlyAskedQuestions />
+				</div>
+			</div>
+			<div className="bg-primary-dark">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<CallToAction />
+				</div>
 			</div>
 
 			{/* <CompaniesMarquee /> */}

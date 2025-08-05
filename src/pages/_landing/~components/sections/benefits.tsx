@@ -15,7 +15,7 @@ export const Route = createFileRoute("/_landing/~components/sections/benefits")(
 
 export function Benefits() {
 	return (
-		<>
+		<section className="flex flex-col py-10 lg:py-16">
 			<BenefitCard
 				badge="Sem Barreiras, Sem Complicação"
 				callToAction={{
@@ -57,6 +57,6 @@ export function Benefits() {
 				imgUrl="https://framerusercontent.com/images/m38Yb07do9oj4O3MGbGuFGvSSM.gif?scale-down-to=1024"
 				title="Pagamentos que acompanham o seu ritmo"
 			/>
-		</>
+		</section>
 	);
 }
