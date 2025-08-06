@@ -8,7 +8,7 @@ export const Route = createFileRoute("/_landing")({
 
 function Layout() {
 	return (
-		<main className="min-h-screen w-full bg-primary-dark text-white">
+		<main className="min-h-screen w-full text-white">
 			<div>
 				<Navbar />
 
@@ -19,5 +19,5 @@ function Layout() {
 				<Footer />
 			</div>
 		</main>
-	)
+	);
 }
