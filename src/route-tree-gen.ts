@@ -13,8 +13,14 @@ import { Route as LandingLayoutRouteImport } from './pages/_landing/layout'
 import { Route as AppLayoutRouteImport } from './pages/_app/layout'
 import { Route as LandingIndexRouteImport } from './pages/_landing/index'
 import { Route as AppDashboardIndexRouteImport } from './pages/_app/dashboard/index'
+import { Route as LandingChar126componentsSectionsTaxesRouteImport } from './pages/_landing/~components/sections/taxes'
+import { Route as LandingChar126componentsSectionsRewardsRouteImport } from './pages/_landing/~components/sections/rewards'
+import { Route as LandingChar126componentsSectionsResourcesRouteImport } from './pages/_landing/~components/sections/resources'
 import { Route as LandingChar126componentsSectionsIntroRouteImport } from './pages/_landing/~components/sections/intro'
+import { Route as LandingChar126componentsSectionsFrequentlyAskedQuestionsRouteImport } from './pages/_landing/~components/sections/frequently-asked-questions'
 import { Route as LandingChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_landing/~components/sections/companies-marquee'
+import { Route as LandingChar126componentsSectionsCallToActionRouteImport } from './pages/_landing/~components/sections/call-to-action'
+import { Route as LandingChar126componentsSectionsBenefitsRouteImport } from './pages/_landing/~components/sections/benefits'
 
 const LandingLayoutRoute = LandingLayoutRouteImport.update({
   id: '/_landing',
@@ -34,10 +40,34 @@ const AppDashboardIndexRoute = AppDashboardIndexRouteImport.update({
   path: '/dashboard/',
   getParentRoute: () => AppLayoutRoute,
 } as any)
+const LandingChar126componentsSectionsTaxesRoute =
+  LandingChar126componentsSectionsTaxesRouteImport.update({
+    id: '/~components/sections/taxes',
+    path: '/~components/sections/taxes',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
+const LandingChar126componentsSectionsRewardsRoute =
+  LandingChar126componentsSectionsRewardsRouteImport.update({
+    id: '/~components/sections/rewards',
+    path: '/~components/sections/rewards',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
+const LandingChar126componentsSectionsResourcesRoute =
+  LandingChar126componentsSectionsResourcesRouteImport.update({
+    id: '/~components/sections/resources',
+    path: '/~components/sections/resources',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
 const LandingChar126componentsSectionsIntroRoute =
   LandingChar126componentsSectionsIntroRouteImport.update({
     id: '/~components/sections/intro',
     path: '/~components/sections/intro',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
+const LandingChar126componentsSectionsFrequentlyAskedQuestionsRoute =
+  LandingChar126componentsSectionsFrequentlyAskedQuestionsRouteImport.update({
+    id: '/~components/sections/frequently-asked-questions',
+    path: '/~components/sections/frequently-asked-questions',
     getParentRoute: () => LandingLayoutRoute,
   } as any)
 const LandingChar126componentsSectionsCompaniesMarqueeRoute =
@@ -46,18 +76,42 @@ const LandingChar126componentsSectionsCompaniesMarqueeRoute =
     path: '/~components/sections/companies-marquee',
     getParentRoute: () => LandingLayoutRoute,
   } as any)
+const LandingChar126componentsSectionsCallToActionRoute =
+  LandingChar126componentsSectionsCallToActionRouteImport.update({
+    id: '/~components/sections/call-to-action',
+    path: '/~components/sections/call-to-action',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
+const LandingChar126componentsSectionsBenefitsRoute =
+  LandingChar126componentsSectionsBenefitsRouteImport.update({
+    id: '/~components/sections/benefits',
+    path: '/~components/sections/benefits',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof LandingIndexRoute
   '/dashboard': typeof AppDashboardIndexRoute
+  '/~components/sections/benefits': typeof LandingChar126componentsSectionsBenefitsRoute
+  '/~components/sections/call-to-action': typeof LandingChar126componentsSectionsCallToActionRoute
   '/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
+  '/~components/sections/frequently-asked-questions': typeof LandingChar126componentsSectionsFrequentlyAskedQuestionsRoute
   '/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
+  '/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
+  '/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
+  '/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof LandingIndexRoute
   '/dashboard': typeof AppDashboardIndexRoute
+  '/~components/sections/benefits': typeof LandingChar126componentsSectionsBenefitsRoute
+  '/~components/sections/call-to-action': typeof LandingChar126componentsSectionsCallToActionRoute
   '/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
+  '/~components/sections/frequently-asked-questions': typeof LandingChar126componentsSectionsFrequentlyAskedQuestionsRoute
   '/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
+  '/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
+  '/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
+  '/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -65,30 +119,54 @@ export interface FileRoutesById {
   '/_landing': typeof LandingLayoutRouteWithChildren
   '/_landing/': typeof LandingIndexRoute
   '/_app/dashboard/': typeof AppDashboardIndexRoute
+  '/_landing/~components/sections/benefits': typeof LandingChar126componentsSectionsBenefitsRoute
+  '/_landing/~components/sections/call-to-action': typeof LandingChar126componentsSectionsCallToActionRoute
   '/_landing/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
+  '/_landing/~components/sections/frequently-asked-questions': typeof LandingChar126componentsSectionsFrequentlyAskedQuestionsRoute
   '/_landing/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
+  '/_landing/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
+  '/_landing/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
+  '/_landing/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/dashboard'
+    | '/~components/sections/benefits'
+    | '/~components/sections/call-to-action'
     | '/~components/sections/companies-marquee'
+    | '/~components/sections/frequently-asked-questions'
     | '/~components/sections/intro'
+    | '/~components/sections/resources'
+    | '/~components/sections/rewards'
+    | '/~components/sections/taxes'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/dashboard'
+    | '/~components/sections/benefits'
+    | '/~components/sections/call-to-action'
     | '/~components/sections/companies-marquee'
+    | '/~components/sections/frequently-asked-questions'
     | '/~components/sections/intro'
+    | '/~components/sections/resources'
+    | '/~components/sections/rewards'
+    | '/~components/sections/taxes'
   id:
     | '__root__'
     | '/_app'
     | '/_landing'
     | '/_landing/'
     | '/_app/dashboard/'
+    | '/_landing/~components/sections/benefits'
+    | '/_landing/~components/sections/call-to-action'
     | '/_landing/~components/sections/companies-marquee'
+    | '/_landing/~components/sections/frequently-asked-questions'
     | '/_landing/~components/sections/intro'
+    | '/_landing/~components/sections/resources'
+    | '/_landing/~components/sections/rewards'
+    | '/_landing/~components/sections/taxes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -126,6 +204,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppDashboardIndexRouteImport
       parentRoute: typeof AppLayoutRoute
     }
+    '/_landing/~components/sections/taxes': {
+      id: '/_landing/~components/sections/taxes'
+      path: '/~components/sections/taxes'
+      fullPath: '/~components/sections/taxes'
+      preLoaderRoute: typeof LandingChar126componentsSectionsTaxesRouteImport
+      parentRoute: typeof LandingLayoutRoute
+    }
+    '/_landing/~components/sections/rewards': {
+      id: '/_landing/~components/sections/rewards'
+      path: '/~components/sections/rewards'
+      fullPath: '/~components/sections/rewards'
+      preLoaderRoute: typeof LandingChar126componentsSectionsRewardsRouteImport
+      parentRoute: typeof LandingLayoutRoute
+    }
+    '/_landing/~components/sections/resources': {
+      id: '/_landing/~components/sections/resources'
+      path: '/~components/sections/resources'
+      fullPath: '/~components/sections/resources'
+      preLoaderRoute: typeof LandingChar126componentsSectionsResourcesRouteImport
+      parentRoute: typeof LandingLayoutRoute
+    }
     '/_landing/~components/sections/intro': {
       id: '/_landing/~components/sections/intro'
       path: '/~components/sections/intro'
@@ -133,11 +232,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LandingChar126componentsSectionsIntroRouteImport
       parentRoute: typeof LandingLayoutRoute
     }
+    '/_landing/~components/sections/frequently-asked-questions': {
+      id: '/_landing/~components/sections/frequently-asked-questions'
+      path: '/~components/sections/frequently-asked-questions'
+      fullPath: '/~components/sections/frequently-asked-questions'
+      preLoaderRoute: typeof LandingChar126componentsSectionsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof LandingLayoutRoute
+    }
     '/_landing/~components/sections/companies-marquee': {
       id: '/_landing/~components/sections/companies-marquee'
       path: '/~components/sections/companies-marquee'
       fullPath: '/~components/sections/companies-marquee'
       preLoaderRoute: typeof LandingChar126componentsSectionsCompaniesMarqueeRouteImport
+      parentRoute: typeof LandingLayoutRoute
+    }
+    '/_landing/~components/sections/call-to-action': {
+      id: '/_landing/~components/sections/call-to-action'
+      path: '/~components/sections/call-to-action'
+      fullPath: '/~components/sections/call-to-action'
+      preLoaderRoute: typeof LandingChar126componentsSectionsCallToActionRouteImport
+      parentRoute: typeof LandingLayoutRoute
+    }
+    '/_landing/~components/sections/benefits': {
+      id: '/_landing/~components/sections/benefits'
+      path: '/~components/sections/benefits'
+      fullPath: '/~components/sections/benefits'
+      preLoaderRoute: typeof LandingChar126componentsSectionsBenefitsRouteImport
       parentRoute: typeof LandingLayoutRoute
     }
   }
@@ -157,16 +277,34 @@ const AppLayoutRouteWithChildren = AppLayoutRoute._addFileChildren(
 
 interface LandingLayoutRouteChildren {
   LandingIndexRoute: typeof LandingIndexRoute
+  LandingChar126componentsSectionsBenefitsRoute: typeof LandingChar126componentsSectionsBenefitsRoute
+  LandingChar126componentsSectionsCallToActionRoute: typeof LandingChar126componentsSectionsCallToActionRoute
   LandingChar126componentsSectionsCompaniesMarqueeRoute: typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
+  LandingChar126componentsSectionsFrequentlyAskedQuestionsRoute: typeof LandingChar126componentsSectionsFrequentlyAskedQuestionsRoute
   LandingChar126componentsSectionsIntroRoute: typeof LandingChar126componentsSectionsIntroRoute
+  LandingChar126componentsSectionsResourcesRoute: typeof LandingChar126componentsSectionsResourcesRoute
+  LandingChar126componentsSectionsRewardsRoute: typeof LandingChar126componentsSectionsRewardsRoute
+  LandingChar126componentsSectionsTaxesRoute: typeof LandingChar126componentsSectionsTaxesRoute
 }
 
 const LandingLayoutRouteChildren: LandingLayoutRouteChildren = {
   LandingIndexRoute: LandingIndexRoute,
+  LandingChar126componentsSectionsBenefitsRoute:
+    LandingChar126componentsSectionsBenefitsRoute,
+  LandingChar126componentsSectionsCallToActionRoute:
+    LandingChar126componentsSectionsCallToActionRoute,
   LandingChar126componentsSectionsCompaniesMarqueeRoute:
     LandingChar126componentsSectionsCompaniesMarqueeRoute,
+  LandingChar126componentsSectionsFrequentlyAskedQuestionsRoute:
+    LandingChar126componentsSectionsFrequentlyAskedQuestionsRoute,
   LandingChar126componentsSectionsIntroRoute:
     LandingChar126componentsSectionsIntroRoute,
+  LandingChar126componentsSectionsResourcesRoute:
+    LandingChar126componentsSectionsResourcesRoute,
+  LandingChar126componentsSectionsRewardsRoute:
+    LandingChar126componentsSectionsRewardsRoute,
+  LandingChar126componentsSectionsTaxesRoute:
+    LandingChar126componentsSectionsTaxesRoute,
 }
 
 const LandingLayoutRouteWithChildren = LandingLayoutRoute._addFileChildren(

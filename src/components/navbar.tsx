@@ -31,7 +31,7 @@ export function Navbar() {
 	return (
 		<nav className="sticky top-0 right-0 left-0 z-50 bg-primary-black shadow-lg">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center justify-between py-6">
+				<div className="flex items-center justify-between py-3">
 					<Link className="flex gap-2" to="/">
 						{/** biome-ignore lint/performance/noImgElement: required b @Vite */}
 						<img alt="Fyno" className="size-7" src="/assets/icons/logo.svg" />
@@ -57,17 +57,17 @@ export function Navbar() {
 						</Button>
 						<Button
 							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
+							onClick={() => scrollToSection("rewards")}
+							variant="link"
+						>
+							Premiações
+						</Button>
+						<Button
+							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
 							onClick={() => scrollToSection("taxes")}
 							variant="link"
 						>
 							Taxas
-						</Button>
-						<Button
-							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
-							onClick={() => scrollToSection("awards")}
-							variant="link"
-						>
-							Premiações
 						</Button>
 						<Button
 							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
@@ -80,13 +80,13 @@ export function Navbar() {
 
 					<div className="flex items-center gap-2">
 						<Button
-							className="hidden cursor-pointer rounded-3xl px-6 py-6 text-base lg:flex"
+							className="hidden cursor-pointer rounded-3xl px-6 py-5 text-base lg:flex"
 							variant="secondary"
 						>
 							Entrar
 							<ChevronRight className="size-5" />
 						</Button>
-						<Button className="hidden cursor-pointer rounded-3xl bg-primary-green px-6 py-6 text-base text-black hover:bg-primary-green/80 lg:flex">
+						<Button className="hidden cursor-pointer rounded-3xl bg-primary-green px-6 py-5 text-base text-black hover:bg-primary-green/80 lg:flex">
 							Criar conta
 							<LogIn className="size-5" />
 						</Button>
@@ -133,14 +133,14 @@ export function Navbar() {
 							onClick={() => scrollToSection("taxes")}
 							variant="link"
 						>
-							Taxas
+							Premiações
 						</Button>
 						<Button
 							className="-px-2 block cursor-pointer py-2 font-normal text-lg text-white transition-colors hover:text-gray-300"
 							onClick={() => scrollToSection("awards")}
 							variant="link"
 						>
-							Premiações
+							Taxas
 						</Button>
 						<Button
 							className="-px-2 block cursor-pointer py-2 font-normal text-lg text-white transition-colors hover:text-gray-300"
@@ -151,7 +151,7 @@ export function Navbar() {
 						</Button>
 
 						<Button
-							className="w-full cursor-pointer py-6 font-semibold text-base"
+							className="w-full cursor-pointer py-5 font-semibold text-base"
 							onClick={closeMenu}
 							variant="secondary"
 						>
@@ -159,7 +159,7 @@ export function Navbar() {
 							<ChevronRight className="size-5" />
 						</Button>
 						<Button
-							className="w-full cursor-pointer bg-primary-green py-6 font-semibold text-base text-black hover:bg-primary-green/80"
+							className="w-full cursor-pointer bg-primary-green py-5 font-semibold text-base text-black hover:bg-primary-green/80"
 							onClick={closeMenu}
 						>
 							Criar conta

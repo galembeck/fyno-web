@@ -8,7 +8,7 @@ import {
 	SidebarHeader,
 	SidebarRail,
 } from "@/components/ui/sidebar";
-import { sidebarData } from "@/constants";
+import { sidebarData } from "@/constants/sidebar";
 import { NavMain } from "./nav-main";
 import { NavProjects } from "./nav-projects";
 import { NavUser } from "./nav-user";
