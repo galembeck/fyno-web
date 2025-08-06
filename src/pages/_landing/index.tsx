@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CallToAction } from "./~components/call-to-action";
+import { FrequentlyAskedQuestions } from "./~components/frequently-asked-questions";
 import { Benefits } from "./~components/sections/benefits";
-import { CallToAction } from "./~components/sections/call-to-action";
-import { FrequentlyAskedQuestions } from "./~components/sections/frequently-asked-questions";
 import { Intro } from "./~components/sections/intro";
 import { Resources } from "./~components/sections/resources";
 import { Rewards } from "./~components/sections/rewards";
@@ -49,7 +49,11 @@ function RouteComponent() {
 			</div>
 			<div className="bg-primary-black">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-					<FrequentlyAskedQuestions />
+					<FrequentlyAskedQuestions
+						badge="Dúvidas frequentes"
+						layout="landing"
+						title="Tire suas dúvidas aqui"
+					/>
 				</div>
 			</div>
 			<div className="bg-primary-dark">

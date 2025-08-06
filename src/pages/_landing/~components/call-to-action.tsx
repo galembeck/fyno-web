@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute(
-	"/_landing/~components/sections/call-to-action"
+	"/_landing/~components/call-to-action"
 )({
 	component: CallToAction,
 });
@@ -48,5 +48,5 @@ export function CallToAction() {
 				</article>
 			</div>
 		</section>
-	);
+	)
 }

@@ -1,6 +1,6 @@
 /** biome-ignore-all lint/performance/noImgElement: required by @Vite */
 
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Building2, ChevronRight, Crown, Plane } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,12 @@ export const Route = createFileRoute("/_landing/~components/sections/rewards")({
 });
 
 export function Rewards() {
+	const navigate = useNavigate();
+
+	const handleNavigateToRewards = () => {
+		navigate({ to: "/rewards" });
+	};
+
 	return (
 		<section className="px-4 md:px-8 lg:px-16" id="rewards">
 			<article className="flex flex-col items-center gap-6 py-10">
@@ -27,7 +33,11 @@ export function Rewards() {
 					de reconhecimento e experiências únicas.
 				</p>
 
-				<Button className="mt-7" variant="secondary">
+				<Button
+					className="mt-7"
+					onClick={handleNavigateToRewards}
+					variant="secondary"
+				>
 					Conheça todas as premiações
 					<ChevronRight />
 				</Button>
