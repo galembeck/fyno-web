@@ -4,12 +4,26 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
-import { frequentlyAskedQuestions } from "@/constants/questions";
+import {
+	landingQuestionsAccordion,
+	rewardsQuestionsAccordion,
+} from "@/constants/questions";
 
-export function QuestionsAccordion() {
+interface QuestionsAccordionProps {
+	layout: "landing" | "rewards";
+}
+
+export function QuestionsAccordion({
+	layout = "landing",
+}: QuestionsAccordionProps) {
+	const questions =
+		layout === "landing"
+			? landingQuestionsAccordion
+			: rewardsQuestionsAccordion;
+
 	return (
 		<Accordion className="w-full" collapsible type="single">
-			{frequentlyAskedQuestions.map((question) => (
+			{questions.map((question) => (
 				<AccordionItem
 					className="py-2"
 					key={question.id}
