@@ -18,7 +18,10 @@ export const Route = createFileRoute(
 
 export function Resources() {
 	return (
-		<section className="flex flex-col items-center py-20" id="resources">
+		<section
+			className="flex flex-col items-center py-10 lg:py-20"
+			id="resources"
+		>
 			<article className="flex flex-col items-center gap-6 pb-12">
 				<Badge className="bg-third-green-dark font-semibold text-primary-green uppercase">
 					Tecnologia que impulsiona

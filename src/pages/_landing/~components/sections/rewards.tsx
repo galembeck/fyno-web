@@ -1,5 +1,7 @@
+/** biome-ignore-all lint/performance/noImgElement: required by @Vite */
+
 import { createFileRoute } from "@tanstack/react-router";
-import { ChevronRight } from "lucide-react";
+import { Building2, ChevronRight, Crown, Plane } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -9,7 +11,7 @@ export const Route = createFileRoute("/_landing/~components/sections/rewards")({
 
 export function Rewards() {
 	return (
-		<section id="rewards">
+		<section className="px-4 md:px-8 lg:px-16" id="rewards">
 			<article className="flex flex-col items-center gap-6 py-10">
 				<Badge className="bg-third-green-dark font-semibold text-primary-green uppercase">
 					Seu sucesso merece ser celebrado
@@ -30,6 +32,81 @@ export function Rewards() {
 					<ChevronRight />
 				</Button>
 			</article>
+
+			{/* Cards Grid */}
+			<div className="mx-auto max-w-7xl space-y-4 pb-16 md:grid md:grid-cols-3 md:gap-4 md:space-y-0 lg:gap-6">
+				{/* Saque Automático - Top Left - 3 espaços */}
+				<div className="rounded-2xl bg-gradient-to-br from-lime-300 to-lime-400 p-6 text-black md:col-span-2">
+					<div className="mb-4">
+						<Building2 className="h-8 w-8" />
+					</div>
+					<h3 className="mb-3 font-bold text-xl">Saque Automático</h3>
+					<p className="text-sm leading-relaxed">
+						Receba seus pagamentos sem complicação. Configure saques automáticos
+						para sua conta e tenha previsibilidade no fluxo de caixa.
+					</p>
+				</div>
+
+				{/* 500 MIL - Top Right - 1 espaço */}
+				<div className="relative flex min-h-[200px] items-center justify-center overflow-hidden rounded-2xl bg-black p-8 md:min-h-0">
+					<img
+						alt="Board Reward"
+						className="absolute h-full w-full object-cover"
+						src="https://framerusercontent.com/images/P9HOA6jFv9DvYCci4Or63wlnxCw.png"
+					/>
+				</div>
+
+				{/* Person Image - Middle Left */}
+				<div className="relative h-52 overflow-hidden rounded-2xl">
+					<img
+						alt="Person"
+						className="absolute inset-0 h-full w-full object-cover"
+						src="https://framerusercontent.com/images/0TbGyB6OaV7Vbf7Es4xFdXFE0.png"
+					/>
+				</div>
+
+				{/* Hyper Elite - Middle Center */}
+				<div className="rounded-2xl bg-black p-6 text-white">
+					<div className="mb-4">
+						<Crown className="h-8 w-8 text-yellow-400" />
+					</div>
+					<h3 className="mb-3 font-bold text-xl">Hyper Elite</h3>
+					<p className="text-gray-300 text-sm leading-relaxed">
+						Tenha acesso a condições diferenciadas, suporte prioritário e
+						benefícios exclusivos para impulsionar ainda mais o seu negócio.
+					</p>
+				</div>
+
+				{/* Person with Card - Middle Right */}
+				<div className="relative h-52 overflow-hidden rounded-2xl">
+					<img
+						alt="Person"
+						className="absolute inset-0 h-full w-full object-cover"
+						src="https://framerusercontent.com/images/GVBydWfB2wk28qy1sUmKg9reixA.jpg"
+					/>
+				</div>
+
+				{/* Yacht - Bottom Right - 2 espaços */}
+				<div className="relative h-52 overflow-hidden rounded-2xl md:col-span-1">
+					<img
+						alt="Yatch"
+						className="absolute inset-0 h-full w-full object-cover"
+						src="https://framerusercontent.com/images/ESrKE7Ybglu2MIi5mPPDlV0uNt8.png"
+					/>
+				</div>
+
+				{/* Viagens Exclusivas - Bottom Left - 2 espaços */}
+				<div className="rounded-2xl bg-gradient-to-br from-green-800 to-green-900 p-6 text-white md:col-span-2">
+					<div className="mb-4">
+						<Plane className="h-8 w-8" />
+					</div>
+					<h3 className="mb-3 font-bold text-xl">Viagens Exclusivas</h3>
+					<p className="text-green-100 text-sm leading-relaxed">
+						Alcance novos patamares e celebre suas metas com viagens incríveis,
+						totalmente custeadas pela HyperCash.
+					</p>
+				</div>
+			</div>
 		</section>
 	);
 }

@@ -10,7 +10,7 @@ export const Route = createFileRoute(
 
 export function FrequentlyAskedQuestions() {
 	return (
-		<section className="py-20" id="questions">
+		<section className="py-10 lg:py-20" id="questions">
 			<article className="flex flex-col items-center gap-6 pb-10">
 				<Badge className="bg-primary-green-light font-semibold text-black uppercase">
 					Dúvidas frequentes

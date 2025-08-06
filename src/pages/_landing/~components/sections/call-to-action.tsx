@@ -11,7 +11,7 @@ export const Route = createFileRoute(
 
 export function CallToAction() {
 	return (
-		<section className="py-20">
+		<section className="py-10 lg:py-20">
 			<div className="rounded-2xl bg-gradient-to-r from-secondary-green-dark to-primary-green-dark p-8 lg:p-16">
 				<article className="flex max-w-md flex-col items-start gap-5 lg:max-w-full lg:flex-row lg:items-center">
 					<div className="flex flex-col items-start gap-5 lg:max-w-md">

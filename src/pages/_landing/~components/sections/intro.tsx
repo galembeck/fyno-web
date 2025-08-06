@@ -10,7 +10,7 @@ export const Route = createFileRoute("/_landing/~components/sections/intro")({
 
 export function Intro() {
 	return (
-		<div className="flex flex-col justify-center py-20 text-center">
+		<div className="flex flex-col justify-center py-10 text-center lg:py-20">
 			<Link to="/">
 				<Badge className="items-center gap-2 rounded-full bg-primary-green-dark py-2">
 					<Badge className="rounded-full bg-primary-green font-normal text-sm">

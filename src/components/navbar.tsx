@@ -57,14 +57,14 @@ export function Navbar() {
 						</Button>
 						<Button
 							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
-							onClick={() => scrollToSection("taxes")}
+							onClick={() => scrollToSection("rewards")}
 							variant="link"
 						>
 							Premiações
 						</Button>
 						<Button
 							className="cursor-pointer font-normal text-base text-white transition-colors hover:text-gray-300"
-							onClick={() => scrollToSection("awards")}
+							onClick={() => scrollToSection("taxes")}
 							variant="link"
 						>
 							Taxas
