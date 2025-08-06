@@ -33,9 +33,7 @@ export function Rewards() {
 				</Button>
 			</article>
 
-			{/* Cards Grid */}
 			<div className="mx-auto max-w-7xl space-y-4 pb-16 md:grid md:grid-cols-3 md:gap-4 md:space-y-0 lg:gap-6">
-				{/* Saque Automático - Top Left - 3 espaços */}
 				<div className="rounded-2xl bg-gradient-to-br from-lime-300 to-lime-400 p-6 text-black md:col-span-2">
 					<div className="mb-4">
 						<Building2 className="h-8 w-8" />
@@ -47,7 +45,6 @@ export function Rewards() {
 					</p>
 				</div>
 
-				{/* 500 MIL - Top Right - 1 espaço */}
 				<div className="relative flex min-h-[200px] items-center justify-center overflow-hidden rounded-2xl bg-black p-8 md:min-h-0">
 					<img
 						alt="Board Reward"
@@ -56,7 +53,6 @@ export function Rewards() {
 					/>
 				</div>
 
-				{/* Person Image - Middle Left */}
 				<div className="relative h-52 overflow-hidden rounded-2xl">
 					<img
 						alt="Person"
@@ -65,19 +61,17 @@ export function Rewards() {
 					/>
 				</div>
 
-				{/* Hyper Elite - Middle Center */}
 				<div className="rounded-2xl bg-black p-6 text-white">
 					<div className="mb-4">
 						<Crown className="h-8 w-8 text-yellow-400" />
 					</div>
-					<h3 className="mb-3 font-bold text-xl">Hyper Elite</h3>
+					<h3 className="mb-3 font-bold text-xl">Fyno Elite</h3>
 					<p className="text-gray-300 text-sm leading-relaxed">
 						Tenha acesso a condições diferenciadas, suporte prioritário e
 						benefícios exclusivos para impulsionar ainda mais o seu negócio.
 					</p>
 				</div>
 
-				{/* Person with Card - Middle Right */}
 				<div className="relative h-52 overflow-hidden rounded-2xl">
 					<img
 						alt="Person"
@@ -86,7 +80,6 @@ export function Rewards() {
 					/>
 				</div>
 
-				{/* Yacht - Bottom Right - 2 espaços */}
 				<div className="relative h-52 overflow-hidden rounded-2xl md:col-span-1">
 					<img
 						alt="Yatch"
@@ -95,7 +88,6 @@ export function Rewards() {
 					/>
 				</div>
 
-				{/* Viagens Exclusivas - Bottom Left - 2 espaços */}
 				<div className="rounded-2xl bg-gradient-to-br from-green-800 to-green-900 p-6 text-white md:col-span-2">
 					<div className="mb-4">
 						<Plane className="h-8 w-8" />
@@ -103,7 +95,7 @@ export function Rewards() {
 					<h3 className="mb-3 font-bold text-xl">Viagens Exclusivas</h3>
 					<p className="text-green-100 text-sm leading-relaxed">
 						Alcance novos patamares e celebre suas metas com viagens incríveis,
-						totalmente custeadas pela HyperCash.
+						totalmente custeadas pela Fyno.
 					</p>
 				</div>
 			</div>
