@@ -13,6 +13,7 @@ import { Route as LandingLayoutRouteImport } from './pages/_landing/layout'
 import { Route as AppLayoutRouteImport } from './pages/_app/layout'
 import { Route as LandingIndexRouteImport } from './pages/_landing/index'
 import { Route as AppDashboardIndexRouteImport } from './pages/_app/dashboard/index'
+import { Route as LandingChar126componentsSectionsTaxesRouteImport } from './pages/_landing/~components/sections/taxes'
 import { Route as LandingChar126componentsSectionsRewardsRouteImport } from './pages/_landing/~components/sections/rewards'
 import { Route as LandingChar126componentsSectionsResourcesRouteImport } from './pages/_landing/~components/sections/resources'
 import { Route as LandingChar126componentsSectionsIntroRouteImport } from './pages/_landing/~components/sections/intro'
@@ -39,6 +40,12 @@ const AppDashboardIndexRoute = AppDashboardIndexRouteImport.update({
   path: '/dashboard/',
   getParentRoute: () => AppLayoutRoute,
 } as any)
+const LandingChar126componentsSectionsTaxesRoute =
+  LandingChar126componentsSectionsTaxesRouteImport.update({
+    id: '/~components/sections/taxes',
+    path: '/~components/sections/taxes',
+    getParentRoute: () => LandingLayoutRoute,
+  } as any)
 const LandingChar126componentsSectionsRewardsRoute =
   LandingChar126componentsSectionsRewardsRouteImport.update({
     id: '/~components/sections/rewards',
@@ -92,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
   '/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
   '/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
+  '/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof LandingIndexRoute
@@ -103,6 +111,7 @@ export interface FileRoutesByTo {
   '/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
   '/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
   '/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
+  '/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -117,6 +126,7 @@ export interface FileRoutesById {
   '/_landing/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
   '/_landing/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
   '/_landing/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
+  '/_landing/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -130,6 +140,7 @@ export interface FileRouteTypes {
     | '/~components/sections/intro'
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
+    | '/~components/sections/taxes'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/~components/sections/intro'
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
+    | '/~components/sections/taxes'
   id:
     | '__root__'
     | '/_app'
@@ -154,6 +166,7 @@ export interface FileRouteTypes {
     | '/_landing/~components/sections/intro'
     | '/_landing/~components/sections/resources'
     | '/_landing/~components/sections/rewards'
+    | '/_landing/~components/sections/taxes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -190,6 +203,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard'
       preLoaderRoute: typeof AppDashboardIndexRouteImport
       parentRoute: typeof AppLayoutRoute
+    }
+    '/_landing/~components/sections/taxes': {
+      id: '/_landing/~components/sections/taxes'
+      path: '/~components/sections/taxes'
+      fullPath: '/~components/sections/taxes'
+      preLoaderRoute: typeof LandingChar126componentsSectionsTaxesRouteImport
+      parentRoute: typeof LandingLayoutRoute
     }
     '/_landing/~components/sections/rewards': {
       id: '/_landing/~components/sections/rewards'
@@ -264,6 +284,7 @@ interface LandingLayoutRouteChildren {
   LandingChar126componentsSectionsIntroRoute: typeof LandingChar126componentsSectionsIntroRoute
   LandingChar126componentsSectionsResourcesRoute: typeof LandingChar126componentsSectionsResourcesRoute
   LandingChar126componentsSectionsRewardsRoute: typeof LandingChar126componentsSectionsRewardsRoute
+  LandingChar126componentsSectionsTaxesRoute: typeof LandingChar126componentsSectionsTaxesRoute
 }
 
 const LandingLayoutRouteChildren: LandingLayoutRouteChildren = {
@@ -282,6 +303,8 @@ const LandingLayoutRouteChildren: LandingLayoutRouteChildren = {
     LandingChar126componentsSectionsResourcesRoute,
   LandingChar126componentsSectionsRewardsRoute:
     LandingChar126componentsSectionsRewardsRoute,
+  LandingChar126componentsSectionsTaxesRoute:
+    LandingChar126componentsSectionsTaxesRoute,
 }
 
 const LandingLayoutRouteWithChildren = LandingLayoutRoute._addFileChildren(
