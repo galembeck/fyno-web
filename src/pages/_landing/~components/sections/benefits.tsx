@@ -15,7 +15,7 @@ export const Route = createFileRoute("/_landing/~components/sections/benefits")(
 
 export function Benefits() {
 	return (
-		<section className="flex flex-col lg:py-16">
+		<section className="flex flex-col lg:gap-32 lg:py-16">
 			<BenefitCard
 				badge="Sem Barreiras, Sem Complicação"
 				callToAction={{

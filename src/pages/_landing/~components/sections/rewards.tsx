@@ -34,7 +34,7 @@ export function Rewards() {
 			</article>
 
 			<div className="mx-auto max-w-7xl space-y-4 pb-16 md:grid md:grid-cols-3 md:gap-4 md:space-y-0 lg:gap-6">
-				<div className="rounded-2xl bg-gradient-to-br from-lime-300 to-lime-400 p-6 text-black md:col-span-2">
+				<div className="rounded-2xl bg-gradient-to-br from-lime-300 to-lime-400 p-10 text-black md:col-span-2">
 					<div className="mb-4">
 						<Building2 className="h-8 w-8" />
 					</div>
@@ -45,23 +45,23 @@ export function Rewards() {
 					</p>
 				</div>
 
-				<div className="relative flex min-h-[200px] items-center justify-center overflow-hidden rounded-2xl bg-black p-8 md:min-h-0">
+				<div className="relative flex min-h-[200px]">
 					<img
 						alt="Board Reward"
-						className="absolute h-full w-full object-cover"
+						className="absolute h-full w-full rounded-2xl object-cover"
 						src="https://framerusercontent.com/images/P9HOA6jFv9DvYCci4Or63wlnxCw.png"
 					/>
 				</div>
 
-				<div className="relative h-52 overflow-hidden rounded-2xl">
+				<div className="relative h-64">
 					<img
 						alt="Person"
-						className="absolute inset-0 h-full w-full object-cover"
+						className="absolute inset-0 h-full w-full rounded-2xl object-cover"
 						src="https://framerusercontent.com/images/0TbGyB6OaV7Vbf7Es4xFdXFE0.png"
 					/>
 				</div>
 
-				<div className="rounded-2xl bg-black p-6 text-white">
+				<div className="rounded-2xl bg-black p-10 text-white">
 					<div className="mb-4">
 						<Crown className="h-8 w-8 text-yellow-400" />
 					</div>
@@ -72,10 +72,10 @@ export function Rewards() {
 					</p>
 				</div>
 
-				<div className="relative h-52 overflow-hidden rounded-2xl">
+				<div className="relative h-64">
 					<img
 						alt="Person"
-						className="absolute inset-0 h-full w-full object-cover"
+						className="absolute inset-0 h-full w-full rounded-2xl object-cover"
 						src="https://framerusercontent.com/images/GVBydWfB2wk28qy1sUmKg9reixA.jpg"
 					/>
 				</div>
