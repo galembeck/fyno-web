@@ -1,4 +1,4 @@
-export const frequentlyAskedQuestions = [
+export const landingQuestionsAccordion = [
 	{
 		id: 1,
 		question: "O que é a Fyno e como funciona?",
@@ -40,5 +40,45 @@ export const frequentlyAskedQuestions = [
 		question: "Para quais tipos de negócios a Fyno é indicada?",
 		answer:
 			"A Fyno é ideal para negócios digitais de todos os tipos, incluindo e-commerces, dropshipping, infoprodutos e diversos outros modelos de negócios online. Para saber mais sobre como a Fyno pode atender especificamente o seu negócio, entre em contato com nosso time de vendas.",
+	},
+];
+
+export const rewardsQuestionsAccordion = [
+	{
+		id: 1,
+		question: "Quem pode participar do programa de recompensas Fyno Rewards?",
+		answer:
+			"Todos os clientes da Fyno que atingirem os marcos de faturamento estabelecidos são elegíveis para participar do programa Fyno Rewards e receber todas as recompensas correspondentes.",
+	},
+	{
+		id: 2,
+		question: "O Fyno Rewards tem algum custo?",
+		answer:
+			"Não, o programa Fyno Rewards é totalmente gratuito para os clientes da Fyno.",
+	},
+	{
+		id: 3,
+		question:
+			"Minha empresa possui sócios, podemos solicitar mais de uma recompensa?",
+		answer:
+			"Cada marco de faturamento atingido dá direito a uma única recompensa, independente da quantidade de sócios na empresa.",
+	},
+	{
+		id: 4,
+		question: "Quanto tempo leva para receber minhas recompensas?",
+		answer:
+			"Após a confirmação do atingimento do marco de faturamento, a equipe da Fyno entrará em contato para informar o prazo e os detalhes de envio da sua recompensa.",
+	},
+	{
+		id: 5,
+		question: "As recompensas são enviadas automaticamente?",
+		answer:
+			"Não, ao atingir um marco de faturamento, você deve solicitar sua recompensa através da plataforma Fyno ou entrando em contato com a sua gerente de contas.",
+	},
+	{
+		id: 6,
+		question: "Como posso acompanhar meu progresso no programa Fyno Rewards?",
+		answer:
+			"Você pode acompanhar seu progresso e os marcos atingidos diretamente no painel de controle da conta de sua organização Fyno.",
 	},
 ];
