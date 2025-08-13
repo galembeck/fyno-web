@@ -2,6 +2,7 @@
 
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @theme {
 	--font-dm-sans: "DM Sans", sans-serif;
@@ -16,11 +17,14 @@
 	--color-primary-green: oklch(0.8256 0.1985 127);
 	--color-secondary-green: oklch(0.7711 0.1248 124);
 	--color-primary-green-light: oklch(0.9812 0.027 120.5);
+	--color-third-green-light: oklch(0.9812 0.027 120.5);
 	--color-primary-green-dark: oklch(0.2241 0.046 124.16);
 	--color-secondary-green-dark: oklch(0.2023 0.006 121.98);
 	--color-third-green-dark: oklch(0.3119 0.0367 123.5);
 
 	--color-app-background: oklch(0.1448 0 0);
+
+	--color-secondary-white: oklch(0.9871 0.0017 145.56);
 }
 
 @custom-variant dark (&:is(.dark *));

@@ -14,7 +14,7 @@ export const benefits = [
 			"Suas transações passam pelas melhores adquirentes, garantindo a maior taxa de aprovação do mercado, e que apenas transações seguras sejam processadas.",
 		callToAction: {
 			text: "Começar agora",
-			path: "/",
+			path: "/sign-up",
 			icon: ArrowRight,
 			hoverIcon: Check,
 		},
@@ -30,7 +30,7 @@ export const benefits = [
 			"Aprovou? O valor cai na sua conta automaticamente, sem burocracia. Saque quando quiser, com alta disponibilidade e segurança.",
 		callToAction: {
 			text: "Saiba mais",
-			path: "/",
+			path: "/sign-up",
 			icon: BadgeQuestionMark,
 			hoverIcon: Check,
 		},
@@ -46,7 +46,7 @@ export const benefits = [
 			"Seja qual for o volume, processamos suas transações com estabilidade e baixa latência. Escale sem preocupações e sem barreiras.",
 		callToAction: {
 			text: "Abrir conta",
-			path: "/",
+			path: "/sign-up",
 			icon: BadgeDollarSign,
 			hoverIcon: Check,
 		},

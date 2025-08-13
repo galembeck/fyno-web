@@ -55,10 +55,12 @@ export function BenefitCard({
 
 					<h1 className="font-semibold text-5xl lg:text-6xl">{title}</h1>
 
-					<p className="text-base text-secondary-gray">{description}</p>
+					<p className="text-base text-muted-foreground dark:text-secondary-gray">
+						{description}
+					</p>
 
 					<Button
-						className="group relative flex items-center bg-primary-green px-4 py-4 font-semibold transition-all hover:bg-secondary-green"
+						className="group relative flex items-center bg-primary-green px-4 py-4 font-semibold text-black transition-all hover:bg-secondary-green"
 						onClick={() => navigate({ to: path })}
 						variant="secondary"
 					>

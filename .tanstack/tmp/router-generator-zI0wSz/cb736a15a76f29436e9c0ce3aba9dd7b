@@ -1,0 +1,11 @@
+import { createFileRoute } from '@tanstack/react-router'
+
+export const Route = createFileRoute('/_app/_related/_compliance/terms-of-use')(
+  {
+    component: RouteComponent,
+  },
+)
+
+function RouteComponent() {
+  return <div>Hello "/_app/_related/_compliance/terms-of-use"!</div>
+}

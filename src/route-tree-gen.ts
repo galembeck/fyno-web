@@ -9,401 +9,658 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './pages/__root'
-import { Route as LandingLayoutRouteImport } from './pages/_landing/layout'
-import { Route as AppLayoutRouteImport } from './pages/_app/layout'
-import { Route as LandingIndexRouteImport } from './pages/_landing/index'
-import { Route as LandingRewardsIndexRouteImport } from './pages/_landing/rewards/index'
-import { Route as AppDashboardIndexRouteImport } from './pages/_app/dashboard/index'
-import { Route as LandingChar126componentsFrequentlyAskedQuestionsRouteImport } from './pages/_landing/~components/frequently-asked-questions'
-import { Route as LandingChar126componentsCallToActionRouteImport } from './pages/_landing/~components/call-to-action'
-import { Route as LandingChar126componentsSectionsTaxesRouteImport } from './pages/_landing/~components/sections/taxes'
-import { Route as LandingChar126componentsSectionsRewardsRouteImport } from './pages/_landing/~components/sections/rewards'
-import { Route as LandingChar126componentsSectionsResourcesRouteImport } from './pages/_landing/~components/sections/resources'
-import { Route as LandingChar126componentsSectionsIntroRouteImport } from './pages/_landing/~components/sections/intro'
-import { Route as LandingChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_landing/~components/sections/companies-marquee'
-import { Route as LandingChar126componentsSectionsBenefitsRouteImport } from './pages/_landing/~components/sections/benefits'
-import { Route as LandingRewardsChar126componentsSectionsRewardsListRouteImport } from './pages/_landing/rewards/~components/sections/rewards-list'
-import { Route as LandingRewardsChar126componentsSectionsPicturesCarouselRouteImport } from './pages/_landing/rewards/~components/sections/pictures-carousel'
-import { Route as LandingRewardsChar126componentsSectionsIntroRouteImport } from './pages/_landing/rewards/~components/sections/intro'
+import { Route as AppPublicLayoutRouteImport } from './pages/_app/_public/layout'
+import { Route as AppAdminLayoutRouteImport } from './pages/_app/_admin/layout'
+import { Route as AuthSignUpIndexRouteImport } from './pages/_auth/sign-up/index'
+import { Route as AppPublicIndexRouteImport } from './pages/_app/_public/index'
+import { Route as AppRelatedBlogLayoutRouteImport } from './pages/_app/_related/blog/layout'
+import { Route as AppRelatedComplianceLayoutRouteImport } from './pages/_app/_related/_compliance/layout'
+import { Route as AppRelatedBlogIndexRouteImport } from './pages/_app/_related/blog/index'
+import { Route as AppPublicRewardsIndexRouteImport } from './pages/_app/_public/rewards/index'
+import { Route as AppAdminDashboardIndexRouteImport } from './pages/_app/_admin/dashboard/index'
+import { Route as AppRelatedComplianceTermsOfUseRouteImport } from './pages/_app/_related/_compliance/terms-of-use'
+import { Route as AppRelatedComplianceProhibitedProductsRouteImport } from './pages/_app/_related/_compliance/prohibited-products'
+import { Route as AppRelatedCompliancePrivacyPolicyRouteImport } from './pages/_app/_related/_compliance/privacy-policy'
+import { Route as AppRelatedComplianceContactRouteImport } from './pages/_app/_related/_compliance/contact'
+import { Route as AppRelatedComplianceComplaintsRouteImport } from './pages/_app/_related/_compliance/complaints'
+import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
+import { Route as AppRelatedBlogChar126componentsBlogInsightsRouteImport } from './pages/_app/_related/blog/~components/blog-insights'
+import { Route as AppPublicChar126componentsSectionsTaxesRouteImport } from './pages/_app/_public/~components/sections/taxes'
+import { Route as AppPublicChar126componentsSectionsRewardsRouteImport } from './pages/_app/_public/~components/sections/rewards'
+import { Route as AppPublicChar126componentsSectionsResourcesRouteImport } from './pages/_app/_public/~components/sections/resources'
+import { Route as AppPublicChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/~components/sections/intro'
+import { Route as AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_app/_public/~components/sections/companies-marquee'
+import { Route as AppPublicChar126componentsSectionsBenefitsRouteImport } from './pages/_app/_public/~components/sections/benefits'
+import { Route as AppRelatedBlogChar126componentsContentInsightsFiltersRouteImport } from './pages/_app/_related/blog/~components/content/insights-filters'
+import { Route as AppRelatedBlogChar126componentsContentInsightCardRouteImport } from './pages/_app/_related/blog/~components/content/insight-card'
+import { Route as AppPublicRewardsChar126componentsSectionsRewardsListRouteImport } from './pages/_app/_public/rewards/~components/sections/rewards-list'
+import { Route as AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport } from './pages/_app/_public/rewards/~components/sections/pictures-carousel'
+import { Route as AppPublicRewardsChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/rewards/~components/sections/intro'
 
-const LandingLayoutRoute = LandingLayoutRouteImport.update({
-  id: '/_landing',
+const AppPublicLayoutRoute = AppPublicLayoutRouteImport.update({
+  id: '/_app/_public',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppLayoutRoute = AppLayoutRouteImport.update({
-  id: '/_app',
+const AppAdminLayoutRoute = AppAdminLayoutRouteImport.update({
+  id: '/_app/_admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LandingIndexRoute = LandingIndexRouteImport.update({
+const AuthSignUpIndexRoute = AuthSignUpIndexRouteImport.update({
+  id: '/_auth/sign-up/',
+  path: '/sign-up/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppPublicIndexRoute = AppPublicIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => LandingLayoutRoute,
+  getParentRoute: () => AppPublicLayoutRoute,
 } as any)
-const LandingRewardsIndexRoute = LandingRewardsIndexRouteImport.update({
+const AppRelatedBlogLayoutRoute = AppRelatedBlogLayoutRouteImport.update({
+  id: '/_app/_related/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRelatedComplianceLayoutRoute =
+  AppRelatedComplianceLayoutRouteImport.update({
+    id: '/_app/_related/_compliance',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AppRelatedBlogIndexRoute = AppRelatedBlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRelatedBlogLayoutRoute,
+} as any)
+const AppPublicRewardsIndexRoute = AppPublicRewardsIndexRouteImport.update({
   id: '/rewards/',
   path: '/rewards/',
-  getParentRoute: () => LandingLayoutRoute,
+  getParentRoute: () => AppPublicLayoutRoute,
 } as any)
-const AppDashboardIndexRoute = AppDashboardIndexRouteImport.update({
+const AppAdminDashboardIndexRoute = AppAdminDashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
-  getParentRoute: () => AppLayoutRoute,
+  getParentRoute: () => AppAdminLayoutRoute,
 } as any)
-const LandingChar126componentsFrequentlyAskedQuestionsRoute =
-  LandingChar126componentsFrequentlyAskedQuestionsRouteImport.update({
-    id: '/~components/frequently-asked-questions',
-    path: '/~components/frequently-asked-questions',
-    getParentRoute: () => LandingLayoutRoute,
+const AppRelatedComplianceTermsOfUseRoute =
+  AppRelatedComplianceTermsOfUseRouteImport.update({
+    id: '/terms-of-use',
+    path: '/terms-of-use',
+    getParentRoute: () => AppRelatedComplianceLayoutRoute,
   } as any)
-const LandingChar126componentsCallToActionRoute =
-  LandingChar126componentsCallToActionRouteImport.update({
-    id: '/~components/call-to-action',
-    path: '/~components/call-to-action',
-    getParentRoute: () => LandingLayoutRoute,
+const AppRelatedComplianceProhibitedProductsRoute =
+  AppRelatedComplianceProhibitedProductsRouteImport.update({
+    id: '/prohibited-products',
+    path: '/prohibited-products',
+    getParentRoute: () => AppRelatedComplianceLayoutRoute,
   } as any)
-const LandingChar126componentsSectionsTaxesRoute =
-  LandingChar126componentsSectionsTaxesRouteImport.update({
+const AppRelatedCompliancePrivacyPolicyRoute =
+  AppRelatedCompliancePrivacyPolicyRouteImport.update({
+    id: '/privacy-policy',
+    path: '/privacy-policy',
+    getParentRoute: () => AppRelatedComplianceLayoutRoute,
+  } as any)
+const AppRelatedComplianceContactRoute =
+  AppRelatedComplianceContactRouteImport.update({
+    id: '/contact',
+    path: '/contact',
+    getParentRoute: () => AppRelatedComplianceLayoutRoute,
+  } as any)
+const AppRelatedComplianceComplaintsRoute =
+  AppRelatedComplianceComplaintsRouteImport.update({
+    id: '/complaints',
+    path: '/complaints',
+    getParentRoute: () => AppRelatedComplianceLayoutRoute,
+  } as any)
+const AppRelatedBlogChar126componentsNavbarRoute =
+  AppRelatedBlogChar126componentsNavbarRouteImport.update({
+    id: '/~components/navbar',
+    path: '/~components/navbar',
+    getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
+const AppRelatedBlogChar126componentsBlogInsightsRoute =
+  AppRelatedBlogChar126componentsBlogInsightsRouteImport.update({
+    id: '/~components/blog-insights',
+    path: '/~components/blog-insights',
+    getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
+const AppPublicChar126componentsSectionsTaxesRoute =
+  AppPublicChar126componentsSectionsTaxesRouteImport.update({
     id: '/~components/sections/taxes',
     path: '/~components/sections/taxes',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const LandingChar126componentsSectionsRewardsRoute =
-  LandingChar126componentsSectionsRewardsRouteImport.update({
+const AppPublicChar126componentsSectionsRewardsRoute =
+  AppPublicChar126componentsSectionsRewardsRouteImport.update({
     id: '/~components/sections/rewards',
     path: '/~components/sections/rewards',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const LandingChar126componentsSectionsResourcesRoute =
-  LandingChar126componentsSectionsResourcesRouteImport.update({
+const AppPublicChar126componentsSectionsResourcesRoute =
+  AppPublicChar126componentsSectionsResourcesRouteImport.update({
     id: '/~components/sections/resources',
     path: '/~components/sections/resources',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const LandingChar126componentsSectionsIntroRoute =
-  LandingChar126componentsSectionsIntroRouteImport.update({
+const AppPublicChar126componentsSectionsIntroRoute =
+  AppPublicChar126componentsSectionsIntroRouteImport.update({
     id: '/~components/sections/intro',
     path: '/~components/sections/intro',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const LandingChar126componentsSectionsCompaniesMarqueeRoute =
-  LandingChar126componentsSectionsCompaniesMarqueeRouteImport.update({
+const AppPublicChar126componentsSectionsCompaniesMarqueeRoute =
+  AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport.update({
     id: '/~components/sections/companies-marquee',
     path: '/~components/sections/companies-marquee',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const LandingChar126componentsSectionsBenefitsRoute =
-  LandingChar126componentsSectionsBenefitsRouteImport.update({
+const AppPublicChar126componentsSectionsBenefitsRoute =
+  AppPublicChar126componentsSectionsBenefitsRouteImport.update({
     id: '/~components/sections/benefits',
     path: '/~components/sections/benefits',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const LandingRewardsChar126componentsSectionsRewardsListRoute =
-  LandingRewardsChar126componentsSectionsRewardsListRouteImport.update({
+const AppRelatedBlogChar126componentsContentInsightsFiltersRoute =
+  AppRelatedBlogChar126componentsContentInsightsFiltersRouteImport.update({
+    id: '/~components/content/insights-filters',
+    path: '/~components/content/insights-filters',
+    getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
+const AppRelatedBlogChar126componentsContentInsightCardRoute =
+  AppRelatedBlogChar126componentsContentInsightCardRouteImport.update({
+    id: '/~components/content/insight-card',
+    path: '/~components/content/insight-card',
+    getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
+const AppPublicRewardsChar126componentsSectionsRewardsListRoute =
+  AppPublicRewardsChar126componentsSectionsRewardsListRouteImport.update({
     id: '/rewards/~components/sections/rewards-list',
     path: '/rewards/~components/sections/rewards-list',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const LandingRewardsChar126componentsSectionsPicturesCarouselRoute =
-  LandingRewardsChar126componentsSectionsPicturesCarouselRouteImport.update({
+const AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute =
+  AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport.update({
     id: '/rewards/~components/sections/pictures-carousel',
     path: '/rewards/~components/sections/pictures-carousel',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const LandingRewardsChar126componentsSectionsIntroRoute =
-  LandingRewardsChar126componentsSectionsIntroRouteImport.update({
+const AppPublicRewardsChar126componentsSectionsIntroRoute =
+  AppPublicRewardsChar126componentsSectionsIntroRouteImport.update({
     id: '/rewards/~components/sections/intro',
     path: '/rewards/~components/sections/intro',
-    getParentRoute: () => LandingLayoutRoute,
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof LandingIndexRoute
-  '/~components/call-to-action': typeof LandingChar126componentsCallToActionRoute
-  '/~components/frequently-asked-questions': typeof LandingChar126componentsFrequentlyAskedQuestionsRoute
-  '/dashboard': typeof AppDashboardIndexRoute
-  '/rewards': typeof LandingRewardsIndexRoute
-  '/~components/sections/benefits': typeof LandingChar126componentsSectionsBenefitsRoute
-  '/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
-  '/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
-  '/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
-  '/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
-  '/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
-  '/rewards/~components/sections/intro': typeof LandingRewardsChar126componentsSectionsIntroRoute
-  '/rewards/~components/sections/pictures-carousel': typeof LandingRewardsChar126componentsSectionsPicturesCarouselRoute
-  '/rewards/~components/sections/rewards-list': typeof LandingRewardsChar126componentsSectionsRewardsListRoute
+  '/blog': typeof AppRelatedBlogLayoutRouteWithChildren
+  '/': typeof AppPublicIndexRoute
+  '/sign-up': typeof AuthSignUpIndexRoute
+  '/complaints': typeof AppRelatedComplianceComplaintsRoute
+  '/contact': typeof AppRelatedComplianceContactRoute
+  '/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
+  '/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
+  '/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
+  '/dashboard': typeof AppAdminDashboardIndexRoute
+  '/rewards': typeof AppPublicRewardsIndexRoute
+  '/blog/': typeof AppRelatedBlogIndexRoute
+  '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
+  '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
+  '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
+  '/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
+  '/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
+  '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
+  '/blog/~components/blog-insights': typeof AppRelatedBlogChar126componentsBlogInsightsRoute
+  '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
+  '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
+  '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
+  '/blog/~components/content/insight-card': typeof AppRelatedBlogChar126componentsContentInsightCardRoute
+  '/blog/~components/content/insights-filters': typeof AppRelatedBlogChar126componentsContentInsightsFiltersRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof LandingIndexRoute
-  '/~components/call-to-action': typeof LandingChar126componentsCallToActionRoute
-  '/~components/frequently-asked-questions': typeof LandingChar126componentsFrequentlyAskedQuestionsRoute
-  '/dashboard': typeof AppDashboardIndexRoute
-  '/rewards': typeof LandingRewardsIndexRoute
-  '/~components/sections/benefits': typeof LandingChar126componentsSectionsBenefitsRoute
-  '/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
-  '/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
-  '/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
-  '/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
-  '/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
-  '/rewards/~components/sections/intro': typeof LandingRewardsChar126componentsSectionsIntroRoute
-  '/rewards/~components/sections/pictures-carousel': typeof LandingRewardsChar126componentsSectionsPicturesCarouselRoute
-  '/rewards/~components/sections/rewards-list': typeof LandingRewardsChar126componentsSectionsRewardsListRoute
+  '/': typeof AppPublicIndexRoute
+  '/sign-up': typeof AuthSignUpIndexRoute
+  '/complaints': typeof AppRelatedComplianceComplaintsRoute
+  '/contact': typeof AppRelatedComplianceContactRoute
+  '/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
+  '/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
+  '/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
+  '/dashboard': typeof AppAdminDashboardIndexRoute
+  '/rewards': typeof AppPublicRewardsIndexRoute
+  '/blog': typeof AppRelatedBlogIndexRoute
+  '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
+  '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
+  '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
+  '/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
+  '/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
+  '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
+  '/blog/~components/blog-insights': typeof AppRelatedBlogChar126componentsBlogInsightsRoute
+  '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
+  '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
+  '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
+  '/blog/~components/content/insight-card': typeof AppRelatedBlogChar126componentsContentInsightCardRoute
+  '/blog/~components/content/insights-filters': typeof AppRelatedBlogChar126componentsContentInsightsFiltersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/_app': typeof AppLayoutRouteWithChildren
-  '/_landing': typeof LandingLayoutRouteWithChildren
-  '/_landing/': typeof LandingIndexRoute
-  '/_landing/~components/call-to-action': typeof LandingChar126componentsCallToActionRoute
-  '/_landing/~components/frequently-asked-questions': typeof LandingChar126componentsFrequentlyAskedQuestionsRoute
-  '/_app/dashboard/': typeof AppDashboardIndexRoute
-  '/_landing/rewards/': typeof LandingRewardsIndexRoute
-  '/_landing/~components/sections/benefits': typeof LandingChar126componentsSectionsBenefitsRoute
-  '/_landing/~components/sections/companies-marquee': typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
-  '/_landing/~components/sections/intro': typeof LandingChar126componentsSectionsIntroRoute
-  '/_landing/~components/sections/resources': typeof LandingChar126componentsSectionsResourcesRoute
-  '/_landing/~components/sections/rewards': typeof LandingChar126componentsSectionsRewardsRoute
-  '/_landing/~components/sections/taxes': typeof LandingChar126componentsSectionsTaxesRoute
-  '/_landing/rewards/~components/sections/intro': typeof LandingRewardsChar126componentsSectionsIntroRoute
-  '/_landing/rewards/~components/sections/pictures-carousel': typeof LandingRewardsChar126componentsSectionsPicturesCarouselRoute
-  '/_landing/rewards/~components/sections/rewards-list': typeof LandingRewardsChar126componentsSectionsRewardsListRoute
+  '/_app/_admin': typeof AppAdminLayoutRouteWithChildren
+  '/_app/_public': typeof AppPublicLayoutRouteWithChildren
+  '/_app/_related/_compliance': typeof AppRelatedComplianceLayoutRouteWithChildren
+  '/_app/_related/blog': typeof AppRelatedBlogLayoutRouteWithChildren
+  '/_app/_public/': typeof AppPublicIndexRoute
+  '/_auth/sign-up/': typeof AuthSignUpIndexRoute
+  '/_app/_related/_compliance/complaints': typeof AppRelatedComplianceComplaintsRoute
+  '/_app/_related/_compliance/contact': typeof AppRelatedComplianceContactRoute
+  '/_app/_related/_compliance/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
+  '/_app/_related/_compliance/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
+  '/_app/_related/_compliance/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
+  '/_app/_admin/dashboard/': typeof AppAdminDashboardIndexRoute
+  '/_app/_public/rewards/': typeof AppPublicRewardsIndexRoute
+  '/_app/_related/blog/': typeof AppRelatedBlogIndexRoute
+  '/_app/_public/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
+  '/_app/_public/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
+  '/_app/_public/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
+  '/_app/_public/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
+  '/_app/_public/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
+  '/_app/_public/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
+  '/_app/_related/blog/~components/blog-insights': typeof AppRelatedBlogChar126componentsBlogInsightsRoute
+  '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/_app/_public/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
+  '/_app/_public/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
+  '/_app/_public/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
+  '/_app/_related/blog/~components/content/insight-card': typeof AppRelatedBlogChar126componentsContentInsightCardRoute
+  '/_app/_related/blog/~components/content/insights-filters': typeof AppRelatedBlogChar126componentsContentInsightsFiltersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/blog'
     | '/'
-    | '/~components/call-to-action'
-    | '/~components/frequently-asked-questions'
+    | '/sign-up'
+    | '/complaints'
+    | '/contact'
+    | '/privacy-policy'
+    | '/prohibited-products'
+    | '/terms-of-use'
     | '/dashboard'
     | '/rewards'
+    | '/blog/'
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
     | '/~components/sections/taxes'
+    | '/blog/~components/blog-insights'
+    | '/blog/~components/navbar'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
+    | '/blog/~components/content/insight-card'
+    | '/blog/~components/content/insights-filters'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/~components/call-to-action'
-    | '/~components/frequently-asked-questions'
+    | '/sign-up'
+    | '/complaints'
+    | '/contact'
+    | '/privacy-policy'
+    | '/prohibited-products'
+    | '/terms-of-use'
     | '/dashboard'
     | '/rewards'
+    | '/blog'
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
     | '/~components/sections/taxes'
+    | '/blog/~components/blog-insights'
+    | '/blog/~components/navbar'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
+    | '/blog/~components/content/insight-card'
+    | '/blog/~components/content/insights-filters'
   id:
     | '__root__'
-    | '/_app'
-    | '/_landing'
-    | '/_landing/'
-    | '/_landing/~components/call-to-action'
-    | '/_landing/~components/frequently-asked-questions'
-    | '/_app/dashboard/'
-    | '/_landing/rewards/'
-    | '/_landing/~components/sections/benefits'
-    | '/_landing/~components/sections/companies-marquee'
-    | '/_landing/~components/sections/intro'
-    | '/_landing/~components/sections/resources'
-    | '/_landing/~components/sections/rewards'
-    | '/_landing/~components/sections/taxes'
-    | '/_landing/rewards/~components/sections/intro'
-    | '/_landing/rewards/~components/sections/pictures-carousel'
-    | '/_landing/rewards/~components/sections/rewards-list'
+    | '/_app/_admin'
+    | '/_app/_public'
+    | '/_app/_related/_compliance'
+    | '/_app/_related/blog'
+    | '/_app/_public/'
+    | '/_auth/sign-up/'
+    | '/_app/_related/_compliance/complaints'
+    | '/_app/_related/_compliance/contact'
+    | '/_app/_related/_compliance/privacy-policy'
+    | '/_app/_related/_compliance/prohibited-products'
+    | '/_app/_related/_compliance/terms-of-use'
+    | '/_app/_admin/dashboard/'
+    | '/_app/_public/rewards/'
+    | '/_app/_related/blog/'
+    | '/_app/_public/~components/sections/benefits'
+    | '/_app/_public/~components/sections/companies-marquee'
+    | '/_app/_public/~components/sections/intro'
+    | '/_app/_public/~components/sections/resources'
+    | '/_app/_public/~components/sections/rewards'
+    | '/_app/_public/~components/sections/taxes'
+    | '/_app/_related/blog/~components/blog-insights'
+    | '/_app/_related/blog/~components/navbar'
+    | '/_app/_public/rewards/~components/sections/intro'
+    | '/_app/_public/rewards/~components/sections/pictures-carousel'
+    | '/_app/_public/rewards/~components/sections/rewards-list'
+    | '/_app/_related/blog/~components/content/insight-card'
+    | '/_app/_related/blog/~components/content/insights-filters'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  AppLayoutRoute: typeof AppLayoutRouteWithChildren
-  LandingLayoutRoute: typeof LandingLayoutRouteWithChildren
+  AppAdminLayoutRoute: typeof AppAdminLayoutRouteWithChildren
+  AppPublicLayoutRoute: typeof AppPublicLayoutRouteWithChildren
+  AppRelatedComplianceLayoutRoute: typeof AppRelatedComplianceLayoutRouteWithChildren
+  AppRelatedBlogLayoutRoute: typeof AppRelatedBlogLayoutRouteWithChildren
+  AuthSignUpIndexRoute: typeof AuthSignUpIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/_landing': {
-      id: '/_landing'
+    '/_app/_public': {
+      id: '/_app/_public'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof LandingLayoutRouteImport
+      preLoaderRoute: typeof AppPublicLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_app': {
-      id: '/_app'
+    '/_app/_admin': {
+      id: '/_app/_admin'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof AppLayoutRouteImport
+      preLoaderRoute: typeof AppAdminLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_landing/': {
-      id: '/_landing/'
+    '/_auth/sign-up/': {
+      id: '/_auth/sign-up/'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof AuthSignUpIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app/_public/': {
+      id: '/_app/_public/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof LandingIndexRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicIndexRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/rewards/': {
-      id: '/_landing/rewards/'
+    '/_app/_related/blog': {
+      id: '/_app/_related/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof AppRelatedBlogLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app/_related/_compliance': {
+      id: '/_app/_related/_compliance'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof AppRelatedComplianceLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app/_related/blog/': {
+      id: '/_app/_related/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof AppRelatedBlogIndexRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_public/rewards/': {
+      id: '/_app/_public/rewards/'
       path: '/rewards'
       fullPath: '/rewards'
-      preLoaderRoute: typeof LandingRewardsIndexRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicRewardsIndexRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_app/dashboard/': {
-      id: '/_app/dashboard/'
+    '/_app/_admin/dashboard/': {
+      id: '/_app/_admin/dashboard/'
       path: '/dashboard'
       fullPath: '/dashboard'
-      preLoaderRoute: typeof AppDashboardIndexRouteImport
-      parentRoute: typeof AppLayoutRoute
+      preLoaderRoute: typeof AppAdminDashboardIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_landing/~components/frequently-asked-questions': {
-      id: '/_landing/~components/frequently-asked-questions'
-      path: '/~components/frequently-asked-questions'
-      fullPath: '/~components/frequently-asked-questions'
-      preLoaderRoute: typeof LandingChar126componentsFrequentlyAskedQuestionsRouteImport
-      parentRoute: typeof LandingLayoutRoute
+    '/_app/_related/_compliance/terms-of-use': {
+      id: '/_app/_related/_compliance/terms-of-use'
+      path: '/terms-of-use'
+      fullPath: '/terms-of-use'
+      preLoaderRoute: typeof AppRelatedComplianceTermsOfUseRouteImport
+      parentRoute: typeof AppRelatedComplianceLayoutRoute
     }
-    '/_landing/~components/call-to-action': {
-      id: '/_landing/~components/call-to-action'
-      path: '/~components/call-to-action'
-      fullPath: '/~components/call-to-action'
-      preLoaderRoute: typeof LandingChar126componentsCallToActionRouteImport
-      parentRoute: typeof LandingLayoutRoute
+    '/_app/_related/_compliance/prohibited-products': {
+      id: '/_app/_related/_compliance/prohibited-products'
+      path: '/prohibited-products'
+      fullPath: '/prohibited-products'
+      preLoaderRoute: typeof AppRelatedComplianceProhibitedProductsRouteImport
+      parentRoute: typeof AppRelatedComplianceLayoutRoute
     }
-    '/_landing/~components/sections/taxes': {
-      id: '/_landing/~components/sections/taxes'
+    '/_app/_related/_compliance/privacy-policy': {
+      id: '/_app/_related/_compliance/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof AppRelatedCompliancePrivacyPolicyRouteImport
+      parentRoute: typeof AppRelatedComplianceLayoutRoute
+    }
+    '/_app/_related/_compliance/contact': {
+      id: '/_app/_related/_compliance/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof AppRelatedComplianceContactRouteImport
+      parentRoute: typeof AppRelatedComplianceLayoutRoute
+    }
+    '/_app/_related/_compliance/complaints': {
+      id: '/_app/_related/_compliance/complaints'
+      path: '/complaints'
+      fullPath: '/complaints'
+      preLoaderRoute: typeof AppRelatedComplianceComplaintsRouteImport
+      parentRoute: typeof AppRelatedComplianceLayoutRoute
+    }
+    '/_app/_related/blog/~components/navbar': {
+      id: '/_app/_related/blog/~components/navbar'
+      path: '/~components/navbar'
+      fullPath: '/blog/~components/navbar'
+      preLoaderRoute: typeof AppRelatedBlogChar126componentsNavbarRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/~components/blog-insights': {
+      id: '/_app/_related/blog/~components/blog-insights'
+      path: '/~components/blog-insights'
+      fullPath: '/blog/~components/blog-insights'
+      preLoaderRoute: typeof AppRelatedBlogChar126componentsBlogInsightsRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_public/~components/sections/taxes': {
+      id: '/_app/_public/~components/sections/taxes'
       path: '/~components/sections/taxes'
       fullPath: '/~components/sections/taxes'
-      preLoaderRoute: typeof LandingChar126componentsSectionsTaxesRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicChar126componentsSectionsTaxesRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/~components/sections/rewards': {
-      id: '/_landing/~components/sections/rewards'
+    '/_app/_public/~components/sections/rewards': {
+      id: '/_app/_public/~components/sections/rewards'
       path: '/~components/sections/rewards'
       fullPath: '/~components/sections/rewards'
-      preLoaderRoute: typeof LandingChar126componentsSectionsRewardsRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicChar126componentsSectionsRewardsRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/~components/sections/resources': {
-      id: '/_landing/~components/sections/resources'
+    '/_app/_public/~components/sections/resources': {
+      id: '/_app/_public/~components/sections/resources'
       path: '/~components/sections/resources'
       fullPath: '/~components/sections/resources'
-      preLoaderRoute: typeof LandingChar126componentsSectionsResourcesRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicChar126componentsSectionsResourcesRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/~components/sections/intro': {
-      id: '/_landing/~components/sections/intro'
+    '/_app/_public/~components/sections/intro': {
+      id: '/_app/_public/~components/sections/intro'
       path: '/~components/sections/intro'
       fullPath: '/~components/sections/intro'
-      preLoaderRoute: typeof LandingChar126componentsSectionsIntroRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicChar126componentsSectionsIntroRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/~components/sections/companies-marquee': {
-      id: '/_landing/~components/sections/companies-marquee'
+    '/_app/_public/~components/sections/companies-marquee': {
+      id: '/_app/_public/~components/sections/companies-marquee'
       path: '/~components/sections/companies-marquee'
       fullPath: '/~components/sections/companies-marquee'
-      preLoaderRoute: typeof LandingChar126componentsSectionsCompaniesMarqueeRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/~components/sections/benefits': {
-      id: '/_landing/~components/sections/benefits'
+    '/_app/_public/~components/sections/benefits': {
+      id: '/_app/_public/~components/sections/benefits'
       path: '/~components/sections/benefits'
       fullPath: '/~components/sections/benefits'
-      preLoaderRoute: typeof LandingChar126componentsSectionsBenefitsRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicChar126componentsSectionsBenefitsRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/rewards/~components/sections/rewards-list': {
-      id: '/_landing/rewards/~components/sections/rewards-list'
+    '/_app/_related/blog/~components/content/insights-filters': {
+      id: '/_app/_related/blog/~components/content/insights-filters'
+      path: '/~components/content/insights-filters'
+      fullPath: '/blog/~components/content/insights-filters'
+      preLoaderRoute: typeof AppRelatedBlogChar126componentsContentInsightsFiltersRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/~components/content/insight-card': {
+      id: '/_app/_related/blog/~components/content/insight-card'
+      path: '/~components/content/insight-card'
+      fullPath: '/blog/~components/content/insight-card'
+      preLoaderRoute: typeof AppRelatedBlogChar126componentsContentInsightCardRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_public/rewards/~components/sections/rewards-list': {
+      id: '/_app/_public/rewards/~components/sections/rewards-list'
       path: '/rewards/~components/sections/rewards-list'
       fullPath: '/rewards/~components/sections/rewards-list'
-      preLoaderRoute: typeof LandingRewardsChar126componentsSectionsRewardsListRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicRewardsChar126componentsSectionsRewardsListRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/rewards/~components/sections/pictures-carousel': {
-      id: '/_landing/rewards/~components/sections/pictures-carousel'
+    '/_app/_public/rewards/~components/sections/pictures-carousel': {
+      id: '/_app/_public/rewards/~components/sections/pictures-carousel'
       path: '/rewards/~components/sections/pictures-carousel'
       fullPath: '/rewards/~components/sections/pictures-carousel'
-      preLoaderRoute: typeof LandingRewardsChar126componentsSectionsPicturesCarouselRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_landing/rewards/~components/sections/intro': {
-      id: '/_landing/rewards/~components/sections/intro'
+    '/_app/_public/rewards/~components/sections/intro': {
+      id: '/_app/_public/rewards/~components/sections/intro'
       path: '/rewards/~components/sections/intro'
       fullPath: '/rewards/~components/sections/intro'
-      preLoaderRoute: typeof LandingRewardsChar126componentsSectionsIntroRouteImport
-      parentRoute: typeof LandingLayoutRoute
+      preLoaderRoute: typeof AppPublicRewardsChar126componentsSectionsIntroRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
   }
 }
 
-interface AppLayoutRouteChildren {
-  AppDashboardIndexRoute: typeof AppDashboardIndexRoute
+interface AppAdminLayoutRouteChildren {
+  AppAdminDashboardIndexRoute: typeof AppAdminDashboardIndexRoute
 }
 
-const AppLayoutRouteChildren: AppLayoutRouteChildren = {
-  AppDashboardIndexRoute: AppDashboardIndexRoute,
+const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
+  AppAdminDashboardIndexRoute: AppAdminDashboardIndexRoute,
 }
 
-const AppLayoutRouteWithChildren = AppLayoutRoute._addFileChildren(
-  AppLayoutRouteChildren,
+const AppAdminLayoutRouteWithChildren = AppAdminLayoutRoute._addFileChildren(
+  AppAdminLayoutRouteChildren,
 )
 
-interface LandingLayoutRouteChildren {
-  LandingIndexRoute: typeof LandingIndexRoute
-  LandingChar126componentsCallToActionRoute: typeof LandingChar126componentsCallToActionRoute
-  LandingChar126componentsFrequentlyAskedQuestionsRoute: typeof LandingChar126componentsFrequentlyAskedQuestionsRoute
-  LandingRewardsIndexRoute: typeof LandingRewardsIndexRoute
-  LandingChar126componentsSectionsBenefitsRoute: typeof LandingChar126componentsSectionsBenefitsRoute
-  LandingChar126componentsSectionsCompaniesMarqueeRoute: typeof LandingChar126componentsSectionsCompaniesMarqueeRoute
-  LandingChar126componentsSectionsIntroRoute: typeof LandingChar126componentsSectionsIntroRoute
-  LandingChar126componentsSectionsResourcesRoute: typeof LandingChar126componentsSectionsResourcesRoute
-  LandingChar126componentsSectionsRewardsRoute: typeof LandingChar126componentsSectionsRewardsRoute
-  LandingChar126componentsSectionsTaxesRoute: typeof LandingChar126componentsSectionsTaxesRoute
-  LandingRewardsChar126componentsSectionsIntroRoute: typeof LandingRewardsChar126componentsSectionsIntroRoute
-  LandingRewardsChar126componentsSectionsPicturesCarouselRoute: typeof LandingRewardsChar126componentsSectionsPicturesCarouselRoute
-  LandingRewardsChar126componentsSectionsRewardsListRoute: typeof LandingRewardsChar126componentsSectionsRewardsListRoute
+interface AppPublicLayoutRouteChildren {
+  AppPublicIndexRoute: typeof AppPublicIndexRoute
+  AppPublicRewardsIndexRoute: typeof AppPublicRewardsIndexRoute
+  AppPublicChar126componentsSectionsBenefitsRoute: typeof AppPublicChar126componentsSectionsBenefitsRoute
+  AppPublicChar126componentsSectionsCompaniesMarqueeRoute: typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
+  AppPublicChar126componentsSectionsIntroRoute: typeof AppPublicChar126componentsSectionsIntroRoute
+  AppPublicChar126componentsSectionsResourcesRoute: typeof AppPublicChar126componentsSectionsResourcesRoute
+  AppPublicChar126componentsSectionsRewardsRoute: typeof AppPublicChar126componentsSectionsRewardsRoute
+  AppPublicChar126componentsSectionsTaxesRoute: typeof AppPublicChar126componentsSectionsTaxesRoute
+  AppPublicRewardsChar126componentsSectionsIntroRoute: typeof AppPublicRewardsChar126componentsSectionsIntroRoute
+  AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute: typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
+  AppPublicRewardsChar126componentsSectionsRewardsListRoute: typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
 }
 
-const LandingLayoutRouteChildren: LandingLayoutRouteChildren = {
-  LandingIndexRoute: LandingIndexRoute,
-  LandingChar126componentsCallToActionRoute:
-    LandingChar126componentsCallToActionRoute,
-  LandingChar126componentsFrequentlyAskedQuestionsRoute:
-    LandingChar126componentsFrequentlyAskedQuestionsRoute,
-  LandingRewardsIndexRoute: LandingRewardsIndexRoute,
-  LandingChar126componentsSectionsBenefitsRoute:
-    LandingChar126componentsSectionsBenefitsRoute,
-  LandingChar126componentsSectionsCompaniesMarqueeRoute:
-    LandingChar126componentsSectionsCompaniesMarqueeRoute,
-  LandingChar126componentsSectionsIntroRoute:
-    LandingChar126componentsSectionsIntroRoute,
-  LandingChar126componentsSectionsResourcesRoute:
-    LandingChar126componentsSectionsResourcesRoute,
-  LandingChar126componentsSectionsRewardsRoute:
-    LandingChar126componentsSectionsRewardsRoute,
-  LandingChar126componentsSectionsTaxesRoute:
-    LandingChar126componentsSectionsTaxesRoute,
-  LandingRewardsChar126componentsSectionsIntroRoute:
-    LandingRewardsChar126componentsSectionsIntroRoute,
-  LandingRewardsChar126componentsSectionsPicturesCarouselRoute:
-    LandingRewardsChar126componentsSectionsPicturesCarouselRoute,
-  LandingRewardsChar126componentsSectionsRewardsListRoute:
-    LandingRewardsChar126componentsSectionsRewardsListRoute,
+const AppPublicLayoutRouteChildren: AppPublicLayoutRouteChildren = {
+  AppPublicIndexRoute: AppPublicIndexRoute,
+  AppPublicRewardsIndexRoute: AppPublicRewardsIndexRoute,
+  AppPublicChar126componentsSectionsBenefitsRoute:
+    AppPublicChar126componentsSectionsBenefitsRoute,
+  AppPublicChar126componentsSectionsCompaniesMarqueeRoute:
+    AppPublicChar126componentsSectionsCompaniesMarqueeRoute,
+  AppPublicChar126componentsSectionsIntroRoute:
+    AppPublicChar126componentsSectionsIntroRoute,
+  AppPublicChar126componentsSectionsResourcesRoute:
+    AppPublicChar126componentsSectionsResourcesRoute,
+  AppPublicChar126componentsSectionsRewardsRoute:
+    AppPublicChar126componentsSectionsRewardsRoute,
+  AppPublicChar126componentsSectionsTaxesRoute:
+    AppPublicChar126componentsSectionsTaxesRoute,
+  AppPublicRewardsChar126componentsSectionsIntroRoute:
+    AppPublicRewardsChar126componentsSectionsIntroRoute,
+  AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute:
+    AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute,
+  AppPublicRewardsChar126componentsSectionsRewardsListRoute:
+    AppPublicRewardsChar126componentsSectionsRewardsListRoute,
 }
 
-const LandingLayoutRouteWithChildren = LandingLayoutRoute._addFileChildren(
-  LandingLayoutRouteChildren,
+const AppPublicLayoutRouteWithChildren = AppPublicLayoutRoute._addFileChildren(
+  AppPublicLayoutRouteChildren,
 )
+
+interface AppRelatedComplianceLayoutRouteChildren {
+  AppRelatedComplianceComplaintsRoute: typeof AppRelatedComplianceComplaintsRoute
+  AppRelatedComplianceContactRoute: typeof AppRelatedComplianceContactRoute
+  AppRelatedCompliancePrivacyPolicyRoute: typeof AppRelatedCompliancePrivacyPolicyRoute
+  AppRelatedComplianceProhibitedProductsRoute: typeof AppRelatedComplianceProhibitedProductsRoute
+  AppRelatedComplianceTermsOfUseRoute: typeof AppRelatedComplianceTermsOfUseRoute
+}
+
+const AppRelatedComplianceLayoutRouteChildren: AppRelatedComplianceLayoutRouteChildren =
+  {
+    AppRelatedComplianceComplaintsRoute: AppRelatedComplianceComplaintsRoute,
+    AppRelatedComplianceContactRoute: AppRelatedComplianceContactRoute,
+    AppRelatedCompliancePrivacyPolicyRoute:
+      AppRelatedCompliancePrivacyPolicyRoute,
+    AppRelatedComplianceProhibitedProductsRoute:
+      AppRelatedComplianceProhibitedProductsRoute,
+    AppRelatedComplianceTermsOfUseRoute: AppRelatedComplianceTermsOfUseRoute,
+  }
+
+const AppRelatedComplianceLayoutRouteWithChildren =
+  AppRelatedComplianceLayoutRoute._addFileChildren(
+    AppRelatedComplianceLayoutRouteChildren,
+  )
+
+interface AppRelatedBlogLayoutRouteChildren {
+  AppRelatedBlogIndexRoute: typeof AppRelatedBlogIndexRoute
+  AppRelatedBlogChar126componentsBlogInsightsRoute: typeof AppRelatedBlogChar126componentsBlogInsightsRoute
+  AppRelatedBlogChar126componentsNavbarRoute: typeof AppRelatedBlogChar126componentsNavbarRoute
+  AppRelatedBlogChar126componentsContentInsightCardRoute: typeof AppRelatedBlogChar126componentsContentInsightCardRoute
+  AppRelatedBlogChar126componentsContentInsightsFiltersRoute: typeof AppRelatedBlogChar126componentsContentInsightsFiltersRoute
+}
+
+const AppRelatedBlogLayoutRouteChildren: AppRelatedBlogLayoutRouteChildren = {
+  AppRelatedBlogIndexRoute: AppRelatedBlogIndexRoute,
+  AppRelatedBlogChar126componentsBlogInsightsRoute:
+    AppRelatedBlogChar126componentsBlogInsightsRoute,
+  AppRelatedBlogChar126componentsNavbarRoute:
+    AppRelatedBlogChar126componentsNavbarRoute,
+  AppRelatedBlogChar126componentsContentInsightCardRoute:
+    AppRelatedBlogChar126componentsContentInsightCardRoute,
+  AppRelatedBlogChar126componentsContentInsightsFiltersRoute:
+    AppRelatedBlogChar126componentsContentInsightsFiltersRoute,
+}
+
+const AppRelatedBlogLayoutRouteWithChildren =
+  AppRelatedBlogLayoutRoute._addFileChildren(AppRelatedBlogLayoutRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
-  AppLayoutRoute: AppLayoutRouteWithChildren,
-  LandingLayoutRoute: LandingLayoutRouteWithChildren,
+  AppAdminLayoutRoute: AppAdminLayoutRouteWithChildren,
+  AppPublicLayoutRoute: AppPublicLayoutRouteWithChildren,
+  AppRelatedComplianceLayoutRoute: AppRelatedComplianceLayoutRouteWithChildren,
+  AppRelatedBlogLayoutRoute: AppRelatedBlogLayoutRouteWithChildren,
+  AuthSignUpIndexRoute: AuthSignUpIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
