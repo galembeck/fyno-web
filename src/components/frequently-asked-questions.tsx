@@ -1,14 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { QuestionsAccordion } from "@/components/questions-accordion";
 import { Badge } from "@/components/ui/badge";
-
-export const Route = createFileRoute(
-	"/_app/_public/~components/frequently-asked-questions"
-)({
-	component: () => (
-		<FrequentlyAskedQuestions badge="Badge" layout="landing" title="Title" />
-	),
-});
 
 interface FrequentlyAskedQuestionsProps {
 	layout: "landing" | "rewards";
@@ -52,5 +43,5 @@ export function FrequentlyAskedQuestions({
 				</div>
 			)}
 		</section>
-	)
+	);
 }
