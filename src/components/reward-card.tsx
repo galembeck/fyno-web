@@ -41,7 +41,9 @@ export function RewardCard({
 
 					<h1 className="font-semibold text-5xl lg:text-6xl">{title}</h1>
 
-					<p className="text-base text-secondary-gray">{description}</p>
+					<p className="text-base text-muted-foreground dark:text-secondary-gray">
+						{description}
+					</p>
 
 					<Separator orientation="horizontal" />
 

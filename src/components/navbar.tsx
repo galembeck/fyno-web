@@ -86,7 +86,7 @@ export function Navbar() {
 					<div className="flex items-center gap-2">
 						<Button
 							className="hidden cursor-pointer rounded-3xl px-6 py-5 text-base lg:flex"
-							// onClick={() => navigate({ to: "/sign-in" })}
+							onClick={() => navigate({ to: "/sign-in" })}
 							variant="secondary"
 						>
 							Entrar
@@ -165,7 +165,7 @@ export function Navbar() {
 							className="w-full cursor-pointer py-5 font-semibold text-base"
 							onClick={() => {
 								closeMenu();
-								// navigate({ to: "/sign-in" });
+								navigate({ to: "/sign-in" });
 							}}
 							variant="secondary"
 						>

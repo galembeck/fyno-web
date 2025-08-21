@@ -16,7 +16,7 @@ export function Intro() {
 					Fyno Rewards: Recompensas que acompanham seu sucesso!
 				</h1>
 
-				<p className="text-base text-secondary-gray lg:text-lg">
+				<p className="text-base text-muted-foreground lg:text-lg dark:text-secondary-gray">
 					A cada desafio superado, novas conquistas esperam por você. Ganhe,
 					evolua e troque seus pontos por experiências incríveis.
 				</p>
@@ -41,5 +41,5 @@ export function Intro() {
 				/>
 			</div>
 		</div>
-	)
+	);
 }

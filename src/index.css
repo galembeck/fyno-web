@@ -13,6 +13,7 @@
 
 	--color-primary-gray: oklch(0.2393 0 0);
 	--color-secondary-gray: oklch(0.7717 0.0068 17.3);
+	--color-input-gray: oklch(0.2857 0.0046 174.11);
 
 	--color-primary-green: oklch(0.8256 0.1985 127);
 	--color-secondary-green: oklch(0.7711 0.1248 124);

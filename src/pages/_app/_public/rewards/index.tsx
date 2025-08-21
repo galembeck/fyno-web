@@ -19,25 +19,25 @@ export const Route = createFileRoute("/_app/_public/rewards/")({
 function Rewards() {
 	return (
 		<main className="flex flex-col">
-			<div className="bg-primary-dark">
+			<div className="bg-gradient-to-b from-white to-third-green-light dark:from-primary-dark dark:to-secondary-dark">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<Intro />
 				</div>
 			</div>
 
-			<div className="bg-secondary-dark">
+			<div className="bg-secondary-white dark:bg-secondary-dark">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<PicturesCarousel />
 				</div>
 			</div>
 
-			<div className="bg-primary-dark">
+			<div className="bg-white dark:bg-primary-dark">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<RewardsList />
 				</div>
 			</div>
 
-			<div className="bg-primary-black">
+			<div className="bg-secondary-white dark:bg-primary-black">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<FrequentlyAskedQuestions
 						badge="FAQ | FREQUENTLY ASKED QUESTIONS"
@@ -47,7 +47,7 @@ function Rewards() {
 				</div>
 			</div>
 
-			<div className="bg-primary-dark">
+			<div className="bg-white dark:bg-primary-dark">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<CallToAction />
 				</div>

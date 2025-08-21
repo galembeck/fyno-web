@@ -12,12 +12,15 @@ import { Route as rootRouteImport } from './pages/__root'
 import { Route as AppPublicLayoutRouteImport } from './pages/_app/_public/layout'
 import { Route as AppAdminLayoutRouteImport } from './pages/_app/_admin/layout'
 import { Route as AuthSignUpIndexRouteImport } from './pages/_auth/sign-up/index'
+import { Route as AuthSignInIndexRouteImport } from './pages/_auth/sign-in/index'
 import { Route as AppPublicIndexRouteImport } from './pages/_app/_public/index'
 import { Route as AppRelatedBlogLayoutRouteImport } from './pages/_app/_related/blog/layout'
 import { Route as AppRelatedComplianceLayoutRouteImport } from './pages/_app/_related/_compliance/layout'
 import { Route as AppRelatedBlogIndexRouteImport } from './pages/_app/_related/blog/index'
 import { Route as AppPublicRewardsIndexRouteImport } from './pages/_app/_public/rewards/index'
 import { Route as AppAdminDashboardIndexRouteImport } from './pages/_app/_admin/dashboard/index'
+import { Route as AuthSignUpChar126componentsSignUpFormRouteImport } from './pages/_auth/sign-up/~components/sign-up-form'
+import { Route as AuthSignInChar126componentsSignInFormRouteImport } from './pages/_auth/sign-in/~components/sign-in-form'
 import { Route as AppRelatedComplianceTermsOfUseRouteImport } from './pages/_app/_related/_compliance/terms-of-use'
 import { Route as AppRelatedComplianceProhibitedProductsRouteImport } from './pages/_app/_related/_compliance/prohibited-products'
 import { Route as AppRelatedCompliancePrivacyPolicyRouteImport } from './pages/_app/_related/_compliance/privacy-policy'
@@ -50,6 +53,11 @@ const AuthSignUpIndexRoute = AuthSignUpIndexRouteImport.update({
   path: '/sign-up/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthSignInIndexRoute = AuthSignInIndexRouteImport.update({
+  id: '/_auth/sign-in/',
+  path: '/sign-in/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppPublicIndexRoute = AppPublicIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -80,6 +88,18 @@ const AppAdminDashboardIndexRoute = AppAdminDashboardIndexRouteImport.update({
   path: '/dashboard/',
   getParentRoute: () => AppAdminLayoutRoute,
 } as any)
+const AuthSignUpChar126componentsSignUpFormRoute =
+  AuthSignUpChar126componentsSignUpFormRouteImport.update({
+    id: '/_auth/sign-up/~components/sign-up-form',
+    path: '/sign-up/~components/sign-up-form',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AuthSignInChar126componentsSignInFormRoute =
+  AuthSignInChar126componentsSignInFormRouteImport.update({
+    id: '/_auth/sign-in/~components/sign-in-form',
+    path: '/sign-in/~components/sign-in-form',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AppRelatedComplianceTermsOfUseRoute =
   AppRelatedComplianceTermsOfUseRouteImport.update({
     id: '/terms-of-use',
@@ -192,12 +212,15 @@ const AppPublicRewardsChar126componentsSectionsIntroRoute =
 export interface FileRoutesByFullPath {
   '/blog': typeof AppRelatedBlogLayoutRouteWithChildren
   '/': typeof AppPublicIndexRoute
+  '/sign-in': typeof AuthSignInIndexRoute
   '/sign-up': typeof AuthSignUpIndexRoute
   '/complaints': typeof AppRelatedComplianceComplaintsRoute
   '/contact': typeof AppRelatedComplianceContactRoute
   '/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
   '/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
   '/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
+  '/sign-in/~components/sign-in-form': typeof AuthSignInChar126componentsSignInFormRoute
+  '/sign-up/~components/sign-up-form': typeof AuthSignUpChar126componentsSignUpFormRoute
   '/dashboard': typeof AppAdminDashboardIndexRoute
   '/rewards': typeof AppPublicRewardsIndexRoute
   '/blog/': typeof AppRelatedBlogIndexRoute
@@ -217,12 +240,15 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof AppPublicIndexRoute
+  '/sign-in': typeof AuthSignInIndexRoute
   '/sign-up': typeof AuthSignUpIndexRoute
   '/complaints': typeof AppRelatedComplianceComplaintsRoute
   '/contact': typeof AppRelatedComplianceContactRoute
   '/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
   '/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
   '/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
+  '/sign-in/~components/sign-in-form': typeof AuthSignInChar126componentsSignInFormRoute
+  '/sign-up/~components/sign-up-form': typeof AuthSignUpChar126componentsSignUpFormRoute
   '/dashboard': typeof AppAdminDashboardIndexRoute
   '/rewards': typeof AppPublicRewardsIndexRoute
   '/blog': typeof AppRelatedBlogIndexRoute
@@ -247,12 +273,15 @@ export interface FileRoutesById {
   '/_app/_related/_compliance': typeof AppRelatedComplianceLayoutRouteWithChildren
   '/_app/_related/blog': typeof AppRelatedBlogLayoutRouteWithChildren
   '/_app/_public/': typeof AppPublicIndexRoute
+  '/_auth/sign-in/': typeof AuthSignInIndexRoute
   '/_auth/sign-up/': typeof AuthSignUpIndexRoute
   '/_app/_related/_compliance/complaints': typeof AppRelatedComplianceComplaintsRoute
   '/_app/_related/_compliance/contact': typeof AppRelatedComplianceContactRoute
   '/_app/_related/_compliance/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
   '/_app/_related/_compliance/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
   '/_app/_related/_compliance/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
+  '/_auth/sign-in/~components/sign-in-form': typeof AuthSignInChar126componentsSignInFormRoute
+  '/_auth/sign-up/~components/sign-up-form': typeof AuthSignUpChar126componentsSignUpFormRoute
   '/_app/_admin/dashboard/': typeof AppAdminDashboardIndexRoute
   '/_app/_public/rewards/': typeof AppPublicRewardsIndexRoute
   '/_app/_related/blog/': typeof AppRelatedBlogIndexRoute
@@ -275,12 +304,15 @@ export interface FileRouteTypes {
   fullPaths:
     | '/blog'
     | '/'
+    | '/sign-in'
     | '/sign-up'
     | '/complaints'
     | '/contact'
     | '/privacy-policy'
     | '/prohibited-products'
     | '/terms-of-use'
+    | '/sign-in/~components/sign-in-form'
+    | '/sign-up/~components/sign-up-form'
     | '/dashboard'
     | '/rewards'
     | '/blog/'
@@ -300,12 +332,15 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/sign-in'
     | '/sign-up'
     | '/complaints'
     | '/contact'
     | '/privacy-policy'
     | '/prohibited-products'
     | '/terms-of-use'
+    | '/sign-in/~components/sign-in-form'
+    | '/sign-up/~components/sign-up-form'
     | '/dashboard'
     | '/rewards'
     | '/blog'
@@ -329,12 +364,15 @@ export interface FileRouteTypes {
     | '/_app/_related/_compliance'
     | '/_app/_related/blog'
     | '/_app/_public/'
+    | '/_auth/sign-in/'
     | '/_auth/sign-up/'
     | '/_app/_related/_compliance/complaints'
     | '/_app/_related/_compliance/contact'
     | '/_app/_related/_compliance/privacy-policy'
     | '/_app/_related/_compliance/prohibited-products'
     | '/_app/_related/_compliance/terms-of-use'
+    | '/_auth/sign-in/~components/sign-in-form'
+    | '/_auth/sign-up/~components/sign-up-form'
     | '/_app/_admin/dashboard/'
     | '/_app/_public/rewards/'
     | '/_app/_related/blog/'
@@ -358,7 +396,10 @@ export interface RootRouteChildren {
   AppPublicLayoutRoute: typeof AppPublicLayoutRouteWithChildren
   AppRelatedComplianceLayoutRoute: typeof AppRelatedComplianceLayoutRouteWithChildren
   AppRelatedBlogLayoutRoute: typeof AppRelatedBlogLayoutRouteWithChildren
+  AuthSignInIndexRoute: typeof AuthSignInIndexRoute
   AuthSignUpIndexRoute: typeof AuthSignUpIndexRoute
+  AuthSignInChar126componentsSignInFormRoute: typeof AuthSignInChar126componentsSignInFormRoute
+  AuthSignUpChar126componentsSignUpFormRoute: typeof AuthSignUpChar126componentsSignUpFormRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -382,6 +423,13 @@ declare module '@tanstack/react-router' {
       path: '/sign-up'
       fullPath: '/sign-up'
       preLoaderRoute: typeof AuthSignUpIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth/sign-in/': {
+      id: '/_auth/sign-in/'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof AuthSignInIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_app/_public/': {
@@ -425,6 +473,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard'
       preLoaderRoute: typeof AppAdminDashboardIndexRouteImport
       parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_auth/sign-up/~components/sign-up-form': {
+      id: '/_auth/sign-up/~components/sign-up-form'
+      path: '/sign-up/~components/sign-up-form'
+      fullPath: '/sign-up/~components/sign-up-form'
+      preLoaderRoute: typeof AuthSignUpChar126componentsSignUpFormRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth/sign-in/~components/sign-in-form': {
+      id: '/_auth/sign-in/~components/sign-in-form'
+      path: '/sign-in/~components/sign-in-form'
+      fullPath: '/sign-in/~components/sign-in-form'
+      preLoaderRoute: typeof AuthSignInChar126componentsSignInFormRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_app/_related/_compliance/terms-of-use': {
       id: '/_app/_related/_compliance/terms-of-use'
@@ -660,7 +722,12 @@ const rootRouteChildren: RootRouteChildren = {
   AppPublicLayoutRoute: AppPublicLayoutRouteWithChildren,
   AppRelatedComplianceLayoutRoute: AppRelatedComplianceLayoutRouteWithChildren,
   AppRelatedBlogLayoutRoute: AppRelatedBlogLayoutRouteWithChildren,
+  AuthSignInIndexRoute: AuthSignInIndexRoute,
   AuthSignUpIndexRoute: AuthSignUpIndexRoute,
+  AuthSignInChar126componentsSignInFormRoute:
+    AuthSignInChar126componentsSignInFormRoute,
+  AuthSignUpChar126componentsSignUpFormRoute:
+    AuthSignUpChar126componentsSignUpFormRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
