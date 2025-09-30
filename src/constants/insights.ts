@@ -1,39 +1,40 @@
 export const insights = [
 	{
 		id: 1,
-		date: "Há 5 minutos",
-		title: "Powerful Trading Tools and Features for Experienced Investors",
+		date: "Set. 9, 2025",
+		title:
+			"Pagamentos via WhatsApp: riscos, limites e dicas para vender seguro",
 		description:
-			"I'm always trying to think of new and interesting business ideas. I generally try to come up with ideas by thinking of what I would want to do or see in the world. Then, I try to find reasons why it wouldn't work...",
-		category: "Tools",
+			"Descubra os riscos, limites e melhores práticas para garantir vendas seguras usando pagamentos via WhatsApp.",
+		category: "Gateway de pagamento",
 		author: "Pedro Galembeck",
 		readTime: "7 minutos",
 		imgUrl:
-			"https://blog.hypercash.com.br/wp-content/uploads/2025/07/encerramento-conta-passo-a-passo-945.webp",
+			"https://blog.hypercash.com.br/wp-content/uploads/2025/08/pagamentos-whatsapp-seguros-986.webp",
 	},
 	{
 		id: 2,
-		date: "Há 2 meses",
-		title: "We are implementing AI and Technology",
+		date: "Set. 8, 2025",
+		title: "Como garantir aprovação máxima de vendas em segmentos restritos",
 		description:
-			"I'm always trying to think of new and interesting business ideas. I generally try to come up with ideas by thinking of what I would want to do or see in the world. Then, I try to find reasons why it wouldn't work...",
-		category: "AI",
+			"Aprenda a configurar risco e parâmetros para dropshipping em nichos restritos e maximize a aprovação de vendas digitais.",
+		category: "Conversão de vendas",
 		author: "Pedro Galembeck",
 		readTime: "1,5 horas",
 		imgUrl:
-			"https://blog.hypercash.com.br/wp-content/uploads/2025/07/erros-contratacao-gateways-481.webp",
+			"https://blog.hypercash.com.br/wp-content/uploads/2025/08/parametrizacao-operacao-dropshipping-820.webp",
 	},
 	{
 		id: 3,
-		date: "Há 3 anos",
-		title: "We are implementing AI and Technology",
+		date: "Set. 7, 2025",
+		title: "O que considerar em Gateways para SaaS ou E-Commerces híbridos?",
 		description:
-			"I'm always trying to think of new and interesting business ideas. I generally try to come up with ideas by thinking of what I would want to do or see in the world. Then, I try to find reasons why it wouldn't work...",
-		category: "AI",
+			"Confira os limites de transações, recorrência, integrações e suporte para gateways em SaaS e E-Commerces híbridos.",
+		category: "Gateway de pagamento",
 		author: "Pedro Galembeck",
 		readTime: "15 minutos",
 		imgUrl:
-			"https://blog.hypercash.com.br/wp-content/uploads/2025/07/infraestrutura-pagamento-volume-alto-436.webp",
+			"https://blog.hypercash.com.br/wp-content/uploads/2025/08/gateway-saas-ecommerce-integracoes-32.webp",
 	},
 ];
 

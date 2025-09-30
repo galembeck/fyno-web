@@ -31,7 +31,7 @@ export function InsightsFilters({
 						<div className="flex gap-2 pb-4">
 							{topics.map((topic) => (
 								<Badge
-									className="rounded-full bg-gray-100 px-3 py-1 font-normal text-gray-700 text-xs hover:bg-gray-200"
+									className="cursor-pointer rounded-full bg-gray-100 px-3 py-1 font-normal text-gray-700 text-xs hover:bg-gray-200"
 									key={topic}
 									variant="secondary"
 								>
@@ -48,7 +48,7 @@ export function InsightsFilters({
 					<div className="grid grid-cols-2 gap-2">
 						{categories.map((category) => (
 							<Button
-								className="justify-start px-3 font-normal text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+								className="cursor-pointer justify-start px-3 font-normal text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
 								key={category}
 								variant="ghost"
 							>
@@ -58,7 +58,7 @@ export function InsightsFilters({
 					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 
 	return (
@@ -70,7 +70,7 @@ export function InsightsFilters({
 				<div className="flex flex-wrap gap-2">
 					{topics.map((topic) => (
 						<Badge
-							className="rounded-full bg-gray-100 px-3 py-1 font-normal text-gray-700 text-xs hover:bg-gray-200"
+							className="cursor-pointer rounded-full bg-gray-100 px-3 py-1 font-normal text-gray-700 text-xs hover:bg-gray-200"
 							key={topic}
 							variant="secondary"
 						>
@@ -85,7 +85,7 @@ export function InsightsFilters({
 				<div className="space-y-2">
 					{categories.map((category) => (
 						<Button
-							className="w-full justify-start px-3 font-normal text-gray-500 text-sm hover:text-gray-900 dark:text-muted-foreground dark:hover:text-gray-300"
+							className="w-full cursor-pointer justify-start px-3 font-normal text-gray-500 text-sm hover:text-gray-900 dark:text-muted-foreground dark:hover:text-gray-300"
 							key={category}
 							variant="ghost"
 						>
@@ -95,5 +95,5 @@ export function InsightsFilters({
 				</div>
 			</div>
 		</aside>
-	)
+	);
 }
