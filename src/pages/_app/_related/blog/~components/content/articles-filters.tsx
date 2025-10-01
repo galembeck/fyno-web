@@ -2,21 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { blogContent } from "@/constants/insights";
+import { blogContent } from "@/constants/articles";
 
 export const Route = createFileRoute(
-	"/_app/_related/blog/~components/content/insights-filters"
+	"/_app/_related/blog/~components/content/articles-filters"
 )({
-	component: InsightsFilters,
+	component: ArticlesFilters,
 });
 
-interface InsightsFiltersProps {
+interface ArticlesFiltersProps {
 	isMobileView?: boolean;
 }
 
-export function InsightsFilters({
+export function ArticlesFilters({
 	isMobileView = false,
-}: InsightsFiltersProps) {
+}: ArticlesFiltersProps) {
 	const topics = blogContent.categories.topics;
 	const categories = blogContent.categories.categories;
 

@@ -5,8 +5,8 @@ import { CallToAction } from "@/components/call-to-action";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { BlogInsights } from "./~components/blog-insights";
-import { InsightsFilters } from "./~components/content/insights-filters";
+import { BlogArticles } from "./~components/blog-articles";
+import { ArticlesFilters } from "./~components/content/articles-filters";
 
 export const Route = createFileRoute("/_app/_related/blog/")({
 	component: Blog,
@@ -41,7 +41,7 @@ function Blog() {
 				<article className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
 					<div className="flex flex-col gap-3">
 						<h1 className="font-bold text-4xl text-black lg:text-5xl dark:text-white">
-							Insights do nosso time
+							Publicações relevantes
 						</h1>
 
 						<p className="text-base text-gray-600 dark:text-gray-400">
@@ -78,14 +78,14 @@ function Blog() {
 				>
 					<div className="rounded-md border border-input bg-secondary-white dark:bg-primary-dark">
 						<div className="mx-auto max-w-7xl px-4 py-4">
-							<InsightsFilters isMobileView={true} />
+							<ArticlesFilters isMobileView={true} />
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 lg:pb-10">
-				<BlogInsights />
+				<BlogArticles />
 			</div>
 
 			<Separator className="mt-10" />

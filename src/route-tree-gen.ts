@@ -26,16 +26,18 @@ import { Route as AppRelatedComplianceProhibitedProductsRouteImport } from './pa
 import { Route as AppRelatedCompliancePrivacyPolicyRouteImport } from './pages/_app/_related/_compliance/privacy-policy'
 import { Route as AppRelatedComplianceContactRouteImport } from './pages/_app/_related/_compliance/contact'
 import { Route as AppRelatedComplianceComplaintsRouteImport } from './pages/_app/_related/_compliance/complaints'
+import { Route as AppRelatedBlogArticleIdIndexRouteImport } from './pages/_app/_related/blog/$articleId/index'
 import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
-import { Route as AppRelatedBlogChar126componentsBlogInsightsRouteImport } from './pages/_app/_related/blog/~components/blog-insights'
+import { Route as AppRelatedBlogChar126componentsBlogArticlesRouteImport } from './pages/_app/_related/blog/~components/blog-articles'
 import { Route as AppPublicChar126componentsSectionsTaxesRouteImport } from './pages/_app/_public/~components/sections/taxes'
 import { Route as AppPublicChar126componentsSectionsRewardsRouteImport } from './pages/_app/_public/~components/sections/rewards'
 import { Route as AppPublicChar126componentsSectionsResourcesRouteImport } from './pages/_app/_public/~components/sections/resources'
 import { Route as AppPublicChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/~components/sections/intro'
 import { Route as AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_app/_public/~components/sections/companies-marquee'
 import { Route as AppPublicChar126componentsSectionsBenefitsRouteImport } from './pages/_app/_public/~components/sections/benefits'
-import { Route as AppRelatedBlogChar126componentsContentInsightsFiltersRouteImport } from './pages/_app/_related/blog/~components/content/insights-filters'
-import { Route as AppRelatedBlogChar126componentsContentInsightCardRouteImport } from './pages/_app/_related/blog/~components/content/insight-card'
+import { Route as AppRelatedBlogChar126componentsContentArticlesFiltersRouteImport } from './pages/_app/_related/blog/~components/content/articles-filters'
+import { Route as AppRelatedBlogChar126componentsContentArticleCardRouteImport } from './pages/_app/_related/blog/~components/content/article-card'
+import { Route as AppRelatedBlogArticleIdChar126componentsArticleNotFoundRouteImport } from './pages/_app/_related/blog/$articleId/~components/article-not-found'
 import { Route as AppPublicRewardsChar126componentsSectionsRewardsListRouteImport } from './pages/_app/_public/rewards/~components/sections/rewards-list'
 import { Route as AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport } from './pages/_app/_public/rewards/~components/sections/pictures-carousel'
 import { Route as AppPublicRewardsChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/rewards/~components/sections/intro'
@@ -130,16 +132,22 @@ const AppRelatedComplianceComplaintsRoute =
     path: '/complaints',
     getParentRoute: () => AppRelatedComplianceLayoutRoute,
   } as any)
+const AppRelatedBlogArticleIdIndexRoute =
+  AppRelatedBlogArticleIdIndexRouteImport.update({
+    id: '/$articleId/',
+    path: '/$articleId/',
+    getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
 const AppRelatedBlogChar126componentsNavbarRoute =
   AppRelatedBlogChar126componentsNavbarRouteImport.update({
     id: '/~components/navbar',
     path: '/~components/navbar',
     getParentRoute: () => AppRelatedBlogLayoutRoute,
   } as any)
-const AppRelatedBlogChar126componentsBlogInsightsRoute =
-  AppRelatedBlogChar126componentsBlogInsightsRouteImport.update({
-    id: '/~components/blog-insights',
-    path: '/~components/blog-insights',
+const AppRelatedBlogChar126componentsBlogArticlesRoute =
+  AppRelatedBlogChar126componentsBlogArticlesRouteImport.update({
+    id: '/~components/blog-articles',
+    path: '/~components/blog-articles',
     getParentRoute: () => AppRelatedBlogLayoutRoute,
   } as any)
 const AppPublicChar126componentsSectionsTaxesRoute =
@@ -178,16 +186,22 @@ const AppPublicChar126componentsSectionsBenefitsRoute =
     path: '/~components/sections/benefits',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const AppRelatedBlogChar126componentsContentInsightsFiltersRoute =
-  AppRelatedBlogChar126componentsContentInsightsFiltersRouteImport.update({
-    id: '/~components/content/insights-filters',
-    path: '/~components/content/insights-filters',
+const AppRelatedBlogChar126componentsContentArticlesFiltersRoute =
+  AppRelatedBlogChar126componentsContentArticlesFiltersRouteImport.update({
+    id: '/~components/content/articles-filters',
+    path: '/~components/content/articles-filters',
     getParentRoute: () => AppRelatedBlogLayoutRoute,
   } as any)
-const AppRelatedBlogChar126componentsContentInsightCardRoute =
-  AppRelatedBlogChar126componentsContentInsightCardRouteImport.update({
-    id: '/~components/content/insight-card',
-    path: '/~components/content/insight-card',
+const AppRelatedBlogChar126componentsContentArticleCardRoute =
+  AppRelatedBlogChar126componentsContentArticleCardRouteImport.update({
+    id: '/~components/content/article-card',
+    path: '/~components/content/article-card',
+    getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
+const AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute =
+  AppRelatedBlogArticleIdChar126componentsArticleNotFoundRouteImport.update({
+    id: '/$articleId/~components/article-not-found',
+    path: '/$articleId/~components/article-not-found',
     getParentRoute: () => AppRelatedBlogLayoutRoute,
   } as any)
 const AppPublicRewardsChar126componentsSectionsRewardsListRoute =
@@ -230,13 +244,15 @@ export interface FileRoutesByFullPath {
   '/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
-  '/blog/~components/blog-insights': typeof AppRelatedBlogChar126componentsBlogInsightsRoute
+  '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/blog/$articleId': typeof AppRelatedBlogArticleIdIndexRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
-  '/blog/~components/content/insight-card': typeof AppRelatedBlogChar126componentsContentInsightCardRoute
-  '/blog/~components/content/insights-filters': typeof AppRelatedBlogChar126componentsContentInsightsFiltersRoute
+  '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute
+  '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
+  '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof AppPublicIndexRoute
@@ -258,13 +274,15 @@ export interface FileRoutesByTo {
   '/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
-  '/blog/~components/blog-insights': typeof AppRelatedBlogChar126componentsBlogInsightsRoute
+  '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/blog/$articleId': typeof AppRelatedBlogArticleIdIndexRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
-  '/blog/~components/content/insight-card': typeof AppRelatedBlogChar126componentsContentInsightCardRoute
-  '/blog/~components/content/insights-filters': typeof AppRelatedBlogChar126componentsContentInsightsFiltersRoute
+  '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute
+  '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
+  '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -291,13 +309,15 @@ export interface FileRoutesById {
   '/_app/_public/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/_app/_public/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/_app/_public/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
-  '/_app/_related/blog/~components/blog-insights': typeof AppRelatedBlogChar126componentsBlogInsightsRoute
+  '/_app/_related/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/_app/_related/blog/$articleId/': typeof AppRelatedBlogArticleIdIndexRoute
   '/_app/_public/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/_app/_public/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/_app/_public/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
-  '/_app/_related/blog/~components/content/insight-card': typeof AppRelatedBlogChar126componentsContentInsightCardRoute
-  '/_app/_related/blog/~components/content/insights-filters': typeof AppRelatedBlogChar126componentsContentInsightsFiltersRoute
+  '/_app/_related/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute
+  '/_app/_related/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
+  '/_app/_related/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -322,13 +342,15 @@ export interface FileRouteTypes {
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
     | '/~components/sections/taxes'
-    | '/blog/~components/blog-insights'
+    | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
+    | '/blog/$articleId'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
-    | '/blog/~components/content/insight-card'
-    | '/blog/~components/content/insights-filters'
+    | '/blog/$articleId/~components/article-not-found'
+    | '/blog/~components/content/article-card'
+    | '/blog/~components/content/articles-filters'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -350,13 +372,15 @@ export interface FileRouteTypes {
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
     | '/~components/sections/taxes'
-    | '/blog/~components/blog-insights'
+    | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
+    | '/blog/$articleId'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
-    | '/blog/~components/content/insight-card'
-    | '/blog/~components/content/insights-filters'
+    | '/blog/$articleId/~components/article-not-found'
+    | '/blog/~components/content/article-card'
+    | '/blog/~components/content/articles-filters'
   id:
     | '__root__'
     | '/_app/_admin'
@@ -382,13 +406,15 @@ export interface FileRouteTypes {
     | '/_app/_public/~components/sections/resources'
     | '/_app/_public/~components/sections/rewards'
     | '/_app/_public/~components/sections/taxes'
-    | '/_app/_related/blog/~components/blog-insights'
+    | '/_app/_related/blog/~components/blog-articles'
     | '/_app/_related/blog/~components/navbar'
+    | '/_app/_related/blog/$articleId/'
     | '/_app/_public/rewards/~components/sections/intro'
     | '/_app/_public/rewards/~components/sections/pictures-carousel'
     | '/_app/_public/rewards/~components/sections/rewards-list'
-    | '/_app/_related/blog/~components/content/insight-card'
-    | '/_app/_related/blog/~components/content/insights-filters'
+    | '/_app/_related/blog/$articleId/~components/article-not-found'
+    | '/_app/_related/blog/~components/content/article-card'
+    | '/_app/_related/blog/~components/content/articles-filters'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -523,6 +549,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedComplianceComplaintsRouteImport
       parentRoute: typeof AppRelatedComplianceLayoutRoute
     }
+    '/_app/_related/blog/$articleId/': {
+      id: '/_app/_related/blog/$articleId/'
+      path: '/$articleId'
+      fullPath: '/blog/$articleId'
+      preLoaderRoute: typeof AppRelatedBlogArticleIdIndexRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
     '/_app/_related/blog/~components/navbar': {
       id: '/_app/_related/blog/~components/navbar'
       path: '/~components/navbar'
@@ -530,11 +563,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedBlogChar126componentsNavbarRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
     }
-    '/_app/_related/blog/~components/blog-insights': {
-      id: '/_app/_related/blog/~components/blog-insights'
-      path: '/~components/blog-insights'
-      fullPath: '/blog/~components/blog-insights'
-      preLoaderRoute: typeof AppRelatedBlogChar126componentsBlogInsightsRouteImport
+    '/_app/_related/blog/~components/blog-articles': {
+      id: '/_app/_related/blog/~components/blog-articles'
+      path: '/~components/blog-articles'
+      fullPath: '/blog/~components/blog-articles'
+      preLoaderRoute: typeof AppRelatedBlogChar126componentsBlogArticlesRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
     }
     '/_app/_public/~components/sections/taxes': {
@@ -579,18 +612,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicChar126componentsSectionsBenefitsRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_app/_related/blog/~components/content/insights-filters': {
-      id: '/_app/_related/blog/~components/content/insights-filters'
-      path: '/~components/content/insights-filters'
-      fullPath: '/blog/~components/content/insights-filters'
-      preLoaderRoute: typeof AppRelatedBlogChar126componentsContentInsightsFiltersRouteImport
+    '/_app/_related/blog/~components/content/articles-filters': {
+      id: '/_app/_related/blog/~components/content/articles-filters'
+      path: '/~components/content/articles-filters'
+      fullPath: '/blog/~components/content/articles-filters'
+      preLoaderRoute: typeof AppRelatedBlogChar126componentsContentArticlesFiltersRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
     }
-    '/_app/_related/blog/~components/content/insight-card': {
-      id: '/_app/_related/blog/~components/content/insight-card'
-      path: '/~components/content/insight-card'
-      fullPath: '/blog/~components/content/insight-card'
-      preLoaderRoute: typeof AppRelatedBlogChar126componentsContentInsightCardRouteImport
+    '/_app/_related/blog/~components/content/article-card': {
+      id: '/_app/_related/blog/~components/content/article-card'
+      path: '/~components/content/article-card'
+      fullPath: '/blog/~components/content/article-card'
+      preLoaderRoute: typeof AppRelatedBlogChar126componentsContentArticleCardRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/$articleId/~components/article-not-found': {
+      id: '/_app/_related/blog/$articleId/~components/article-not-found'
+      path: '/$articleId/~components/article-not-found'
+      fullPath: '/blog/$articleId/~components/article-not-found'
+      preLoaderRoute: typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
     }
     '/_app/_public/rewards/~components/sections/rewards-list': {
@@ -696,22 +736,27 @@ const AppRelatedComplianceLayoutRouteWithChildren =
 
 interface AppRelatedBlogLayoutRouteChildren {
   AppRelatedBlogIndexRoute: typeof AppRelatedBlogIndexRoute
-  AppRelatedBlogChar126componentsBlogInsightsRoute: typeof AppRelatedBlogChar126componentsBlogInsightsRoute
+  AppRelatedBlogChar126componentsBlogArticlesRoute: typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   AppRelatedBlogChar126componentsNavbarRoute: typeof AppRelatedBlogChar126componentsNavbarRoute
-  AppRelatedBlogChar126componentsContentInsightCardRoute: typeof AppRelatedBlogChar126componentsContentInsightCardRoute
-  AppRelatedBlogChar126componentsContentInsightsFiltersRoute: typeof AppRelatedBlogChar126componentsContentInsightsFiltersRoute
+  AppRelatedBlogArticleIdIndexRoute: typeof AppRelatedBlogArticleIdIndexRoute
+  AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute: typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute
+  AppRelatedBlogChar126componentsContentArticleCardRoute: typeof AppRelatedBlogChar126componentsContentArticleCardRoute
+  AppRelatedBlogChar126componentsContentArticlesFiltersRoute: typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
 }
 
 const AppRelatedBlogLayoutRouteChildren: AppRelatedBlogLayoutRouteChildren = {
   AppRelatedBlogIndexRoute: AppRelatedBlogIndexRoute,
-  AppRelatedBlogChar126componentsBlogInsightsRoute:
-    AppRelatedBlogChar126componentsBlogInsightsRoute,
+  AppRelatedBlogChar126componentsBlogArticlesRoute:
+    AppRelatedBlogChar126componentsBlogArticlesRoute,
   AppRelatedBlogChar126componentsNavbarRoute:
     AppRelatedBlogChar126componentsNavbarRoute,
-  AppRelatedBlogChar126componentsContentInsightCardRoute:
-    AppRelatedBlogChar126componentsContentInsightCardRoute,
-  AppRelatedBlogChar126componentsContentInsightsFiltersRoute:
-    AppRelatedBlogChar126componentsContentInsightsFiltersRoute,
+  AppRelatedBlogArticleIdIndexRoute: AppRelatedBlogArticleIdIndexRoute,
+  AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute:
+    AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute,
+  AppRelatedBlogChar126componentsContentArticleCardRoute:
+    AppRelatedBlogChar126componentsContentArticleCardRoute,
+  AppRelatedBlogChar126componentsContentArticlesFiltersRoute:
+    AppRelatedBlogChar126componentsContentArticlesFiltersRoute,
 }
 
 const AppRelatedBlogLayoutRouteWithChildren =

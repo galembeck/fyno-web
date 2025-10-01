@@ -1,24 +1,25 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
 export const Route = createFileRoute(
-	"/_app/_related/blog/~components/content/insight-card"
+	"/_app/_related/blog/~components/content/article-card"
 )({
 	component: () => (
-		<InsightCard
+		<ArticleCard
 			author="Author"
 			category="Category"
 			date="Date"
 			description="Description"
 			imgUrl="imgUrl"
 			readTime="Read Time"
+			slug="Slug"
 			title="Title"
 		/>
 	),
 });
 
-export interface InsightCardProps {
+export interface ArticleCardProps {
 	date: string;
 	title: string;
 	description: string;
@@ -26,9 +27,10 @@ export interface InsightCardProps {
 	author: string;
 	readTime: string;
 	imgUrl: string;
+	slug: string;
 }
 
-export function InsightCard({
+export function ArticleCard({
 	date,
 	title,
 	description,
@@ -36,9 +38,19 @@ export function InsightCard({
 	author,
 	readTime,
 	imgUrl,
-}: InsightCardProps) {
+	slug,
+}: ArticleCardProps) {
+	const navigate = useNavigate();
+
+	const handleClick = () => {
+		navigate({ to: "/blog/$articleId", params: { articleId: slug } });
+	};
+
 	return (
-		<Card className="flex cursor-pointer flex-col gap-4 p-6 lg:flex-row lg:pb-8 lg:pl-10">
+		<Card
+			className="flex cursor-pointer flex-col gap-4 p-6 lg:flex-row lg:pb-8 lg:pl-10"
+			onClick={handleClick}
+		>
 			<div className="max-w-lg flex-1">
 				<p className="mb-2 font-medium text-blue-600 text-sm">{date}</p>
 				<h2 className="mb-3 font-bold text-xl leading-tight lg:text-2xl dark:text-white">
@@ -55,7 +67,7 @@ export function InsightCard({
 						{category}
 					</Badge>
 					<span className="text-gray-500 text-xs dark:text-muted-foreground">
-						By {author}
+						Por {author}
 					</span>
 					<div className="rounded-full bg-primary-gray p-1 dark:bg-muted-foreground" />
 					<span className="text-blue-600 text-xs">Leitura: {readTime}</span>

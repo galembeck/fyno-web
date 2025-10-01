@@ -1,6 +1,7 @@
-export const insights = [
+export const articles = [
 	{
 		id: 1,
+		slug: "pagamentos-via-whatsapp-riscos-limites-dicas-para-vender-seguro",
 		date: "Set. 9, 2025",
 		title:
 			"Pagamentos via WhatsApp: riscos, limites e dicas para vender seguro",
@@ -14,6 +15,7 @@ export const insights = [
 	},
 	{
 		id: 2,
+		slug: "aprovacao-maxima-vendas-segmentos-restritos",
 		date: "Set. 8, 2025",
 		title: "Como garantir aprovação máxima de vendas em segmentos restritos",
 		description:
@@ -26,6 +28,7 @@ export const insights = [
 	},
 	{
 		id: 3,
+		slug: "gateways-para-saas-ou-ecommerces-hibridos",
 		date: "Set. 7, 2025",
 		title: "O que considerar em Gateways para SaaS ou E-Commerces híbridos?",
 		description:
@@ -59,5 +62,5 @@ export const blogContent = {
 			"Inteligência Artificial",
 		],
 	},
-	posts: [insights],
+	posts: [articles],
 };
