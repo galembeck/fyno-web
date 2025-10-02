@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SearchX } from "lucide-react";
 
 export const Route = createFileRoute(
-	"/_app/_related/blog/$articleId/~components/article-not-found"
+	"/_app/_related/blog/_article-content/$articleId/~components/article-not-found"
 )({
 	component: ArticleNotFound,
 });

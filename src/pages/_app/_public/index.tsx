@@ -3,6 +3,7 @@ import { FrequentlyAskedQuestions } from "@/components/frequently-asked-question
 import { CallToAction } from "../../../components/call-to-action";
 import { Benefits } from "./~components/sections/benefits";
 import { Intro } from "./~components/sections/intro";
+import { RecentArticles } from "./~components/sections/recent-articles";
 import { Resources } from "./~components/sections/resources";
 import { Rewards } from "./~components/sections/rewards";
 import { Taxes } from "./~components/sections/taxes";
@@ -45,6 +46,11 @@ function Index() {
 			<div className="bg-primary-black text-white">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<Taxes />
+				</div>
+			</div>
+			<div className="bg-white dark:bg-primary-dark">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<RecentArticles />
 				</div>
 			</div>
 			<div className="bg-white dark:bg-secondary-dark">

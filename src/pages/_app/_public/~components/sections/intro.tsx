@@ -76,7 +76,7 @@ export function Intro() {
 				</Button>
 
 				<Button
-					className="cursor-pointer items-center rounded-full border-2 bg-transparent px-8 py-6 text-black text-lg hover:bg-secondary-white dark:text-white dark:hover:text-white/80"
+					className="cursor-pointer items-center rounded-full border-2 bg-transparent px-8 py-6 text-black text-lg hover:bg-secondary-white dark:text-white dark:hover:text-black"
 					onClick={() => navigate({ to: "/sign-up" })}
 				>
 					Fale com nossa equipe

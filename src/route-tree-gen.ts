@@ -26,7 +26,6 @@ import { Route as AppRelatedComplianceProhibitedProductsRouteImport } from './pa
 import { Route as AppRelatedCompliancePrivacyPolicyRouteImport } from './pages/_app/_related/_compliance/privacy-policy'
 import { Route as AppRelatedComplianceContactRouteImport } from './pages/_app/_related/_compliance/contact'
 import { Route as AppRelatedComplianceComplaintsRouteImport } from './pages/_app/_related/_compliance/complaints'
-import { Route as AppRelatedBlogArticleIdIndexRouteImport } from './pages/_app/_related/blog/$articleId/index'
 import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
 import { Route as AppRelatedBlogChar126componentsBlogArticlesRouteImport } from './pages/_app/_related/blog/~components/blog-articles'
 import { Route as AppPublicChar126componentsSectionsTaxesRouteImport } from './pages/_app/_public/~components/sections/taxes'
@@ -35,12 +34,19 @@ import { Route as AppPublicChar126componentsSectionsResourcesRouteImport } from 
 import { Route as AppPublicChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/~components/sections/intro'
 import { Route as AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_app/_public/~components/sections/companies-marquee'
 import { Route as AppPublicChar126componentsSectionsBenefitsRouteImport } from './pages/_app/_public/~components/sections/benefits'
+import { Route as AppRelatedBlogArticleContentArticleIdIndexRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/index'
 import { Route as AppRelatedBlogChar126componentsContentArticlesFiltersRouteImport } from './pages/_app/_related/blog/~components/content/articles-filters'
 import { Route as AppRelatedBlogChar126componentsContentArticleCardRouteImport } from './pages/_app/_related/blog/~components/content/article-card'
-import { Route as AppRelatedBlogArticleIdChar126componentsArticleNotFoundRouteImport } from './pages/_app/_related/blog/$articleId/~components/article-not-found'
 import { Route as AppPublicRewardsChar126componentsSectionsRewardsListRouteImport } from './pages/_app/_public/rewards/~components/sections/rewards-list'
 import { Route as AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport } from './pages/_app/_public/rewards/~components/sections/pictures-carousel'
 import { Route as AppPublicRewardsChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/rewards/~components/sections/intro'
+import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
+import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
+import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
+import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
+import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
+import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
+import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
 
 const AppPublicLayoutRoute = AppPublicLayoutRouteImport.update({
   id: '/_app/_public',
@@ -132,12 +138,6 @@ const AppRelatedComplianceComplaintsRoute =
     path: '/complaints',
     getParentRoute: () => AppRelatedComplianceLayoutRoute,
   } as any)
-const AppRelatedBlogArticleIdIndexRoute =
-  AppRelatedBlogArticleIdIndexRouteImport.update({
-    id: '/$articleId/',
-    path: '/$articleId/',
-    getParentRoute: () => AppRelatedBlogLayoutRoute,
-  } as any)
 const AppRelatedBlogChar126componentsNavbarRoute =
   AppRelatedBlogChar126componentsNavbarRouteImport.update({
     id: '/~components/navbar',
@@ -186,6 +186,12 @@ const AppPublicChar126componentsSectionsBenefitsRoute =
     path: '/~components/sections/benefits',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
+const AppRelatedBlogArticleContentArticleIdIndexRoute =
+  AppRelatedBlogArticleContentArticleIdIndexRouteImport.update({
+    id: '/_article-content/$articleId/',
+    path: '/$articleId/',
+    getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
 const AppRelatedBlogChar126componentsContentArticlesFiltersRoute =
   AppRelatedBlogChar126componentsContentArticlesFiltersRouteImport.update({
     id: '/~components/content/articles-filters',
@@ -196,12 +202,6 @@ const AppRelatedBlogChar126componentsContentArticleCardRoute =
   AppRelatedBlogChar126componentsContentArticleCardRouteImport.update({
     id: '/~components/content/article-card',
     path: '/~components/content/article-card',
-    getParentRoute: () => AppRelatedBlogLayoutRoute,
-  } as any)
-const AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute =
-  AppRelatedBlogArticleIdChar126componentsArticleNotFoundRouteImport.update({
-    id: '/$articleId/~components/article-not-found',
-    path: '/$articleId/~components/article-not-found',
     getParentRoute: () => AppRelatedBlogLayoutRoute,
   } as any)
 const AppPublicRewardsChar126componentsSectionsRewardsListRoute =
@@ -222,6 +222,62 @@ const AppPublicRewardsChar126componentsSectionsIntroRoute =
     path: '/rewards/~components/sections/intro',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
+const AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute =
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRouteImport.update(
+    {
+      id: '/_article-content/$articleId/~components/article-with-error',
+      path: '/$articleId/~components/article-with-error',
+      getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute =
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRouteImport.update(
+    {
+      id: '/_article-content/$articleId/~components/article-skeleton',
+      path: '/$articleId/~components/article-skeleton',
+      getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute =
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRouteImport.update(
+    {
+      id: '/_article-content/$articleId/~components/article-sharing',
+      path: '/$articleId/~components/article-sharing',
+      getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute =
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport.update(
+    {
+      id: '/_article-content/$articleId/~components/article-not-found',
+      path: '/$articleId/~components/article-not-found',
+      getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute =
+  AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRouteImport.update(
+    {
+      id: '/_article-content/$articleId/~components/dynamic-zone/related-articles',
+      path: '/$articleId/~components/dynamic-zone/related-articles',
+      getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute =
+  AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRouteImport.update(
+    {
+      id: '/_article-content/$articleId/~components/dynamic-zone/related-article-card',
+      path: '/$articleId/~components/dynamic-zone/related-article-card',
+      getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute =
+  AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport.update(
+    {
+      id: '/_article-content/$articleId/~components/content-renderer/rich-content-renderer',
+      path: '/$articleId/~components/content-renderer/rich-content-renderer',
+      getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
 
 export interface FileRoutesByFullPath {
   '/blog': typeof AppRelatedBlogLayoutRouteWithChildren
@@ -246,13 +302,19 @@ export interface FileRoutesByFullPath {
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
-  '/blog/$articleId': typeof AppRelatedBlogArticleIdIndexRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
-  '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute
   '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
+  '/blog/$articleId': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
+  '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
+  '/blog/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
+  '/blog/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
+  '/blog/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
+  '/blog/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
+  '/blog/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
+  '/blog/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof AppPublicIndexRoute
@@ -276,13 +338,19 @@ export interface FileRoutesByTo {
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
-  '/blog/$articleId': typeof AppRelatedBlogArticleIdIndexRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
-  '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute
   '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
+  '/blog/$articleId': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
+  '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
+  '/blog/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
+  '/blog/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
+  '/blog/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
+  '/blog/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
+  '/blog/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
+  '/blog/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -311,13 +379,19 @@ export interface FileRoutesById {
   '/_app/_public/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/_app/_related/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
-  '/_app/_related/blog/$articleId/': typeof AppRelatedBlogArticleIdIndexRoute
   '/_app/_public/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/_app/_public/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/_app/_public/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
-  '/_app/_related/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute
   '/_app/_related/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/_app/_related/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
+  '/_app/_related/blog/_article-content/$articleId/': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
+  '/_app/_related/blog/_article-content/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
+  '/_app/_related/blog/_article-content/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
+  '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
+  '/_app/_related/blog/_article-content/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
+  '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
+  '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
+  '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -344,13 +418,19 @@ export interface FileRouteTypes {
     | '/~components/sections/taxes'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
-    | '/blog/$articleId'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
-    | '/blog/$articleId/~components/article-not-found'
     | '/blog/~components/content/article-card'
     | '/blog/~components/content/articles-filters'
+    | '/blog/$articleId'
+    | '/blog/$articleId/~components/article-not-found'
+    | '/blog/$articleId/~components/article-sharing'
+    | '/blog/$articleId/~components/article-skeleton'
+    | '/blog/$articleId/~components/article-with-error'
+    | '/blog/$articleId/~components/content-renderer/rich-content-renderer'
+    | '/blog/$articleId/~components/dynamic-zone/related-article-card'
+    | '/blog/$articleId/~components/dynamic-zone/related-articles'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -374,13 +454,19 @@ export interface FileRouteTypes {
     | '/~components/sections/taxes'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
-    | '/blog/$articleId'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
-    | '/blog/$articleId/~components/article-not-found'
     | '/blog/~components/content/article-card'
     | '/blog/~components/content/articles-filters'
+    | '/blog/$articleId'
+    | '/blog/$articleId/~components/article-not-found'
+    | '/blog/$articleId/~components/article-sharing'
+    | '/blog/$articleId/~components/article-skeleton'
+    | '/blog/$articleId/~components/article-with-error'
+    | '/blog/$articleId/~components/content-renderer/rich-content-renderer'
+    | '/blog/$articleId/~components/dynamic-zone/related-article-card'
+    | '/blog/$articleId/~components/dynamic-zone/related-articles'
   id:
     | '__root__'
     | '/_app/_admin'
@@ -408,13 +494,19 @@ export interface FileRouteTypes {
     | '/_app/_public/~components/sections/taxes'
     | '/_app/_related/blog/~components/blog-articles'
     | '/_app/_related/blog/~components/navbar'
-    | '/_app/_related/blog/$articleId/'
     | '/_app/_public/rewards/~components/sections/intro'
     | '/_app/_public/rewards/~components/sections/pictures-carousel'
     | '/_app/_public/rewards/~components/sections/rewards-list'
-    | '/_app/_related/blog/$articleId/~components/article-not-found'
     | '/_app/_related/blog/~components/content/article-card'
     | '/_app/_related/blog/~components/content/articles-filters'
+    | '/_app/_related/blog/_article-content/$articleId/'
+    | '/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
+    | '/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
+    | '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
+    | '/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
+    | '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
+    | '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
+    | '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -549,13 +641,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedComplianceComplaintsRouteImport
       parentRoute: typeof AppRelatedComplianceLayoutRoute
     }
-    '/_app/_related/blog/$articleId/': {
-      id: '/_app/_related/blog/$articleId/'
-      path: '/$articleId'
-      fullPath: '/blog/$articleId'
-      preLoaderRoute: typeof AppRelatedBlogArticleIdIndexRouteImport
-      parentRoute: typeof AppRelatedBlogLayoutRoute
-    }
     '/_app/_related/blog/~components/navbar': {
       id: '/_app/_related/blog/~components/navbar'
       path: '/~components/navbar'
@@ -612,6 +697,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicChar126componentsSectionsBenefitsRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
+    '/_app/_related/blog/_article-content/$articleId/': {
+      id: '/_app/_related/blog/_article-content/$articleId/'
+      path: '/$articleId'
+      fullPath: '/blog/$articleId'
+      preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdIndexRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
     '/_app/_related/blog/~components/content/articles-filters': {
       id: '/_app/_related/blog/~components/content/articles-filters'
       path: '/~components/content/articles-filters'
@@ -624,13 +716,6 @@ declare module '@tanstack/react-router' {
       path: '/~components/content/article-card'
       fullPath: '/blog/~components/content/article-card'
       preLoaderRoute: typeof AppRelatedBlogChar126componentsContentArticleCardRouteImport
-      parentRoute: typeof AppRelatedBlogLayoutRoute
-    }
-    '/_app/_related/blog/$articleId/~components/article-not-found': {
-      id: '/_app/_related/blog/$articleId/~components/article-not-found'
-      path: '/$articleId/~components/article-not-found'
-      fullPath: '/blog/$articleId/~components/article-not-found'
-      preLoaderRoute: typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
     }
     '/_app/_public/rewards/~components/sections/rewards-list': {
@@ -653,6 +738,55 @@ declare module '@tanstack/react-router' {
       fullPath: '/rewards/~components/sections/intro'
       preLoaderRoute: typeof AppPublicRewardsChar126componentsSectionsIntroRouteImport
       parentRoute: typeof AppPublicLayoutRoute
+    }
+    '/_app/_related/blog/_article-content/$articleId/~components/article-with-error': {
+      id: '/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
+      path: '/$articleId/~components/article-with-error'
+      fullPath: '/blog/$articleId/~components/article-with-error'
+      preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton': {
+      id: '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
+      path: '/$articleId/~components/article-skeleton'
+      fullPath: '/blog/$articleId/~components/article-skeleton'
+      preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/_article-content/$articleId/~components/article-sharing': {
+      id: '/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
+      path: '/$articleId/~components/article-sharing'
+      fullPath: '/blog/$articleId/~components/article-sharing'
+      preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/_article-content/$articleId/~components/article-not-found': {
+      id: '/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
+      path: '/$articleId/~components/article-not-found'
+      fullPath: '/blog/$articleId/~components/article-not-found'
+      preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles': {
+      id: '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
+      path: '/$articleId/~components/dynamic-zone/related-articles'
+      fullPath: '/blog/$articleId/~components/dynamic-zone/related-articles'
+      preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card': {
+      id: '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
+      path: '/$articleId/~components/dynamic-zone/related-article-card'
+      fullPath: '/blog/$articleId/~components/dynamic-zone/related-article-card'
+      preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer': {
+      id: '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
+      path: '/$articleId/~components/content-renderer/rich-content-renderer'
+      fullPath: '/blog/$articleId/~components/content-renderer/rich-content-renderer'
+      preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
     }
   }
 }
@@ -738,10 +872,16 @@ interface AppRelatedBlogLayoutRouteChildren {
   AppRelatedBlogIndexRoute: typeof AppRelatedBlogIndexRoute
   AppRelatedBlogChar126componentsBlogArticlesRoute: typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   AppRelatedBlogChar126componentsNavbarRoute: typeof AppRelatedBlogChar126componentsNavbarRoute
-  AppRelatedBlogArticleIdIndexRoute: typeof AppRelatedBlogArticleIdIndexRoute
-  AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute: typeof AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute
   AppRelatedBlogChar126componentsContentArticleCardRoute: typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   AppRelatedBlogChar126componentsContentArticlesFiltersRoute: typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
+  AppRelatedBlogArticleContentArticleIdIndexRoute: typeof AppRelatedBlogArticleContentArticleIdIndexRoute
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
+  AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
+  AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
+  AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
 }
 
 const AppRelatedBlogLayoutRouteChildren: AppRelatedBlogLayoutRouteChildren = {
@@ -750,13 +890,26 @@ const AppRelatedBlogLayoutRouteChildren: AppRelatedBlogLayoutRouteChildren = {
     AppRelatedBlogChar126componentsBlogArticlesRoute,
   AppRelatedBlogChar126componentsNavbarRoute:
     AppRelatedBlogChar126componentsNavbarRoute,
-  AppRelatedBlogArticleIdIndexRoute: AppRelatedBlogArticleIdIndexRoute,
-  AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute:
-    AppRelatedBlogArticleIdChar126componentsArticleNotFoundRoute,
   AppRelatedBlogChar126componentsContentArticleCardRoute:
     AppRelatedBlogChar126componentsContentArticleCardRoute,
   AppRelatedBlogChar126componentsContentArticlesFiltersRoute:
     AppRelatedBlogChar126componentsContentArticlesFiltersRoute,
+  AppRelatedBlogArticleContentArticleIdIndexRoute:
+    AppRelatedBlogArticleContentArticleIdIndexRoute,
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute:
+    AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute,
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute:
+    AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute,
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute:
+    AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute,
+  AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute:
+    AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute,
+  AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute:
+    AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute,
+  AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute:
+    AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute,
+  AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute:
+    AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute,
 }
 
 const AppRelatedBlogLayoutRouteWithChildren =

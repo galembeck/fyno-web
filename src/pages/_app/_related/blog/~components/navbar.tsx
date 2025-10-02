@@ -81,14 +81,14 @@ export function Navbar() {
 						</Button>
 						<Button
 							className="font-normal text-base text-black transition-colors hover:text-black/75 dark:text-white dark:hover:text-gray-300"
-							onClick={() => navigate({ to: "/" })}
+							onClick={() => navigate({ to: "/contact" })}
 							variant="link"
 						>
 							Contato
 						</Button>
 						<Button
 							className="font-normal text-base text-black transition-colors hover:text-black/75 dark:text-white dark:hover:text-gray-300"
-							onClick={() => navigate({ to: "/" })}
+							onClick={() => navigate({ to: "/", hash: "questions" })}
 							variant="link"
 						>
 							FAQ
@@ -159,14 +159,14 @@ export function Navbar() {
 						</Button>
 						<Button
 							className="-px-2 block cursor-pointer py-2 font-normal text-black text-lg transition-colors hover:text-black/75 dark:text-white dark:hover:text-gray-300"
-							onClick={() => navigate({ to: "/" })}
+							onClick={() => navigate({ to: "/contact" })}
 							variant="link"
 						>
 							Contato
 						</Button>
 						<Button
 							className="-px-2 block cursor-pointer py-2 font-normal text-black text-lg transition-colors hover:text-black/75 dark:text-white dark:hover:text-gray-300"
-							onClick={() => navigate({ to: "/" })}
+							onClick={() => navigate({ to: "/", hash: "questions" })}
 							variant="link"
 						>
 							FAQ

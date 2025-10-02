@@ -1,15 +1,23 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Filter, Search } from "lucide-react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { ArrowRight, Filter, Search, X } from "lucide-react";
 import { useState } from "react";
+import z from "zod";
 import { CallToAction } from "@/components/call-to-action";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { useCategoriesQuery } from "@/hooks/_related/blog/use-categories-query";
 import { BlogArticles } from "./~components/blog-articles";
 import { ArticlesFilters } from "./~components/content/articles-filters";
 
+const blogSearchSchema = z.object({
+	search: z.string().optional().catch(undefined),
+	category: z.number().optional().catch(undefined),
+});
+
 export const Route = createFileRoute("/_app/_related/blog/")({
 	component: Blog,
+	validateSearch: blogSearchSchema,
 	head: () => ({
 		meta: [
 			{
@@ -20,11 +28,73 @@ export const Route = createFileRoute("/_app/_related/blog/")({
 });
 
 function Blog() {
+	const navigate = useNavigate({ from: "/blog" });
+
+	const { data: categories = [] } = useCategoriesQuery();
+	const { search: searchQuery, category: selectedCategory } = Route.useSearch();
+
 	const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+	const [searchArticle, setSearchArticle] = useState(searchQuery || "");
 
 	const toggleFilters = () => {
 		setIsFiltersOpen(!isFiltersOpen);
 	};
+
+	const updateURL = (newSearch?: string, newCategory?: number | null) => {
+		// biome-ignore lint/suspicious/noExplicitAny: required by search-params
+		const params: any = {};
+
+		// biome-ignore lint/complexity/useOptionalChain: required by search-params
+		if (newSearch && newSearch.trim()) {
+			params.search = newSearch.trim();
+		}
+
+		if (newCategory) {
+			params.category = newCategory;
+		}
+
+		navigate({
+			search: params,
+			replace: true,
+		});
+	};
+
+	const handleSearch = () => {
+		const trimmedSearch = searchArticle.trim();
+		updateURL(trimmedSearch, selectedCategory);
+		setSearchArticle(trimmedSearch);
+	};
+
+	const handleKeyPress = (e: React.KeyboardEvent) => {
+		if (e.key === "Enter") {
+			handleSearch();
+		}
+	};
+
+	const handleCategoryChange = (categoryId: number | null) => {
+		updateURL(searchQuery, categoryId);
+	};
+
+	const clearAllFilters = () => {
+		setSearchArticle("");
+		navigate({
+			search: {},
+			replace: true,
+		});
+	};
+
+	const clearSearch = () => {
+		setSearchArticle("");
+		updateURL("", selectedCategory);
+	};
+
+	const clearCategory = () => {
+		updateURL(searchQuery, null);
+	};
+
+	const selectedCategoryName = categories.find(
+		(category) => category.id === selectedCategory
+	)?.name;
 
 	return (
 		<main className="flex flex-col">
@@ -50,25 +120,99 @@ function Blog() {
 						</p>
 					</div>
 
-					<div className="flex w-full items-center gap-2 md:w-auto">
-						<div className="relative flex flex-1 items-center gap-2 md:w-80">
-							<Search className="-translate-y-1/2 absolute top-1/2 left-3 h-4 w-4 text-gray-400" />
-							<Input className="pl-10" placeholder="Procure por um tema..." />
+					<div className="flex w-full flex-col gap-4 md:w-auto">
+						<div className="flex w-full items-center gap-2 md:w-auto">
+							<div className="relative flex flex-1 items-center gap-2 md:w-80">
+								<Search className="-translate-y-1/2 absolute top-1/2 left-3 h-4 w-4 text-gray-400" />
 
-							<Button>
-								<ArrowRight />
+								<Input
+									className="pl-10"
+									onChange={(e) => setSearchArticle(e.target.value)}
+									onKeyPress={handleKeyPress}
+									placeholder="Procure por um artigo..."
+									value={searchArticle}
+								/>
+
+								{/* {searchQuery && (
+									<Button
+										className="-translate-y-1/2 absolute top-1/2 right-12 h-6 w-6 p-0"
+										onClick={clearSearch}
+										size="sm"
+										variant="ghost"
+									>
+										<X className="h-4 w-4" />
+									</Button>
+								)} */}
+
+								<Button onClick={handleSearch}>
+									<ArrowRight />
+								</Button>
+							</div>
+
+							<Button
+								className="lg:hidden"
+								onClick={toggleFilters}
+								variant="secondary"
+							>
+								<Filter />
 							</Button>
 						</div>
 
-						<Button
-							className="lg:hidden"
-							onClick={toggleFilters}
-							variant="secondary"
-						>
-							<Filter />
-						</Button>
+						{/* {searchQuery && (
+							<span className="text-sm text-white/80 md:max-w-sm dark:text-muted-foreground">
+								Pesquisando por: "{searchQuery}"
+							</span>
+						)} */}
 					</div>
 				</article>
+
+				{(searchQuery || selectedCategory) && (
+					<div className="mt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+						<div className="flex flex-wrap items-center gap-2">
+							<span className="text-gray-600 text-sm dark:text-gray-400">
+								Filtros ativos:
+							</span>
+
+							{searchQuery && (
+								<span className="inline-flex items-center gap-1 rounded-full bg-blue-100 px-3 py-1 text-blue-800 text-sm dark:bg-blue-900 dark:text-blue-200">
+									Pesquisa: "{searchQuery}"
+									<Button
+										className="h-4 w-4 p-0 hover:bg-blue-200 dark:hover:bg-blue-800"
+										onClick={clearSearch}
+										size="sm"
+										variant="ghost"
+									>
+										<X className="h-3 w-3" />
+									</Button>
+								</span>
+							)}
+
+							{selectedCategory && (
+								<span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-3 py-1 text-green-800 text-sm dark:bg-green-900 dark:text-green-200">
+									Categoria: {selectedCategoryName}
+									<Button
+										className="h-4 w-4 p-0 hover:bg-green-200 dark:hover:bg-green-800"
+										onClick={clearCategory}
+										size="sm"
+										variant="ghost"
+									>
+										<X className="h-3 w-3" />
+									</Button>
+								</span>
+							)}
+						</div>
+
+						<Button
+							className="w-full self-start text-xs md:w-fit md:self-auto"
+							onClick={clearAllFilters}
+							size="sm"
+							variant="outline"
+						>
+							Limpar tudo
+						</Button>
+					</div>
+				)}
+
 				<div
 					className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
 						isFiltersOpen
@@ -78,14 +222,31 @@ function Blog() {
 				>
 					<div className="rounded-md border border-input bg-secondary-white dark:bg-primary-dark">
 						<div className="mx-auto max-w-7xl px-4 py-4">
-							<ArticlesFilters isMobileView={true} />
+							<ArticlesFilters
+								isMobileView={true}
+								onCategoryChange={handleCategoryChange}
+								selectedCategory={selectedCategory}
+							/>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 lg:pb-10">
-				<BlogArticles />
+				<div className="flex flex-col gap-8 lg:flex-row">
+					<ArticlesFilters
+						isMobileView={false}
+						onCategoryChange={handleCategoryChange}
+						selectedCategory={selectedCategory}
+					/>
+
+					<div className="flex-1">
+						<BlogArticles
+							searchQuery={searchQuery}
+							selectedCategory={selectedCategory}
+						/>
+					</div>
+				</div>
 			</div>
 
 			<Separator className="mt-10" />
