@@ -1,4 +1,4 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
@@ -19,6 +19,18 @@ import { AppSidebar } from "@/components/ui/sidebar/app-sidebar";
 
 export const Route = createFileRoute("/_app/_admin")({
 	component: Layout,
+	beforeLoad: ({ location }) => {
+		const token = localStorage.getItem("strapi_jwt");
+
+		if (!token) {
+			throw redirect({
+				to: '/sign-in',
+				search: {
+					redirect: location.href,
+				},
+			});
+		};
+	},
 });
 
 function Layout() {

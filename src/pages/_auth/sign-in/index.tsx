@@ -1,8 +1,17 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { SiginInForm } from "./~components/sign-in-form";
 
 export const Route = createFileRoute("/_auth/sign-in/")({
 	component: SignIn,
+	beforeLoad: () => {
+		const token = localStorage.getItem("strapi_jwt");
+
+		if (token) {
+			throw redirect({
+				to: '/dashboard',
+			});
+		};
+	},
 });
 
 function SignIn() {

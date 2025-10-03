@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -13,6 +13,9 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useAuth } from "@/hooks/_auth/use-auth";
+import { Spinner } from "@/components/ui/spinner";
+import { ArrowRight, Check } from "lucide-react";
 
 export const Route = createFileRoute("/_auth/sign-in/~components/sign-in-form")(
 	{
@@ -30,6 +33,10 @@ const signInFormSchema = z.object({
 });
 
 export function SiginInForm() {
+	const navigate = useNavigate();
+
+	const { login, isLoggingIn, loginError } = useAuth();
+
 	const form = useForm<z.infer<typeof signInFormSchema>>({
 		resolver: zodResolver(signInFormSchema),
 		defaultValues: {
@@ -38,13 +45,28 @@ export function SiginInForm() {
 		},
 	});
 
-	function onSubmit(values: z.infer<typeof signInFormSchema>) {
-		// biome-ignore lint/suspicious/noConsole: only used in development
-		console.log(values);
+	async function onSubmit(values: z.infer<typeof signInFormSchema>) {
+		try {
+			await login({
+				identifier: values.email, // E-mail ou username
+				password: values.password,
+			});
 
-		toast("Login realizado com sucesso!", {
-			description: "Redirecionando para o dashboard...",
-		});
+			toast.success("Bem-vindo de volta! :)", {
+				description: "Redirecionando para o dashboard...",
+			});
+
+			const redirectTo = (URLSearchParams as any)?.redirect || "/dashboard";
+
+			navigate({
+				to: redirectTo,
+				replace: true,
+			});
+		} catch (error: any) {
+			toast.error("Erro! :/", {
+				description: error.message || "E-mail ou senha incorretos/inválidos! Tente novamente...",
+			});
+		}
 	}
 
 	return (
@@ -98,12 +120,33 @@ export function SiginInForm() {
 						)}
 					/>
 
+					{loginError && (
+						<div className="rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700 text-sm">
+							{loginError.message}
+						</div>
+					)}
+
 					<Button
 						className="w-full bg-primary-green font-semibold text-black hover:bg-primary-green/80"
 						type="submit"
 						variant="secondary"
+						disabled={isLoggingIn}
 					>
-						Entrar
+						{isLoggingIn ? (
+							<div className="flex gap-4">
+								<Spinner />
+								<p>
+									Entrando...
+								</p>
+							</div>
+						) : (
+							<div className="flex gap-2 items-center group transition-all">
+								<span>Entrar</span>
+								<span className="group-hover:-translate-x-4 ml-1 transition-all duration-300 group-hover:opacity-0">
+									<ArrowRight />
+								</span>
+							</div>
+						)}
 					</Button>
 				</form>
 			</Form>
@@ -117,6 +160,15 @@ export function SiginInForm() {
 					Cadastre-se
 				</Link>
 			</div>
+
+			{/* <div className="text-center text-sm">
+				<Link 
+					className="text-muted-foreground hover:text-primary hover:underline"
+					to="/forgot-password"
+				>
+					Esqueceu sua senha?
+				</Link>
+			</div> */}
 		</div>
 	);
 }

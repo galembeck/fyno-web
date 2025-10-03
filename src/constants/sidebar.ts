@@ -12,11 +12,6 @@ import {
 } from "lucide-react";
 
 export const sidebarData = {
-	user: {
-		name: "Pedro Galembeck",
-		email: "pedro.galembeck@mblabs.com.br",
-		avatar: "/avatars/shadcn.jpg",
-	},
 	teams: [
 		{
 			name: "Galembeck's Coorp.",
