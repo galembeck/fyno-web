@@ -31,6 +31,7 @@ import { Route as AppRelatedBlogChar126componentsBlogArticlesRouteImport } from 
 import { Route as AppPublicChar126componentsSectionsTaxesRouteImport } from './pages/_app/_public/~components/sections/taxes'
 import { Route as AppPublicChar126componentsSectionsRewardsRouteImport } from './pages/_app/_public/~components/sections/rewards'
 import { Route as AppPublicChar126componentsSectionsResourcesRouteImport } from './pages/_app/_public/~components/sections/resources'
+import { Route as AppPublicChar126componentsSectionsRecentArticlesRouteImport } from './pages/_app/_public/~components/sections/recent-articles'
 import { Route as AppPublicChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/~components/sections/intro'
 import { Route as AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_app/_public/~components/sections/companies-marquee'
 import { Route as AppPublicChar126componentsSectionsBenefitsRouteImport } from './pages/_app/_public/~components/sections/benefits'
@@ -168,6 +169,12 @@ const AppPublicChar126componentsSectionsResourcesRoute =
     path: '/~components/sections/resources',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
+const AppPublicChar126componentsSectionsRecentArticlesRoute =
+  AppPublicChar126componentsSectionsRecentArticlesRouteImport.update({
+    id: '/~components/sections/recent-articles',
+    path: '/~components/sections/recent-articles',
+    getParentRoute: () => AppPublicLayoutRoute,
+  } as any)
 const AppPublicChar126componentsSectionsIntroRoute =
   AppPublicChar126componentsSectionsIntroRouteImport.update({
     id: '/~components/sections/intro',
@@ -297,6 +304,7 @@ export interface FileRoutesByFullPath {
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
+  '/~components/sections/recent-articles': typeof AppPublicChar126componentsSectionsRecentArticlesRoute
   '/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
@@ -333,6 +341,7 @@ export interface FileRoutesByTo {
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
+  '/~components/sections/recent-articles': typeof AppPublicChar126componentsSectionsRecentArticlesRoute
   '/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
@@ -374,6 +383,7 @@ export interface FileRoutesById {
   '/_app/_public/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/_app/_public/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/_app/_public/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
+  '/_app/_public/~components/sections/recent-articles': typeof AppPublicChar126componentsSectionsRecentArticlesRoute
   '/_app/_public/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/_app/_public/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/_app/_public/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
@@ -413,6 +423,7 @@ export interface FileRouteTypes {
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
+    | '/~components/sections/recent-articles'
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
     | '/~components/sections/taxes'
@@ -449,6 +460,7 @@ export interface FileRouteTypes {
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
+    | '/~components/sections/recent-articles'
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
     | '/~components/sections/taxes'
@@ -489,6 +501,7 @@ export interface FileRouteTypes {
     | '/_app/_public/~components/sections/benefits'
     | '/_app/_public/~components/sections/companies-marquee'
     | '/_app/_public/~components/sections/intro'
+    | '/_app/_public/~components/sections/recent-articles'
     | '/_app/_public/~components/sections/resources'
     | '/_app/_public/~components/sections/rewards'
     | '/_app/_public/~components/sections/taxes'
@@ -676,6 +689,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicChar126componentsSectionsResourcesRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
+    '/_app/_public/~components/sections/recent-articles': {
+      id: '/_app/_public/~components/sections/recent-articles'
+      path: '/~components/sections/recent-articles'
+      fullPath: '/~components/sections/recent-articles'
+      preLoaderRoute: typeof AppPublicChar126componentsSectionsRecentArticlesRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
+    }
     '/_app/_public/~components/sections/intro': {
       id: '/_app/_public/~components/sections/intro'
       path: '/~components/sections/intro'
@@ -809,6 +829,7 @@ interface AppPublicLayoutRouteChildren {
   AppPublicChar126componentsSectionsBenefitsRoute: typeof AppPublicChar126componentsSectionsBenefitsRoute
   AppPublicChar126componentsSectionsCompaniesMarqueeRoute: typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   AppPublicChar126componentsSectionsIntroRoute: typeof AppPublicChar126componentsSectionsIntroRoute
+  AppPublicChar126componentsSectionsRecentArticlesRoute: typeof AppPublicChar126componentsSectionsRecentArticlesRoute
   AppPublicChar126componentsSectionsResourcesRoute: typeof AppPublicChar126componentsSectionsResourcesRoute
   AppPublicChar126componentsSectionsRewardsRoute: typeof AppPublicChar126componentsSectionsRewardsRoute
   AppPublicChar126componentsSectionsTaxesRoute: typeof AppPublicChar126componentsSectionsTaxesRoute
@@ -826,6 +847,8 @@ const AppPublicLayoutRouteChildren: AppPublicLayoutRouteChildren = {
     AppPublicChar126componentsSectionsCompaniesMarqueeRoute,
   AppPublicChar126componentsSectionsIntroRoute:
     AppPublicChar126componentsSectionsIntroRoute,
+  AppPublicChar126componentsSectionsRecentArticlesRoute:
+    AppPublicChar126componentsSectionsRecentArticlesRoute,
   AppPublicChar126componentsSectionsResourcesRoute:
     AppPublicChar126componentsSectionsResourcesRoute,
   AppPublicChar126componentsSectionsRewardsRoute:

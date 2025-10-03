@@ -1,5 +1,12 @@
+import { createFileRoute } from "@tanstack/react-router";
 import { RecentArticlesCarousel } from "@/components/recent-articles-carousel";
 import { Badge } from "@/components/ui/badge";
+
+export const Route = createFileRoute(
+	"/_app/_public/~components/sections/recent-articles"
+)({
+	component: RecentArticles,
+});
 
 export function RecentArticles() {
 	return (
