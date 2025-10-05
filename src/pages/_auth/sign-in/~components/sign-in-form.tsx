@@ -1,5 +1,8 @@
+/** biome-ignore-all lint/suspicious/noExplicitAny: required by @Vite */
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -13,9 +16,8 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useAuth } from "@/hooks/_auth/use-auth";
 import { Spinner } from "@/components/ui/spinner";
-import { ArrowRight, Check } from "lucide-react";
+import { useAuth } from "@/hooks/_auth/use-auth";
 
 export const Route = createFileRoute("/_auth/sign-in/~components/sign-in-form")(
 	{
@@ -64,7 +66,9 @@ export function SiginInForm() {
 			});
 		} catch (error: any) {
 			toast.error("Erro! :/", {
-				description: error.message || "E-mail ou senha incorretos/inválidos! Tente novamente...",
+				description:
+					error.message ||
+					"E-mail ou senha incorretos/inválidos! Tente novamente...",
 			});
 		}
 	}
@@ -128,19 +132,17 @@ export function SiginInForm() {
 
 					<Button
 						className="w-full bg-primary-green font-semibold text-black hover:bg-primary-green/80"
+						disabled={isLoggingIn}
 						type="submit"
 						variant="secondary"
-						disabled={isLoggingIn}
 					>
 						{isLoggingIn ? (
 							<div className="flex gap-4">
 								<Spinner />
-								<p>
-									Entrando...
-								</p>
+								<p>Entrando...</p>
 							</div>
 						) : (
-							<div className="flex gap-2 items-center group transition-all">
+							<div className="group flex items-center gap-2 transition-all">
 								<span>Entrar</span>
 								<span className="group-hover:-translate-x-4 ml-1 transition-all duration-300 group-hover:opacity-0">
 									<ArrowRight />

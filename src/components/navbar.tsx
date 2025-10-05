@@ -8,11 +8,15 @@ import {
 	X,
 } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/hooks/_auth/use-auth";
+import { ProfileDropdown } from "./profile-dropdown";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 
 export function Navbar() {
 	const navigate = useNavigate();
+
+	const { user } = useAuth();
 
 	function navigateToBlog() {
 		navigate({ to: "/blog" });
@@ -84,21 +88,27 @@ export function Navbar() {
 					</div>
 
 					<div className="flex items-center gap-2">
-						<Button
-							className="hidden cursor-pointer rounded-3xl px-6 py-5 text-base lg:flex"
-							onClick={() => navigate({ to: "/sign-in" })}
-							variant="secondary"
-						>
-							Entrar
-							<ChevronRight className="size-5" />
-						</Button>
-						<Button
-							className="hidden cursor-pointer rounded-3xl bg-primary-green px-6 py-5 text-base text-black hover:bg-primary-green/80 lg:flex"
-							onClick={() => navigate({ to: "/sign-up" })}
-						>
-							Criar conta
-							<LogIn className="size-5" />
-						</Button>
+						{user ? (
+							<ProfileDropdown />
+						) : (
+							<>
+								<Button
+									className="hidden cursor-pointer rounded-3xl px-6 py-5 text-base lg:flex"
+									onClick={() => navigate({ to: "/sign-in" })}
+									variant="secondary"
+								>
+									Entrar
+									<ChevronRight className="size-5" />
+								</Button>
+								<Button
+									className="hidden cursor-pointer rounded-3xl bg-primary-green px-6 py-5 text-base text-black hover:bg-primary-green/80 lg:flex"
+									onClick={() => navigate({ to: "/sign-up" })}
+								>
+									Criar conta
+									<LogIn className="size-5" />
+								</Button>
+							</>
+						)}
 
 						<Button
 							className="cursor-pointer lg:hidden"
@@ -161,27 +171,31 @@ export function Navbar() {
 							Blog
 						</Button>
 
-						<Button
-							className="w-full cursor-pointer py-5 font-semibold text-base"
-							onClick={() => {
-								closeMenu();
-								navigate({ to: "/sign-in" });
-							}}
-							variant="secondary"
-						>
-							Entrar
-							<ChevronRight className="size-5" />
-						</Button>
-						<Button
-							className="w-full cursor-pointer bg-primary-green py-5 font-semibold text-base text-black hover:bg-primary-green/80"
-							onClick={() => {
-								closeMenu();
-								navigate({ to: "/sign-up" });
-							}}
-						>
-							Criar conta
-							<LogIn className="size-5" />
-						</Button>
+						{!user && (
+							<>
+								<Button
+									className="w-full cursor-pointer py-5 font-semibold text-base"
+									onClick={() => {
+										closeMenu();
+										navigate({ to: "/sign-in" });
+									}}
+									variant="secondary"
+								>
+									Entrar
+									<ChevronRight className="size-5" />
+								</Button>
+								<Button
+									className="w-full cursor-pointer bg-primary-green py-5 font-semibold text-base text-black hover:bg-primary-green/80"
+									onClick={() => {
+										closeMenu();
+										navigate({ to: "/sign-up" });
+									}}
+								>
+									Criar conta
+									<LogIn className="size-5" />
+								</Button>
+							</>
+						)}
 					</div>
 				</div>
 			</div>

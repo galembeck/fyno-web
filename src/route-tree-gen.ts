@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './pages/__root'
+import { Route as ErrorNotFoundRouteImport } from './pages/_error/not-found'
+import { Route as AuthSignUpLayoutRouteImport } from './pages/_auth/sign-up/layout'
 import { Route as AppPublicLayoutRouteImport } from './pages/_app/_public/layout'
 import { Route as AppAdminLayoutRouteImport } from './pages/_app/_admin/layout'
 import { Route as AuthSignUpIndexRouteImport } from './pages/_auth/sign-up/index'
@@ -16,6 +18,8 @@ import { Route as AuthSignInIndexRouteImport } from './pages/_auth/sign-in/index
 import { Route as AppPublicIndexRouteImport } from './pages/_app/_public/index'
 import { Route as AppRelatedBlogLayoutRouteImport } from './pages/_app/_related/blog/layout'
 import { Route as AppRelatedComplianceLayoutRouteImport } from './pages/_app/_related/_compliance/layout'
+import { Route as AuthSignUpTaxesNegotiationIndexRouteImport } from './pages/_auth/sign-up/taxes-negotiation/index'
+import { Route as AuthSignUpRegisterIndexRouteImport } from './pages/_auth/sign-up/register/index'
 import { Route as AppRelatedBlogIndexRouteImport } from './pages/_app/_related/blog/index'
 import { Route as AppPublicRewardsIndexRouteImport } from './pages/_app/_public/rewards/index'
 import { Route as AppAdminDashboardIndexRouteImport } from './pages/_app/_admin/dashboard/index'
@@ -26,6 +30,8 @@ import { Route as AppRelatedComplianceProhibitedProductsRouteImport } from './pa
 import { Route as AppRelatedCompliancePrivacyPolicyRouteImport } from './pages/_app/_related/_compliance/privacy-policy'
 import { Route as AppRelatedComplianceContactRouteImport } from './pages/_app/_related/_compliance/contact'
 import { Route as AppRelatedComplianceComplaintsRouteImport } from './pages/_app/_related/_compliance/complaints'
+import { Route as AuthSignUpRegisterChar126componentsRegisterFormRouteImport } from './pages/_auth/sign-up/register/~components/register-form'
+import { Route as AuthSignUpRegisterChar126componentsLeaveConfirmationRouteImport } from './pages/_auth/sign-up/register/~components/leave-confirmation'
 import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
 import { Route as AppRelatedBlogChar126componentsBlogArticlesRouteImport } from './pages/_app/_related/blog/~components/blog-articles'
 import { Route as AppPublicChar126componentsSectionsTaxesRouteImport } from './pages/_app/_public/~components/sections/taxes'
@@ -49,6 +55,16 @@ import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZ
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
 
+const ErrorNotFoundRoute = ErrorNotFoundRouteImport.update({
+  id: '/_error/not-found',
+  path: '/not-found',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthSignUpLayoutRoute = AuthSignUpLayoutRouteImport.update({
+  id: '/_auth/sign-up',
+  path: '/sign-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppPublicLayoutRoute = AppPublicLayoutRouteImport.update({
   id: '/_app/_public',
   getParentRoute: () => rootRouteImport,
@@ -58,9 +74,9 @@ const AppAdminLayoutRoute = AppAdminLayoutRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthSignUpIndexRoute = AuthSignUpIndexRouteImport.update({
-  id: '/_auth/sign-up/',
-  path: '/sign-up/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthSignUpLayoutRoute,
 } as any)
 const AuthSignInIndexRoute = AuthSignInIndexRouteImport.update({
   id: '/_auth/sign-in/',
@@ -82,6 +98,17 @@ const AppRelatedComplianceLayoutRoute =
     id: '/_app/_related/_compliance',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AuthSignUpTaxesNegotiationIndexRoute =
+  AuthSignUpTaxesNegotiationIndexRouteImport.update({
+    id: '/taxes-negotiation/',
+    path: '/taxes-negotiation/',
+    getParentRoute: () => AuthSignUpLayoutRoute,
+  } as any)
+const AuthSignUpRegisterIndexRoute = AuthSignUpRegisterIndexRouteImport.update({
+  id: '/register/',
+  path: '/register/',
+  getParentRoute: () => AuthSignUpLayoutRoute,
+} as any)
 const AppRelatedBlogIndexRoute = AppRelatedBlogIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -99,9 +126,9 @@ const AppAdminDashboardIndexRoute = AppAdminDashboardIndexRouteImport.update({
 } as any)
 const AuthSignUpChar126componentsSignUpFormRoute =
   AuthSignUpChar126componentsSignUpFormRouteImport.update({
-    id: '/_auth/sign-up/~components/sign-up-form',
-    path: '/sign-up/~components/sign-up-form',
-    getParentRoute: () => rootRouteImport,
+    id: '/~components/sign-up-form',
+    path: '/~components/sign-up-form',
+    getParentRoute: () => AuthSignUpLayoutRoute,
   } as any)
 const AuthSignInChar126componentsSignInFormRoute =
   AuthSignInChar126componentsSignInFormRouteImport.update({
@@ -138,6 +165,18 @@ const AppRelatedComplianceComplaintsRoute =
     id: '/complaints',
     path: '/complaints',
     getParentRoute: () => AppRelatedComplianceLayoutRoute,
+  } as any)
+const AuthSignUpRegisterChar126componentsRegisterFormRoute =
+  AuthSignUpRegisterChar126componentsRegisterFormRouteImport.update({
+    id: '/register/~components/register-form',
+    path: '/register/~components/register-form',
+    getParentRoute: () => AuthSignUpLayoutRoute,
+  } as any)
+const AuthSignUpRegisterChar126componentsLeaveConfirmationRoute =
+  AuthSignUpRegisterChar126componentsLeaveConfirmationRouteImport.update({
+    id: '/register/~components/leave-confirmation',
+    path: '/register/~components/leave-confirmation',
+    getParentRoute: () => AuthSignUpLayoutRoute,
   } as any)
 const AppRelatedBlogChar126componentsNavbarRoute =
   AppRelatedBlogChar126componentsNavbarRouteImport.update({
@@ -287,10 +326,12 @@ const AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichC
   )
 
 export interface FileRoutesByFullPath {
+  '/sign-up': typeof AuthSignUpLayoutRouteWithChildren
+  '/not-found': typeof ErrorNotFoundRoute
   '/blog': typeof AppRelatedBlogLayoutRouteWithChildren
   '/': typeof AppPublicIndexRoute
   '/sign-in': typeof AuthSignInIndexRoute
-  '/sign-up': typeof AuthSignUpIndexRoute
+  '/sign-up/': typeof AuthSignUpIndexRoute
   '/complaints': typeof AppRelatedComplianceComplaintsRoute
   '/contact': typeof AppRelatedComplianceContactRoute
   '/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
@@ -301,6 +342,8 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof AppAdminDashboardIndexRoute
   '/rewards': typeof AppPublicRewardsIndexRoute
   '/blog/': typeof AppRelatedBlogIndexRoute
+  '/sign-up/register': typeof AuthSignUpRegisterIndexRoute
+  '/sign-up/taxes-negotiation': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -310,6 +353,8 @@ export interface FileRoutesByFullPath {
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
+  '/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
@@ -325,6 +370,7 @@ export interface FileRoutesByFullPath {
   '/blog/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
 }
 export interface FileRoutesByTo {
+  '/not-found': typeof ErrorNotFoundRoute
   '/': typeof AppPublicIndexRoute
   '/sign-in': typeof AuthSignInIndexRoute
   '/sign-up': typeof AuthSignUpIndexRoute
@@ -338,6 +384,8 @@ export interface FileRoutesByTo {
   '/dashboard': typeof AppAdminDashboardIndexRoute
   '/rewards': typeof AppPublicRewardsIndexRoute
   '/blog': typeof AppRelatedBlogIndexRoute
+  '/sign-up/register': typeof AuthSignUpRegisterIndexRoute
+  '/sign-up/taxes-negotiation': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -347,6 +395,8 @@ export interface FileRoutesByTo {
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
+  '/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
@@ -365,6 +415,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app/_admin': typeof AppAdminLayoutRouteWithChildren
   '/_app/_public': typeof AppPublicLayoutRouteWithChildren
+  '/_auth/sign-up': typeof AuthSignUpLayoutRouteWithChildren
+  '/_error/not-found': typeof ErrorNotFoundRoute
   '/_app/_related/_compliance': typeof AppRelatedComplianceLayoutRouteWithChildren
   '/_app/_related/blog': typeof AppRelatedBlogLayoutRouteWithChildren
   '/_app/_public/': typeof AppPublicIndexRoute
@@ -380,6 +432,8 @@ export interface FileRoutesById {
   '/_app/_admin/dashboard/': typeof AppAdminDashboardIndexRoute
   '/_app/_public/rewards/': typeof AppPublicRewardsIndexRoute
   '/_app/_related/blog/': typeof AppRelatedBlogIndexRoute
+  '/_auth/sign-up/register/': typeof AuthSignUpRegisterIndexRoute
+  '/_auth/sign-up/taxes-negotiation/': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/_app/_public/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/_app/_public/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/_app/_public/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -389,6 +443,8 @@ export interface FileRoutesById {
   '/_app/_public/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/_app/_related/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/_auth/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
+  '/_auth/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
   '/_app/_public/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/_app/_public/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/_app/_public/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
@@ -406,10 +462,12 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/sign-up'
+    | '/not-found'
     | '/blog'
     | '/'
     | '/sign-in'
-    | '/sign-up'
+    | '/sign-up/'
     | '/complaints'
     | '/contact'
     | '/privacy-policy'
@@ -420,6 +478,8 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/rewards'
     | '/blog/'
+    | '/sign-up/register'
+    | '/sign-up/taxes-negotiation'
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
@@ -429,6 +489,8 @@ export interface FileRouteTypes {
     | '/~components/sections/taxes'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
+    | '/sign-up/register/~components/leave-confirmation'
+    | '/sign-up/register/~components/register-form'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
@@ -444,6 +506,7 @@ export interface FileRouteTypes {
     | '/blog/$articleId/~components/dynamic-zone/related-articles'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/not-found'
     | '/'
     | '/sign-in'
     | '/sign-up'
@@ -457,6 +520,8 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/rewards'
     | '/blog'
+    | '/sign-up/register'
+    | '/sign-up/taxes-negotiation'
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
@@ -466,6 +531,8 @@ export interface FileRouteTypes {
     | '/~components/sections/taxes'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
+    | '/sign-up/register/~components/leave-confirmation'
+    | '/sign-up/register/~components/register-form'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
@@ -483,6 +550,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/_app/_admin'
     | '/_app/_public'
+    | '/_auth/sign-up'
+    | '/_error/not-found'
     | '/_app/_related/_compliance'
     | '/_app/_related/blog'
     | '/_app/_public/'
@@ -498,6 +567,8 @@ export interface FileRouteTypes {
     | '/_app/_admin/dashboard/'
     | '/_app/_public/rewards/'
     | '/_app/_related/blog/'
+    | '/_auth/sign-up/register/'
+    | '/_auth/sign-up/taxes-negotiation/'
     | '/_app/_public/~components/sections/benefits'
     | '/_app/_public/~components/sections/companies-marquee'
     | '/_app/_public/~components/sections/intro'
@@ -507,6 +578,8 @@ export interface FileRouteTypes {
     | '/_app/_public/~components/sections/taxes'
     | '/_app/_related/blog/~components/blog-articles'
     | '/_app/_related/blog/~components/navbar'
+    | '/_auth/sign-up/register/~components/leave-confirmation'
+    | '/_auth/sign-up/register/~components/register-form'
     | '/_app/_public/rewards/~components/sections/intro'
     | '/_app/_public/rewards/~components/sections/pictures-carousel'
     | '/_app/_public/rewards/~components/sections/rewards-list'
@@ -525,16 +598,30 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   AppAdminLayoutRoute: typeof AppAdminLayoutRouteWithChildren
   AppPublicLayoutRoute: typeof AppPublicLayoutRouteWithChildren
+  AuthSignUpLayoutRoute: typeof AuthSignUpLayoutRouteWithChildren
+  ErrorNotFoundRoute: typeof ErrorNotFoundRoute
   AppRelatedComplianceLayoutRoute: typeof AppRelatedComplianceLayoutRouteWithChildren
   AppRelatedBlogLayoutRoute: typeof AppRelatedBlogLayoutRouteWithChildren
   AuthSignInIndexRoute: typeof AuthSignInIndexRoute
-  AuthSignUpIndexRoute: typeof AuthSignUpIndexRoute
   AuthSignInChar126componentsSignInFormRoute: typeof AuthSignInChar126componentsSignInFormRoute
-  AuthSignUpChar126componentsSignUpFormRoute: typeof AuthSignUpChar126componentsSignUpFormRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/_error/not-found': {
+      id: '/_error/not-found'
+      path: '/not-found'
+      fullPath: '/not-found'
+      preLoaderRoute: typeof ErrorNotFoundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth/sign-up': {
+      id: '/_auth/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof AuthSignUpLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_app/_public': {
       id: '/_app/_public'
       path: ''
@@ -551,10 +638,10 @@ declare module '@tanstack/react-router' {
     }
     '/_auth/sign-up/': {
       id: '/_auth/sign-up/'
-      path: '/sign-up'
-      fullPath: '/sign-up'
+      path: '/'
+      fullPath: '/sign-up/'
       preLoaderRoute: typeof AuthSignUpIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AuthSignUpLayoutRoute
     }
     '/_auth/sign-in/': {
       id: '/_auth/sign-in/'
@@ -584,6 +671,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedComplianceLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_auth/sign-up/taxes-negotiation/': {
+      id: '/_auth/sign-up/taxes-negotiation/'
+      path: '/taxes-negotiation'
+      fullPath: '/sign-up/taxes-negotiation'
+      preLoaderRoute: typeof AuthSignUpTaxesNegotiationIndexRouteImport
+      parentRoute: typeof AuthSignUpLayoutRoute
+    }
+    '/_auth/sign-up/register/': {
+      id: '/_auth/sign-up/register/'
+      path: '/register'
+      fullPath: '/sign-up/register'
+      preLoaderRoute: typeof AuthSignUpRegisterIndexRouteImport
+      parentRoute: typeof AuthSignUpLayoutRoute
+    }
     '/_app/_related/blog/': {
       id: '/_app/_related/blog/'
       path: '/'
@@ -607,10 +708,10 @@ declare module '@tanstack/react-router' {
     }
     '/_auth/sign-up/~components/sign-up-form': {
       id: '/_auth/sign-up/~components/sign-up-form'
-      path: '/sign-up/~components/sign-up-form'
+      path: '/~components/sign-up-form'
       fullPath: '/sign-up/~components/sign-up-form'
       preLoaderRoute: typeof AuthSignUpChar126componentsSignUpFormRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AuthSignUpLayoutRoute
     }
     '/_auth/sign-in/~components/sign-in-form': {
       id: '/_auth/sign-in/~components/sign-in-form'
@@ -653,6 +754,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/complaints'
       preLoaderRoute: typeof AppRelatedComplianceComplaintsRouteImport
       parentRoute: typeof AppRelatedComplianceLayoutRoute
+    }
+    '/_auth/sign-up/register/~components/register-form': {
+      id: '/_auth/sign-up/register/~components/register-form'
+      path: '/register/~components/register-form'
+      fullPath: '/sign-up/register/~components/register-form'
+      preLoaderRoute: typeof AuthSignUpRegisterChar126componentsRegisterFormRouteImport
+      parentRoute: typeof AuthSignUpLayoutRoute
+    }
+    '/_auth/sign-up/register/~components/leave-confirmation': {
+      id: '/_auth/sign-up/register/~components/leave-confirmation'
+      path: '/register/~components/leave-confirmation'
+      fullPath: '/sign-up/register/~components/leave-confirmation'
+      preLoaderRoute: typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRouteImport
+      parentRoute: typeof AuthSignUpLayoutRoute
     }
     '/_app/_related/blog/~components/navbar': {
       id: '/_app/_related/blog/~components/navbar'
@@ -867,6 +982,30 @@ const AppPublicLayoutRouteWithChildren = AppPublicLayoutRoute._addFileChildren(
   AppPublicLayoutRouteChildren,
 )
 
+interface AuthSignUpLayoutRouteChildren {
+  AuthSignUpIndexRoute: typeof AuthSignUpIndexRoute
+  AuthSignUpChar126componentsSignUpFormRoute: typeof AuthSignUpChar126componentsSignUpFormRoute
+  AuthSignUpRegisterIndexRoute: typeof AuthSignUpRegisterIndexRoute
+  AuthSignUpTaxesNegotiationIndexRoute: typeof AuthSignUpTaxesNegotiationIndexRoute
+  AuthSignUpRegisterChar126componentsLeaveConfirmationRoute: typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
+  AuthSignUpRegisterChar126componentsRegisterFormRoute: typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
+}
+
+const AuthSignUpLayoutRouteChildren: AuthSignUpLayoutRouteChildren = {
+  AuthSignUpIndexRoute: AuthSignUpIndexRoute,
+  AuthSignUpChar126componentsSignUpFormRoute:
+    AuthSignUpChar126componentsSignUpFormRoute,
+  AuthSignUpRegisterIndexRoute: AuthSignUpRegisterIndexRoute,
+  AuthSignUpTaxesNegotiationIndexRoute: AuthSignUpTaxesNegotiationIndexRoute,
+  AuthSignUpRegisterChar126componentsLeaveConfirmationRoute:
+    AuthSignUpRegisterChar126componentsLeaveConfirmationRoute,
+  AuthSignUpRegisterChar126componentsRegisterFormRoute:
+    AuthSignUpRegisterChar126componentsRegisterFormRoute,
+}
+
+const AuthSignUpLayoutRouteWithChildren =
+  AuthSignUpLayoutRoute._addFileChildren(AuthSignUpLayoutRouteChildren)
+
 interface AppRelatedComplianceLayoutRouteChildren {
   AppRelatedComplianceComplaintsRoute: typeof AppRelatedComplianceComplaintsRoute
   AppRelatedComplianceContactRoute: typeof AppRelatedComplianceContactRoute
@@ -941,14 +1080,13 @@ const AppRelatedBlogLayoutRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   AppAdminLayoutRoute: AppAdminLayoutRouteWithChildren,
   AppPublicLayoutRoute: AppPublicLayoutRouteWithChildren,
+  AuthSignUpLayoutRoute: AuthSignUpLayoutRouteWithChildren,
+  ErrorNotFoundRoute: ErrorNotFoundRoute,
   AppRelatedComplianceLayoutRoute: AppRelatedComplianceLayoutRouteWithChildren,
   AppRelatedBlogLayoutRoute: AppRelatedBlogLayoutRouteWithChildren,
   AuthSignInIndexRoute: AuthSignInIndexRoute,
-  AuthSignUpIndexRoute: AuthSignUpIndexRoute,
   AuthSignInChar126componentsSignInFormRoute:
     AuthSignInChar126componentsSignInFormRoute,
-  AuthSignUpChar126componentsSignUpFormRoute:
-    AuthSignUpChar126componentsSignUpFormRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
