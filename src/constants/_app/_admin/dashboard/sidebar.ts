@@ -29,16 +29,17 @@ export const sidebarData = {
 			plan: "Free",
 		},
 	],
+
 	navMain: [
 		{
-			title: "Playground",
-			url: "#",
+			title: "Dashboard",
+			url: "/dashboard",
 			icon: SquareTerminal,
 			isActive: true,
 			items: [
 				{
-					title: "History",
-					url: "#",
+					title: "Overview",
+					url: "/dashboard",
 				},
 				{
 					title: "Starred",
@@ -93,27 +94,27 @@ export const sidebarData = {
 			],
 		},
 		{
-			title: "Settings",
-			url: "#",
+			title: "Configurações",
+			url: "/dashboard/settings",
 			icon: Settings2,
-			items: [
-				{
-					title: "General",
-					url: "#",
-				},
-				{
-					title: "Team",
-					url: "#",
-				},
-				{
-					title: "Billing",
-					url: "#",
-				},
-				{
-					title: "Limits",
-					url: "#",
-				},
-			],
+			// items: [
+			// 	{
+			// 		title: "General",
+			// 		url: "/dashboard/settings",
+			// 	},
+			// 	{
+			// 		title: "Team",
+			// 		url: "#",
+			// 	},
+			// 	{
+			// 		title: "Billing",
+			// 		url: "#",
+			// 	},
+			// 	{
+			// 		title: "Limits",
+			// 		url: "#",
+			// 	},
+			// ],
 		},
 	],
 	projects: [

@@ -21,19 +21,43 @@ interface UseArticlesQueryOptions {
 	richContent?: boolean;
 	searchQuery?: string;
 	categoryId?: number | null;
+	page?: number;
+	pageSize?: number;
 }
 
-export const useArticlesQuery = (options?: UseArticlesQueryOptions) => {
+interface ArticlesResponse {
+	articles: Article[] | ArticleWithRichContent[];
+	meta: {
+		pagination: {
+			page: number;
+			pageSize: number;
+			pageCount: number;
+			total: number;
+		};
+	};
+}
+
+export const useArticlesQuery = (
+	options?: UseArticlesQueryOptions
+): {
+	data: ArticlesResponse | undefined;
+	isLoading: boolean;
+	error: Error | null;
+} => {
 	return useQuery({
 		queryKey: [
 			"articles",
 			options?.richContent ? "rich" : "simple",
 			options?.searchQuery,
 			options?.categoryId,
+			options?.page || 1,
+			options?.pageSize || 10,
 		],
-		queryFn: async () => {
-			let url =
-				"/articles?populate[0]=image&populate[1]=category&sort[0]=createdAt:desc";
+		queryFn: async (): Promise<ArticlesResponse> => {
+			const page = options?.page || 1;
+			const pageSize = options?.pageSize || 10;
+
+			let url = `/articles?populate[0]=image&populate[1]=category&sort[0]=createdAt:desc&pagination[page]=${page}&pagination[pageSize]=${pageSize}`;
 
 			const filters: string[] = [];
 
@@ -56,12 +80,12 @@ export const useArticlesQuery = (options?: UseArticlesQueryOptions) => {
 			const responseData = await strapiAPI.fetch(url);
 			const strapiArticles: StrapiArticle[] = responseData.data || [];
 
-			return strapiArticles.map((article) => {
-				const imgUrl = buildImageUrl(article.image);
-				const categoryName = getCategoryName(article.category);
-				const contentText = extractTextFromContent(article.content || []);
-
-				if (options?.richContent) {
+			let articles: Article[] | ArticleWithRichContent[];
+			if (options?.richContent) {
+				articles = strapiArticles.map((article) => {
+					const imgUrl = buildImageUrl(article.image);
+					const categoryName = getCategoryName(article.category);
+					const contentText = extractTextFromContent(article.content || []);
 					return {
 						id: article.id,
 						documentId: article.documentId,
@@ -77,24 +101,41 @@ export const useArticlesQuery = (options?: UseArticlesQueryOptions) => {
 						createdAt: article.createdAt,
 						updatedAt: article.updatedAt,
 					} as ArticleWithRichContent;
-				}
+				});
+			} else {
+				articles = strapiArticles.map((article) => {
+					const imgUrl = buildImageUrl(article.image);
+					const categoryName = getCategoryName(article.category);
+					const contentText = extractTextFromContent(article.content || []);
+					return {
+						id: article.id,
+						documentId: article.documentId,
+						title: article.title,
+						description: article.description,
+						slug: article.slug,
+						date: formatDate(article.publishedAt),
+						category: categoryName,
+						author: article.author,
+						readTime: article.readTime || calculateReadTime(contentText),
+						imgUrl,
+						content: contentText,
+						createdAt: article.createdAt,
+						updatedAt: article.updatedAt,
+					} as Article;
+				});
+			}
 
-				return {
-					id: article.id,
-					documentId: article.documentId,
-					title: article.title,
-					description: article.description,
-					slug: article.slug,
-					date: formatDate(article.publishedAt),
-					category: categoryName,
-					author: article.author,
-					readTime: article.readTime || calculateReadTime(contentText),
-					imgUrl,
-					content: contentText,
-					createdAt: article.createdAt,
-					updatedAt: article.updatedAt,
-				} as Article;
-			});
+			return {
+				articles,
+				meta: responseData.meta || {
+					pagination: {
+						page: 1,
+						pageSize: 10,
+						pageCount: 1,
+						total: articles.length,
+					},
+				},
+			};
 		},
 		staleTime: 5 * 60 * 1000,
 	});

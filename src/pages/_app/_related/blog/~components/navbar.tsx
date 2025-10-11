@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ChevronDown, LogIn, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ProfileDropdown } from "@/components/profile-dropdown";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,6 +17,7 @@ import {
 	DropdownMenuSubTrigger,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useAuth } from "@/hooks/_auth/use-auth";
 
 export const Route = createFileRoute("/_app/_related/blog/~components/navbar")({
 	component: Navbar,
@@ -45,6 +47,8 @@ function CareersDropdown() {
 }
 
 export function Navbar() {
+	const { user } = useAuth();
+
 	const navigate = useNavigate();
 
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -117,26 +121,32 @@ export function Navbar() {
 					</div>
 
 					<div className="flex items-center gap-3">
-						<Button
-							className="hidden cursor-pointer rounded-3xl bg-primary-green py-3 text-base text-black hover:bg-primary-green/80 lg:flex"
-							onClick={() => navigate({ to: "/sign-up" })}
-						>
-							Criar conta
-							<LogIn className="size-5" />
-						</Button>
+						{user ? (
+							<ProfileDropdown />
+						) : (
+							<>
+								<Button
+									className="hidden cursor-pointer rounded-3xl bg-primary-green py-3 text-base text-black hover:bg-primary-green/80 lg:flex"
+									onClick={() => navigate({ to: "/sign-up" })}
+								>
+									Criar conta
+									<LogIn className="size-5" />
+								</Button>
 
-						<Button
-							className="cursor-pointer lg:hidden"
-							onClick={toggleMenu}
-							size="icon"
-							variant="ghost"
-						>
-							{isMenuOpen ? (
-								<X className="size-7" />
-							) : (
-								<Menu className="size-7" />
-							)}
-						</Button>
+								<Button
+									className="cursor-pointer lg:hidden"
+									onClick={toggleMenu}
+									size="icon"
+									variant="ghost"
+								>
+									{isMenuOpen ? (
+										<X className="size-7" />
+									) : (
+										<Menu className="size-7" />
+									)}
+								</Button>
+							</>
+						)}
 
 						<ThemeToggle />
 					</div>

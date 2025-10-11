@@ -1,5 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
-import { LogOut } from "lucide-react";
+import { LayoutDashboard, LogOut } from "lucide-react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -35,19 +35,19 @@ export function ProfileDropdown() {
 			</DropdownMenuTrigger>
 
 			<DropdownMenuContent align="start" className="w-56">
-				<DropdownMenuLabel>Minha conta</DropdownMenuLabel>
+				<DropdownMenuLabel className="text-muted-foreground">
+					Painel administrativo
+				</DropdownMenuLabel>
 				<DropdownMenuGroup>
 					<DropdownMenuItem onClick={() => navigate({ to: "/dashboard" })}>
+						<LayoutDashboard />
 						Dashboard
 					</DropdownMenuItem>
 				</DropdownMenuGroup>
 
 				<DropdownMenuSeparator />
 
-				<DropdownMenuItem
-					className="cursor-pointer focus:text-red-400"
-					onClick={handleLogout}
-				>
+				<DropdownMenuItem className="focus:text-red-400" onClick={handleLogout}>
 					<LogOut />
 					Sair
 				</DropdownMenuItem>

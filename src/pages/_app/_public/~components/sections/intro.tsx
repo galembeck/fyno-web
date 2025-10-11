@@ -1,9 +1,9 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowRight, LogIn, MessageCircleIcon } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { TypingAnimation } from "@/components/ui/typing-animation";
+import { useTheme } from "@/providers/theme/theme-provider";
 
 export const Route = createFileRoute(
 	"/_app/_public/~components/sections/intro"

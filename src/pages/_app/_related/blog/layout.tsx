@@ -1,6 +1,6 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { Footer } from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/providers/theme/theme-provider";
 import { Navbar } from "./~components/navbar";
 
 export const Route = createFileRoute("/_app/_related/blog")({

@@ -1,30 +1,52 @@
+/** biome-ignore-all lint/suspicious/noEmptyBlockStatements: required by @TanStack-Router */
+
 import { createFileRoute } from "@tanstack/react-router";
 import { useArticlesQuery } from "@/hooks/_related/blog/use-articles-query";
 import { ArticleCard } from "./content/article-card";
+import { BlogPagination } from "./pagination/blog-pagination";
 
 export const Route = createFileRoute(
 	"/_app/_related/blog/~components/blog-articles"
 )({
-	component: BlogArticles,
+	component: () => (
+		<BlogArticles
+			currentPage={1}
+			itemsPerPage={10}
+			onItemsPerPageChange={() => {}}
+			onPageChange={() => {}}
+		/>
+	),
 });
 
 interface BlogArticlesProps {
 	searchQuery?: string;
-	selectedCategory?: number | null;
+	selectedCategory?: number;
+	currentPage: number;
+	itemsPerPage: number;
+	onPageChange: (page: number) => void;
+	onItemsPerPageChange: (itemsPerPage: number) => void;
 }
 
 export function BlogArticles({
 	searchQuery,
 	selectedCategory,
+	currentPage,
+	itemsPerPage,
+	onPageChange,
+	onItemsPerPageChange,
 }: BlogArticlesProps) {
 	const {
-		data: articles = [],
+		data: articlesResponse,
 		isLoading,
 		error,
 	} = useArticlesQuery({
 		searchQuery,
 		categoryId: selectedCategory,
+		page: currentPage,
+		pageSize: itemsPerPage,
 	});
+
+	const articles = articlesResponse?.articles ?? [];
 
 	if (isLoading) {
 		return (
@@ -66,6 +88,17 @@ export function BlogArticles({
 					title={article.title}
 				/>
 			))}
+
+			<BlogPagination
+				currentPage={articlesResponse?.meta.pagination.page ?? 1}
+				itemsPerPage={
+					articlesResponse?.meta.pagination.pageSize ?? itemsPerPage
+				}
+				onItemsPerPageChange={onItemsPerPageChange}
+				onPageChange={onPageChange}
+				totalItems={articlesResponse?.meta.pagination.total ?? 0}
+				totalPages={articlesResponse?.meta.pagination.pageCount ?? 1}
+			/>
 		</div>
 	);
 }

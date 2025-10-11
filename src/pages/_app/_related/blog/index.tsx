@@ -13,6 +13,8 @@ import { ArticlesFilters } from "./~components/content/articles-filters";
 const blogSearchSchema = z.object({
 	search: z.string().optional().catch(undefined),
 	category: z.number().optional().catch(undefined),
+	page: z.number().min(1).optional().catch(1),
+	pageSize: z.number().min(1).max(25).optional().catch(10),
 });
 
 export const Route = createFileRoute("/_app/_related/blog/")({
@@ -31,7 +33,12 @@ function Blog() {
 	const navigate = useNavigate({ from: "/blog" });
 
 	const { data: categories = [] } = useCategoriesQuery();
-	const { search: searchQuery, category: selectedCategory } = Route.useSearch();
+	const {
+		search: searchQuery,
+		category: selectedCategory,
+		page: currentPage = 1,
+		pageSize: itemsPerPage = 10,
+	} = Route.useSearch();
 
 	const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 	const [searchArticle, setSearchArticle] = useState(searchQuery || "");
@@ -40,28 +47,46 @@ function Blog() {
 		setIsFiltersOpen(!isFiltersOpen);
 	};
 
-	const updateURL = (newSearch?: string, newCategory?: number | null) => {
+	const updateURL = (params: {
+		search?: string;
+		category?: number | null;
+		page?: number;
+		pageSize?: number;
+	}) => {
 		// biome-ignore lint/suspicious/noExplicitAny: required by search-params
-		const params: any = {};
+		const searchParams: any = {};
 
-		// biome-ignore lint/complexity/useOptionalChain: required by search-params
-		if (newSearch && newSearch.trim()) {
-			params.search = newSearch.trim();
+		// biome-ignore lint/complexity/useOptionalChain: required by @Strapi
+		if (params.search && params.search.trim()) {
+			searchParams.search = params.search.trim();
 		}
 
-		if (newCategory) {
-			params.category = newCategory;
+		if (params.category) {
+			searchParams.category = params.category;
+		}
+
+		if (params.page && params.page > 1) {
+			searchParams.page = params.page;
+		}
+
+		if (params.pageSize && params.pageSize !== 10) {
+			searchParams.pageSize = params.pageSize;
 		}
 
 		navigate({
-			search: params,
+			search: searchParams,
 			replace: true,
 		});
 	};
 
 	const handleSearch = () => {
 		const trimmedSearch = searchArticle.trim();
-		updateURL(trimmedSearch, selectedCategory);
+		updateURL({
+			search: trimmedSearch,
+			category: selectedCategory,
+			page: 1,
+			pageSize: itemsPerPage,
+		});
 		setSearchArticle(trimmedSearch);
 	};
 
@@ -72,7 +97,30 @@ function Blog() {
 	};
 
 	const handleCategoryChange = (categoryId: number | null) => {
-		updateURL(searchQuery, categoryId);
+		updateURL({
+			search: searchQuery,
+			category: categoryId,
+			page: 1,
+			pageSize: itemsPerPage,
+		});
+	};
+
+	const handlePageChange = (page: number) => {
+		updateURL({
+			search: searchQuery,
+			category: selectedCategory,
+			page,
+			pageSize: itemsPerPage,
+		});
+	};
+
+	const handleItemsPerPageChange = (newPageSize: number) => {
+		updateURL({
+			search: searchQuery,
+			category: selectedCategory,
+			page: 1,
+			pageSize: newPageSize,
+		});
 	};
 
 	const clearAllFilters = () => {
@@ -85,11 +133,21 @@ function Blog() {
 
 	const clearSearch = () => {
 		setSearchArticle("");
-		updateURL("", selectedCategory);
+		updateURL({
+			search: "",
+			category: selectedCategory,
+			page: 1,
+			pageSize: itemsPerPage,
+		});
 	};
 
 	const clearCategory = () => {
-		updateURL(searchQuery, null);
+		updateURL({
+			search: searchQuery,
+			category: null,
+			page: 1,
+			pageSize: itemsPerPage,
+		});
 	};
 
 	const selectedCategoryName = categories.find(
@@ -133,17 +191,6 @@ function Blog() {
 									value={searchArticle}
 								/>
 
-								{/* {searchQuery && (
-									<Button
-										className="-translate-y-1/2 absolute top-1/2 right-12 h-6 w-6 p-0"
-										onClick={clearSearch}
-										size="sm"
-										variant="ghost"
-									>
-										<X className="h-4 w-4" />
-									</Button>
-								)} */}
-
 								<Button onClick={handleSearch}>
 									<ArrowRight />
 								</Button>
@@ -157,12 +204,6 @@ function Blog() {
 								<Filter />
 							</Button>
 						</div>
-
-						{/* {searchQuery && (
-							<span className="text-sm text-white/80 md:max-w-sm dark:text-muted-foreground">
-								Pesquisando por: "{searchQuery}"
-							</span>
-						)} */}
 					</div>
 				</article>
 
@@ -242,6 +283,10 @@ function Blog() {
 
 					<div className="flex-1">
 						<BlogArticles
+							currentPage={currentPage}
+							itemsPerPage={itemsPerPage}
+							onItemsPerPageChange={handleItemsPerPageChange}
+							onPageChange={handlePageChange}
 							searchQuery={searchQuery}
 							selectedCategory={selectedCategory}
 						/>

@@ -1,16 +1,15 @@
 "use client";
 
-import { useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import {
-	BadgeCheck,
 	Bell,
 	ChevronsUpDown,
 	CreditCard,
 	LogOut,
 	Sparkles,
+	User,
 } from "lucide-react";
 import { toast } from "sonner";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
 	DropdownMenu,
@@ -30,14 +29,22 @@ import {
 import { useAuth } from "@/hooks/_auth/use-auth";
 import { getInitials } from "@/lib/get-initials";
 
-export function NavUser() {
-	const { isMobile } = useSidebar();
+export const Route = createFileRoute(
+	"/_app/_admin/dashboard/~components/sidebar/elements/user-profile"
+)({
+	component: UserProfile,
+});
+
+export function UserProfile() {
 	const navigate = useNavigate();
+
+	const { isMobile } = useSidebar();
+
 	const { user, logout, isLoading } = useAuth();
 
 	const handleLogout = () => {
 		logout();
-		toast.success("Nos vemos em breve!", {
+		toast.info("Esperamos te ver em breve!", {
 			description: "Redirecionando de volta para a página inicial...",
 		});
 		navigate({ to: "/sign-in" });
@@ -127,16 +134,18 @@ export function NavUser() {
 						<DropdownMenuSeparator />
 						<DropdownMenuGroup>
 							<DropdownMenuItem>
-								<BadgeCheck />
-								Conta
-							</DropdownMenuItem>
-							<DropdownMenuItem>
 								<CreditCard />
 								Faturamento
 							</DropdownMenuItem>
 							<DropdownMenuItem>
 								<Bell />
 								Notificações
+							</DropdownMenuItem>
+							<DropdownMenuItem
+								onClick={() => navigate({ to: "/dashboard/profile" })}
+							>
+								<User />
+								Perfil
 							</DropdownMenuItem>
 						</DropdownMenuGroup>
 						<DropdownMenuSeparator />

@@ -5,6 +5,7 @@ import { strapiAPI } from "@/api/strapi";
 
 export interface User {
 	id: number;
+	documentId: string;
 	username: string;
 	email: string;
 	confirmed: boolean;
@@ -18,6 +19,13 @@ export interface User {
 	monthlyRevenue?: string;
 	phone?: string;
 	supportPhone?: string;
+
+	role?: {
+		id: number;
+		name: string;
+		description: string;
+		type: string;
+	};
 }
 
 interface AuthResponse {
@@ -128,7 +136,7 @@ const authService = {
 	},
 
 	async getMe(token: string): Promise<User> {
-		const response = await strapiAPI.fetch("/users/me", {
+		const response = await strapiAPI.fetch("/users/me?populate=role", {
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},

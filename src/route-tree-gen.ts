@@ -8,6 +8,8 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createFileRoute } from '@tanstack/react-router'
+
 import { Route as rootRouteImport } from './pages/__root'
 import { Route as ErrorNotFoundRouteImport } from './pages/_error/not-found'
 import { Route as AuthSignUpLayoutRouteImport } from './pages/_auth/sign-up/layout'
@@ -30,6 +32,8 @@ import { Route as AppRelatedComplianceProhibitedProductsRouteImport } from './pa
 import { Route as AppRelatedCompliancePrivacyPolicyRouteImport } from './pages/_app/_related/_compliance/privacy-policy'
 import { Route as AppRelatedComplianceContactRouteImport } from './pages/_app/_related/_compliance/contact'
 import { Route as AppRelatedComplianceComplaintsRouteImport } from './pages/_app/_related/_compliance/complaints'
+import { Route as AppAdminDashboardSettingsIndexRouteImport } from './pages/_app/_admin/dashboard/settings/index'
+import { Route as AppAdminDashboardProfileIndexRouteImport } from './pages/_app/_admin/dashboard/profile/index'
 import { Route as AuthSignUpRegisterChar126componentsRegisterFormRouteImport } from './pages/_auth/sign-up/register/~components/register-form'
 import { Route as AuthSignUpRegisterChar126componentsLeaveConfirmationRouteImport } from './pages/_auth/sign-up/register/~components/leave-confirmation'
 import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
@@ -41,19 +45,36 @@ import { Route as AppPublicChar126componentsSectionsRecentArticlesRouteImport } 
 import { Route as AppPublicChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/~components/sections/intro'
 import { Route as AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_app/_public/~components/sections/companies-marquee'
 import { Route as AppPublicChar126componentsSectionsBenefitsRouteImport } from './pages/_app/_public/~components/sections/benefits'
+import { Route as AppAdminDashboardChar126componentsAnalyticsOverviewRouteImport } from './pages/_app/_admin/dashboard/~components/analytics-overview'
+import { Route as AppAdminDashboardChar126componentsAnalyticOverviewCardRouteImport } from './pages/_app/_admin/dashboard/~components/analytic-overview-card'
+import { Route as AppAdminDashboardSettingsPageSettingsRouteImport } from './pages/_app/_admin/dashboard/settings/_page-settings'
 import { Route as AppRelatedBlogArticleContentArticleIdIndexRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/index'
+import { Route as AppRelatedBlogChar126componentsPaginationBlogPaginationRouteImport } from './pages/_app/_related/blog/~components/pagination/blog-pagination'
 import { Route as AppRelatedBlogChar126componentsContentArticlesFiltersRouteImport } from './pages/_app/_related/blog/~components/content/articles-filters'
 import { Route as AppRelatedBlogChar126componentsContentArticleCardRouteImport } from './pages/_app/_related/blog/~components/content/article-card'
 import { Route as AppPublicRewardsChar126componentsSectionsRewardsListRouteImport } from './pages/_app/_public/rewards/~components/sections/rewards-list'
 import { Route as AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport } from './pages/_app/_public/rewards/~components/sections/pictures-carousel'
 import { Route as AppPublicRewardsChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/rewards/~components/sections/intro'
+import { Route as AppAdminDashboardChar126componentsSidebarDashboardSidebarRouteImport } from './pages/_app/_admin/dashboard/~components/sidebar/dashboard-sidebar'
+import { Route as AppAdminDashboardSettingsChar126componentsProfileTabRouteImport } from './pages/_app/_admin/dashboard/settings/~components/profile-tab'
+import { Route as AppAdminDashboardSettingsChar126componentsCompanyTabRouteImport } from './pages/_app/_admin/dashboard/settings/~components/company-tab'
+import { Route as AppAdminDashboardProfileChar126componentsPersonalInformationRouteImport } from './pages/_app/_admin/dashboard/profile/~components/personal-information'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
+import { Route as AppAdminDashboardChar126componentsSidebarElementsUserProfileRouteImport } from './pages/_app/_admin/dashboard/~components/sidebar/elements/user-profile'
+import { Route as AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRouteImport } from './pages/_app/_admin/dashboard/~components/sidebar/elements/team-switcher'
+import { Route as AppAdminDashboardChar126componentsSidebarElementsSearchSectionRouteImport } from './pages/_app/_admin/dashboard/~components/sidebar/elements/search-section'
+import { Route as AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRouteImport } from './pages/_app/_admin/dashboard/~components/sidebar/elements/navigation-projects'
+import { Route as AppAdminDashboardChar126componentsSidebarElementsNagivationContentRouteImport } from './pages/_app/_admin/dashboard/~components/sidebar/elements/nagivation-content'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
+
+const AppAdminDashboardSettingsRouteImport = createFileRoute(
+  '/_app/_admin/dashboard/settings',
+)()
 
 const ErrorNotFoundRoute = ErrorNotFoundRouteImport.update({
   id: '/_error/not-found',
@@ -97,6 +118,12 @@ const AppRelatedComplianceLayoutRoute =
   AppRelatedComplianceLayoutRouteImport.update({
     id: '/_app/_related/_compliance',
     getParentRoute: () => rootRouteImport,
+  } as any)
+const AppAdminDashboardSettingsRoute =
+  AppAdminDashboardSettingsRouteImport.update({
+    id: '/dashboard/settings',
+    path: '/dashboard/settings',
+    getParentRoute: () => AppAdminLayoutRoute,
   } as any)
 const AuthSignUpTaxesNegotiationIndexRoute =
   AuthSignUpTaxesNegotiationIndexRouteImport.update({
@@ -166,6 +193,18 @@ const AppRelatedComplianceComplaintsRoute =
     path: '/complaints',
     getParentRoute: () => AppRelatedComplianceLayoutRoute,
   } as any)
+const AppAdminDashboardSettingsIndexRoute =
+  AppAdminDashboardSettingsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AppAdminDashboardSettingsRoute,
+  } as any)
+const AppAdminDashboardProfileIndexRoute =
+  AppAdminDashboardProfileIndexRouteImport.update({
+    id: '/dashboard/profile/',
+    path: '/dashboard/profile/',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
 const AuthSignUpRegisterChar126componentsRegisterFormRoute =
   AuthSignUpRegisterChar126componentsRegisterFormRouteImport.update({
     id: '/register/~components/register-form',
@@ -232,10 +271,33 @@ const AppPublicChar126componentsSectionsBenefitsRoute =
     path: '/~components/sections/benefits',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
+const AppAdminDashboardChar126componentsAnalyticsOverviewRoute =
+  AppAdminDashboardChar126componentsAnalyticsOverviewRouteImport.update({
+    id: '/dashboard/~components/analytics-overview',
+    path: '/dashboard/~components/analytics-overview',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminDashboardChar126componentsAnalyticOverviewCardRoute =
+  AppAdminDashboardChar126componentsAnalyticOverviewCardRouteImport.update({
+    id: '/dashboard/~components/analytic-overview-card',
+    path: '/dashboard/~components/analytic-overview-card',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminDashboardSettingsPageSettingsRoute =
+  AppAdminDashboardSettingsPageSettingsRouteImport.update({
+    id: '/_page-settings',
+    getParentRoute: () => AppAdminDashboardSettingsRoute,
+  } as any)
 const AppRelatedBlogArticleContentArticleIdIndexRoute =
   AppRelatedBlogArticleContentArticleIdIndexRouteImport.update({
     id: '/_article-content/$articleId/',
     path: '/$articleId/',
+    getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
+const AppRelatedBlogChar126componentsPaginationBlogPaginationRoute =
+  AppRelatedBlogChar126componentsPaginationBlogPaginationRouteImport.update({
+    id: '/~components/pagination/blog-pagination',
+    path: '/~components/pagination/blog-pagination',
     getParentRoute: () => AppRelatedBlogLayoutRoute,
   } as any)
 const AppRelatedBlogChar126componentsContentArticlesFiltersRoute =
@@ -268,6 +330,32 @@ const AppPublicRewardsChar126componentsSectionsIntroRoute =
     path: '/rewards/~components/sections/intro',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
+const AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute =
+  AppAdminDashboardChar126componentsSidebarDashboardSidebarRouteImport.update({
+    id: '/dashboard/~components/sidebar/dashboard-sidebar',
+    path: '/dashboard/~components/sidebar/dashboard-sidebar',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminDashboardSettingsChar126componentsProfileTabRoute =
+  AppAdminDashboardSettingsChar126componentsProfileTabRouteImport.update({
+    id: '/~components/profile-tab',
+    path: '/~components/profile-tab',
+    getParentRoute: () => AppAdminDashboardSettingsRoute,
+  } as any)
+const AppAdminDashboardSettingsChar126componentsCompanyTabRoute =
+  AppAdminDashboardSettingsChar126componentsCompanyTabRouteImport.update({
+    id: '/~components/company-tab',
+    path: '/~components/company-tab',
+    getParentRoute: () => AppAdminDashboardSettingsRoute,
+  } as any)
+const AppAdminDashboardProfileChar126componentsPersonalInformationRoute =
+  AppAdminDashboardProfileChar126componentsPersonalInformationRouteImport.update(
+    {
+      id: '/dashboard/profile/~components/personal-information',
+      path: '/dashboard/profile/~components/personal-information',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
 const AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute =
   AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRouteImport.update(
     {
@@ -298,6 +386,46 @@ const AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
       id: '/_article-content/$articleId/~components/article-not-found',
       path: '/$articleId/~components/article-not-found',
       getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppAdminDashboardChar126componentsSidebarElementsUserProfileRoute =
+  AppAdminDashboardChar126componentsSidebarElementsUserProfileRouteImport.update(
+    {
+      id: '/dashboard/~components/sidebar/elements/user-profile',
+      path: '/dashboard/~components/sidebar/elements/user-profile',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRoute =
+  AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRouteImport.update(
+    {
+      id: '/dashboard/~components/sidebar/elements/team-switcher',
+      path: '/dashboard/~components/sidebar/elements/team-switcher',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminDashboardChar126componentsSidebarElementsSearchSectionRoute =
+  AppAdminDashboardChar126componentsSidebarElementsSearchSectionRouteImport.update(
+    {
+      id: '/dashboard/~components/sidebar/elements/search-section',
+      path: '/dashboard/~components/sidebar/elements/search-section',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute =
+  AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRouteImport.update(
+    {
+      id: '/dashboard/~components/sidebar/elements/navigation-projects',
+      path: '/dashboard/~components/sidebar/elements/navigation-projects',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute =
+  AppAdminDashboardChar126componentsSidebarElementsNagivationContentRouteImport.update(
+    {
+      id: '/dashboard/~components/sidebar/elements/nagivation-content',
+      path: '/dashboard/~components/sidebar/elements/nagivation-content',
+      getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
 const AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute =
@@ -344,6 +472,9 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof AppRelatedBlogIndexRoute
   '/sign-up/register': typeof AuthSignUpRegisterIndexRoute
   '/sign-up/taxes-negotiation': typeof AuthSignUpTaxesNegotiationIndexRoute
+  '/dashboard/settings': typeof AppAdminDashboardSettingsPageSettingsRoute
+  '/dashboard/~components/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRoute
+  '/dashboard/~components/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsOverviewRoute
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -355,12 +486,24 @@ export interface FileRoutesByFullPath {
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
+  '/dashboard/profile': typeof AppAdminDashboardProfileIndexRoute
+  '/dashboard/settings/': typeof AppAdminDashboardSettingsIndexRoute
+  '/dashboard/profile/~components/personal-information': typeof AppAdminDashboardProfileChar126componentsPersonalInformationRoute
+  '/dashboard/settings/~components/company-tab': typeof AppAdminDashboardSettingsChar126componentsCompanyTabRoute
+  '/dashboard/settings/~components/profile-tab': typeof AppAdminDashboardSettingsChar126componentsProfileTabRoute
+  '/dashboard/~components/sidebar/dashboard-sidebar': typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
   '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
+  '/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
   '/blog/$articleId': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
+  '/dashboard/~components/sidebar/elements/nagivation-content': typeof AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute
+  '/dashboard/~components/sidebar/elements/navigation-projects': typeof AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute
+  '/dashboard/~components/sidebar/elements/search-section': typeof AppAdminDashboardChar126componentsSidebarElementsSearchSectionRoute
+  '/dashboard/~components/sidebar/elements/team-switcher': typeof AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRoute
+  '/dashboard/~components/sidebar/elements/user-profile': typeof AppAdminDashboardChar126componentsSidebarElementsUserProfileRoute
   '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
   '/blog/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/blog/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
@@ -386,6 +529,9 @@ export interface FileRoutesByTo {
   '/blog': typeof AppRelatedBlogIndexRoute
   '/sign-up/register': typeof AuthSignUpRegisterIndexRoute
   '/sign-up/taxes-negotiation': typeof AuthSignUpTaxesNegotiationIndexRoute
+  '/dashboard/settings': typeof AppAdminDashboardSettingsIndexRoute
+  '/dashboard/~components/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRoute
+  '/dashboard/~components/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsOverviewRoute
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -397,12 +543,23 @@ export interface FileRoutesByTo {
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
+  '/dashboard/profile': typeof AppAdminDashboardProfileIndexRoute
+  '/dashboard/profile/~components/personal-information': typeof AppAdminDashboardProfileChar126componentsPersonalInformationRoute
+  '/dashboard/settings/~components/company-tab': typeof AppAdminDashboardSettingsChar126componentsCompanyTabRoute
+  '/dashboard/settings/~components/profile-tab': typeof AppAdminDashboardSettingsChar126componentsProfileTabRoute
+  '/dashboard/~components/sidebar/dashboard-sidebar': typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
   '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
+  '/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
   '/blog/$articleId': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
+  '/dashboard/~components/sidebar/elements/nagivation-content': typeof AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute
+  '/dashboard/~components/sidebar/elements/navigation-projects': typeof AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute
+  '/dashboard/~components/sidebar/elements/search-section': typeof AppAdminDashboardChar126componentsSidebarElementsSearchSectionRoute
+  '/dashboard/~components/sidebar/elements/team-switcher': typeof AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRoute
+  '/dashboard/~components/sidebar/elements/user-profile': typeof AppAdminDashboardChar126componentsSidebarElementsUserProfileRoute
   '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
   '/blog/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/blog/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
@@ -434,6 +591,10 @@ export interface FileRoutesById {
   '/_app/_related/blog/': typeof AppRelatedBlogIndexRoute
   '/_auth/sign-up/register/': typeof AuthSignUpRegisterIndexRoute
   '/_auth/sign-up/taxes-negotiation/': typeof AuthSignUpTaxesNegotiationIndexRoute
+  '/_app/_admin/dashboard/settings': typeof AppAdminDashboardSettingsRouteWithChildren
+  '/_app/_admin/dashboard/settings/_page-settings': typeof AppAdminDashboardSettingsPageSettingsRoute
+  '/_app/_admin/dashboard/~components/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRoute
+  '/_app/_admin/dashboard/~components/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsOverviewRoute
   '/_app/_public/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/_app/_public/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/_app/_public/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -445,12 +606,24 @@ export interface FileRoutesById {
   '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/_auth/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/_auth/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
+  '/_app/_admin/dashboard/profile/': typeof AppAdminDashboardProfileIndexRoute
+  '/_app/_admin/dashboard/settings/': typeof AppAdminDashboardSettingsIndexRoute
+  '/_app/_admin/dashboard/profile/~components/personal-information': typeof AppAdminDashboardProfileChar126componentsPersonalInformationRoute
+  '/_app/_admin/dashboard/settings/~components/company-tab': typeof AppAdminDashboardSettingsChar126componentsCompanyTabRoute
+  '/_app/_admin/dashboard/settings/~components/profile-tab': typeof AppAdminDashboardSettingsChar126componentsProfileTabRoute
+  '/_app/_admin/dashboard/~components/sidebar/dashboard-sidebar': typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute
   '/_app/_public/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/_app/_public/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/_app/_public/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
   '/_app/_related/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/_app/_related/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
+  '/_app/_related/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
   '/_app/_related/blog/_article-content/$articleId/': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
+  '/_app/_admin/dashboard/~components/sidebar/elements/nagivation-content': typeof AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute
+  '/_app/_admin/dashboard/~components/sidebar/elements/navigation-projects': typeof AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute
+  '/_app/_admin/dashboard/~components/sidebar/elements/search-section': typeof AppAdminDashboardChar126componentsSidebarElementsSearchSectionRoute
+  '/_app/_admin/dashboard/~components/sidebar/elements/team-switcher': typeof AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRoute
+  '/_app/_admin/dashboard/~components/sidebar/elements/user-profile': typeof AppAdminDashboardChar126componentsSidebarElementsUserProfileRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
@@ -480,6 +653,9 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/sign-up/register'
     | '/sign-up/taxes-negotiation'
+    | '/dashboard/settings'
+    | '/dashboard/~components/analytic-overview-card'
+    | '/dashboard/~components/analytics-overview'
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
@@ -491,12 +667,24 @@ export interface FileRouteTypes {
     | '/blog/~components/navbar'
     | '/sign-up/register/~components/leave-confirmation'
     | '/sign-up/register/~components/register-form'
+    | '/dashboard/profile'
+    | '/dashboard/settings/'
+    | '/dashboard/profile/~components/personal-information'
+    | '/dashboard/settings/~components/company-tab'
+    | '/dashboard/settings/~components/profile-tab'
+    | '/dashboard/~components/sidebar/dashboard-sidebar'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
     | '/blog/~components/content/article-card'
     | '/blog/~components/content/articles-filters'
+    | '/blog/~components/pagination/blog-pagination'
     | '/blog/$articleId'
+    | '/dashboard/~components/sidebar/elements/nagivation-content'
+    | '/dashboard/~components/sidebar/elements/navigation-projects'
+    | '/dashboard/~components/sidebar/elements/search-section'
+    | '/dashboard/~components/sidebar/elements/team-switcher'
+    | '/dashboard/~components/sidebar/elements/user-profile'
     | '/blog/$articleId/~components/article-not-found'
     | '/blog/$articleId/~components/article-sharing'
     | '/blog/$articleId/~components/article-skeleton'
@@ -522,6 +710,9 @@ export interface FileRouteTypes {
     | '/blog'
     | '/sign-up/register'
     | '/sign-up/taxes-negotiation'
+    | '/dashboard/settings'
+    | '/dashboard/~components/analytic-overview-card'
+    | '/dashboard/~components/analytics-overview'
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
@@ -533,12 +724,23 @@ export interface FileRouteTypes {
     | '/blog/~components/navbar'
     | '/sign-up/register/~components/leave-confirmation'
     | '/sign-up/register/~components/register-form'
+    | '/dashboard/profile'
+    | '/dashboard/profile/~components/personal-information'
+    | '/dashboard/settings/~components/company-tab'
+    | '/dashboard/settings/~components/profile-tab'
+    | '/dashboard/~components/sidebar/dashboard-sidebar'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
     | '/blog/~components/content/article-card'
     | '/blog/~components/content/articles-filters'
+    | '/blog/~components/pagination/blog-pagination'
     | '/blog/$articleId'
+    | '/dashboard/~components/sidebar/elements/nagivation-content'
+    | '/dashboard/~components/sidebar/elements/navigation-projects'
+    | '/dashboard/~components/sidebar/elements/search-section'
+    | '/dashboard/~components/sidebar/elements/team-switcher'
+    | '/dashboard/~components/sidebar/elements/user-profile'
     | '/blog/$articleId/~components/article-not-found'
     | '/blog/$articleId/~components/article-sharing'
     | '/blog/$articleId/~components/article-skeleton'
@@ -569,6 +771,10 @@ export interface FileRouteTypes {
     | '/_app/_related/blog/'
     | '/_auth/sign-up/register/'
     | '/_auth/sign-up/taxes-negotiation/'
+    | '/_app/_admin/dashboard/settings'
+    | '/_app/_admin/dashboard/settings/_page-settings'
+    | '/_app/_admin/dashboard/~components/analytic-overview-card'
+    | '/_app/_admin/dashboard/~components/analytics-overview'
     | '/_app/_public/~components/sections/benefits'
     | '/_app/_public/~components/sections/companies-marquee'
     | '/_app/_public/~components/sections/intro'
@@ -580,12 +786,24 @@ export interface FileRouteTypes {
     | '/_app/_related/blog/~components/navbar'
     | '/_auth/sign-up/register/~components/leave-confirmation'
     | '/_auth/sign-up/register/~components/register-form'
+    | '/_app/_admin/dashboard/profile/'
+    | '/_app/_admin/dashboard/settings/'
+    | '/_app/_admin/dashboard/profile/~components/personal-information'
+    | '/_app/_admin/dashboard/settings/~components/company-tab'
+    | '/_app/_admin/dashboard/settings/~components/profile-tab'
+    | '/_app/_admin/dashboard/~components/sidebar/dashboard-sidebar'
     | '/_app/_public/rewards/~components/sections/intro'
     | '/_app/_public/rewards/~components/sections/pictures-carousel'
     | '/_app/_public/rewards/~components/sections/rewards-list'
     | '/_app/_related/blog/~components/content/article-card'
     | '/_app/_related/blog/~components/content/articles-filters'
+    | '/_app/_related/blog/~components/pagination/blog-pagination'
     | '/_app/_related/blog/_article-content/$articleId/'
+    | '/_app/_admin/dashboard/~components/sidebar/elements/nagivation-content'
+    | '/_app/_admin/dashboard/~components/sidebar/elements/navigation-projects'
+    | '/_app/_admin/dashboard/~components/sidebar/elements/search-section'
+    | '/_app/_admin/dashboard/~components/sidebar/elements/team-switcher'
+    | '/_app/_admin/dashboard/~components/sidebar/elements/user-profile'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
@@ -671,6 +889,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedComplianceLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_app/_admin/dashboard/settings': {
+      id: '/_app/_admin/dashboard/settings'
+      path: '/dashboard/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof AppAdminDashboardSettingsRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_auth/sign-up/taxes-negotiation/': {
       id: '/_auth/sign-up/taxes-negotiation/'
       path: '/taxes-negotiation'
@@ -755,6 +980,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedComplianceComplaintsRouteImport
       parentRoute: typeof AppRelatedComplianceLayoutRoute
     }
+    '/_app/_admin/dashboard/settings/': {
+      id: '/_app/_admin/dashboard/settings/'
+      path: '/'
+      fullPath: '/dashboard/settings/'
+      preLoaderRoute: typeof AppAdminDashboardSettingsIndexRouteImport
+      parentRoute: typeof AppAdminDashboardSettingsRoute
+    }
+    '/_app/_admin/dashboard/profile/': {
+      id: '/_app/_admin/dashboard/profile/'
+      path: '/dashboard/profile'
+      fullPath: '/dashboard/profile'
+      preLoaderRoute: typeof AppAdminDashboardProfileIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_auth/sign-up/register/~components/register-form': {
       id: '/_auth/sign-up/register/~components/register-form'
       path: '/register/~components/register-form'
@@ -832,11 +1071,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicChar126componentsSectionsBenefitsRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
+    '/_app/_admin/dashboard/~components/analytics-overview': {
+      id: '/_app/_admin/dashboard/~components/analytics-overview'
+      path: '/dashboard/~components/analytics-overview'
+      fullPath: '/dashboard/~components/analytics-overview'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsAnalyticsOverviewRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/~components/analytic-overview-card': {
+      id: '/_app/_admin/dashboard/~components/analytic-overview-card'
+      path: '/dashboard/~components/analytic-overview-card'
+      fullPath: '/dashboard/~components/analytic-overview-card'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/settings/_page-settings': {
+      id: '/_app/_admin/dashboard/settings/_page-settings'
+      path: '/dashboard/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof AppAdminDashboardSettingsPageSettingsRouteImport
+      parentRoute: typeof AppAdminDashboardSettingsRoute
+    }
     '/_app/_related/blog/_article-content/$articleId/': {
       id: '/_app/_related/blog/_article-content/$articleId/'
       path: '/$articleId'
       fullPath: '/blog/$articleId'
       preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdIndexRouteImport
+      parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_related/blog/~components/pagination/blog-pagination': {
+      id: '/_app/_related/blog/~components/pagination/blog-pagination'
+      path: '/~components/pagination/blog-pagination'
+      fullPath: '/blog/~components/pagination/blog-pagination'
+      preLoaderRoute: typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
     }
     '/_app/_related/blog/~components/content/articles-filters': {
@@ -874,6 +1141,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicRewardsChar126componentsSectionsIntroRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
+    '/_app/_admin/dashboard/~components/sidebar/dashboard-sidebar': {
+      id: '/_app/_admin/dashboard/~components/sidebar/dashboard-sidebar'
+      path: '/dashboard/~components/sidebar/dashboard-sidebar'
+      fullPath: '/dashboard/~components/sidebar/dashboard-sidebar'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/settings/~components/profile-tab': {
+      id: '/_app/_admin/dashboard/settings/~components/profile-tab'
+      path: '/~components/profile-tab'
+      fullPath: '/dashboard/settings/~components/profile-tab'
+      preLoaderRoute: typeof AppAdminDashboardSettingsChar126componentsProfileTabRouteImport
+      parentRoute: typeof AppAdminDashboardSettingsRoute
+    }
+    '/_app/_admin/dashboard/settings/~components/company-tab': {
+      id: '/_app/_admin/dashboard/settings/~components/company-tab'
+      path: '/~components/company-tab'
+      fullPath: '/dashboard/settings/~components/company-tab'
+      preLoaderRoute: typeof AppAdminDashboardSettingsChar126componentsCompanyTabRouteImport
+      parentRoute: typeof AppAdminDashboardSettingsRoute
+    }
+    '/_app/_admin/dashboard/profile/~components/personal-information': {
+      id: '/_app/_admin/dashboard/profile/~components/personal-information'
+      path: '/dashboard/profile/~components/personal-information'
+      fullPath: '/dashboard/profile/~components/personal-information'
+      preLoaderRoute: typeof AppAdminDashboardProfileChar126componentsPersonalInformationRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_app/_related/blog/_article-content/$articleId/~components/article-with-error': {
       id: '/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
       path: '/$articleId/~components/article-with-error'
@@ -902,6 +1197,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
     }
+    '/_app/_admin/dashboard/~components/sidebar/elements/user-profile': {
+      id: '/_app/_admin/dashboard/~components/sidebar/elements/user-profile'
+      path: '/dashboard/~components/sidebar/elements/user-profile'
+      fullPath: '/dashboard/~components/sidebar/elements/user-profile'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsSidebarElementsUserProfileRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/~components/sidebar/elements/team-switcher': {
+      id: '/_app/_admin/dashboard/~components/sidebar/elements/team-switcher'
+      path: '/dashboard/~components/sidebar/elements/team-switcher'
+      fullPath: '/dashboard/~components/sidebar/elements/team-switcher'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/~components/sidebar/elements/search-section': {
+      id: '/_app/_admin/dashboard/~components/sidebar/elements/search-section'
+      path: '/dashboard/~components/sidebar/elements/search-section'
+      fullPath: '/dashboard/~components/sidebar/elements/search-section'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsSidebarElementsSearchSectionRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/~components/sidebar/elements/navigation-projects': {
+      id: '/_app/_admin/dashboard/~components/sidebar/elements/navigation-projects'
+      path: '/dashboard/~components/sidebar/elements/navigation-projects'
+      fullPath: '/dashboard/~components/sidebar/elements/navigation-projects'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/~components/sidebar/elements/nagivation-content': {
+      id: '/_app/_admin/dashboard/~components/sidebar/elements/nagivation-content'
+      path: '/dashboard/~components/sidebar/elements/nagivation-content'
+      fullPath: '/dashboard/~components/sidebar/elements/nagivation-content'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsSidebarElementsNagivationContentRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles': {
       id: '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
       path: '/$articleId/~components/dynamic-zone/related-articles'
@@ -926,12 +1256,66 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AppAdminDashboardSettingsRouteChildren {
+  AppAdminDashboardSettingsPageSettingsRoute: typeof AppAdminDashboardSettingsPageSettingsRoute
+  AppAdminDashboardSettingsIndexRoute: typeof AppAdminDashboardSettingsIndexRoute
+  AppAdminDashboardSettingsChar126componentsCompanyTabRoute: typeof AppAdminDashboardSettingsChar126componentsCompanyTabRoute
+  AppAdminDashboardSettingsChar126componentsProfileTabRoute: typeof AppAdminDashboardSettingsChar126componentsProfileTabRoute
+}
+
+const AppAdminDashboardSettingsRouteChildren: AppAdminDashboardSettingsRouteChildren =
+  {
+    AppAdminDashboardSettingsPageSettingsRoute:
+      AppAdminDashboardSettingsPageSettingsRoute,
+    AppAdminDashboardSettingsIndexRoute: AppAdminDashboardSettingsIndexRoute,
+    AppAdminDashboardSettingsChar126componentsCompanyTabRoute:
+      AppAdminDashboardSettingsChar126componentsCompanyTabRoute,
+    AppAdminDashboardSettingsChar126componentsProfileTabRoute:
+      AppAdminDashboardSettingsChar126componentsProfileTabRoute,
+  }
+
+const AppAdminDashboardSettingsRouteWithChildren =
+  AppAdminDashboardSettingsRoute._addFileChildren(
+    AppAdminDashboardSettingsRouteChildren,
+  )
+
 interface AppAdminLayoutRouteChildren {
   AppAdminDashboardIndexRoute: typeof AppAdminDashboardIndexRoute
+  AppAdminDashboardSettingsRoute: typeof AppAdminDashboardSettingsRouteWithChildren
+  AppAdminDashboardChar126componentsAnalyticOverviewCardRoute: typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRoute
+  AppAdminDashboardChar126componentsAnalyticsOverviewRoute: typeof AppAdminDashboardChar126componentsAnalyticsOverviewRoute
+  AppAdminDashboardProfileIndexRoute: typeof AppAdminDashboardProfileIndexRoute
+  AppAdminDashboardProfileChar126componentsPersonalInformationRoute: typeof AppAdminDashboardProfileChar126componentsPersonalInformationRoute
+  AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute: typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute
+  AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute: typeof AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute
+  AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute: typeof AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute
+  AppAdminDashboardChar126componentsSidebarElementsSearchSectionRoute: typeof AppAdminDashboardChar126componentsSidebarElementsSearchSectionRoute
+  AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRoute: typeof AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRoute
+  AppAdminDashboardChar126componentsSidebarElementsUserProfileRoute: typeof AppAdminDashboardChar126componentsSidebarElementsUserProfileRoute
 }
 
 const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
   AppAdminDashboardIndexRoute: AppAdminDashboardIndexRoute,
+  AppAdminDashboardSettingsRoute: AppAdminDashboardSettingsRouteWithChildren,
+  AppAdminDashboardChar126componentsAnalyticOverviewCardRoute:
+    AppAdminDashboardChar126componentsAnalyticOverviewCardRoute,
+  AppAdminDashboardChar126componentsAnalyticsOverviewRoute:
+    AppAdminDashboardChar126componentsAnalyticsOverviewRoute,
+  AppAdminDashboardProfileIndexRoute: AppAdminDashboardProfileIndexRoute,
+  AppAdminDashboardProfileChar126componentsPersonalInformationRoute:
+    AppAdminDashboardProfileChar126componentsPersonalInformationRoute,
+  AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute:
+    AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute,
+  AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute:
+    AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute,
+  AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute:
+    AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute,
+  AppAdminDashboardChar126componentsSidebarElementsSearchSectionRoute:
+    AppAdminDashboardChar126componentsSidebarElementsSearchSectionRoute,
+  AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRoute:
+    AppAdminDashboardChar126componentsSidebarElementsTeamSwitcherRoute,
+  AppAdminDashboardChar126componentsSidebarElementsUserProfileRoute:
+    AppAdminDashboardChar126componentsSidebarElementsUserProfileRoute,
 }
 
 const AppAdminLayoutRouteWithChildren = AppAdminLayoutRoute._addFileChildren(
@@ -1036,6 +1420,7 @@ interface AppRelatedBlogLayoutRouteChildren {
   AppRelatedBlogChar126componentsNavbarRoute: typeof AppRelatedBlogChar126componentsNavbarRoute
   AppRelatedBlogChar126componentsContentArticleCardRoute: typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   AppRelatedBlogChar126componentsContentArticlesFiltersRoute: typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
+  AppRelatedBlogChar126componentsPaginationBlogPaginationRoute: typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
   AppRelatedBlogArticleContentArticleIdIndexRoute: typeof AppRelatedBlogArticleContentArticleIdIndexRoute
   AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
   AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
@@ -1056,6 +1441,8 @@ const AppRelatedBlogLayoutRouteChildren: AppRelatedBlogLayoutRouteChildren = {
     AppRelatedBlogChar126componentsContentArticleCardRoute,
   AppRelatedBlogChar126componentsContentArticlesFiltersRoute:
     AppRelatedBlogChar126componentsContentArticlesFiltersRoute,
+  AppRelatedBlogChar126componentsPaginationBlogPaginationRoute:
+    AppRelatedBlogChar126componentsPaginationBlogPaginationRoute,
   AppRelatedBlogArticleContentArticleIdIndexRoute:
     AppRelatedBlogArticleContentArticleIdIndexRoute,
   AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute:

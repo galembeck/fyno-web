@@ -1,5 +1,6 @@
 "use client";
 
+import { createFileRoute } from "@tanstack/react-router";
 import {
 	Folder,
 	Forward,
@@ -7,7 +8,6 @@ import {
 	MoreHorizontal,
 	Trash2,
 } from "lucide-react";
-
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -25,7 +25,13 @@ import {
 	useSidebar,
 } from "@/components/ui/sidebar";
 
-export function NavProjects({
+export const Route = createFileRoute(
+	"/_app/_admin/dashboard/~components/sidebar/elements/navigation-projects"
+)({
+	component: () => <NavigationProjects projects={[]} />,
+});
+
+export function NavigationProjects({
 	projects,
 }: Readonly<{
 	projects: {
