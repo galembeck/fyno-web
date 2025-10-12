@@ -17,6 +17,7 @@ import { Route as AppPublicLayoutRouteImport } from './pages/_app/_public/layout
 import { Route as AppAdminLayoutRouteImport } from './pages/_app/_admin/layout'
 import { Route as AuthSignUpIndexRouteImport } from './pages/_auth/sign-up/index'
 import { Route as AuthSignInIndexRouteImport } from './pages/_auth/sign-in/index'
+import { Route as AuthConfirmEmailChangeIndexRouteImport } from './pages/_auth/confirm-email-change/index'
 import { Route as AppPublicIndexRouteImport } from './pages/_app/_public/index'
 import { Route as AppRelatedBlogLayoutRouteImport } from './pages/_app/_related/blog/layout'
 import { Route as AppRelatedComplianceLayoutRouteImport } from './pages/_app/_related/_compliance/layout'
@@ -45,8 +46,7 @@ import { Route as AppPublicChar126componentsSectionsRecentArticlesRouteImport } 
 import { Route as AppPublicChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/~components/sections/intro'
 import { Route as AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_app/_public/~components/sections/companies-marquee'
 import { Route as AppPublicChar126componentsSectionsBenefitsRouteImport } from './pages/_app/_public/~components/sections/benefits'
-import { Route as AppAdminDashboardChar126componentsAnalyticsOverviewRouteImport } from './pages/_app/_admin/dashboard/~components/analytics-overview'
-import { Route as AppAdminDashboardChar126componentsAnalyticOverviewCardRouteImport } from './pages/_app/_admin/dashboard/~components/analytic-overview-card'
+import { Route as AppAdminDashboardChar126componentsChartAreaInteractiveRouteImport } from './pages/_app/_admin/dashboard/~components/chart-area-interactive'
 import { Route as AppAdminDashboardSettingsPageSettingsRouteImport } from './pages/_app/_admin/dashboard/settings/_page-settings'
 import { Route as AppRelatedBlogArticleContentArticleIdIndexRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/index'
 import { Route as AppRelatedBlogChar126componentsPaginationBlogPaginationRouteImport } from './pages/_app/_related/blog/~components/pagination/blog-pagination'
@@ -56,6 +56,8 @@ import { Route as AppPublicRewardsChar126componentsSectionsRewardsListRouteImpor
 import { Route as AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport } from './pages/_app/_public/rewards/~components/sections/pictures-carousel'
 import { Route as AppPublicRewardsChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/rewards/~components/sections/intro'
 import { Route as AppAdminDashboardChar126componentsSidebarDashboardSidebarRouteImport } from './pages/_app/_admin/dashboard/~components/sidebar/dashboard-sidebar'
+import { Route as AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRouteImport } from './pages/_app/_admin/dashboard/~components/analytics/analytics-overview'
+import { Route as AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRouteImport } from './pages/_app/_admin/dashboard/~components/analytics/analytic-overview-card'
 import { Route as AppAdminDashboardSettingsChar126componentsProfileTabRouteImport } from './pages/_app/_admin/dashboard/settings/~components/profile-tab'
 import { Route as AppAdminDashboardSettingsChar126componentsCompanyTabRouteImport } from './pages/_app/_admin/dashboard/settings/~components/company-tab'
 import { Route as AppAdminDashboardProfileChar126componentsPersonalInformationRouteImport } from './pages/_app/_admin/dashboard/profile/~components/personal-information'
@@ -104,6 +106,12 @@ const AuthSignInIndexRoute = AuthSignInIndexRouteImport.update({
   path: '/sign-in/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthConfirmEmailChangeIndexRoute =
+  AuthConfirmEmailChangeIndexRouteImport.update({
+    id: '/_auth/confirm-email-change/',
+    path: '/confirm-email-change/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AppPublicIndexRoute = AppPublicIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -271,16 +279,10 @@ const AppPublicChar126componentsSectionsBenefitsRoute =
     path: '/~components/sections/benefits',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const AppAdminDashboardChar126componentsAnalyticsOverviewRoute =
-  AppAdminDashboardChar126componentsAnalyticsOverviewRouteImport.update({
-    id: '/dashboard/~components/analytics-overview',
-    path: '/dashboard/~components/analytics-overview',
-    getParentRoute: () => AppAdminLayoutRoute,
-  } as any)
-const AppAdminDashboardChar126componentsAnalyticOverviewCardRoute =
-  AppAdminDashboardChar126componentsAnalyticOverviewCardRouteImport.update({
-    id: '/dashboard/~components/analytic-overview-card',
-    path: '/dashboard/~components/analytic-overview-card',
+const AppAdminDashboardChar126componentsChartAreaInteractiveRoute =
+  AppAdminDashboardChar126componentsChartAreaInteractiveRouteImport.update({
+    id: '/dashboard/~components/chart-area-interactive',
+    path: '/dashboard/~components/chart-area-interactive',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
 const AppAdminDashboardSettingsPageSettingsRoute =
@@ -336,6 +338,22 @@ const AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute =
     path: '/dashboard/~components/sidebar/dashboard-sidebar',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
+const AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRoute =
+  AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRouteImport.update(
+    {
+      id: '/dashboard/~components/analytics/analytics-overview',
+      path: '/dashboard/~components/analytics/analytics-overview',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRoute =
+  AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRouteImport.update(
+    {
+      id: '/dashboard/~components/analytics/analytic-overview-card',
+      path: '/dashboard/~components/analytics/analytic-overview-card',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
 const AppAdminDashboardSettingsChar126componentsProfileTabRoute =
   AppAdminDashboardSettingsChar126componentsProfileTabRouteImport.update({
     id: '/~components/profile-tab',
@@ -458,6 +476,7 @@ export interface FileRoutesByFullPath {
   '/not-found': typeof ErrorNotFoundRoute
   '/blog': typeof AppRelatedBlogLayoutRouteWithChildren
   '/': typeof AppPublicIndexRoute
+  '/confirm-email-change': typeof AuthConfirmEmailChangeIndexRoute
   '/sign-in': typeof AuthSignInIndexRoute
   '/sign-up/': typeof AuthSignUpIndexRoute
   '/complaints': typeof AppRelatedComplianceComplaintsRoute
@@ -473,8 +492,7 @@ export interface FileRoutesByFullPath {
   '/sign-up/register': typeof AuthSignUpRegisterIndexRoute
   '/sign-up/taxes-negotiation': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/dashboard/settings': typeof AppAdminDashboardSettingsPageSettingsRoute
-  '/dashboard/~components/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRoute
-  '/dashboard/~components/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsOverviewRoute
+  '/dashboard/~components/chart-area-interactive': typeof AppAdminDashboardChar126componentsChartAreaInteractiveRoute
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -491,6 +509,8 @@ export interface FileRoutesByFullPath {
   '/dashboard/profile/~components/personal-information': typeof AppAdminDashboardProfileChar126componentsPersonalInformationRoute
   '/dashboard/settings/~components/company-tab': typeof AppAdminDashboardSettingsChar126componentsCompanyTabRoute
   '/dashboard/settings/~components/profile-tab': typeof AppAdminDashboardSettingsChar126componentsProfileTabRoute
+  '/dashboard/~components/analytics/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRoute
+  '/dashboard/~components/analytics/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRoute
   '/dashboard/~components/sidebar/dashboard-sidebar': typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
@@ -515,6 +535,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/not-found': typeof ErrorNotFoundRoute
   '/': typeof AppPublicIndexRoute
+  '/confirm-email-change': typeof AuthConfirmEmailChangeIndexRoute
   '/sign-in': typeof AuthSignInIndexRoute
   '/sign-up': typeof AuthSignUpIndexRoute
   '/complaints': typeof AppRelatedComplianceComplaintsRoute
@@ -530,8 +551,7 @@ export interface FileRoutesByTo {
   '/sign-up/register': typeof AuthSignUpRegisterIndexRoute
   '/sign-up/taxes-negotiation': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/dashboard/settings': typeof AppAdminDashboardSettingsIndexRoute
-  '/dashboard/~components/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRoute
-  '/dashboard/~components/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsOverviewRoute
+  '/dashboard/~components/chart-area-interactive': typeof AppAdminDashboardChar126componentsChartAreaInteractiveRoute
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -547,6 +567,8 @@ export interface FileRoutesByTo {
   '/dashboard/profile/~components/personal-information': typeof AppAdminDashboardProfileChar126componentsPersonalInformationRoute
   '/dashboard/settings/~components/company-tab': typeof AppAdminDashboardSettingsChar126componentsCompanyTabRoute
   '/dashboard/settings/~components/profile-tab': typeof AppAdminDashboardSettingsChar126componentsProfileTabRoute
+  '/dashboard/~components/analytics/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRoute
+  '/dashboard/~components/analytics/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRoute
   '/dashboard/~components/sidebar/dashboard-sidebar': typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
@@ -577,6 +599,7 @@ export interface FileRoutesById {
   '/_app/_related/_compliance': typeof AppRelatedComplianceLayoutRouteWithChildren
   '/_app/_related/blog': typeof AppRelatedBlogLayoutRouteWithChildren
   '/_app/_public/': typeof AppPublicIndexRoute
+  '/_auth/confirm-email-change/': typeof AuthConfirmEmailChangeIndexRoute
   '/_auth/sign-in/': typeof AuthSignInIndexRoute
   '/_auth/sign-up/': typeof AuthSignUpIndexRoute
   '/_app/_related/_compliance/complaints': typeof AppRelatedComplianceComplaintsRoute
@@ -593,8 +616,7 @@ export interface FileRoutesById {
   '/_auth/sign-up/taxes-negotiation/': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/_app/_admin/dashboard/settings': typeof AppAdminDashboardSettingsRouteWithChildren
   '/_app/_admin/dashboard/settings/_page-settings': typeof AppAdminDashboardSettingsPageSettingsRoute
-  '/_app/_admin/dashboard/~components/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRoute
-  '/_app/_admin/dashboard/~components/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsOverviewRoute
+  '/_app/_admin/dashboard/~components/chart-area-interactive': typeof AppAdminDashboardChar126componentsChartAreaInteractiveRoute
   '/_app/_public/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
   '/_app/_public/~components/sections/companies-marquee': typeof AppPublicChar126componentsSectionsCompaniesMarqueeRoute
   '/_app/_public/~components/sections/intro': typeof AppPublicChar126componentsSectionsIntroRoute
@@ -611,6 +633,8 @@ export interface FileRoutesById {
   '/_app/_admin/dashboard/profile/~components/personal-information': typeof AppAdminDashboardProfileChar126componentsPersonalInformationRoute
   '/_app/_admin/dashboard/settings/~components/company-tab': typeof AppAdminDashboardSettingsChar126componentsCompanyTabRoute
   '/_app/_admin/dashboard/settings/~components/profile-tab': typeof AppAdminDashboardSettingsChar126componentsProfileTabRoute
+  '/_app/_admin/dashboard/~components/analytics/analytic-overview-card': typeof AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRoute
+  '/_app/_admin/dashboard/~components/analytics/analytics-overview': typeof AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRoute
   '/_app/_admin/dashboard/~components/sidebar/dashboard-sidebar': typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute
   '/_app/_public/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/_app/_public/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
@@ -639,6 +663,7 @@ export interface FileRouteTypes {
     | '/not-found'
     | '/blog'
     | '/'
+    | '/confirm-email-change'
     | '/sign-in'
     | '/sign-up/'
     | '/complaints'
@@ -654,8 +679,7 @@ export interface FileRouteTypes {
     | '/sign-up/register'
     | '/sign-up/taxes-negotiation'
     | '/dashboard/settings'
-    | '/dashboard/~components/analytic-overview-card'
-    | '/dashboard/~components/analytics-overview'
+    | '/dashboard/~components/chart-area-interactive'
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
@@ -672,6 +696,8 @@ export interface FileRouteTypes {
     | '/dashboard/profile/~components/personal-information'
     | '/dashboard/settings/~components/company-tab'
     | '/dashboard/settings/~components/profile-tab'
+    | '/dashboard/~components/analytics/analytic-overview-card'
+    | '/dashboard/~components/analytics/analytics-overview'
     | '/dashboard/~components/sidebar/dashboard-sidebar'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
@@ -696,6 +722,7 @@ export interface FileRouteTypes {
   to:
     | '/not-found'
     | '/'
+    | '/confirm-email-change'
     | '/sign-in'
     | '/sign-up'
     | '/complaints'
@@ -711,8 +738,7 @@ export interface FileRouteTypes {
     | '/sign-up/register'
     | '/sign-up/taxes-negotiation'
     | '/dashboard/settings'
-    | '/dashboard/~components/analytic-overview-card'
-    | '/dashboard/~components/analytics-overview'
+    | '/dashboard/~components/chart-area-interactive'
     | '/~components/sections/benefits'
     | '/~components/sections/companies-marquee'
     | '/~components/sections/intro'
@@ -728,6 +754,8 @@ export interface FileRouteTypes {
     | '/dashboard/profile/~components/personal-information'
     | '/dashboard/settings/~components/company-tab'
     | '/dashboard/settings/~components/profile-tab'
+    | '/dashboard/~components/analytics/analytic-overview-card'
+    | '/dashboard/~components/analytics/analytics-overview'
     | '/dashboard/~components/sidebar/dashboard-sidebar'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
@@ -757,6 +785,7 @@ export interface FileRouteTypes {
     | '/_app/_related/_compliance'
     | '/_app/_related/blog'
     | '/_app/_public/'
+    | '/_auth/confirm-email-change/'
     | '/_auth/sign-in/'
     | '/_auth/sign-up/'
     | '/_app/_related/_compliance/complaints'
@@ -773,8 +802,7 @@ export interface FileRouteTypes {
     | '/_auth/sign-up/taxes-negotiation/'
     | '/_app/_admin/dashboard/settings'
     | '/_app/_admin/dashboard/settings/_page-settings'
-    | '/_app/_admin/dashboard/~components/analytic-overview-card'
-    | '/_app/_admin/dashboard/~components/analytics-overview'
+    | '/_app/_admin/dashboard/~components/chart-area-interactive'
     | '/_app/_public/~components/sections/benefits'
     | '/_app/_public/~components/sections/companies-marquee'
     | '/_app/_public/~components/sections/intro'
@@ -791,6 +819,8 @@ export interface FileRouteTypes {
     | '/_app/_admin/dashboard/profile/~components/personal-information'
     | '/_app/_admin/dashboard/settings/~components/company-tab'
     | '/_app/_admin/dashboard/settings/~components/profile-tab'
+    | '/_app/_admin/dashboard/~components/analytics/analytic-overview-card'
+    | '/_app/_admin/dashboard/~components/analytics/analytics-overview'
     | '/_app/_admin/dashboard/~components/sidebar/dashboard-sidebar'
     | '/_app/_public/rewards/~components/sections/intro'
     | '/_app/_public/rewards/~components/sections/pictures-carousel'
@@ -820,6 +850,7 @@ export interface RootRouteChildren {
   ErrorNotFoundRoute: typeof ErrorNotFoundRoute
   AppRelatedComplianceLayoutRoute: typeof AppRelatedComplianceLayoutRouteWithChildren
   AppRelatedBlogLayoutRoute: typeof AppRelatedBlogLayoutRouteWithChildren
+  AuthConfirmEmailChangeIndexRoute: typeof AuthConfirmEmailChangeIndexRoute
   AuthSignInIndexRoute: typeof AuthSignInIndexRoute
   AuthSignInChar126componentsSignInFormRoute: typeof AuthSignInChar126componentsSignInFormRoute
 }
@@ -866,6 +897,13 @@ declare module '@tanstack/react-router' {
       path: '/sign-in'
       fullPath: '/sign-in'
       preLoaderRoute: typeof AuthSignInIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth/confirm-email-change/': {
+      id: '/_auth/confirm-email-change/'
+      path: '/confirm-email-change'
+      fullPath: '/confirm-email-change'
+      preLoaderRoute: typeof AuthConfirmEmailChangeIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_app/_public/': {
@@ -1071,18 +1109,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicChar126componentsSectionsBenefitsRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_app/_admin/dashboard/~components/analytics-overview': {
-      id: '/_app/_admin/dashboard/~components/analytics-overview'
-      path: '/dashboard/~components/analytics-overview'
-      fullPath: '/dashboard/~components/analytics-overview'
-      preLoaderRoute: typeof AppAdminDashboardChar126componentsAnalyticsOverviewRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
-    }
-    '/_app/_admin/dashboard/~components/analytic-overview-card': {
-      id: '/_app/_admin/dashboard/~components/analytic-overview-card'
-      path: '/dashboard/~components/analytic-overview-card'
-      fullPath: '/dashboard/~components/analytic-overview-card'
-      preLoaderRoute: typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRouteImport
+    '/_app/_admin/dashboard/~components/chart-area-interactive': {
+      id: '/_app/_admin/dashboard/~components/chart-area-interactive'
+      path: '/dashboard/~components/chart-area-interactive'
+      fullPath: '/dashboard/~components/chart-area-interactive'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsChartAreaInteractiveRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_admin/dashboard/settings/_page-settings': {
@@ -1146,6 +1177,20 @@ declare module '@tanstack/react-router' {
       path: '/dashboard/~components/sidebar/dashboard-sidebar'
       fullPath: '/dashboard/~components/sidebar/dashboard-sidebar'
       preLoaderRoute: typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/~components/analytics/analytics-overview': {
+      id: '/_app/_admin/dashboard/~components/analytics/analytics-overview'
+      path: '/dashboard/~components/analytics/analytics-overview'
+      fullPath: '/dashboard/~components/analytics/analytics-overview'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/_admin/dashboard/~components/analytics/analytic-overview-card': {
+      id: '/_app/_admin/dashboard/~components/analytics/analytic-overview-card'
+      path: '/dashboard/~components/analytics/analytic-overview-card'
+      fullPath: '/dashboard/~components/analytics/analytic-overview-card'
+      preLoaderRoute: typeof AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_admin/dashboard/settings/~components/profile-tab': {
@@ -1282,10 +1327,11 @@ const AppAdminDashboardSettingsRouteWithChildren =
 interface AppAdminLayoutRouteChildren {
   AppAdminDashboardIndexRoute: typeof AppAdminDashboardIndexRoute
   AppAdminDashboardSettingsRoute: typeof AppAdminDashboardSettingsRouteWithChildren
-  AppAdminDashboardChar126componentsAnalyticOverviewCardRoute: typeof AppAdminDashboardChar126componentsAnalyticOverviewCardRoute
-  AppAdminDashboardChar126componentsAnalyticsOverviewRoute: typeof AppAdminDashboardChar126componentsAnalyticsOverviewRoute
+  AppAdminDashboardChar126componentsChartAreaInteractiveRoute: typeof AppAdminDashboardChar126componentsChartAreaInteractiveRoute
   AppAdminDashboardProfileIndexRoute: typeof AppAdminDashboardProfileIndexRoute
   AppAdminDashboardProfileChar126componentsPersonalInformationRoute: typeof AppAdminDashboardProfileChar126componentsPersonalInformationRoute
+  AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRoute: typeof AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRoute
+  AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRoute: typeof AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRoute
   AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute: typeof AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute
   AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute: typeof AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute
   AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute: typeof AppAdminDashboardChar126componentsSidebarElementsNavigationProjectsRoute
@@ -1297,13 +1343,15 @@ interface AppAdminLayoutRouteChildren {
 const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
   AppAdminDashboardIndexRoute: AppAdminDashboardIndexRoute,
   AppAdminDashboardSettingsRoute: AppAdminDashboardSettingsRouteWithChildren,
-  AppAdminDashboardChar126componentsAnalyticOverviewCardRoute:
-    AppAdminDashboardChar126componentsAnalyticOverviewCardRoute,
-  AppAdminDashboardChar126componentsAnalyticsOverviewRoute:
-    AppAdminDashboardChar126componentsAnalyticsOverviewRoute,
+  AppAdminDashboardChar126componentsChartAreaInteractiveRoute:
+    AppAdminDashboardChar126componentsChartAreaInteractiveRoute,
   AppAdminDashboardProfileIndexRoute: AppAdminDashboardProfileIndexRoute,
   AppAdminDashboardProfileChar126componentsPersonalInformationRoute:
     AppAdminDashboardProfileChar126componentsPersonalInformationRoute,
+  AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRoute:
+    AppAdminDashboardChar126componentsAnalyticsAnalyticOverviewCardRoute,
+  AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRoute:
+    AppAdminDashboardChar126componentsAnalyticsAnalyticsOverviewRoute,
   AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute:
     AppAdminDashboardChar126componentsSidebarDashboardSidebarRoute,
   AppAdminDashboardChar126componentsSidebarElementsNagivationContentRoute:
@@ -1471,6 +1519,7 @@ const rootRouteChildren: RootRouteChildren = {
   ErrorNotFoundRoute: ErrorNotFoundRoute,
   AppRelatedComplianceLayoutRoute: AppRelatedComplianceLayoutRouteWithChildren,
   AppRelatedBlogLayoutRoute: AppRelatedBlogLayoutRouteWithChildren,
+  AuthConfirmEmailChangeIndexRoute: AuthConfirmEmailChangeIndexRoute,
   AuthSignInIndexRoute: AuthSignInIndexRoute,
   AuthSignInChar126componentsSignInFormRoute:
     AuthSignInChar126componentsSignInFormRoute,

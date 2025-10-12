@@ -1,4 +1,5 @@
 /** biome-ignore-all lint/suspicious/noConsole: only used during development procedures */
+/** biome-ignore-all lint/style/useBlockStatements: only used during development prcedures */
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { strapiAPI } from "@/api/strapi";
@@ -19,6 +20,10 @@ export interface User {
 	monthlyRevenue?: string;
 	phone?: string;
 	supportPhone?: string;
+
+	pendingEmail?: string;
+	emailChangeToken?: string;
+	emailChangeTokenExpiration?: string;
 
 	role?: {
 		id: number;
@@ -48,6 +53,26 @@ interface RegisterData {
 interface LoginData {
 	identifier: string;
 	password: string;
+}
+
+export interface EmailChangeRequest {
+	id: number;
+	documentId: string;
+	newEmail: string;
+	token: string;
+	confirmed: boolean;
+	expiresAt: string;
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+	user?:
+		| {
+				id: number;
+				email: string;
+				username: string;
+				name?: string;
+		  }
+		| number;
 }
 
 async function updateUserProfile(
@@ -145,6 +170,69 @@ const authService = {
 		return response;
 	},
 
+	async requestEmailChange(
+		token: string,
+		newEmail: string
+	): Promise<EmailChangeRequest> {
+		const response = await strapiAPI.fetch("/users/request-email-change", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+			body: JSON.stringify({
+				newEmail,
+			}),
+		});
+
+		return response.data;
+	},
+
+	async confirmEmailChange(
+		token: string
+	): Promise<{ success: boolean; newEmail?: string }> {
+		const response = await strapiAPI.fetch("/users/confirm-email-change", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				token,
+			}),
+		});
+
+		return {
+			success: response.success,
+			newEmail: response.newEmail,
+		};
+	},
+
+	async resendEmailConfirmation(token: string): Promise<{ success: boolean }> {
+		const response = await strapiAPI.fetch("/users/resend-email-confirmation", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+			body: JSON.stringify({}),
+		});
+
+		return response;
+	},
+
+	async cancelEmailChange(token: string): Promise<{ success: boolean }> {
+		const response = await strapiAPI.fetch("/users/cancel-email-change", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+			body: JSON.stringify({}),
+		});
+
+		return response;
+	},
+
 	setToken(token: string) {
 		localStorage.setItem("strapi_jwt", token);
 	},
@@ -166,7 +254,6 @@ export function useAuth() {
 		queryFn: async () => {
 			const token = authService.getToken();
 
-			// biome-ignore lint/style/useBlockStatements: not important...
 			if (!token) return null;
 
 			try {
@@ -196,6 +283,56 @@ export function useAuth() {
 		},
 	});
 
+	const updateUserMutation = useMutation({
+		mutationFn: async (data: Partial<User>) => {
+			const token = authService.getToken();
+			if (!(token && user)) throw new Error("Token ou usuário não encontrado");
+
+			return await updateUserProfile(token, user.id, data);
+		},
+		onSuccess: (updatedUser) => {
+			queryClient.setQueryData(["auth", "me"], updatedUser);
+			queryClient.invalidateQueries({ queryKey: ["auth", "me"] });
+		},
+	});
+
+	const requestEmailChangeMutation = useMutation({
+		mutationFn: (newEmail: string) => {
+			const token = authService.getToken();
+			if (!token) throw new Error("Token não encontrado");
+			return authService.requestEmailChange(token, newEmail);
+		},
+		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: ["auth", "me"] });
+		},
+	});
+
+	const confirmEmailChangeMutation = useMutation({
+		mutationFn: authService.confirmEmailChange,
+		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: ["auth", "me"] });
+		},
+	});
+
+	const resendEmailConfirmationMutation = useMutation({
+		mutationFn: () => {
+			const token = authService.getToken();
+			if (!token) throw new Error("Token não encontrado");
+			return authService.resendEmailConfirmation(token);
+		},
+	});
+
+	const cancelEmailChangeMutation = useMutation({
+		mutationFn: () => {
+			const token = authService.getToken();
+			if (!token) throw new Error("Token não encontrado");
+			return authService.cancelEmailChange(token);
+		},
+		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: ["auth", "me"] });
+		},
+	});
+
 	const logout = () => {
 		authService.removeToken();
 		queryClient.setQueryData(["auth", "me"], null);
@@ -208,10 +345,25 @@ export function useAuth() {
 		isAuthenticated: !!user,
 		register: registerMutation.mutateAsync,
 		login: loginMutation.mutateAsync,
+		updateUser: updateUserMutation.mutateAsync,
 		logout,
 		isRegistering: registerMutation.isPending,
 		isLoggingIn: loginMutation.isPending,
+		isUpdatingUser: updateUserMutation.isPending,
 		registerError: registerMutation.error,
 		loginError: loginMutation.error,
+		updateError: updateUserMutation.error,
+
+		requestEmailChange: requestEmailChangeMutation.mutateAsync,
+		isRequestingEmailChange: requestEmailChangeMutation.isPending,
+
+		confirmEmailChange: confirmEmailChangeMutation.mutateAsync,
+		isConfirmingEmailChange: confirmEmailChangeMutation.isPending,
+
+		resendEmailConfirmation: resendEmailConfirmationMutation.mutateAsync,
+		isResendingEmailConfirmation: resendEmailConfirmationMutation.isPending,
+
+		cancelEmailChange: cancelEmailChangeMutation.mutateAsync,
+		isCancellingEmailChange: cancelEmailChangeMutation.isPending,
 	};
 }

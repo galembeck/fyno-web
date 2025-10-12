@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AnalyticsOverview } from "./~components/analytics-overview";
+import { AnalyticsOverview } from "./~components/analytics/analytics-overview";
+import { ChartAreaInteractive } from "./~components/chart-area-interactive";
 
 export const Route = createFileRoute("/_app/_admin/dashboard/")({
 	component: DashboardPage,
@@ -14,8 +15,10 @@ export const Route = createFileRoute("/_app/_admin/dashboard/")({
 
 function DashboardPage() {
 	return (
-		<main className="container mx-auto p-4">
+		<main className="container mx-auto space-y-8 p-4">
 			<AnalyticsOverview />
+
+			<ChartAreaInteractive />
 		</main>
 	);
 }

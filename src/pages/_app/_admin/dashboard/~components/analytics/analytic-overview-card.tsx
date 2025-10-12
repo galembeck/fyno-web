@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const Route = createFileRoute(
-	"/_app/_admin/dashboard/~components/analytic-overview-card"
+	"/_app/_admin/dashboard/~components/analytics/analytic-overview-card"
 )({
 	component: () => (
 		<AnalyticOverviewCard
@@ -27,7 +27,7 @@ interface AnalyticOverviewCardProps {
 	rate: {
 		percentage: string;
 		type: "increase" | "decrease";
-	};
+	}
 	value: string;
 	message: string;
 	comment: string;
@@ -74,5 +74,5 @@ export function AnalyticOverviewCard({
 				</div>
 			</CardContent>
 		</Card>
-	);
+	)
 }

@@ -3,7 +3,7 @@ import { analytics } from "@/constants/_app/_admin/dashboard/analytics";
 import { AnalyticOverviewCard } from "./analytic-overview-card";
 
 export const Route = createFileRoute(
-	"/_app/_admin/dashboard/~components/analytics-overview"
+	"/_app/_admin/dashboard/~components/analytics/analytics-overview"
 )({
 	component: AnalyticsOverview,
 });
