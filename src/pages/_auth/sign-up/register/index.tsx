@@ -9,7 +9,7 @@ export const Route = createFileRoute("/_auth/sign-up/register/")({
 
 		if (token) {
 			throw redirect({
-				to: "/dashboard",
+				to: "/admin/dashboard",
 			});
 		}
 	},

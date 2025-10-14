@@ -39,7 +39,9 @@ export function ProfileDropdown() {
 					Painel administrativo
 				</DropdownMenuLabel>
 				<DropdownMenuGroup>
-					<DropdownMenuItem onClick={() => navigate({ to: "/dashboard" })}>
+					<DropdownMenuItem
+						onClick={() => navigate({ to: "/admin/dashboard" })}
+					>
 						<LayoutDashboard />
 						Dashboard
 					</DropdownMenuItem>

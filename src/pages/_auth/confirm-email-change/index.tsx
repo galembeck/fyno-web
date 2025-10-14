@@ -51,7 +51,7 @@ function ConfirmEmailChangePage() {
 					setMessage("Email alterado com sucesso!");
 
 					setTimeout(() => {
-						navigate({ to: "/dashboard/settings" });
+						navigate({ to: "/admin/settings" });
 					}, 3000);
 				}
 				// biome-ignore lint/suspicious/noExplicitAny: not important...
@@ -114,7 +114,7 @@ function ConfirmEmailChangePage() {
 							</div>
 							<Button
 								className="w-full"
-								onClick={() => navigate({ to: "/dashboard/settings" })}
+								onClick={() => navigate({ to: "/admin/settings" })}
 							>
 								Ir para Configurações
 							</Button>
@@ -145,7 +145,7 @@ function ConfirmEmailChangePage() {
 							<div className="flex flex-col gap-2">
 								<Button
 									className="w-full"
-									onClick={() => navigate({ to: "/dashboard/settings" })}
+									onClick={() => navigate({ to: "/admin/settings" })}
 								>
 									Voltar às Configurações
 								</Button>

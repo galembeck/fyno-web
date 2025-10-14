@@ -1,7 +1,7 @@
 import {
 	AudioWaveform,
+	BadgeDollarSign,
 	BookOpen,
-	Bot,
 	Command,
 	Frame,
 	GalleryVerticalEnd,
@@ -33,88 +33,47 @@ export const sidebarData = {
 	navMain: [
 		{
 			title: "Dashboard",
-			url: "/dashboard",
+			url: "/admin/dashboard",
 			icon: SquareTerminal,
 			isActive: true,
 			items: [
 				{
 					title: "Overview",
-					url: "/dashboard",
-				},
-				{
-					title: "Starred",
-					url: "#",
-				},
-				{
-					title: "Settings",
-					url: "#",
+					url: "/admin/dashboard",
 				},
 			],
 		},
 		{
-			title: "Models",
-			url: "#",
-			icon: Bot,
+			title: "Financeiro",
+			url: "/admin/financial",
+			icon: BadgeDollarSign,
+			isActive: true,
 			items: [
 				{
-					title: "Genesis",
-					url: "#",
+					title: "Pagamentos",
+					url: "/admin/payments",
 				},
 				{
-					title: "Explorer",
-					url: "#",
-				},
-				{
-					title: "Quantum",
-					url: "#",
+					title: "Extratos",
+					url: "/admin/extracts",
 				},
 			],
 		},
 		{
-			title: "Documentation",
-			url: "#",
+			title: "Gestão",
+			url: "/admin/mamagement",
 			icon: BookOpen,
 			items: [
 				{
-					title: "Introduction",
-					url: "#",
-				},
-				{
-					title: "Get Started",
-					url: "#",
-				},
-				{
-					title: "Tutorials",
-					url: "#",
-				},
-				{
-					title: "Changelog",
-					url: "#",
+					title: "Clientes",
+					url: "/admin/clients",
 				},
 			],
 		},
 		{
 			title: "Configurações",
-			url: "/dashboard/settings",
+			url: "/admin/settings",
 			icon: Settings2,
-			// items: [
-			// 	{
-			// 		title: "General",
-			// 		url: "/dashboard/settings",
-			// 	},
-			// 	{
-			// 		title: "Team",
-			// 		url: "#",
-			// 	},
-			// 	{
-			// 		title: "Billing",
-			// 		url: "#",
-			// 	},
-			// 	{
-			// 		title: "Limits",
-			// 		url: "#",
-			// 	},
-			// ],
 		},
 	],
 	projects: [

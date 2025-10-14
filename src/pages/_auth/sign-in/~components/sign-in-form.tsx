@@ -58,7 +58,8 @@ export function SiginInForm() {
 				description: "Redirecionando para o dashboard...",
 			});
 
-			const redirectTo = (URLSearchParams as any)?.redirect || "/dashboard";
+			const redirectTo =
+				(URLSearchParams as any)?.redirect || "/admin/dashboard";
 
 			navigate({
 				to: redirectTo,
