@@ -1,21 +1,8 @@
 "use client";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
-} from "@/components/ui/sidebar";
-import { createFileRoute } from "@tanstack/react-router";
-import { ChevronsUpDown, GalleryVerticalEnd, Plus } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Badge } from "@/components/ui/badge";
+import { SidebarMenu, SidebarMenuItem } from "@/components/ui/sidebar";
 
 export const Route = createFileRoute(
   "/_app/admin/~components/sidebar/elements/team-switcher"
@@ -26,7 +13,7 @@ export const Route = createFileRoute(
 export function TeamSwitcher() {
   // const { user, isLoading } = useAuth();
 
-  const { isMobile } = useSidebar();
+  // const { isMobile } = useSidebar();
 
   // const [activeTeam, setActiveTeam] = useState(teams[0]);
 
@@ -36,8 +23,23 @@ export function TeamSwitcher() {
 
   return (
     <SidebarMenu>
-      <SidebarMenuItem>
-        <DropdownMenu>
+      <SidebarMenuItem className="flex flex-col items-center justify-center py-4">
+        <Link className="flex gap-2 " to="/">
+          {/** biome-ignore lint/performance/noImgElement: required b @Vite */}
+          <img alt="Fyno" className="size-7" src="/assets/icons/logo.svg" />
+          <h1 className="font-semibold text-black text-xl lg:text-2xl dark:text-white">
+            Fyno
+          </h1>
+        </Link>
+
+        <Badge
+          className="mt-3 text-center font-bold text-xs uppercase"
+          variant="outline"
+        >
+          Dashboard
+        </Badge>
+
+        {/* <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
@@ -62,7 +64,7 @@ export function TeamSwitcher() {
             <DropdownMenuLabel className="text-muted-foreground text-xs">
               Teams
             </DropdownMenuLabel>
-            {/* {teams.map((team, index) => (
+            {teams.map((team, index) => (
               <DropdownMenuItem
                 className="gap-2 p-2"
                 key={team.name}
@@ -74,7 +76,7 @@ export function TeamSwitcher() {
                 {team.name}
                 <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
               </DropdownMenuItem>
-            ))} */}
+            ))}
             <DropdownMenuSeparator />
             <DropdownMenuItem className="gap-2 p-2">
               <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
@@ -83,7 +85,7 @@ export function TeamSwitcher() {
               <div className="font-medium text-muted-foreground">Add team</div>
             </DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
       </SidebarMenuItem>
     </SidebarMenu>
   );

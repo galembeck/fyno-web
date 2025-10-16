@@ -14,12 +14,28 @@ export interface User {
 	createdAt: string;
 	updatedAt: string;
 
+	// First-step (PersonalInformationForm)
 	name?: string;
 	lastname?: string;
-	cnpj?: string;
-	monthlyRevenue?: string;
 	phone?: string;
 	supportPhone?: string;
+
+	// Second-step (CompanyInformationForm)
+	companyName?: string;
+	cnpj?: string;
+	monthlyRevenue?: string;
+	storeDomain?: string;
+	businessSegment?: string;
+	businessDescription?: string;
+
+	// Third-step (AddressInformationForm)
+	street?: string;
+	number?: string;
+	complement?: string;
+	neighborhood?: string;
+	cep?: string;
+	city?: string;
+	state?: string;
 
 	pendingEmail?: string;
 	emailChangeToken?: string;
@@ -39,15 +55,31 @@ interface AuthResponse {
 }
 
 interface RegisterData {
+	// First-step (PersonalInformationData)
 	username: string;
 	email: string;
 	password: string;
 	name?: string;
 	lastname?: string;
-	cnpj?: string;
-	monthlyRevenue?: string;
 	phone?: string;
 	supportPhone?: string;
+
+	// Second-step (CompanyInformationForm)
+	companyName?: string;
+	cnpj?: string;
+	monthlyRevenue?: string;
+	storeDomain?: string;
+	businessSegment?: string;
+	businessDescription?: string;
+
+	// Third-step (AddressInformationForm)
+	street?: string;
+	number?: string;
+	complement?: string;
+	neighborhood?: string;
+	cep?: string;
+	city?: string;
+	state?: string;
 }
 
 interface LoginData {
@@ -94,6 +126,29 @@ async function updateUserProfile(
 }
 
 const authService = {
+	async checkEmailExists(email: string): Promise<boolean> {
+		try {
+			const encodedEmail = encodeURIComponent(email);
+
+			const response = await strapiAPI.fetch(
+				`/users?filters[email][$eq]=${encodedEmail}`
+			);
+
+			if (Array.isArray(response)) {
+				return response.length > 0;
+			}
+
+			if (response?.data && Array.isArray(response.data)) {
+				return response.data.length > 0;
+			}
+
+			return false;
+			// biome-ignore lint/correctness/noUnusedVariables: not used...
+		} catch (error) {
+			return false;
+		}
+	},
+
 	async register(data: RegisterData): Promise<AuthResponse> {
 		const basicData = {
 			username: data.username,
@@ -111,24 +166,54 @@ const authService = {
 
 		if (
 			response.jwt &&
+			// First-step (PersonalInformationData)
 			(data.name ||
 				data.lastname ||
+				data.phone ||
+				data.supportPhone ||
+				// Second-step (CompanyInformationData)
+				data.companyName ||
 				data.cnpj ||
 				data.monthlyRevenue ||
-				data.phone ||
-				data.supportPhone)
+				data.storeDomain ||
+				data.businessSegment ||
+				data.businessDescription ||
+				// Third-step (AddressInformationData)
+				data.street ||
+				data.number ||
+				data.complement ||
+				data.neighborhood ||
+				data.cep ||
+				data.city ||
+				data.state)
 		) {
 			try {
 				const updatedUser = await updateUserProfile(
 					response.jwt,
 					response.user.id,
 					{
+						// First-step (PersonalInformationData)
 						name: data.name,
 						lastname: data.lastname,
-						cnpj: data.cnpj,
-						monthlyRevenue: data.monthlyRevenue,
 						phone: data.phone,
 						supportPhone: data.supportPhone,
+
+						// Second-step (CompanyInformationData)
+						companyName: data.companyName,
+						cnpj: data.cnpj,
+						monthlyRevenue: data.monthlyRevenue,
+						storeDomain: data.storeDomain,
+						businessSegment: data.businessSegment,
+						businessDescription: data.businessDescription,
+
+						// Third-step (AddressInformationData)
+						street: data.street,
+						number: data.number,
+						complement: data.complement,
+						neighborhood: data.neighborhood,
+						cep: data.cep,
+						city: data.city,
+						state: data.state,
 					}
 				);
 
@@ -267,6 +352,10 @@ export function useAuth() {
 		staleTime: 5 * 60 * 1000,
 	});
 
+	const checkEmailExists = async (email: string) => {
+		return await authService.checkEmailExists(email);
+	};
+
 	const registerMutation = useMutation({
 		mutationFn: authService.register,
 		onSuccess: (data) => {
@@ -346,6 +435,7 @@ export function useAuth() {
 		register: registerMutation.mutateAsync,
 		login: loginMutation.mutateAsync,
 		updateUser: updateUserMutation.mutateAsync,
+		checkEmailExists,
 		logout,
 		isRegistering: registerMutation.isPending,
 		isLoggingIn: loginMutation.isPending,

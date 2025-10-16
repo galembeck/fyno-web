@@ -47,7 +47,6 @@ export const sidebarData = {
 			title: "Financeiro",
 			url: "/admin/financial",
 			icon: BadgeDollarSign,
-			isActive: true,
 			items: [
 				{
 					title: "Pagamentos",
