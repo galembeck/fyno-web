@@ -44,6 +44,7 @@ import { Route as AppAdminChar126componentsSidebarDashboardSidebarRouteImport } 
 import { Route as AppAdminPagesSettingsPageSettingsRouteImport } from './pages/_app/admin/_pages/settings/_page-settings'
 import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
 import { Route as AppRelatedBlogChar126componentsBlogArticlesRouteImport } from './pages/_app/_related/blog/~components/blog-articles'
+import { Route as AppPublicChar126componentsSectionsTestimonialsRouteImport } from './pages/_app/_public/~components/sections/testimonials'
 import { Route as AppPublicChar126componentsSectionsTaxesRouteImport } from './pages/_app/_public/~components/sections/taxes'
 import { Route as AppPublicChar126componentsSectionsRewardsRouteImport } from './pages/_app/_public/~components/sections/rewards'
 import { Route as AppPublicChar126componentsSectionsResourcesRouteImport } from './pages/_app/_public/~components/sections/resources'
@@ -291,6 +292,12 @@ const AppRelatedBlogChar126componentsBlogArticlesRoute =
     id: '/~components/blog-articles',
     path: '/~components/blog-articles',
     getParentRoute: () => AppRelatedBlogLayoutRoute,
+  } as any)
+const AppPublicChar126componentsSectionsTestimonialsRoute =
+  AppPublicChar126componentsSectionsTestimonialsRouteImport.update({
+    id: '/~components/sections/testimonials',
+    path: '/~components/sections/testimonials',
+    getParentRoute: () => AppPublicLayoutRoute,
   } as any)
 const AppPublicChar126componentsSectionsTaxesRoute =
   AppPublicChar126componentsSectionsTaxesRouteImport.update({
@@ -700,6 +707,7 @@ export interface FileRoutesByFullPath {
   '/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
+  '/~components/sections/testimonials': typeof AppPublicChar126componentsSectionsTestimonialsRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/admin/settings': typeof AppAdminPagesSettingsPageSettingsRoute
@@ -785,6 +793,7 @@ export interface FileRoutesByTo {
   '/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
+  '/~components/sections/testimonials': typeof AppPublicChar126componentsSectionsTestimonialsRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/admin/settings': typeof AppAdminPagesSettingsIndexRoute
@@ -875,6 +884,7 @@ export interface FileRoutesById {
   '/_app/_public/~components/sections/resources': typeof AppPublicChar126componentsSectionsResourcesRoute
   '/_app/_public/~components/sections/rewards': typeof AppPublicChar126componentsSectionsRewardsRoute
   '/_app/_public/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
+  '/_app/_public/~components/sections/testimonials': typeof AppPublicChar126componentsSectionsTestimonialsRoute
   '/_app/_related/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/_app/admin/_pages/settings': typeof AppAdminPagesSettingsRouteWithChildren
@@ -966,6 +976,7 @@ export interface FileRouteTypes {
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
     | '/~components/sections/taxes'
+    | '/~components/sections/testimonials'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
     | '/admin/settings'
@@ -1051,6 +1062,7 @@ export interface FileRouteTypes {
     | '/~components/sections/resources'
     | '/~components/sections/rewards'
     | '/~components/sections/taxes'
+    | '/~components/sections/testimonials'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
     | '/admin/settings'
@@ -1140,6 +1152,7 @@ export interface FileRouteTypes {
     | '/_app/_public/~components/sections/resources'
     | '/_app/_public/~components/sections/rewards'
     | '/_app/_public/~components/sections/taxes'
+    | '/_app/_public/~components/sections/testimonials'
     | '/_app/_related/blog/~components/blog-articles'
     | '/_app/_related/blog/~components/navbar'
     | '/_app/admin/_pages/settings'
@@ -1452,6 +1465,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/~components/blog-articles'
       preLoaderRoute: typeof AppRelatedBlogChar126componentsBlogArticlesRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/_public/~components/sections/testimonials': {
+      id: '/_app/_public/~components/sections/testimonials'
+      path: '/~components/sections/testimonials'
+      fullPath: '/~components/sections/testimonials'
+      preLoaderRoute: typeof AppPublicChar126componentsSectionsTestimonialsRouteImport
+      parentRoute: typeof AppPublicLayoutRoute
     }
     '/_app/_public/~components/sections/taxes': {
       id: '/_app/_public/~components/sections/taxes'
@@ -1851,6 +1871,7 @@ interface AppPublicLayoutRouteChildren {
   AppPublicChar126componentsSectionsResourcesRoute: typeof AppPublicChar126componentsSectionsResourcesRoute
   AppPublicChar126componentsSectionsRewardsRoute: typeof AppPublicChar126componentsSectionsRewardsRoute
   AppPublicChar126componentsSectionsTaxesRoute: typeof AppPublicChar126componentsSectionsTaxesRoute
+  AppPublicChar126componentsSectionsTestimonialsRoute: typeof AppPublicChar126componentsSectionsTestimonialsRoute
   AppPublicRewardsChar126componentsSectionsIntroRoute: typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute: typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   AppPublicRewardsChar126componentsSectionsRewardsListRoute: typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
@@ -1873,6 +1894,8 @@ const AppPublicLayoutRouteChildren: AppPublicLayoutRouteChildren = {
     AppPublicChar126componentsSectionsRewardsRoute,
   AppPublicChar126componentsSectionsTaxesRoute:
     AppPublicChar126componentsSectionsTaxesRoute,
+  AppPublicChar126componentsSectionsTestimonialsRoute:
+    AppPublicChar126componentsSectionsTestimonialsRoute,
   AppPublicRewardsChar126componentsSectionsIntroRoute:
     AppPublicRewardsChar126componentsSectionsIntroRoute,
   AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute:
