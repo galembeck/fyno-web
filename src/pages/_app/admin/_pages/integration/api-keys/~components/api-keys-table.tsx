@@ -6,6 +6,7 @@ import { format } from "date-fns";
 import { Copy, MoreHorizontal, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { DataTableColumnSearch } from "@/components/data-table-column-search";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -95,6 +96,9 @@ export const apiKeysTableColumns: ColumnDef<APIKey>[] = [
         placeholder="Buscar por origem..."
         title="Origem"
       />
+    ),
+    cell: ({ row }) => (
+      <Badge className="bg-blue-400">{row.getValue("origin")}</Badge>
     ),
   },
   {
