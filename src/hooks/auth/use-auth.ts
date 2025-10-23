@@ -4,7 +4,7 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { api } from "@/api/modules/auth.api";
+import api from "@/api/api";
 
 export function useAuth() {
   const queryClient = useQueryClient();

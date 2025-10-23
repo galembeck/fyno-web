@@ -3,9 +3,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
-import { Copy, MoreHorizontal, Trash2 } from "lucide-react";
+import { Copy, Logs, MoreHorizontal, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { DataTableColumnSearch } from "@/components/data-table-column-search";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -22,10 +23,12 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useApiKeys } from "@/hooks/integration/use-api-keys";
+import { useWebhooks } from "@/hooks/integration/use-webhooks";
 import { DeleteConfirmation } from "../../~components/delete-confirmation";
+import { CreateWebhook } from "./create-webhook";
 
 export const Route = createFileRoute(
   "/_app/admin/_pages/integration/webhooks/~components/webhooks-table"
@@ -95,6 +98,32 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
         title="Eventos"
       />
     ),
+    cell: ({ row }) => {
+      const events = (row.getValue("events") as string[]) || [];
+
+      return (
+        <div className="flex flex-wrap gap-2">
+          {events.map((event) => {
+            const lower = event.toLowerCase();
+            const badgeClass = lower.includes("billing")
+              ? "bg-emerald-600 text-white"
+              : // biome-ignore lint/style/noNestedTernary: required by webhook-events styling...
+                lower.includes("withdraw")
+                ? "bg-sky-600 text-white"
+                : "bg-slate-100 text-muted-foreground";
+
+            return (
+              <Badge
+                className={`px-2 py-0.5 text-xs ${badgeClass}`}
+                key={event}
+              >
+                {event}
+              </Badge>
+            );
+          })}
+        </div>
+      );
+    },
   },
   {
     accessorKey: "url",
@@ -134,7 +163,7 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
     cell: ({ row }) => {
       const client = row.original;
 
-      const { revokeKey } = useApiKeys();
+      const { deleteWebhook } = useWebhooks();
 
       const [openConfirm, setOpenConfirm] = useState(false);
 
@@ -160,6 +189,13 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
                 Copiar ID (webhook)
               </DropdownMenuItem>
 
+              <DropdownMenuItem>
+                <Logs />
+                Ver logs
+              </DropdownMenuItem>
+
+              <DropdownMenuSeparator />
+
               <DropdownMenuItem
                 onClick={(e) => {
                   e.preventDefault();
@@ -172,7 +208,7 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
               </DropdownMenuItem>
 
               <DeleteConfirmation
-                onClick={() => revokeKey(client.id)}
+                onClick={() => deleteWebhook(client.id)}
                 onOpenChange={setOpenConfirm}
                 open={openConfirm}
                 type="webhook"
@@ -186,7 +222,7 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
 ];
 
 export function WebhooksTable() {
-  const { keys, isLoading } = useApiKeys();
+  const { webhooks, isLoading } = useWebhooks();
 
   return (
     <Card>
@@ -196,7 +232,9 @@ export function WebhooksTable() {
           Visualize, gerencie e crie webhooks para fins de desenvolvimento
         </CardDescription>
 
-        <CardAction>{/* <CreateAPIKey /> */}</CardAction>
+        <CardAction>
+          <CreateWebhook />
+        </CardAction>
       </CardHeader>
 
       <CardContent>
@@ -207,12 +245,12 @@ export function WebhooksTable() {
         ) : (
           <DataTable
             columns={webhooksTableColumns}
-            data={(keys || []).map((key: any) => ({
-              id: key.id,
-              name: key.name ?? "",
-              events: key.events ?? [],
-              url: key.url ?? "",
-              createdAt: key.createdAt ?? "",
+            data={(webhooks || []).map((webhook: any) => ({
+              id: webhook.id,
+              name: webhook.name ?? "",
+              events: webhook.events ?? [],
+              url: webhook.url ?? "",
+              createdAt: webhook.createdAt ?? "",
             }))}
             filterableColumns={[
               {
