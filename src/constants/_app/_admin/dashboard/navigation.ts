@@ -17,9 +17,10 @@ export const searchNavigationItems: NavigationItem[] = [
     title: "Dashboard",
     url: "/admin/dashboard",
     description: "Visão geral do dashboard",
-    group: "Principal",
-    icon: sidebarData.primary.find((item) => item.title === "Dashboard")?.icon,
-    keywords: ["inicio", "home", "principal", "overview", "dashboard"],
+    group: "Consolidado",
+    icon: sidebarData.consolidated.find((item) => item.title === "Dashboard")
+      ?.icon,
+    keywords: ["inicio", "home", "consolidado", "overview", "dashboard"],
   },
 
   {
@@ -28,8 +29,9 @@ export const searchNavigationItems: NavigationItem[] = [
     url: "/admin/payments",
     description:
       "Visualize e gerencie todos os pagamentos realizados em sua plataforma",
-    group: "Financeiro",
-    icon: sidebarData.primary.find((item) => item.title === "Financeiro")?.icon,
+    group: "Consolidado",
+    icon: sidebarData.consolidated.find((item) => item.title === "Financeiro")
+      ?.icon,
     keywords: ["financeiro", "overview", "pagamentos", "payments"],
   },
   // {
@@ -48,8 +50,9 @@ export const searchNavigationItems: NavigationItem[] = [
     title: "Clientes",
     url: "/admin/clients",
     description: "Visualize e gerencie todos os clientes de sua plataforma",
-    group: "Gestão",
-    icon: sidebarData.primary.find((item) => item.title === "Gestão")?.icon,
+    group: "Consolidado",
+    icon: sidebarData.consolidated.find((item) => item.title === "Gestão")
+      ?.icon,
     keywords: [
       "gestão",
       "usuários",
@@ -112,7 +115,7 @@ export const getAllNavigationItems = (): NavigationItem[] => {
     })
   );
 
-  const transactionItems: NavigationItem[] = sidebarData.transactions.map(
+  const transactionItems: NavigationItem[] = sidebarData.primary.map(
     (item) => ({
       id: `item-${item.title}`,
       title: item.title,

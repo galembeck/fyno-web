@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const sidebarData = {
-  primary: [
+  consolidated: [
     {
       title: "Dashboard",
       url: "/admin/dashboard",
@@ -85,7 +85,7 @@ export const sidebarData = {
     },
   ],
 
-  transactions: [
+  primary: [
     {
       title: "Produtos",
       description: "Crie e gerencie os produtos disponvéis em sua loja",

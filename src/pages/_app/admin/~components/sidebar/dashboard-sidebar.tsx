@@ -35,15 +35,15 @@ export function DashboardSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
 
       <SidebarContent>
-        <NavigationContent items={sidebarData.primary} section="Principal" />
+        <NavigationContent
+          items={sidebarData.consolidated}
+          section="Consolidado"
+        />
         <NavigationContent
           items={sidebarData.integration}
           section="Integração"
         />
-        <NavigationContent
-          items={sidebarData.transactions}
-          section="Transações"
-        />
+        <NavigationContent items={sidebarData.primary} section="Principal" />
 
         <SidebarGroup>
           <SidebarGroupLabel>Sistema</SidebarGroupLabel>
