@@ -23,6 +23,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useApiKeys } from "@/hooks/integration/use-api-keys";
@@ -154,6 +155,8 @@ export const apiKeysTableColumns: ColumnDef<APIKey>[] = [
                 <Copy />
                 Copiar chave API
               </DropdownMenuItem>
+
+              <DropdownMenuSeparator />
 
               <DropdownMenuItem
                 onClick={(e) => {

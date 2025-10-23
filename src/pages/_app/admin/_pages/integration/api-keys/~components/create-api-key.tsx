@@ -62,7 +62,7 @@ export function CreateAPIKey() {
         origin: ApiKeyOrigins.DASHBOARD,
       });
 
-      toast.success("Chave API criada com sucesso");
+      toast.success("Chave API criada com sucesso!");
       setOpen(false);
       form.reset();
     } catch (error: any) {
