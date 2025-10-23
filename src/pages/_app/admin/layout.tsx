@@ -20,12 +20,14 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/providers/theme/theme-provider";
+import { NotificationDropdown } from "./~components/notification-dropdown";
 import { DashboardSidebar } from "./~components/sidebar/dashboard-sidebar";
+import { SearchSection } from "./~components/sidebar/elements/search-section";
 
 export const Route = createFileRoute("/_app/admin")({
   component: Layout,
   beforeLoad: ({ location }) => {
-    const token = localStorage.getItem("strapi_jwt");
+    const token = localStorage.getItem("fyno_jwt");
 
     if (!token) {
       throw redirect({
@@ -45,13 +47,16 @@ function Layout() {
     "/admin/dashboard": "Dashboard",
 
     "/admin/payments": "Pagamentos",
-    "/admin/extracts": "Extratos",
+    // "/admin/extracts": "Extratos",
 
     "/admin/clients": "Clientes",
     "/admin/client-detail/$clientId": "Detalhes do Cliente",
 
-    "/admin/settings": "Configurações de Conta",
     "/admin/profile": "Perfil",
+    "/admin/settings": "Configurações de Conta",
+
+    "/admin/integration/api-keys": "Integração > API Keys",
+    "/admin/integration/webhooks": "Integração > Webhooks",
   };
 
   function derivativePaths(path: string) {
@@ -98,7 +103,15 @@ function Layout() {
                 </Breadcrumb>
               </div>
 
-              <ThemeToggle />
+              <div className="flex items-center gap-2">
+                <div className="hidden lg:block">
+                  <SearchSection />
+                </div>
+
+                <NotificationDropdown />
+
+                <ThemeToggle />
+              </div>
             </header>
 
             <Outlet />

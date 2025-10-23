@@ -24,31 +24,24 @@ import { Route as AppRelatedBlogLayoutRouteImport } from './pages/_app/_related/
 import { Route as AppRelatedComplianceLayoutRouteImport } from './pages/_app/_related/_compliance/layout'
 import { Route as AuthSignUpTaxesNegotiationIndexRouteImport } from './pages/_auth/sign-up/taxes-negotiation/index'
 import { Route as AuthSignUpRegisterIndexRouteImport } from './pages/_auth/sign-up/register/index'
-import { Route as AppAdminSettingsIndexRouteImport } from './pages/_app/admin/settings/index'
-import { Route as AppAdminProfileIndexRouteImport } from './pages/_app/admin/profile/index'
-import { Route as AppAdminDashboardIndexRouteImport } from './pages/_app/admin/dashboard/index'
 import { Route as AppRelatedBlogIndexRouteImport } from './pages/_app/_related/blog/index'
 import { Route as AppPublicRewardsIndexRouteImport } from './pages/_app/_public/rewards/index'
 import { Route as AuthSignUpChar126componentsSignUpFormRouteImport } from './pages/_auth/sign-up/~components/sign-up-form'
 import { Route as AuthSignInChar126componentsSignInFormRouteImport } from './pages/_auth/sign-in/~components/sign-in-form'
-import { Route as AppAdminSettingsPageSettingsRouteImport } from './pages/_app/admin/settings/_page-settings'
+import { Route as AppAdminChar126componentsNotificationDropdownRouteImport } from './pages/_app/admin/~components/notification-dropdown'
 import { Route as AppRelatedComplianceTermsOfUseRouteImport } from './pages/_app/_related/_compliance/terms-of-use'
 import { Route as AppRelatedComplianceProhibitedProductsRouteImport } from './pages/_app/_related/_compliance/prohibited-products'
 import { Route as AppRelatedCompliancePrivacyPolicyRouteImport } from './pages/_app/_related/_compliance/privacy-policy'
 import { Route as AppRelatedComplianceContactRouteImport } from './pages/_app/_related/_compliance/contact'
 import { Route as AppRelatedComplianceComplaintsRouteImport } from './pages/_app/_related/_compliance/complaints'
-import { Route as AppAdminManagementClientsIndexRouteImport } from './pages/_app/admin/_management/clients/index'
-import { Route as AppAdminManagementClientDetailIndexRouteImport } from './pages/_app/admin/_management/client-detail/index'
-import { Route as AppAdminFinancialPaymentsIndexRouteImport } from './pages/_app/admin/_financial/payments/index'
-import { Route as AppAdminFinancialExtractsIndexRouteImport } from './pages/_app/admin/_financial/extracts/index'
+import { Route as AppAdminPagesSettingsIndexRouteImport } from './pages/_app/admin/_pages/settings/index'
+import { Route as AppAdminPagesProfileIndexRouteImport } from './pages/_app/admin/_pages/profile/index'
+import { Route as AppAdminPagesIntegrationIndexRouteImport } from './pages/_app/admin/_pages/integration/index'
+import { Route as AppAdminPagesDashboardIndexRouteImport } from './pages/_app/admin/_pages/dashboard/index'
 import { Route as AuthSignUpRegisterChar126componentsRegisterFormRouteImport } from './pages/_auth/sign-up/register/~components/register-form'
 import { Route as AuthSignUpRegisterChar126componentsLeaveConfirmationRouteImport } from './pages/_auth/sign-up/register/~components/leave-confirmation'
 import { Route as AppAdminChar126componentsSidebarDashboardSidebarRouteImport } from './pages/_app/admin/~components/sidebar/dashboard-sidebar'
-import { Route as AppAdminSettingsChar126componentsProfileTabRouteImport } from './pages/_app/admin/settings/~components/profile-tab'
-import { Route as AppAdminSettingsChar126componentsCompanyTabRouteImport } from './pages/_app/admin/settings/~components/company-tab'
-import { Route as AppAdminProfileChar126componentsPersonalInformationTabRouteImport } from './pages/_app/admin/profile/~components/personal-information-tab'
-import { Route as AppAdminProfileChar126componentsCompanyInformationTabRouteImport } from './pages/_app/admin/profile/~components/company-information-tab'
-import { Route as AppAdminProfileChar126componentsAddressInformationTabRouteImport } from './pages/_app/admin/profile/~components/address-information-tab'
+import { Route as AppAdminPagesSettingsPageSettingsRouteImport } from './pages/_app/admin/_pages/settings/_page-settings'
 import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
 import { Route as AppRelatedBlogChar126componentsBlogArticlesRouteImport } from './pages/_app/_related/blog/~components/blog-articles'
 import { Route as AppPublicChar126componentsSectionsTaxesRouteImport } from './pages/_app/_public/~components/sections/taxes'
@@ -58,7 +51,12 @@ import { Route as AppPublicChar126componentsSectionsRecentArticlesRouteImport } 
 import { Route as AppPublicChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/~components/sections/intro'
 import { Route as AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport } from './pages/_app/_public/~components/sections/companies-marquee'
 import { Route as AppPublicChar126componentsSectionsBenefitsRouteImport } from './pages/_app/_public/~components/sections/benefits'
-import { Route as AppAdminManagementClientDetailClientIdIndexRouteImport } from './pages/_app/admin/_management/client-detail/$clientId/index'
+import { Route as AppAdminPagesIntegrationWebhooksIndexRouteImport } from './pages/_app/admin/_pages/integration/webhooks/index'
+import { Route as AppAdminPagesIntegrationApiKeysIndexRouteImport } from './pages/_app/admin/_pages/integration/api-keys/index'
+import { Route as AppAdminPagesManagementClientsIndexRouteImport } from './pages/_app/admin/_pages/_management/clients/index'
+import { Route as AppAdminPagesManagementClientDetailIndexRouteImport } from './pages/_app/admin/_pages/_management/client-detail/index'
+import { Route as AppAdminPagesFinancialPaymentsIndexRouteImport } from './pages/_app/admin/_pages/_financial/payments/index'
+import { Route as AppAdminPagesFinancialExtractsIndexRouteImport } from './pages/_app/admin/_pages/_financial/extracts/index'
 import { Route as AppRelatedBlogArticleContentArticleIdIndexRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/index'
 import { Route as AuthSignUpRegisterChar126componentsRegisterFormStepsPersonalInformationFormRouteImport } from './pages/_auth/sign-up/register/~components/register-form-steps/personal-information-form'
 import { Route as AuthSignUpRegisterChar126componentsRegisterFormStepsCompanyInformationFormRouteImport } from './pages/_auth/sign-up/register/~components/register-form-steps/company-information-form'
@@ -66,31 +64,45 @@ import { Route as AuthSignUpRegisterChar126componentsRegisterFormStepsAddressInf
 import { Route as AppAdminChar126componentsSidebarElementsUserProfileRouteImport } from './pages/_app/admin/~components/sidebar/elements/user-profile'
 import { Route as AppAdminChar126componentsSidebarElementsTeamSwitcherRouteImport } from './pages/_app/admin/~components/sidebar/elements/team-switcher'
 import { Route as AppAdminChar126componentsSidebarElementsSearchSectionRouteImport } from './pages/_app/admin/~components/sidebar/elements/search-section'
-import { Route as AppAdminChar126componentsSidebarElementsNavigationProjectsRouteImport } from './pages/_app/admin/~components/sidebar/elements/navigation-projects'
 import { Route as AppAdminChar126componentsSidebarElementsNagivationContentRouteImport } from './pages/_app/admin/~components/sidebar/elements/nagivation-content'
-import { Route as AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRouteImport } from './pages/_app/admin/dashboard/_overview/~components/chart-area-interactive'
-import { Route as AppAdminManagementClientsChar126componentsClientsTableRouteImport } from './pages/_app/admin/_management/clients/~components/clients-table'
-import { Route as AppAdminFinancialPaymentsChar126componentsPaymentsTableRouteImport } from './pages/_app/admin/_financial/payments/~components/payments-table'
-import { Route as AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRouteImport } from './pages/_app/admin/_financial/extracts/~components/financial-summary-card'
-import { Route as AppAdminFinancialExtractsChar126componentsFinancialSummaryRouteImport } from './pages/_app/admin/_financial/extracts/~components/financial-summary'
+import { Route as AppAdminPagesSettingsChar126componentsProfileTabRouteImport } from './pages/_app/admin/_pages/settings/~components/profile-tab'
+import { Route as AppAdminPagesSettingsChar126componentsCompanyTabRouteImport } from './pages/_app/admin/_pages/settings/~components/company-tab'
+import { Route as AppAdminPagesSettingsChar126componentsAddressTabRouteImport } from './pages/_app/admin/_pages/settings/~components/address-tab'
+import { Route as AppAdminPagesProfileChar126componentsPersonalInformationTabRouteImport } from './pages/_app/admin/_pages/profile/~components/personal-information-tab'
+import { Route as AppAdminPagesProfileChar126componentsCompanyInformationTabRouteImport } from './pages/_app/admin/_pages/profile/~components/company-information-tab'
+import { Route as AppAdminPagesProfileChar126componentsAddressInformationTabRouteImport } from './pages/_app/admin/_pages/profile/~components/address-information-tab'
+import { Route as AppAdminPagesIntegrationChar126componentsInformationCardRouteImport } from './pages/_app/admin/_pages/integration/~components/information-card'
 import { Route as AppRelatedBlogChar126componentsPaginationBlogPaginationRouteImport } from './pages/_app/_related/blog/~components/pagination/blog-pagination'
 import { Route as AppRelatedBlogChar126componentsContentArticlesFiltersRouteImport } from './pages/_app/_related/blog/~components/content/articles-filters'
 import { Route as AppRelatedBlogChar126componentsContentArticleCardRouteImport } from './pages/_app/_related/blog/~components/content/article-card'
 import { Route as AppPublicRewardsChar126componentsSectionsRewardsListRouteImport } from './pages/_app/_public/rewards/~components/sections/rewards-list'
 import { Route as AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport } from './pages/_app/_public/rewards/~components/sections/pictures-carousel'
 import { Route as AppPublicRewardsChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/rewards/~components/sections/intro'
-import { Route as AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRouteImport } from './pages/_app/admin/dashboard/_overview/~components/analytics/analytics-overview'
-import { Route as AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRouteImport } from './pages/_app/admin/dashboard/_overview/~components/analytics/analytic-overview-card'
-import { Route as AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport } from './pages/_app/admin/_management/client-detail/$clientId/~components/client-information-tab'
+import { Route as AppAdminPagesManagementClientDetailClientIdIndexRouteImport } from './pages/_app/admin/_pages/_management/client-detail/$clientId/index'
+import { Route as AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRouteImport } from './pages/_app/admin/_pages/integration/webhooks/~components/webhooks-table'
+import { Route as AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRouteImport } from './pages/_app/admin/_pages/integration/api-keys/~components/create-api-key-button'
+import { Route as AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRouteImport } from './pages/_app/admin/_pages/integration/api-keys/~components/create-api-key'
+import { Route as AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRouteImport } from './pages/_app/admin/_pages/integration/api-keys/~components/api-keys-table'
+import { Route as AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRouteImport } from './pages/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card'
+import { Route as AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRouteImport } from './pages/_app/admin/_pages/dashboard/_overview/~components/chart-area-interactive'
+import { Route as AppAdminPagesManagementClientsChar126componentsClientsTableRouteImport } from './pages/_app/admin/_pages/_management/clients/~components/clients-table'
+import { Route as AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRouteImport } from './pages/_app/admin/_pages/_financial/payments/~components/payments-table'
+import { Route as AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRouteImport } from './pages/_app/admin/_pages/_financial/extracts/~components/financial-summary-card'
+import { Route as AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRouteImport } from './pages/_app/admin/_pages/_financial/extracts/~components/financial-summary'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
+import { Route as AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRouteImport } from './pages/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview-card'
+import { Route as AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRouteImport } from './pages/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview'
+import { Route as AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport } from './pages/_app/admin/_pages/_management/client-detail/$clientId/~components/client-information-tab'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
 
-const AppAdminSettingsRouteImport = createFileRoute('/_app/admin/settings')()
+const AppAdminPagesSettingsRouteImport = createFileRoute(
+  '/_app/admin/_pages/settings',
+)()
 
 const ErrorNotFoundRoute = ErrorNotFoundRouteImport.update({
   id: '/_error/not-found',
@@ -110,11 +122,6 @@ const AppAdminLayoutRoute = AppAdminLayoutRouteImport.update({
 const AppPublicLayoutRoute = AppPublicLayoutRouteImport.update({
   id: '/_app/_public',
   getParentRoute: () => rootRouteImport,
-} as any)
-const AppAdminSettingsRoute = AppAdminSettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => AppAdminLayoutRoute,
 } as any)
 const AuthSignUpIndexRoute = AuthSignUpIndexRouteImport.update({
   id: '/',
@@ -152,6 +159,11 @@ const AppRelatedComplianceLayoutRoute =
     id: '/_app/_related/_compliance',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AppAdminPagesSettingsRoute = AppAdminPagesSettingsRouteImport.update({
+  id: '/_pages/settings',
+  path: '/settings',
+  getParentRoute: () => AppAdminLayoutRoute,
+} as any)
 const AuthSignUpTaxesNegotiationIndexRoute =
   AuthSignUpTaxesNegotiationIndexRouteImport.update({
     id: '/taxes-negotiation/',
@@ -162,21 +174,6 @@ const AuthSignUpRegisterIndexRoute = AuthSignUpRegisterIndexRouteImport.update({
   id: '/register/',
   path: '/register/',
   getParentRoute: () => AuthSignUpLayoutRoute,
-} as any)
-const AppAdminSettingsIndexRoute = AppAdminSettingsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => AppAdminSettingsRoute,
-} as any)
-const AppAdminProfileIndexRoute = AppAdminProfileIndexRouteImport.update({
-  id: '/profile/',
-  path: '/profile/',
-  getParentRoute: () => AppAdminLayoutRoute,
-} as any)
-const AppAdminDashboardIndexRoute = AppAdminDashboardIndexRouteImport.update({
-  id: '/dashboard/',
-  path: '/dashboard/',
-  getParentRoute: () => AppAdminLayoutRoute,
 } as any)
 const AppRelatedBlogIndexRoute = AppRelatedBlogIndexRouteImport.update({
   id: '/',
@@ -200,10 +197,11 @@ const AuthSignInChar126componentsSignInFormRoute =
     path: '/sign-in/~components/sign-in-form',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AppAdminSettingsPageSettingsRoute =
-  AppAdminSettingsPageSettingsRouteImport.update({
-    id: '/_page-settings',
-    getParentRoute: () => AppAdminSettingsRoute,
+const AppAdminChar126componentsNotificationDropdownRoute =
+  AppAdminChar126componentsNotificationDropdownRouteImport.update({
+    id: '/~components/notification-dropdown',
+    path: '/~components/notification-dropdown',
+    getParentRoute: () => AppAdminLayoutRoute,
   } as any)
 const AppRelatedComplianceTermsOfUseRoute =
   AppRelatedComplianceTermsOfUseRouteImport.update({
@@ -235,28 +233,28 @@ const AppRelatedComplianceComplaintsRoute =
     path: '/complaints',
     getParentRoute: () => AppRelatedComplianceLayoutRoute,
   } as any)
-const AppAdminManagementClientsIndexRoute =
-  AppAdminManagementClientsIndexRouteImport.update({
-    id: '/_management/clients/',
-    path: '/clients/',
+const AppAdminPagesSettingsIndexRoute =
+  AppAdminPagesSettingsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AppAdminPagesSettingsRoute,
+  } as any)
+const AppAdminPagesProfileIndexRoute =
+  AppAdminPagesProfileIndexRouteImport.update({
+    id: '/_pages/profile/',
+    path: '/profile/',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
-const AppAdminManagementClientDetailIndexRoute =
-  AppAdminManagementClientDetailIndexRouteImport.update({
-    id: '/_management/client-detail/',
-    path: '/client-detail/',
+const AppAdminPagesIntegrationIndexRoute =
+  AppAdminPagesIntegrationIndexRouteImport.update({
+    id: '/_pages/integration/',
+    path: '/integration/',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
-const AppAdminFinancialPaymentsIndexRoute =
-  AppAdminFinancialPaymentsIndexRouteImport.update({
-    id: '/_financial/payments/',
-    path: '/payments/',
-    getParentRoute: () => AppAdminLayoutRoute,
-  } as any)
-const AppAdminFinancialExtractsIndexRoute =
-  AppAdminFinancialExtractsIndexRouteImport.update({
-    id: '/_financial/extracts/',
-    path: '/extracts/',
+const AppAdminPagesDashboardIndexRoute =
+  AppAdminPagesDashboardIndexRouteImport.update({
+    id: '/_pages/dashboard/',
+    path: '/dashboard/',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
 const AuthSignUpRegisterChar126componentsRegisterFormRoute =
@@ -277,35 +275,10 @@ const AppAdminChar126componentsSidebarDashboardSidebarRoute =
     path: '/~components/sidebar/dashboard-sidebar',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
-const AppAdminSettingsChar126componentsProfileTabRoute =
-  AppAdminSettingsChar126componentsProfileTabRouteImport.update({
-    id: '/~components/profile-tab',
-    path: '/~components/profile-tab',
-    getParentRoute: () => AppAdminSettingsRoute,
-  } as any)
-const AppAdminSettingsChar126componentsCompanyTabRoute =
-  AppAdminSettingsChar126componentsCompanyTabRouteImport.update({
-    id: '/~components/company-tab',
-    path: '/~components/company-tab',
-    getParentRoute: () => AppAdminSettingsRoute,
-  } as any)
-const AppAdminProfileChar126componentsPersonalInformationTabRoute =
-  AppAdminProfileChar126componentsPersonalInformationTabRouteImport.update({
-    id: '/profile/~components/personal-information-tab',
-    path: '/profile/~components/personal-information-tab',
-    getParentRoute: () => AppAdminLayoutRoute,
-  } as any)
-const AppAdminProfileChar126componentsCompanyInformationTabRoute =
-  AppAdminProfileChar126componentsCompanyInformationTabRouteImport.update({
-    id: '/profile/~components/company-information-tab',
-    path: '/profile/~components/company-information-tab',
-    getParentRoute: () => AppAdminLayoutRoute,
-  } as any)
-const AppAdminProfileChar126componentsAddressInformationTabRoute =
-  AppAdminProfileChar126componentsAddressInformationTabRouteImport.update({
-    id: '/profile/~components/address-information-tab',
-    path: '/profile/~components/address-information-tab',
-    getParentRoute: () => AppAdminLayoutRoute,
+const AppAdminPagesSettingsPageSettingsRoute =
+  AppAdminPagesSettingsPageSettingsRouteImport.update({
+    id: '/_page-settings',
+    getParentRoute: () => AppAdminPagesSettingsRoute,
   } as any)
 const AppRelatedBlogChar126componentsNavbarRoute =
   AppRelatedBlogChar126componentsNavbarRouteImport.update({
@@ -361,10 +334,40 @@ const AppPublicChar126componentsSectionsBenefitsRoute =
     path: '/~components/sections/benefits',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const AppAdminManagementClientDetailClientIdIndexRoute =
-  AppAdminManagementClientDetailClientIdIndexRouteImport.update({
-    id: '/_management/client-detail/$clientId/',
-    path: '/client-detail/$clientId/',
+const AppAdminPagesIntegrationWebhooksIndexRoute =
+  AppAdminPagesIntegrationWebhooksIndexRouteImport.update({
+    id: '/_pages/integration/webhooks/',
+    path: '/integration/webhooks/',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminPagesIntegrationApiKeysIndexRoute =
+  AppAdminPagesIntegrationApiKeysIndexRouteImport.update({
+    id: '/_pages/integration/api-keys/',
+    path: '/integration/api-keys/',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminPagesManagementClientsIndexRoute =
+  AppAdminPagesManagementClientsIndexRouteImport.update({
+    id: '/_pages/_management/clients/',
+    path: '/clients/',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminPagesManagementClientDetailIndexRoute =
+  AppAdminPagesManagementClientDetailIndexRouteImport.update({
+    id: '/_pages/_management/client-detail/',
+    path: '/client-detail/',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminPagesFinancialPaymentsIndexRoute =
+  AppAdminPagesFinancialPaymentsIndexRouteImport.update({
+    id: '/_pages/_financial/payments/',
+    path: '/payments/',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminPagesFinancialExtractsIndexRoute =
+  AppAdminPagesFinancialExtractsIndexRouteImport.update({
+    id: '/_pages/_financial/extracts/',
+    path: '/extracts/',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
 const AppRelatedBlogArticleContentArticleIdIndexRoute =
@@ -415,50 +418,54 @@ const AppAdminChar126componentsSidebarElementsSearchSectionRoute =
     path: '/~components/sidebar/elements/search-section',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
-const AppAdminChar126componentsSidebarElementsNavigationProjectsRoute =
-  AppAdminChar126componentsSidebarElementsNavigationProjectsRouteImport.update({
-    id: '/~components/sidebar/elements/navigation-projects',
-    path: '/~components/sidebar/elements/navigation-projects',
-    getParentRoute: () => AppAdminLayoutRoute,
-  } as any)
 const AppAdminChar126componentsSidebarElementsNagivationContentRoute =
   AppAdminChar126componentsSidebarElementsNagivationContentRouteImport.update({
     id: '/~components/sidebar/elements/nagivation-content',
     path: '/~components/sidebar/elements/nagivation-content',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
-const AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRoute =
-  AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRouteImport.update(
+const AppAdminPagesSettingsChar126componentsProfileTabRoute =
+  AppAdminPagesSettingsChar126componentsProfileTabRouteImport.update({
+    id: '/~components/profile-tab',
+    path: '/~components/profile-tab',
+    getParentRoute: () => AppAdminPagesSettingsRoute,
+  } as any)
+const AppAdminPagesSettingsChar126componentsCompanyTabRoute =
+  AppAdminPagesSettingsChar126componentsCompanyTabRouteImport.update({
+    id: '/~components/company-tab',
+    path: '/~components/company-tab',
+    getParentRoute: () => AppAdminPagesSettingsRoute,
+  } as any)
+const AppAdminPagesSettingsChar126componentsAddressTabRoute =
+  AppAdminPagesSettingsChar126componentsAddressTabRouteImport.update({
+    id: '/~components/address-tab',
+    path: '/~components/address-tab',
+    getParentRoute: () => AppAdminPagesSettingsRoute,
+  } as any)
+const AppAdminPagesProfileChar126componentsPersonalInformationTabRoute =
+  AppAdminPagesProfileChar126componentsPersonalInformationTabRouteImport.update(
     {
-      id: '/dashboard/_overview/~components/chart-area-interactive',
-      path: '/dashboard/~components/chart-area-interactive',
+      id: '/_pages/profile/~components/personal-information-tab',
+      path: '/profile/~components/personal-information-tab',
       getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
-const AppAdminManagementClientsChar126componentsClientsTableRoute =
-  AppAdminManagementClientsChar126componentsClientsTableRouteImport.update({
-    id: '/_management/clients/~components/clients-table',
-    path: '/clients/~components/clients-table',
+const AppAdminPagesProfileChar126componentsCompanyInformationTabRoute =
+  AppAdminPagesProfileChar126componentsCompanyInformationTabRouteImport.update({
+    id: '/_pages/profile/~components/company-information-tab',
+    path: '/profile/~components/company-information-tab',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
-const AppAdminFinancialPaymentsChar126componentsPaymentsTableRoute =
-  AppAdminFinancialPaymentsChar126componentsPaymentsTableRouteImport.update({
-    id: '/_financial/payments/~components/payments-table',
-    path: '/payments/~components/payments-table',
+const AppAdminPagesProfileChar126componentsAddressInformationTabRoute =
+  AppAdminPagesProfileChar126componentsAddressInformationTabRouteImport.update({
+    id: '/_pages/profile/~components/address-information-tab',
+    path: '/profile/~components/address-information-tab',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
-const AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRoute =
-  AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRouteImport.update(
-    {
-      id: '/_financial/extracts/~components/financial-summary-card',
-      path: '/extracts/~components/financial-summary-card',
-      getParentRoute: () => AppAdminLayoutRoute,
-    } as any,
-  )
-const AppAdminFinancialExtractsChar126componentsFinancialSummaryRoute =
-  AppAdminFinancialExtractsChar126componentsFinancialSummaryRouteImport.update({
-    id: '/_financial/extracts/~components/financial-summary',
-    path: '/extracts/~components/financial-summary',
+const AppAdminPagesIntegrationChar126componentsInformationCardRoute =
+  AppAdminPagesIntegrationChar126componentsInformationCardRouteImport.update({
+    id: '/_pages/integration/~components/information-card',
+    path: '/integration/~components/information-card',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
 const AppRelatedBlogChar126componentsPaginationBlogPaginationRoute =
@@ -497,27 +504,89 @@ const AppPublicRewardsChar126componentsSectionsIntroRoute =
     path: '/rewards/~components/sections/intro',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRoute =
-  AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRouteImport.update(
+const AppAdminPagesManagementClientDetailClientIdIndexRoute =
+  AppAdminPagesManagementClientDetailClientIdIndexRouteImport.update({
+    id: '/_pages/_management/client-detail/$clientId/',
+    path: '/client-detail/$clientId/',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
+const AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute =
+  AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRouteImport.update(
     {
-      id: '/dashboard/_overview/~components/analytics/analytics-overview',
-      path: '/dashboard/~components/analytics/analytics-overview',
+      id: '/_pages/integration/webhooks/~components/webhooks-table',
+      path: '/integration/webhooks/~components/webhooks-table',
       getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
-const AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRoute =
-  AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRouteImport.update(
+const AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute =
+  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRouteImport.update(
     {
-      id: '/dashboard/_overview/~components/analytics/analytic-overview-card',
-      path: '/dashboard/~components/analytics/analytic-overview-card',
+      id: '/_pages/integration/api-keys/~components/create-api-key-button',
+      path: '/integration/api-keys/~components/create-api-key-button',
       getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
-const AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRoute =
-  AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport.update(
+const AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute =
+  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRouteImport.update(
     {
-      id: '/_management/client-detail/$clientId/~components/client-information-tab',
-      path: '/client-detail/$clientId/~components/client-information-tab',
+      id: '/_pages/integration/api-keys/~components/create-api-key',
+      path: '/integration/api-keys/~components/create-api-key',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute =
+  AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRouteImport.update(
+    {
+      id: '/_pages/integration/api-keys/~components/api-keys-table',
+      path: '/integration/api-keys/~components/api-keys-table',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute =
+  AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRouteImport.update(
+    {
+      id: '/_pages/dashboard/_overview/~components/payed-orders-card',
+      path: '/dashboard/~components/payed-orders-card',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute =
+  AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRouteImport.update(
+    {
+      id: '/_pages/dashboard/_overview/~components/chart-area-interactive',
+      path: '/dashboard/~components/chart-area-interactive',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesManagementClientsChar126componentsClientsTableRoute =
+  AppAdminPagesManagementClientsChar126componentsClientsTableRouteImport.update(
+    {
+      id: '/_pages/_management/clients/~components/clients-table',
+      path: '/clients/~components/clients-table',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRoute =
+  AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRouteImport.update(
+    {
+      id: '/_pages/_financial/payments/~components/payments-table',
+      path: '/payments/~components/payments-table',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute =
+  AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRouteImport.update(
+    {
+      id: '/_pages/_financial/extracts/~components/financial-summary-card',
+      path: '/extracts/~components/financial-summary-card',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute =
+  AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRouteImport.update(
+    {
+      id: '/_pages/_financial/extracts/~components/financial-summary',
+      path: '/extracts/~components/financial-summary',
       getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
@@ -551,6 +620,30 @@ const AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
       id: '/_article-content/$articleId/~components/article-not-found',
       path: '/$articleId/~components/article-not-found',
       getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute =
+  AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRouteImport.update(
+    {
+      id: '/_pages/dashboard/_overview/~components/analytics/transactions-overview-card',
+      path: '/dashboard/~components/analytics/transactions-overview-card',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute =
+  AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRouteImport.update(
+    {
+      id: '/_pages/dashboard/_overview/~components/analytics/transactions-overview',
+      path: '/dashboard/~components/analytics/transactions-overview',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute =
+  AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport.update(
+    {
+      id: '/_pages/_management/client-detail/$clientId/~components/client-information-tab',
+      path: '/client-detail/$clientId/~components/client-information-tab',
+      getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
 const AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute =
@@ -593,14 +686,11 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
   '/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
   '/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
-  '/admin/settings': typeof AppAdminSettingsPageSettingsRoute
+  '/admin/~components/notification-dropdown': typeof AppAdminChar126componentsNotificationDropdownRoute
   '/sign-in/~components/sign-in-form': typeof AuthSignInChar126componentsSignInFormRoute
   '/sign-up/~components/sign-up-form': typeof AuthSignUpChar126componentsSignUpFormRoute
   '/rewards': typeof AppPublicRewardsIndexRoute
   '/blog/': typeof AppRelatedBlogIndexRoute
-  '/admin/dashboard': typeof AppAdminDashboardIndexRoute
-  '/admin/profile': typeof AppAdminProfileIndexRoute
-  '/admin/settings/': typeof AppAdminSettingsIndexRoute
   '/sign-up/register': typeof AuthSignUpRegisterIndexRoute
   '/sign-up/taxes-negotiation': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
@@ -612,31 +702,28 @@ export interface FileRoutesByFullPath {
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
-  '/admin/profile/~components/address-information-tab': typeof AppAdminProfileChar126componentsAddressInformationTabRoute
-  '/admin/profile/~components/company-information-tab': typeof AppAdminProfileChar126componentsCompanyInformationTabRoute
-  '/admin/profile/~components/personal-information-tab': typeof AppAdminProfileChar126componentsPersonalInformationTabRoute
-  '/admin/settings/~components/company-tab': typeof AppAdminSettingsChar126componentsCompanyTabRoute
-  '/admin/settings/~components/profile-tab': typeof AppAdminSettingsChar126componentsProfileTabRoute
+  '/admin/settings': typeof AppAdminPagesSettingsPageSettingsRoute
   '/admin/~components/sidebar/dashboard-sidebar': typeof AppAdminChar126componentsSidebarDashboardSidebarRoute
   '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
-  '/admin/extracts': typeof AppAdminFinancialExtractsIndexRoute
-  '/admin/payments': typeof AppAdminFinancialPaymentsIndexRoute
-  '/admin/client-detail': typeof AppAdminManagementClientDetailIndexRoute
-  '/admin/clients': typeof AppAdminManagementClientsIndexRoute
+  '/admin/dashboard': typeof AppAdminPagesDashboardIndexRoute
+  '/admin/integration': typeof AppAdminPagesIntegrationIndexRoute
+  '/admin/profile': typeof AppAdminPagesProfileIndexRoute
+  '/admin/settings/': typeof AppAdminPagesSettingsIndexRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
   '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
   '/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
-  '/admin/extracts/~components/financial-summary': typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryRoute
-  '/admin/extracts/~components/financial-summary-card': typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRoute
-  '/admin/payments/~components/payments-table': typeof AppAdminFinancialPaymentsChar126componentsPaymentsTableRoute
-  '/admin/clients/~components/clients-table': typeof AppAdminManagementClientsChar126componentsClientsTableRoute
-  '/admin/dashboard/~components/chart-area-interactive': typeof AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRoute
+  '/admin/integration/~components/information-card': typeof AppAdminPagesIntegrationChar126componentsInformationCardRoute
+  '/admin/profile/~components/address-information-tab': typeof AppAdminPagesProfileChar126componentsAddressInformationTabRoute
+  '/admin/profile/~components/company-information-tab': typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRoute
+  '/admin/profile/~components/personal-information-tab': typeof AppAdminPagesProfileChar126componentsPersonalInformationTabRoute
+  '/admin/settings/~components/address-tab': typeof AppAdminPagesSettingsChar126componentsAddressTabRoute
+  '/admin/settings/~components/company-tab': typeof AppAdminPagesSettingsChar126componentsCompanyTabRoute
+  '/admin/settings/~components/profile-tab': typeof AppAdminPagesSettingsChar126componentsProfileTabRoute
   '/admin/~components/sidebar/elements/nagivation-content': typeof AppAdminChar126componentsSidebarElementsNagivationContentRoute
-  '/admin/~components/sidebar/elements/navigation-projects': typeof AppAdminChar126componentsSidebarElementsNavigationProjectsRoute
   '/admin/~components/sidebar/elements/search-section': typeof AppAdminChar126componentsSidebarElementsSearchSectionRoute
   '/admin/~components/sidebar/elements/team-switcher': typeof AppAdminChar126componentsSidebarElementsTeamSwitcherRoute
   '/admin/~components/sidebar/elements/user-profile': typeof AppAdminChar126componentsSidebarElementsUserProfileRoute
@@ -644,17 +731,33 @@ export interface FileRoutesByFullPath {
   '/sign-up/register/~components/register-form-steps/company-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsCompanyInformationFormRoute
   '/sign-up/register/~components/register-form-steps/personal-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsPersonalInformationFormRoute
   '/blog/$articleId': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
-  '/admin/client-detail/$clientId': typeof AppAdminManagementClientDetailClientIdIndexRoute
+  '/admin/extracts': typeof AppAdminPagesFinancialExtractsIndexRoute
+  '/admin/payments': typeof AppAdminPagesFinancialPaymentsIndexRoute
+  '/admin/client-detail': typeof AppAdminPagesManagementClientDetailIndexRoute
+  '/admin/clients': typeof AppAdminPagesManagementClientsIndexRoute
+  '/admin/integration/api-keys': typeof AppAdminPagesIntegrationApiKeysIndexRoute
+  '/admin/integration/webhooks': typeof AppAdminPagesIntegrationWebhooksIndexRoute
   '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
   '/blog/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/blog/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
   '/blog/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
-  '/admin/client-detail/$clientId/~components/client-information-tab': typeof AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRoute
-  '/admin/dashboard/~components/analytics/analytic-overview-card': typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRoute
-  '/admin/dashboard/~components/analytics/analytics-overview': typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRoute
+  '/admin/extracts/~components/financial-summary': typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute
+  '/admin/extracts/~components/financial-summary-card': typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
+  '/admin/payments/~components/payments-table': typeof AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRoute
+  '/admin/clients/~components/clients-table': typeof AppAdminPagesManagementClientsChar126componentsClientsTableRoute
+  '/admin/dashboard/~components/chart-area-interactive': typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute
+  '/admin/dashboard/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
+  '/admin/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
+  '/admin/integration/api-keys/~components/create-api-key': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
+  '/admin/integration/api-keys/~components/create-api-key-button': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute
+  '/admin/integration/webhooks/~components/webhooks-table': typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
+  '/admin/client-detail/$clientId': typeof AppAdminPagesManagementClientDetailClientIdIndexRoute
   '/blog/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
   '/blog/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
   '/blog/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
+  '/admin/client-detail/$clientId/~components/client-information-tab': typeof AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
+  '/admin/dashboard/~components/analytics/transactions-overview': typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute
+  '/admin/dashboard/~components/analytics/transactions-overview-card': typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute
 }
 export interface FileRoutesByTo {
   '/not-found': typeof ErrorNotFoundRoute
@@ -668,13 +771,11 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
   '/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
   '/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
-  '/admin/settings': typeof AppAdminSettingsIndexRoute
+  '/admin/~components/notification-dropdown': typeof AppAdminChar126componentsNotificationDropdownRoute
   '/sign-in/~components/sign-in-form': typeof AuthSignInChar126componentsSignInFormRoute
   '/sign-up/~components/sign-up-form': typeof AuthSignUpChar126componentsSignUpFormRoute
   '/rewards': typeof AppPublicRewardsIndexRoute
   '/blog': typeof AppRelatedBlogIndexRoute
-  '/admin/dashboard': typeof AppAdminDashboardIndexRoute
-  '/admin/profile': typeof AppAdminProfileIndexRoute
   '/sign-up/register': typeof AuthSignUpRegisterIndexRoute
   '/sign-up/taxes-negotiation': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
@@ -686,31 +787,27 @@ export interface FileRoutesByTo {
   '/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
-  '/admin/profile/~components/address-information-tab': typeof AppAdminProfileChar126componentsAddressInformationTabRoute
-  '/admin/profile/~components/company-information-tab': typeof AppAdminProfileChar126componentsCompanyInformationTabRoute
-  '/admin/profile/~components/personal-information-tab': typeof AppAdminProfileChar126componentsPersonalInformationTabRoute
-  '/admin/settings/~components/company-tab': typeof AppAdminSettingsChar126componentsCompanyTabRoute
-  '/admin/settings/~components/profile-tab': typeof AppAdminSettingsChar126componentsProfileTabRoute
+  '/admin/settings': typeof AppAdminPagesSettingsIndexRoute
   '/admin/~components/sidebar/dashboard-sidebar': typeof AppAdminChar126componentsSidebarDashboardSidebarRoute
   '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
-  '/admin/extracts': typeof AppAdminFinancialExtractsIndexRoute
-  '/admin/payments': typeof AppAdminFinancialPaymentsIndexRoute
-  '/admin/client-detail': typeof AppAdminManagementClientDetailIndexRoute
-  '/admin/clients': typeof AppAdminManagementClientsIndexRoute
+  '/admin/dashboard': typeof AppAdminPagesDashboardIndexRoute
+  '/admin/integration': typeof AppAdminPagesIntegrationIndexRoute
+  '/admin/profile': typeof AppAdminPagesProfileIndexRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
   '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
   '/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
-  '/admin/extracts/~components/financial-summary': typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryRoute
-  '/admin/extracts/~components/financial-summary-card': typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRoute
-  '/admin/payments/~components/payments-table': typeof AppAdminFinancialPaymentsChar126componentsPaymentsTableRoute
-  '/admin/clients/~components/clients-table': typeof AppAdminManagementClientsChar126componentsClientsTableRoute
-  '/admin/dashboard/~components/chart-area-interactive': typeof AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRoute
+  '/admin/integration/~components/information-card': typeof AppAdminPagesIntegrationChar126componentsInformationCardRoute
+  '/admin/profile/~components/address-information-tab': typeof AppAdminPagesProfileChar126componentsAddressInformationTabRoute
+  '/admin/profile/~components/company-information-tab': typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRoute
+  '/admin/profile/~components/personal-information-tab': typeof AppAdminPagesProfileChar126componentsPersonalInformationTabRoute
+  '/admin/settings/~components/address-tab': typeof AppAdminPagesSettingsChar126componentsAddressTabRoute
+  '/admin/settings/~components/company-tab': typeof AppAdminPagesSettingsChar126componentsCompanyTabRoute
+  '/admin/settings/~components/profile-tab': typeof AppAdminPagesSettingsChar126componentsProfileTabRoute
   '/admin/~components/sidebar/elements/nagivation-content': typeof AppAdminChar126componentsSidebarElementsNagivationContentRoute
-  '/admin/~components/sidebar/elements/navigation-projects': typeof AppAdminChar126componentsSidebarElementsNavigationProjectsRoute
   '/admin/~components/sidebar/elements/search-section': typeof AppAdminChar126componentsSidebarElementsSearchSectionRoute
   '/admin/~components/sidebar/elements/team-switcher': typeof AppAdminChar126componentsSidebarElementsTeamSwitcherRoute
   '/admin/~components/sidebar/elements/user-profile': typeof AppAdminChar126componentsSidebarElementsUserProfileRoute
@@ -718,17 +815,33 @@ export interface FileRoutesByTo {
   '/sign-up/register/~components/register-form-steps/company-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsCompanyInformationFormRoute
   '/sign-up/register/~components/register-form-steps/personal-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsPersonalInformationFormRoute
   '/blog/$articleId': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
-  '/admin/client-detail/$clientId': typeof AppAdminManagementClientDetailClientIdIndexRoute
+  '/admin/extracts': typeof AppAdminPagesFinancialExtractsIndexRoute
+  '/admin/payments': typeof AppAdminPagesFinancialPaymentsIndexRoute
+  '/admin/client-detail': typeof AppAdminPagesManagementClientDetailIndexRoute
+  '/admin/clients': typeof AppAdminPagesManagementClientsIndexRoute
+  '/admin/integration/api-keys': typeof AppAdminPagesIntegrationApiKeysIndexRoute
+  '/admin/integration/webhooks': typeof AppAdminPagesIntegrationWebhooksIndexRoute
   '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
   '/blog/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/blog/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
   '/blog/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
-  '/admin/client-detail/$clientId/~components/client-information-tab': typeof AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRoute
-  '/admin/dashboard/~components/analytics/analytic-overview-card': typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRoute
-  '/admin/dashboard/~components/analytics/analytics-overview': typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRoute
+  '/admin/extracts/~components/financial-summary': typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute
+  '/admin/extracts/~components/financial-summary-card': typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
+  '/admin/payments/~components/payments-table': typeof AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRoute
+  '/admin/clients/~components/clients-table': typeof AppAdminPagesManagementClientsChar126componentsClientsTableRoute
+  '/admin/dashboard/~components/chart-area-interactive': typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute
+  '/admin/dashboard/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
+  '/admin/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
+  '/admin/integration/api-keys/~components/create-api-key': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
+  '/admin/integration/api-keys/~components/create-api-key-button': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute
+  '/admin/integration/webhooks/~components/webhooks-table': typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
+  '/admin/client-detail/$clientId': typeof AppAdminPagesManagementClientDetailClientIdIndexRoute
   '/blog/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
   '/blog/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
   '/blog/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
+  '/admin/client-detail/$clientId/~components/client-information-tab': typeof AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
+  '/admin/dashboard/~components/analytics/transactions-overview': typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute
+  '/admin/dashboard/~components/analytics/transactions-overview-card': typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -748,15 +861,11 @@ export interface FileRoutesById {
   '/_app/_related/_compliance/privacy-policy': typeof AppRelatedCompliancePrivacyPolicyRoute
   '/_app/_related/_compliance/prohibited-products': typeof AppRelatedComplianceProhibitedProductsRoute
   '/_app/_related/_compliance/terms-of-use': typeof AppRelatedComplianceTermsOfUseRoute
-  '/_app/admin/settings': typeof AppAdminSettingsRouteWithChildren
-  '/_app/admin/settings/_page-settings': typeof AppAdminSettingsPageSettingsRoute
+  '/_app/admin/~components/notification-dropdown': typeof AppAdminChar126componentsNotificationDropdownRoute
   '/_auth/sign-in/~components/sign-in-form': typeof AuthSignInChar126componentsSignInFormRoute
   '/_auth/sign-up/~components/sign-up-form': typeof AuthSignUpChar126componentsSignUpFormRoute
   '/_app/_public/rewards/': typeof AppPublicRewardsIndexRoute
   '/_app/_related/blog/': typeof AppRelatedBlogIndexRoute
-  '/_app/admin/dashboard/': typeof AppAdminDashboardIndexRoute
-  '/_app/admin/profile/': typeof AppAdminProfileIndexRoute
-  '/_app/admin/settings/': typeof AppAdminSettingsIndexRoute
   '/_auth/sign-up/register/': typeof AuthSignUpRegisterIndexRoute
   '/_auth/sign-up/taxes-negotiation/': typeof AuthSignUpTaxesNegotiationIndexRoute
   '/_app/_public/~components/sections/benefits': typeof AppPublicChar126componentsSectionsBenefitsRoute
@@ -768,31 +877,29 @@ export interface FileRoutesById {
   '/_app/_public/~components/sections/taxes': typeof AppPublicChar126componentsSectionsTaxesRoute
   '/_app/_related/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
-  '/_app/admin/profile/~components/address-information-tab': typeof AppAdminProfileChar126componentsAddressInformationTabRoute
-  '/_app/admin/profile/~components/company-information-tab': typeof AppAdminProfileChar126componentsCompanyInformationTabRoute
-  '/_app/admin/profile/~components/personal-information-tab': typeof AppAdminProfileChar126componentsPersonalInformationTabRoute
-  '/_app/admin/settings/~components/company-tab': typeof AppAdminSettingsChar126componentsCompanyTabRoute
-  '/_app/admin/settings/~components/profile-tab': typeof AppAdminSettingsChar126componentsProfileTabRoute
+  '/_app/admin/_pages/settings': typeof AppAdminPagesSettingsRouteWithChildren
+  '/_app/admin/_pages/settings/_page-settings': typeof AppAdminPagesSettingsPageSettingsRoute
   '/_app/admin/~components/sidebar/dashboard-sidebar': typeof AppAdminChar126componentsSidebarDashboardSidebarRoute
   '/_auth/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/_auth/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
-  '/_app/admin/_financial/extracts/': typeof AppAdminFinancialExtractsIndexRoute
-  '/_app/admin/_financial/payments/': typeof AppAdminFinancialPaymentsIndexRoute
-  '/_app/admin/_management/client-detail/': typeof AppAdminManagementClientDetailIndexRoute
-  '/_app/admin/_management/clients/': typeof AppAdminManagementClientsIndexRoute
+  '/_app/admin/_pages/dashboard/': typeof AppAdminPagesDashboardIndexRoute
+  '/_app/admin/_pages/integration/': typeof AppAdminPagesIntegrationIndexRoute
+  '/_app/admin/_pages/profile/': typeof AppAdminPagesProfileIndexRoute
+  '/_app/admin/_pages/settings/': typeof AppAdminPagesSettingsIndexRoute
   '/_app/_public/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/_app/_public/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/_app/_public/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
   '/_app/_related/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/_app/_related/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
   '/_app/_related/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
-  '/_app/admin/_financial/extracts/~components/financial-summary': typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryRoute
-  '/_app/admin/_financial/extracts/~components/financial-summary-card': typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRoute
-  '/_app/admin/_financial/payments/~components/payments-table': typeof AppAdminFinancialPaymentsChar126componentsPaymentsTableRoute
-  '/_app/admin/_management/clients/~components/clients-table': typeof AppAdminManagementClientsChar126componentsClientsTableRoute
-  '/_app/admin/dashboard/_overview/~components/chart-area-interactive': typeof AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRoute
+  '/_app/admin/_pages/integration/~components/information-card': typeof AppAdminPagesIntegrationChar126componentsInformationCardRoute
+  '/_app/admin/_pages/profile/~components/address-information-tab': typeof AppAdminPagesProfileChar126componentsAddressInformationTabRoute
+  '/_app/admin/_pages/profile/~components/company-information-tab': typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRoute
+  '/_app/admin/_pages/profile/~components/personal-information-tab': typeof AppAdminPagesProfileChar126componentsPersonalInformationTabRoute
+  '/_app/admin/_pages/settings/~components/address-tab': typeof AppAdminPagesSettingsChar126componentsAddressTabRoute
+  '/_app/admin/_pages/settings/~components/company-tab': typeof AppAdminPagesSettingsChar126componentsCompanyTabRoute
+  '/_app/admin/_pages/settings/~components/profile-tab': typeof AppAdminPagesSettingsChar126componentsProfileTabRoute
   '/_app/admin/~components/sidebar/elements/nagivation-content': typeof AppAdminChar126componentsSidebarElementsNagivationContentRoute
-  '/_app/admin/~components/sidebar/elements/navigation-projects': typeof AppAdminChar126componentsSidebarElementsNavigationProjectsRoute
   '/_app/admin/~components/sidebar/elements/search-section': typeof AppAdminChar126componentsSidebarElementsSearchSectionRoute
   '/_app/admin/~components/sidebar/elements/team-switcher': typeof AppAdminChar126componentsSidebarElementsTeamSwitcherRoute
   '/_app/admin/~components/sidebar/elements/user-profile': typeof AppAdminChar126componentsSidebarElementsUserProfileRoute
@@ -800,17 +907,33 @@ export interface FileRoutesById {
   '/_auth/sign-up/register/~components/register-form-steps/company-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsCompanyInformationFormRoute
   '/_auth/sign-up/register/~components/register-form-steps/personal-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsPersonalInformationFormRoute
   '/_app/_related/blog/_article-content/$articleId/': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
-  '/_app/admin/_management/client-detail/$clientId/': typeof AppAdminManagementClientDetailClientIdIndexRoute
+  '/_app/admin/_pages/_financial/extracts/': typeof AppAdminPagesFinancialExtractsIndexRoute
+  '/_app/admin/_pages/_financial/payments/': typeof AppAdminPagesFinancialPaymentsIndexRoute
+  '/_app/admin/_pages/_management/client-detail/': typeof AppAdminPagesManagementClientDetailIndexRoute
+  '/_app/admin/_pages/_management/clients/': typeof AppAdminPagesManagementClientsIndexRoute
+  '/_app/admin/_pages/integration/api-keys/': typeof AppAdminPagesIntegrationApiKeysIndexRoute
+  '/_app/admin/_pages/integration/webhooks/': typeof AppAdminPagesIntegrationWebhooksIndexRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
-  '/_app/admin/_management/client-detail/$clientId/~components/client-information-tab': typeof AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRoute
-  '/_app/admin/dashboard/_overview/~components/analytics/analytic-overview-card': typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRoute
-  '/_app/admin/dashboard/_overview/~components/analytics/analytics-overview': typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRoute
+  '/_app/admin/_pages/_financial/extracts/~components/financial-summary': typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute
+  '/_app/admin/_pages/_financial/extracts/~components/financial-summary-card': typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
+  '/_app/admin/_pages/_financial/payments/~components/payments-table': typeof AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRoute
+  '/_app/admin/_pages/_management/clients/~components/clients-table': typeof AppAdminPagesManagementClientsChar126componentsClientsTableRoute
+  '/_app/admin/_pages/dashboard/_overview/~components/chart-area-interactive': typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute
+  '/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
+  '/_app/admin/_pages/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
+  '/_app/admin/_pages/integration/api-keys/~components/create-api-key': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
+  '/_app/admin/_pages/integration/api-keys/~components/create-api-key-button': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute
+  '/_app/admin/_pages/integration/webhooks/~components/webhooks-table': typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
+  '/_app/admin/_pages/_management/client-detail/$clientId/': typeof AppAdminPagesManagementClientDetailClientIdIndexRoute
   '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
   '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
   '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
+  '/_app/admin/_pages/_management/client-detail/$clientId/~components/client-information-tab': typeof AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
+  '/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview': typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute
+  '/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview-card': typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -829,14 +952,11 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/prohibited-products'
     | '/terms-of-use'
-    | '/admin/settings'
+    | '/admin/~components/notification-dropdown'
     | '/sign-in/~components/sign-in-form'
     | '/sign-up/~components/sign-up-form'
     | '/rewards'
     | '/blog/'
-    | '/admin/dashboard'
-    | '/admin/profile'
-    | '/admin/settings/'
     | '/sign-up/register'
     | '/sign-up/taxes-negotiation'
     | '/~components/sections/benefits'
@@ -848,31 +968,28 @@ export interface FileRouteTypes {
     | '/~components/sections/taxes'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
-    | '/admin/profile/~components/address-information-tab'
-    | '/admin/profile/~components/company-information-tab'
-    | '/admin/profile/~components/personal-information-tab'
-    | '/admin/settings/~components/company-tab'
-    | '/admin/settings/~components/profile-tab'
+    | '/admin/settings'
     | '/admin/~components/sidebar/dashboard-sidebar'
     | '/sign-up/register/~components/leave-confirmation'
     | '/sign-up/register/~components/register-form'
-    | '/admin/extracts'
-    | '/admin/payments'
-    | '/admin/client-detail'
-    | '/admin/clients'
+    | '/admin/dashboard'
+    | '/admin/integration'
+    | '/admin/profile'
+    | '/admin/settings/'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
     | '/blog/~components/content/article-card'
     | '/blog/~components/content/articles-filters'
     | '/blog/~components/pagination/blog-pagination'
-    | '/admin/extracts/~components/financial-summary'
-    | '/admin/extracts/~components/financial-summary-card'
-    | '/admin/payments/~components/payments-table'
-    | '/admin/clients/~components/clients-table'
-    | '/admin/dashboard/~components/chart-area-interactive'
+    | '/admin/integration/~components/information-card'
+    | '/admin/profile/~components/address-information-tab'
+    | '/admin/profile/~components/company-information-tab'
+    | '/admin/profile/~components/personal-information-tab'
+    | '/admin/settings/~components/address-tab'
+    | '/admin/settings/~components/company-tab'
+    | '/admin/settings/~components/profile-tab'
     | '/admin/~components/sidebar/elements/nagivation-content'
-    | '/admin/~components/sidebar/elements/navigation-projects'
     | '/admin/~components/sidebar/elements/search-section'
     | '/admin/~components/sidebar/elements/team-switcher'
     | '/admin/~components/sidebar/elements/user-profile'
@@ -880,17 +997,33 @@ export interface FileRouteTypes {
     | '/sign-up/register/~components/register-form-steps/company-information-form'
     | '/sign-up/register/~components/register-form-steps/personal-information-form'
     | '/blog/$articleId'
-    | '/admin/client-detail/$clientId'
+    | '/admin/extracts'
+    | '/admin/payments'
+    | '/admin/client-detail'
+    | '/admin/clients'
+    | '/admin/integration/api-keys'
+    | '/admin/integration/webhooks'
     | '/blog/$articleId/~components/article-not-found'
     | '/blog/$articleId/~components/article-sharing'
     | '/blog/$articleId/~components/article-skeleton'
     | '/blog/$articleId/~components/article-with-error'
-    | '/admin/client-detail/$clientId/~components/client-information-tab'
-    | '/admin/dashboard/~components/analytics/analytic-overview-card'
-    | '/admin/dashboard/~components/analytics/analytics-overview'
+    | '/admin/extracts/~components/financial-summary'
+    | '/admin/extracts/~components/financial-summary-card'
+    | '/admin/payments/~components/payments-table'
+    | '/admin/clients/~components/clients-table'
+    | '/admin/dashboard/~components/chart-area-interactive'
+    | '/admin/dashboard/~components/payed-orders-card'
+    | '/admin/integration/api-keys/~components/api-keys-table'
+    | '/admin/integration/api-keys/~components/create-api-key'
+    | '/admin/integration/api-keys/~components/create-api-key-button'
+    | '/admin/integration/webhooks/~components/webhooks-table'
+    | '/admin/client-detail/$clientId'
     | '/blog/$articleId/~components/content-renderer/rich-content-renderer'
     | '/blog/$articleId/~components/dynamic-zone/related-article-card'
     | '/blog/$articleId/~components/dynamic-zone/related-articles'
+    | '/admin/client-detail/$clientId/~components/client-information-tab'
+    | '/admin/dashboard/~components/analytics/transactions-overview'
+    | '/admin/dashboard/~components/analytics/transactions-overview-card'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/not-found'
@@ -904,13 +1037,11 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/prohibited-products'
     | '/terms-of-use'
-    | '/admin/settings'
+    | '/admin/~components/notification-dropdown'
     | '/sign-in/~components/sign-in-form'
     | '/sign-up/~components/sign-up-form'
     | '/rewards'
     | '/blog'
-    | '/admin/dashboard'
-    | '/admin/profile'
     | '/sign-up/register'
     | '/sign-up/taxes-negotiation'
     | '/~components/sections/benefits'
@@ -922,31 +1053,27 @@ export interface FileRouteTypes {
     | '/~components/sections/taxes'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
-    | '/admin/profile/~components/address-information-tab'
-    | '/admin/profile/~components/company-information-tab'
-    | '/admin/profile/~components/personal-information-tab'
-    | '/admin/settings/~components/company-tab'
-    | '/admin/settings/~components/profile-tab'
+    | '/admin/settings'
     | '/admin/~components/sidebar/dashboard-sidebar'
     | '/sign-up/register/~components/leave-confirmation'
     | '/sign-up/register/~components/register-form'
-    | '/admin/extracts'
-    | '/admin/payments'
-    | '/admin/client-detail'
-    | '/admin/clients'
+    | '/admin/dashboard'
+    | '/admin/integration'
+    | '/admin/profile'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
     | '/blog/~components/content/article-card'
     | '/blog/~components/content/articles-filters'
     | '/blog/~components/pagination/blog-pagination'
-    | '/admin/extracts/~components/financial-summary'
-    | '/admin/extracts/~components/financial-summary-card'
-    | '/admin/payments/~components/payments-table'
-    | '/admin/clients/~components/clients-table'
-    | '/admin/dashboard/~components/chart-area-interactive'
+    | '/admin/integration/~components/information-card'
+    | '/admin/profile/~components/address-information-tab'
+    | '/admin/profile/~components/company-information-tab'
+    | '/admin/profile/~components/personal-information-tab'
+    | '/admin/settings/~components/address-tab'
+    | '/admin/settings/~components/company-tab'
+    | '/admin/settings/~components/profile-tab'
     | '/admin/~components/sidebar/elements/nagivation-content'
-    | '/admin/~components/sidebar/elements/navigation-projects'
     | '/admin/~components/sidebar/elements/search-section'
     | '/admin/~components/sidebar/elements/team-switcher'
     | '/admin/~components/sidebar/elements/user-profile'
@@ -954,17 +1081,33 @@ export interface FileRouteTypes {
     | '/sign-up/register/~components/register-form-steps/company-information-form'
     | '/sign-up/register/~components/register-form-steps/personal-information-form'
     | '/blog/$articleId'
-    | '/admin/client-detail/$clientId'
+    | '/admin/extracts'
+    | '/admin/payments'
+    | '/admin/client-detail'
+    | '/admin/clients'
+    | '/admin/integration/api-keys'
+    | '/admin/integration/webhooks'
     | '/blog/$articleId/~components/article-not-found'
     | '/blog/$articleId/~components/article-sharing'
     | '/blog/$articleId/~components/article-skeleton'
     | '/blog/$articleId/~components/article-with-error'
-    | '/admin/client-detail/$clientId/~components/client-information-tab'
-    | '/admin/dashboard/~components/analytics/analytic-overview-card'
-    | '/admin/dashboard/~components/analytics/analytics-overview'
+    | '/admin/extracts/~components/financial-summary'
+    | '/admin/extracts/~components/financial-summary-card'
+    | '/admin/payments/~components/payments-table'
+    | '/admin/clients/~components/clients-table'
+    | '/admin/dashboard/~components/chart-area-interactive'
+    | '/admin/dashboard/~components/payed-orders-card'
+    | '/admin/integration/api-keys/~components/api-keys-table'
+    | '/admin/integration/api-keys/~components/create-api-key'
+    | '/admin/integration/api-keys/~components/create-api-key-button'
+    | '/admin/integration/webhooks/~components/webhooks-table'
+    | '/admin/client-detail/$clientId'
     | '/blog/$articleId/~components/content-renderer/rich-content-renderer'
     | '/blog/$articleId/~components/dynamic-zone/related-article-card'
     | '/blog/$articleId/~components/dynamic-zone/related-articles'
+    | '/admin/client-detail/$clientId/~components/client-information-tab'
+    | '/admin/dashboard/~components/analytics/transactions-overview'
+    | '/admin/dashboard/~components/analytics/transactions-overview-card'
   id:
     | '__root__'
     | '/_app/_public'
@@ -983,15 +1126,11 @@ export interface FileRouteTypes {
     | '/_app/_related/_compliance/privacy-policy'
     | '/_app/_related/_compliance/prohibited-products'
     | '/_app/_related/_compliance/terms-of-use'
-    | '/_app/admin/settings'
-    | '/_app/admin/settings/_page-settings'
+    | '/_app/admin/~components/notification-dropdown'
     | '/_auth/sign-in/~components/sign-in-form'
     | '/_auth/sign-up/~components/sign-up-form'
     | '/_app/_public/rewards/'
     | '/_app/_related/blog/'
-    | '/_app/admin/dashboard/'
-    | '/_app/admin/profile/'
-    | '/_app/admin/settings/'
     | '/_auth/sign-up/register/'
     | '/_auth/sign-up/taxes-negotiation/'
     | '/_app/_public/~components/sections/benefits'
@@ -1003,31 +1142,29 @@ export interface FileRouteTypes {
     | '/_app/_public/~components/sections/taxes'
     | '/_app/_related/blog/~components/blog-articles'
     | '/_app/_related/blog/~components/navbar'
-    | '/_app/admin/profile/~components/address-information-tab'
-    | '/_app/admin/profile/~components/company-information-tab'
-    | '/_app/admin/profile/~components/personal-information-tab'
-    | '/_app/admin/settings/~components/company-tab'
-    | '/_app/admin/settings/~components/profile-tab'
+    | '/_app/admin/_pages/settings'
+    | '/_app/admin/_pages/settings/_page-settings'
     | '/_app/admin/~components/sidebar/dashboard-sidebar'
     | '/_auth/sign-up/register/~components/leave-confirmation'
     | '/_auth/sign-up/register/~components/register-form'
-    | '/_app/admin/_financial/extracts/'
-    | '/_app/admin/_financial/payments/'
-    | '/_app/admin/_management/client-detail/'
-    | '/_app/admin/_management/clients/'
+    | '/_app/admin/_pages/dashboard/'
+    | '/_app/admin/_pages/integration/'
+    | '/_app/admin/_pages/profile/'
+    | '/_app/admin/_pages/settings/'
     | '/_app/_public/rewards/~components/sections/intro'
     | '/_app/_public/rewards/~components/sections/pictures-carousel'
     | '/_app/_public/rewards/~components/sections/rewards-list'
     | '/_app/_related/blog/~components/content/article-card'
     | '/_app/_related/blog/~components/content/articles-filters'
     | '/_app/_related/blog/~components/pagination/blog-pagination'
-    | '/_app/admin/_financial/extracts/~components/financial-summary'
-    | '/_app/admin/_financial/extracts/~components/financial-summary-card'
-    | '/_app/admin/_financial/payments/~components/payments-table'
-    | '/_app/admin/_management/clients/~components/clients-table'
-    | '/_app/admin/dashboard/_overview/~components/chart-area-interactive'
+    | '/_app/admin/_pages/integration/~components/information-card'
+    | '/_app/admin/_pages/profile/~components/address-information-tab'
+    | '/_app/admin/_pages/profile/~components/company-information-tab'
+    | '/_app/admin/_pages/profile/~components/personal-information-tab'
+    | '/_app/admin/_pages/settings/~components/address-tab'
+    | '/_app/admin/_pages/settings/~components/company-tab'
+    | '/_app/admin/_pages/settings/~components/profile-tab'
     | '/_app/admin/~components/sidebar/elements/nagivation-content'
-    | '/_app/admin/~components/sidebar/elements/navigation-projects'
     | '/_app/admin/~components/sidebar/elements/search-section'
     | '/_app/admin/~components/sidebar/elements/team-switcher'
     | '/_app/admin/~components/sidebar/elements/user-profile'
@@ -1035,17 +1172,33 @@ export interface FileRouteTypes {
     | '/_auth/sign-up/register/~components/register-form-steps/company-information-form'
     | '/_auth/sign-up/register/~components/register-form-steps/personal-information-form'
     | '/_app/_related/blog/_article-content/$articleId/'
-    | '/_app/admin/_management/client-detail/$clientId/'
+    | '/_app/admin/_pages/_financial/extracts/'
+    | '/_app/admin/_pages/_financial/payments/'
+    | '/_app/admin/_pages/_management/client-detail/'
+    | '/_app/admin/_pages/_management/clients/'
+    | '/_app/admin/_pages/integration/api-keys/'
+    | '/_app/admin/_pages/integration/webhooks/'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
-    | '/_app/admin/_management/client-detail/$clientId/~components/client-information-tab'
-    | '/_app/admin/dashboard/_overview/~components/analytics/analytic-overview-card'
-    | '/_app/admin/dashboard/_overview/~components/analytics/analytics-overview'
+    | '/_app/admin/_pages/_financial/extracts/~components/financial-summary'
+    | '/_app/admin/_pages/_financial/extracts/~components/financial-summary-card'
+    | '/_app/admin/_pages/_financial/payments/~components/payments-table'
+    | '/_app/admin/_pages/_management/clients/~components/clients-table'
+    | '/_app/admin/_pages/dashboard/_overview/~components/chart-area-interactive'
+    | '/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card'
+    | '/_app/admin/_pages/integration/api-keys/~components/api-keys-table'
+    | '/_app/admin/_pages/integration/api-keys/~components/create-api-key'
+    | '/_app/admin/_pages/integration/api-keys/~components/create-api-key-button'
+    | '/_app/admin/_pages/integration/webhooks/~components/webhooks-table'
+    | '/_app/admin/_pages/_management/client-detail/$clientId/'
     | '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
     | '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
     | '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
+    | '/_app/admin/_pages/_management/client-detail/$clientId/~components/client-information-tab'
+    | '/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview'
+    | '/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview-card'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1089,13 +1242,6 @@ declare module '@tanstack/react-router' {
       fullPath: ''
       preLoaderRoute: typeof AppPublicLayoutRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/_app/admin/settings': {
-      id: '/_app/admin/settings'
-      path: '/settings'
-      fullPath: '/admin/settings'
-      preLoaderRoute: typeof AppAdminSettingsRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
     }
     '/_auth/sign-up/': {
       id: '/_auth/sign-up/'
@@ -1146,6 +1292,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedComplianceLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_app/admin/_pages/settings': {
+      id: '/_app/admin/_pages/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AppAdminPagesSettingsRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_auth/sign-up/taxes-negotiation/': {
       id: '/_auth/sign-up/taxes-negotiation/'
       path: '/taxes-negotiation'
@@ -1159,27 +1312,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/sign-up/register'
       preLoaderRoute: typeof AuthSignUpRegisterIndexRouteImport
       parentRoute: typeof AuthSignUpLayoutRoute
-    }
-    '/_app/admin/settings/': {
-      id: '/_app/admin/settings/'
-      path: '/'
-      fullPath: '/admin/settings/'
-      preLoaderRoute: typeof AppAdminSettingsIndexRouteImport
-      parentRoute: typeof AppAdminSettingsRoute
-    }
-    '/_app/admin/profile/': {
-      id: '/_app/admin/profile/'
-      path: '/profile'
-      fullPath: '/admin/profile'
-      preLoaderRoute: typeof AppAdminProfileIndexRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
-    }
-    '/_app/admin/dashboard/': {
-      id: '/_app/admin/dashboard/'
-      path: '/dashboard'
-      fullPath: '/admin/dashboard'
-      preLoaderRoute: typeof AppAdminDashboardIndexRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_related/blog/': {
       id: '/_app/_related/blog/'
@@ -1209,12 +1341,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthSignInChar126componentsSignInFormRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_app/admin/settings/_page-settings': {
-      id: '/_app/admin/settings/_page-settings'
-      path: '/settings'
-      fullPath: '/admin/settings'
-      preLoaderRoute: typeof AppAdminSettingsPageSettingsRouteImport
-      parentRoute: typeof AppAdminSettingsRoute
+    '/_app/admin/~components/notification-dropdown': {
+      id: '/_app/admin/~components/notification-dropdown'
+      path: '/~components/notification-dropdown'
+      fullPath: '/admin/~components/notification-dropdown'
+      preLoaderRoute: typeof AppAdminChar126componentsNotificationDropdownRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_related/_compliance/terms-of-use': {
       id: '/_app/_related/_compliance/terms-of-use'
@@ -1251,32 +1383,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedComplianceComplaintsRouteImport
       parentRoute: typeof AppRelatedComplianceLayoutRoute
     }
-    '/_app/admin/_management/clients/': {
-      id: '/_app/admin/_management/clients/'
-      path: '/clients'
-      fullPath: '/admin/clients'
-      preLoaderRoute: typeof AppAdminManagementClientsIndexRouteImport
+    '/_app/admin/_pages/settings/': {
+      id: '/_app/admin/_pages/settings/'
+      path: '/'
+      fullPath: '/admin/settings/'
+      preLoaderRoute: typeof AppAdminPagesSettingsIndexRouteImport
+      parentRoute: typeof AppAdminPagesSettingsRoute
+    }
+    '/_app/admin/_pages/profile/': {
+      id: '/_app/admin/_pages/profile/'
+      path: '/profile'
+      fullPath: '/admin/profile'
+      preLoaderRoute: typeof AppAdminPagesProfileIndexRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/_management/client-detail/': {
-      id: '/_app/admin/_management/client-detail/'
-      path: '/client-detail'
-      fullPath: '/admin/client-detail'
-      preLoaderRoute: typeof AppAdminManagementClientDetailIndexRouteImport
+    '/_app/admin/_pages/integration/': {
+      id: '/_app/admin/_pages/integration/'
+      path: '/integration'
+      fullPath: '/admin/integration'
+      preLoaderRoute: typeof AppAdminPagesIntegrationIndexRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/_financial/payments/': {
-      id: '/_app/admin/_financial/payments/'
-      path: '/payments'
-      fullPath: '/admin/payments'
-      preLoaderRoute: typeof AppAdminFinancialPaymentsIndexRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
-    }
-    '/_app/admin/_financial/extracts/': {
-      id: '/_app/admin/_financial/extracts/'
-      path: '/extracts'
-      fullPath: '/admin/extracts'
-      preLoaderRoute: typeof AppAdminFinancialExtractsIndexRouteImport
+    '/_app/admin/_pages/dashboard/': {
+      id: '/_app/admin/_pages/dashboard/'
+      path: '/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AppAdminPagesDashboardIndexRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
     '/_auth/sign-up/register/~components/register-form': {
@@ -1300,40 +1432,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminChar126componentsSidebarDashboardSidebarRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/settings/~components/profile-tab': {
-      id: '/_app/admin/settings/~components/profile-tab'
-      path: '/~components/profile-tab'
-      fullPath: '/admin/settings/~components/profile-tab'
-      preLoaderRoute: typeof AppAdminSettingsChar126componentsProfileTabRouteImport
-      parentRoute: typeof AppAdminSettingsRoute
-    }
-    '/_app/admin/settings/~components/company-tab': {
-      id: '/_app/admin/settings/~components/company-tab'
-      path: '/~components/company-tab'
-      fullPath: '/admin/settings/~components/company-tab'
-      preLoaderRoute: typeof AppAdminSettingsChar126componentsCompanyTabRouteImport
-      parentRoute: typeof AppAdminSettingsRoute
-    }
-    '/_app/admin/profile/~components/personal-information-tab': {
-      id: '/_app/admin/profile/~components/personal-information-tab'
-      path: '/profile/~components/personal-information-tab'
-      fullPath: '/admin/profile/~components/personal-information-tab'
-      preLoaderRoute: typeof AppAdminProfileChar126componentsPersonalInformationTabRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
-    }
-    '/_app/admin/profile/~components/company-information-tab': {
-      id: '/_app/admin/profile/~components/company-information-tab'
-      path: '/profile/~components/company-information-tab'
-      fullPath: '/admin/profile/~components/company-information-tab'
-      preLoaderRoute: typeof AppAdminProfileChar126componentsCompanyInformationTabRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
-    }
-    '/_app/admin/profile/~components/address-information-tab': {
-      id: '/_app/admin/profile/~components/address-information-tab'
-      path: '/profile/~components/address-information-tab'
-      fullPath: '/admin/profile/~components/address-information-tab'
-      preLoaderRoute: typeof AppAdminProfileChar126componentsAddressInformationTabRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
+    '/_app/admin/_pages/settings/_page-settings': {
+      id: '/_app/admin/_pages/settings/_page-settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AppAdminPagesSettingsPageSettingsRouteImport
+      parentRoute: typeof AppAdminPagesSettingsRoute
     }
     '/_app/_related/blog/~components/navbar': {
       id: '/_app/_related/blog/~components/navbar'
@@ -1398,11 +1502,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicChar126componentsSectionsBenefitsRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_app/admin/_management/client-detail/$clientId/': {
-      id: '/_app/admin/_management/client-detail/$clientId/'
-      path: '/client-detail/$clientId'
-      fullPath: '/admin/client-detail/$clientId'
-      preLoaderRoute: typeof AppAdminManagementClientDetailClientIdIndexRouteImport
+    '/_app/admin/_pages/integration/webhooks/': {
+      id: '/_app/admin/_pages/integration/webhooks/'
+      path: '/integration/webhooks'
+      fullPath: '/admin/integration/webhooks'
+      preLoaderRoute: typeof AppAdminPagesIntegrationWebhooksIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/integration/api-keys/': {
+      id: '/_app/admin/_pages/integration/api-keys/'
+      path: '/integration/api-keys'
+      fullPath: '/admin/integration/api-keys'
+      preLoaderRoute: typeof AppAdminPagesIntegrationApiKeysIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_management/clients/': {
+      id: '/_app/admin/_pages/_management/clients/'
+      path: '/clients'
+      fullPath: '/admin/clients'
+      preLoaderRoute: typeof AppAdminPagesManagementClientsIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_management/client-detail/': {
+      id: '/_app/admin/_pages/_management/client-detail/'
+      path: '/client-detail'
+      fullPath: '/admin/client-detail'
+      preLoaderRoute: typeof AppAdminPagesManagementClientDetailIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_financial/payments/': {
+      id: '/_app/admin/_pages/_financial/payments/'
+      path: '/payments'
+      fullPath: '/admin/payments'
+      preLoaderRoute: typeof AppAdminPagesFinancialPaymentsIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_financial/extracts/': {
+      id: '/_app/admin/_pages/_financial/extracts/'
+      path: '/extracts'
+      fullPath: '/admin/extracts'
+      preLoaderRoute: typeof AppAdminPagesFinancialExtractsIndexRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_related/blog/_article-content/$articleId/': {
@@ -1454,13 +1593,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminChar126componentsSidebarElementsSearchSectionRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/~components/sidebar/elements/navigation-projects': {
-      id: '/_app/admin/~components/sidebar/elements/navigation-projects'
-      path: '/~components/sidebar/elements/navigation-projects'
-      fullPath: '/admin/~components/sidebar/elements/navigation-projects'
-      preLoaderRoute: typeof AppAdminChar126componentsSidebarElementsNavigationProjectsRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
-    }
     '/_app/admin/~components/sidebar/elements/nagivation-content': {
       id: '/_app/admin/~components/sidebar/elements/nagivation-content'
       path: '/~components/sidebar/elements/nagivation-content'
@@ -1468,39 +1600,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminChar126componentsSidebarElementsNagivationContentRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/dashboard/_overview/~components/chart-area-interactive': {
-      id: '/_app/admin/dashboard/_overview/~components/chart-area-interactive'
-      path: '/dashboard/~components/chart-area-interactive'
-      fullPath: '/admin/dashboard/~components/chart-area-interactive'
-      preLoaderRoute: typeof AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRouteImport
+    '/_app/admin/_pages/settings/~components/profile-tab': {
+      id: '/_app/admin/_pages/settings/~components/profile-tab'
+      path: '/~components/profile-tab'
+      fullPath: '/admin/settings/~components/profile-tab'
+      preLoaderRoute: typeof AppAdminPagesSettingsChar126componentsProfileTabRouteImport
+      parentRoute: typeof AppAdminPagesSettingsRoute
+    }
+    '/_app/admin/_pages/settings/~components/company-tab': {
+      id: '/_app/admin/_pages/settings/~components/company-tab'
+      path: '/~components/company-tab'
+      fullPath: '/admin/settings/~components/company-tab'
+      preLoaderRoute: typeof AppAdminPagesSettingsChar126componentsCompanyTabRouteImport
+      parentRoute: typeof AppAdminPagesSettingsRoute
+    }
+    '/_app/admin/_pages/settings/~components/address-tab': {
+      id: '/_app/admin/_pages/settings/~components/address-tab'
+      path: '/~components/address-tab'
+      fullPath: '/admin/settings/~components/address-tab'
+      preLoaderRoute: typeof AppAdminPagesSettingsChar126componentsAddressTabRouteImport
+      parentRoute: typeof AppAdminPagesSettingsRoute
+    }
+    '/_app/admin/_pages/profile/~components/personal-information-tab': {
+      id: '/_app/admin/_pages/profile/~components/personal-information-tab'
+      path: '/profile/~components/personal-information-tab'
+      fullPath: '/admin/profile/~components/personal-information-tab'
+      preLoaderRoute: typeof AppAdminPagesProfileChar126componentsPersonalInformationTabRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/_management/clients/~components/clients-table': {
-      id: '/_app/admin/_management/clients/~components/clients-table'
-      path: '/clients/~components/clients-table'
-      fullPath: '/admin/clients/~components/clients-table'
-      preLoaderRoute: typeof AppAdminManagementClientsChar126componentsClientsTableRouteImport
+    '/_app/admin/_pages/profile/~components/company-information-tab': {
+      id: '/_app/admin/_pages/profile/~components/company-information-tab'
+      path: '/profile/~components/company-information-tab'
+      fullPath: '/admin/profile/~components/company-information-tab'
+      preLoaderRoute: typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/_financial/payments/~components/payments-table': {
-      id: '/_app/admin/_financial/payments/~components/payments-table'
-      path: '/payments/~components/payments-table'
-      fullPath: '/admin/payments/~components/payments-table'
-      preLoaderRoute: typeof AppAdminFinancialPaymentsChar126componentsPaymentsTableRouteImport
+    '/_app/admin/_pages/profile/~components/address-information-tab': {
+      id: '/_app/admin/_pages/profile/~components/address-information-tab'
+      path: '/profile/~components/address-information-tab'
+      fullPath: '/admin/profile/~components/address-information-tab'
+      preLoaderRoute: typeof AppAdminPagesProfileChar126componentsAddressInformationTabRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/_financial/extracts/~components/financial-summary-card': {
-      id: '/_app/admin/_financial/extracts/~components/financial-summary-card'
-      path: '/extracts/~components/financial-summary-card'
-      fullPath: '/admin/extracts/~components/financial-summary-card'
-      preLoaderRoute: typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRouteImport
-      parentRoute: typeof AppAdminLayoutRoute
-    }
-    '/_app/admin/_financial/extracts/~components/financial-summary': {
-      id: '/_app/admin/_financial/extracts/~components/financial-summary'
-      path: '/extracts/~components/financial-summary'
-      fullPath: '/admin/extracts/~components/financial-summary'
-      preLoaderRoute: typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryRouteImport
+    '/_app/admin/_pages/integration/~components/information-card': {
+      id: '/_app/admin/_pages/integration/~components/information-card'
+      path: '/integration/~components/information-card'
+      fullPath: '/admin/integration/~components/information-card'
+      preLoaderRoute: typeof AppAdminPagesIntegrationChar126componentsInformationCardRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_related/blog/~components/pagination/blog-pagination': {
@@ -1545,25 +1691,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicRewardsChar126componentsSectionsIntroRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_app/admin/dashboard/_overview/~components/analytics/analytics-overview': {
-      id: '/_app/admin/dashboard/_overview/~components/analytics/analytics-overview'
-      path: '/dashboard/~components/analytics/analytics-overview'
-      fullPath: '/admin/dashboard/~components/analytics/analytics-overview'
-      preLoaderRoute: typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRouteImport
+    '/_app/admin/_pages/_management/client-detail/$clientId/': {
+      id: '/_app/admin/_pages/_management/client-detail/$clientId/'
+      path: '/client-detail/$clientId'
+      fullPath: '/admin/client-detail/$clientId'
+      preLoaderRoute: typeof AppAdminPagesManagementClientDetailClientIdIndexRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/dashboard/_overview/~components/analytics/analytic-overview-card': {
-      id: '/_app/admin/dashboard/_overview/~components/analytics/analytic-overview-card'
-      path: '/dashboard/~components/analytics/analytic-overview-card'
-      fullPath: '/admin/dashboard/~components/analytics/analytic-overview-card'
-      preLoaderRoute: typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRouteImport
+    '/_app/admin/_pages/integration/webhooks/~components/webhooks-table': {
+      id: '/_app/admin/_pages/integration/webhooks/~components/webhooks-table'
+      path: '/integration/webhooks/~components/webhooks-table'
+      fullPath: '/admin/integration/webhooks/~components/webhooks-table'
+      preLoaderRoute: typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/_management/client-detail/$clientId/~components/client-information-tab': {
-      id: '/_app/admin/_management/client-detail/$clientId/~components/client-information-tab'
-      path: '/client-detail/$clientId/~components/client-information-tab'
-      fullPath: '/admin/client-detail/$clientId/~components/client-information-tab'
-      preLoaderRoute: typeof AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport
+    '/_app/admin/_pages/integration/api-keys/~components/create-api-key-button': {
+      id: '/_app/admin/_pages/integration/api-keys/~components/create-api-key-button'
+      path: '/integration/api-keys/~components/create-api-key-button'
+      fullPath: '/admin/integration/api-keys/~components/create-api-key-button'
+      preLoaderRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/integration/api-keys/~components/create-api-key': {
+      id: '/_app/admin/_pages/integration/api-keys/~components/create-api-key'
+      path: '/integration/api-keys/~components/create-api-key'
+      fullPath: '/admin/integration/api-keys/~components/create-api-key'
+      preLoaderRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/integration/api-keys/~components/api-keys-table': {
+      id: '/_app/admin/_pages/integration/api-keys/~components/api-keys-table'
+      path: '/integration/api-keys/~components/api-keys-table'
+      fullPath: '/admin/integration/api-keys/~components/api-keys-table'
+      preLoaderRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card': {
+      id: '/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card'
+      path: '/dashboard/~components/payed-orders-card'
+      fullPath: '/admin/dashboard/~components/payed-orders-card'
+      preLoaderRoute: typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/dashboard/_overview/~components/chart-area-interactive': {
+      id: '/_app/admin/_pages/dashboard/_overview/~components/chart-area-interactive'
+      path: '/dashboard/~components/chart-area-interactive'
+      fullPath: '/admin/dashboard/~components/chart-area-interactive'
+      preLoaderRoute: typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_management/clients/~components/clients-table': {
+      id: '/_app/admin/_pages/_management/clients/~components/clients-table'
+      path: '/clients/~components/clients-table'
+      fullPath: '/admin/clients/~components/clients-table'
+      preLoaderRoute: typeof AppAdminPagesManagementClientsChar126componentsClientsTableRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_financial/payments/~components/payments-table': {
+      id: '/_app/admin/_pages/_financial/payments/~components/payments-table'
+      path: '/payments/~components/payments-table'
+      fullPath: '/admin/payments/~components/payments-table'
+      preLoaderRoute: typeof AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_financial/extracts/~components/financial-summary-card': {
+      id: '/_app/admin/_pages/_financial/extracts/~components/financial-summary-card'
+      path: '/extracts/~components/financial-summary-card'
+      fullPath: '/admin/extracts/~components/financial-summary-card'
+      preLoaderRoute: typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_financial/extracts/~components/financial-summary': {
+      id: '/_app/admin/_pages/_financial/extracts/~components/financial-summary'
+      path: '/extracts/~components/financial-summary'
+      fullPath: '/admin/extracts/~components/financial-summary'
+      preLoaderRoute: typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_related/blog/_article-content/$articleId/~components/article-with-error': {
@@ -1593,6 +1795,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/$articleId/~components/article-not-found'
       preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview-card': {
+      id: '/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview-card'
+      path: '/dashboard/~components/analytics/transactions-overview-card'
+      fullPath: '/admin/dashboard/~components/analytics/transactions-overview-card'
+      preLoaderRoute: typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview': {
+      id: '/_app/admin/_pages/dashboard/_overview/~components/analytics/transactions-overview'
+      path: '/dashboard/~components/analytics/transactions-overview'
+      fullPath: '/admin/dashboard/~components/analytics/transactions-overview'
+      preLoaderRoute: typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_management/client-detail/$clientId/~components/client-information-tab': {
+      id: '/_app/admin/_pages/_management/client-detail/$clientId/~components/client-information-tab'
+      path: '/client-detail/$clientId/~components/client-information-tab'
+      fullPath: '/admin/client-detail/$clientId/~components/client-information-tab'
+      preLoaderRoute: typeof AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles': {
       id: '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
@@ -1662,100 +1885,135 @@ const AppPublicLayoutRouteWithChildren = AppPublicLayoutRoute._addFileChildren(
   AppPublicLayoutRouteChildren,
 )
 
-interface AppAdminSettingsRouteChildren {
-  AppAdminSettingsPageSettingsRoute: typeof AppAdminSettingsPageSettingsRoute
-  AppAdminSettingsIndexRoute: typeof AppAdminSettingsIndexRoute
-  AppAdminSettingsChar126componentsCompanyTabRoute: typeof AppAdminSettingsChar126componentsCompanyTabRoute
-  AppAdminSettingsChar126componentsProfileTabRoute: typeof AppAdminSettingsChar126componentsProfileTabRoute
+interface AppAdminPagesSettingsRouteChildren {
+  AppAdminPagesSettingsPageSettingsRoute: typeof AppAdminPagesSettingsPageSettingsRoute
+  AppAdminPagesSettingsIndexRoute: typeof AppAdminPagesSettingsIndexRoute
+  AppAdminPagesSettingsChar126componentsAddressTabRoute: typeof AppAdminPagesSettingsChar126componentsAddressTabRoute
+  AppAdminPagesSettingsChar126componentsCompanyTabRoute: typeof AppAdminPagesSettingsChar126componentsCompanyTabRoute
+  AppAdminPagesSettingsChar126componentsProfileTabRoute: typeof AppAdminPagesSettingsChar126componentsProfileTabRoute
 }
 
-const AppAdminSettingsRouteChildren: AppAdminSettingsRouteChildren = {
-  AppAdminSettingsPageSettingsRoute: AppAdminSettingsPageSettingsRoute,
-  AppAdminSettingsIndexRoute: AppAdminSettingsIndexRoute,
-  AppAdminSettingsChar126componentsCompanyTabRoute:
-    AppAdminSettingsChar126componentsCompanyTabRoute,
-  AppAdminSettingsChar126componentsProfileTabRoute:
-    AppAdminSettingsChar126componentsProfileTabRoute,
+const AppAdminPagesSettingsRouteChildren: AppAdminPagesSettingsRouteChildren = {
+  AppAdminPagesSettingsPageSettingsRoute:
+    AppAdminPagesSettingsPageSettingsRoute,
+  AppAdminPagesSettingsIndexRoute: AppAdminPagesSettingsIndexRoute,
+  AppAdminPagesSettingsChar126componentsAddressTabRoute:
+    AppAdminPagesSettingsChar126componentsAddressTabRoute,
+  AppAdminPagesSettingsChar126componentsCompanyTabRoute:
+    AppAdminPagesSettingsChar126componentsCompanyTabRoute,
+  AppAdminPagesSettingsChar126componentsProfileTabRoute:
+    AppAdminPagesSettingsChar126componentsProfileTabRoute,
 }
 
-const AppAdminSettingsRouteWithChildren =
-  AppAdminSettingsRoute._addFileChildren(AppAdminSettingsRouteChildren)
+const AppAdminPagesSettingsRouteWithChildren =
+  AppAdminPagesSettingsRoute._addFileChildren(
+    AppAdminPagesSettingsRouteChildren,
+  )
 
 interface AppAdminLayoutRouteChildren {
   AppAdminIndexRoute: typeof AppAdminIndexRoute
-  AppAdminSettingsRoute: typeof AppAdminSettingsRouteWithChildren
-  AppAdminDashboardIndexRoute: typeof AppAdminDashboardIndexRoute
-  AppAdminProfileIndexRoute: typeof AppAdminProfileIndexRoute
-  AppAdminProfileChar126componentsAddressInformationTabRoute: typeof AppAdminProfileChar126componentsAddressInformationTabRoute
-  AppAdminProfileChar126componentsCompanyInformationTabRoute: typeof AppAdminProfileChar126componentsCompanyInformationTabRoute
-  AppAdminProfileChar126componentsPersonalInformationTabRoute: typeof AppAdminProfileChar126componentsPersonalInformationTabRoute
+  AppAdminChar126componentsNotificationDropdownRoute: typeof AppAdminChar126componentsNotificationDropdownRoute
+  AppAdminPagesSettingsRoute: typeof AppAdminPagesSettingsRouteWithChildren
   AppAdminChar126componentsSidebarDashboardSidebarRoute: typeof AppAdminChar126componentsSidebarDashboardSidebarRoute
-  AppAdminFinancialExtractsIndexRoute: typeof AppAdminFinancialExtractsIndexRoute
-  AppAdminFinancialPaymentsIndexRoute: typeof AppAdminFinancialPaymentsIndexRoute
-  AppAdminManagementClientDetailIndexRoute: typeof AppAdminManagementClientDetailIndexRoute
-  AppAdminManagementClientsIndexRoute: typeof AppAdminManagementClientsIndexRoute
-  AppAdminFinancialExtractsChar126componentsFinancialSummaryRoute: typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryRoute
-  AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRoute: typeof AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRoute
-  AppAdminFinancialPaymentsChar126componentsPaymentsTableRoute: typeof AppAdminFinancialPaymentsChar126componentsPaymentsTableRoute
-  AppAdminManagementClientsChar126componentsClientsTableRoute: typeof AppAdminManagementClientsChar126componentsClientsTableRoute
-  AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRoute: typeof AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRoute
+  AppAdminPagesDashboardIndexRoute: typeof AppAdminPagesDashboardIndexRoute
+  AppAdminPagesIntegrationIndexRoute: typeof AppAdminPagesIntegrationIndexRoute
+  AppAdminPagesProfileIndexRoute: typeof AppAdminPagesProfileIndexRoute
+  AppAdminPagesIntegrationChar126componentsInformationCardRoute: typeof AppAdminPagesIntegrationChar126componentsInformationCardRoute
+  AppAdminPagesProfileChar126componentsAddressInformationTabRoute: typeof AppAdminPagesProfileChar126componentsAddressInformationTabRoute
+  AppAdminPagesProfileChar126componentsCompanyInformationTabRoute: typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRoute
+  AppAdminPagesProfileChar126componentsPersonalInformationTabRoute: typeof AppAdminPagesProfileChar126componentsPersonalInformationTabRoute
   AppAdminChar126componentsSidebarElementsNagivationContentRoute: typeof AppAdminChar126componentsSidebarElementsNagivationContentRoute
-  AppAdminChar126componentsSidebarElementsNavigationProjectsRoute: typeof AppAdminChar126componentsSidebarElementsNavigationProjectsRoute
   AppAdminChar126componentsSidebarElementsSearchSectionRoute: typeof AppAdminChar126componentsSidebarElementsSearchSectionRoute
   AppAdminChar126componentsSidebarElementsTeamSwitcherRoute: typeof AppAdminChar126componentsSidebarElementsTeamSwitcherRoute
   AppAdminChar126componentsSidebarElementsUserProfileRoute: typeof AppAdminChar126componentsSidebarElementsUserProfileRoute
-  AppAdminManagementClientDetailClientIdIndexRoute: typeof AppAdminManagementClientDetailClientIdIndexRoute
-  AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRoute: typeof AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRoute
-  AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRoute: typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRoute
-  AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRoute: typeof AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRoute
+  AppAdminPagesFinancialExtractsIndexRoute: typeof AppAdminPagesFinancialExtractsIndexRoute
+  AppAdminPagesFinancialPaymentsIndexRoute: typeof AppAdminPagesFinancialPaymentsIndexRoute
+  AppAdminPagesManagementClientDetailIndexRoute: typeof AppAdminPagesManagementClientDetailIndexRoute
+  AppAdminPagesManagementClientsIndexRoute: typeof AppAdminPagesManagementClientsIndexRoute
+  AppAdminPagesIntegrationApiKeysIndexRoute: typeof AppAdminPagesIntegrationApiKeysIndexRoute
+  AppAdminPagesIntegrationWebhooksIndexRoute: typeof AppAdminPagesIntegrationWebhooksIndexRoute
+  AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute: typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute
+  AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute: typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
+  AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRoute: typeof AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRoute
+  AppAdminPagesManagementClientsChar126componentsClientsTableRoute: typeof AppAdminPagesManagementClientsChar126componentsClientsTableRoute
+  AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute: typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute
+  AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute: typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
+  AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
+  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
+  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute
+  AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute: typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
+  AppAdminPagesManagementClientDetailClientIdIndexRoute: typeof AppAdminPagesManagementClientDetailClientIdIndexRoute
+  AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute: typeof AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
+  AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute: typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute
+  AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute: typeof AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute
 }
 
 const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
   AppAdminIndexRoute: AppAdminIndexRoute,
-  AppAdminSettingsRoute: AppAdminSettingsRouteWithChildren,
-  AppAdminDashboardIndexRoute: AppAdminDashboardIndexRoute,
-  AppAdminProfileIndexRoute: AppAdminProfileIndexRoute,
-  AppAdminProfileChar126componentsAddressInformationTabRoute:
-    AppAdminProfileChar126componentsAddressInformationTabRoute,
-  AppAdminProfileChar126componentsCompanyInformationTabRoute:
-    AppAdminProfileChar126componentsCompanyInformationTabRoute,
-  AppAdminProfileChar126componentsPersonalInformationTabRoute:
-    AppAdminProfileChar126componentsPersonalInformationTabRoute,
+  AppAdminChar126componentsNotificationDropdownRoute:
+    AppAdminChar126componentsNotificationDropdownRoute,
+  AppAdminPagesSettingsRoute: AppAdminPagesSettingsRouteWithChildren,
   AppAdminChar126componentsSidebarDashboardSidebarRoute:
     AppAdminChar126componentsSidebarDashboardSidebarRoute,
-  AppAdminFinancialExtractsIndexRoute: AppAdminFinancialExtractsIndexRoute,
-  AppAdminFinancialPaymentsIndexRoute: AppAdminFinancialPaymentsIndexRoute,
-  AppAdminManagementClientDetailIndexRoute:
-    AppAdminManagementClientDetailIndexRoute,
-  AppAdminManagementClientsIndexRoute: AppAdminManagementClientsIndexRoute,
-  AppAdminFinancialExtractsChar126componentsFinancialSummaryRoute:
-    AppAdminFinancialExtractsChar126componentsFinancialSummaryRoute,
-  AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRoute:
-    AppAdminFinancialExtractsChar126componentsFinancialSummaryCardRoute,
-  AppAdminFinancialPaymentsChar126componentsPaymentsTableRoute:
-    AppAdminFinancialPaymentsChar126componentsPaymentsTableRoute,
-  AppAdminManagementClientsChar126componentsClientsTableRoute:
-    AppAdminManagementClientsChar126componentsClientsTableRoute,
-  AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRoute:
-    AppAdminDashboardOverviewChar126componentsChartAreaInteractiveRoute,
+  AppAdminPagesDashboardIndexRoute: AppAdminPagesDashboardIndexRoute,
+  AppAdminPagesIntegrationIndexRoute: AppAdminPagesIntegrationIndexRoute,
+  AppAdminPagesProfileIndexRoute: AppAdminPagesProfileIndexRoute,
+  AppAdminPagesIntegrationChar126componentsInformationCardRoute:
+    AppAdminPagesIntegrationChar126componentsInformationCardRoute,
+  AppAdminPagesProfileChar126componentsAddressInformationTabRoute:
+    AppAdminPagesProfileChar126componentsAddressInformationTabRoute,
+  AppAdminPagesProfileChar126componentsCompanyInformationTabRoute:
+    AppAdminPagesProfileChar126componentsCompanyInformationTabRoute,
+  AppAdminPagesProfileChar126componentsPersonalInformationTabRoute:
+    AppAdminPagesProfileChar126componentsPersonalInformationTabRoute,
   AppAdminChar126componentsSidebarElementsNagivationContentRoute:
     AppAdminChar126componentsSidebarElementsNagivationContentRoute,
-  AppAdminChar126componentsSidebarElementsNavigationProjectsRoute:
-    AppAdminChar126componentsSidebarElementsNavigationProjectsRoute,
   AppAdminChar126componentsSidebarElementsSearchSectionRoute:
     AppAdminChar126componentsSidebarElementsSearchSectionRoute,
   AppAdminChar126componentsSidebarElementsTeamSwitcherRoute:
     AppAdminChar126componentsSidebarElementsTeamSwitcherRoute,
   AppAdminChar126componentsSidebarElementsUserProfileRoute:
     AppAdminChar126componentsSidebarElementsUserProfileRoute,
-  AppAdminManagementClientDetailClientIdIndexRoute:
-    AppAdminManagementClientDetailClientIdIndexRoute,
-  AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRoute:
-    AppAdminManagementClientDetailClientIdChar126componentsClientInformationTabRoute,
-  AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRoute:
-    AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticOverviewCardRoute,
-  AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRoute:
-    AppAdminDashboardOverviewChar126componentsAnalyticsAnalyticsOverviewRoute,
+  AppAdminPagesFinancialExtractsIndexRoute:
+    AppAdminPagesFinancialExtractsIndexRoute,
+  AppAdminPagesFinancialPaymentsIndexRoute:
+    AppAdminPagesFinancialPaymentsIndexRoute,
+  AppAdminPagesManagementClientDetailIndexRoute:
+    AppAdminPagesManagementClientDetailIndexRoute,
+  AppAdminPagesManagementClientsIndexRoute:
+    AppAdminPagesManagementClientsIndexRoute,
+  AppAdminPagesIntegrationApiKeysIndexRoute:
+    AppAdminPagesIntegrationApiKeysIndexRoute,
+  AppAdminPagesIntegrationWebhooksIndexRoute:
+    AppAdminPagesIntegrationWebhooksIndexRoute,
+  AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute:
+    AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute,
+  AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute:
+    AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute,
+  AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRoute:
+    AppAdminPagesFinancialPaymentsChar126componentsPaymentsTableRoute,
+  AppAdminPagesManagementClientsChar126componentsClientsTableRoute:
+    AppAdminPagesManagementClientsChar126componentsClientsTableRoute,
+  AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute:
+    AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute,
+  AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute:
+    AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute,
+  AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute:
+    AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute,
+  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute:
+    AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute,
+  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute:
+    AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute,
+  AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute:
+    AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute,
+  AppAdminPagesManagementClientDetailClientIdIndexRoute:
+    AppAdminPagesManagementClientDetailClientIdIndexRoute,
+  AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute:
+    AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute,
+  AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute:
+    AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute,
+  AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute:
+    AppAdminPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute,
 }
 
 const AppAdminLayoutRouteWithChildren = AppAdminLayoutRoute._addFileChildren(

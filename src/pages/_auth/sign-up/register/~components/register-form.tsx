@@ -18,7 +18,7 @@ import {
   secondStepFields,
   thirdStepFields,
 } from "@/constants/_auth/sign-up/register-fields";
-import { useAuth } from "@/hooks/_auth/use-auth";
+import { useAuth } from "@/hooks/auth/use-auth";
 import { removeFormat } from "@/lib/_auth/sign-up/format-masks";
 import { isValidCNPJ } from "@/utils/_auth/sign-up/valid-cnpj";
 import { AddressInformationForm } from "./register-form-steps/address-information-form";
@@ -75,8 +75,8 @@ export const registerFormSchema = z
     monthlyRevenue: z.string().min(1, {
       message: "Selecione o faturamento mensal",
     }),
-    storeDomain: z.string().min(2, {
-      message: "Domínio da loja deve ter no mínimo 2 caracteres",
+    storeDomain: z.string().url({
+      message: "Domínio da loja deve ter um formato válido",
     }),
     businessSegment: z.string().min(1, {
       message: "Selecione o segmento de negócio",
@@ -180,15 +180,12 @@ export function RegisterForm() {
 
   async function onSubmit(values: z.infer<typeof registerFormSchema>) {
     try {
-      const username = values.email.split("@")[0];
-
       const cleanPhone = removeFormat(values.phone);
       const cleanSupportPhone = removeFormat(values.supportPhone);
       const cleanCNPJ = removeFormat(values.cnpj);
 
       await register({
         // First-step (PersonalInformationForm)
-        username,
         email: values.email,
         password: values.password,
         name: values.name,

@@ -18,15 +18,16 @@ export function SelectCombobox({
   onChange,
   placeholder,
   disabled,
+  className,
 }: {
   options: { value: string; label: string }[];
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   disabled?: boolean;
+  className?: string;
 }) {
   const [open, setOpen] = useState(false);
-
   const [search, setSearch] = useState("");
 
   const filteredOptions = options.filter((opt) =>
@@ -41,7 +42,8 @@ export function SelectCombobox({
           aria-expanded={open}
           className={cn(
             "w-full justify-between bg-input-gray hover:bg-input-gray",
-            disabled && "bg-input-gray opacity-20"
+            disabled && "bg-input-gray opacity-20",
+            className
           )}
           disabled={disabled}
           role="combobox"

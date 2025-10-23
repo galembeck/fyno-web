@@ -14,7 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useAuth } from "@/hooks/_auth/use-auth";
+import { useAuth } from "@/hooks/auth/use-auth";
 import { formatWhatsApp } from "@/lib/_auth/sign-up/format-masks";
 
 export const Route = createFileRoute(
@@ -72,7 +72,7 @@ export function PersonalInformationForm({
       try {
         const exists = await checkEmailExists(email);
         setEmailExists(exists);
-        // biome-ignore lint/correctness/noUnusedVariables: not used...
+        // biome-ignore lint/correctness/noUnusedVariables: not required...
       } catch (error) {
         setEmailExists(false);
       }
@@ -152,7 +152,7 @@ export function PersonalInformationForm({
               />
             </FormControl>
             <FormMessage />
-            {emailExists && (
+            {Boolean(emailExists) && (
               <div className="mt-2 text-muted-foreground text-sm">
                 E-mail já registrado.{" "}
                 <Link
