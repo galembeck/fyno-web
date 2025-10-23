@@ -82,7 +82,7 @@ import { Route as AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
 import { Route as AppPublicRewardsChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/rewards/~components/sections/intro'
 import { Route as AppAdminPagesManagementClientDetailClientIdIndexRouteImport } from './pages/_app/admin/_pages/_management/client-detail/$clientId/index'
 import { Route as AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRouteImport } from './pages/_app/admin/_pages/integration/webhooks/~components/webhooks-table'
-import { Route as AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRouteImport } from './pages/_app/admin/_pages/integration/api-keys/~components/create-api-key-button'
+import { Route as AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRouteImport } from './pages/_app/admin/_pages/integration/webhooks/~components/create-webhook'
 import { Route as AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRouteImport } from './pages/_app/admin/_pages/integration/api-keys/~components/create-api-key'
 import { Route as AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRouteImport } from './pages/_app/admin/_pages/integration/api-keys/~components/api-keys-table'
 import { Route as AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRouteImport } from './pages/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card'
@@ -534,11 +534,11 @@ const AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute =
       getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
-const AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute =
-  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRouteImport.update(
+const AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRoute =
+  AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRouteImport.update(
     {
-      id: '/_pages/integration/api-keys/~components/create-api-key-button',
-      path: '/integration/api-keys/~components/create-api-key-button',
+      id: '/_pages/integration/webhooks/~components/create-webhook',
+      path: '/integration/webhooks/~components/create-webhook',
       getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
@@ -767,7 +767,7 @@ export interface FileRoutesByFullPath {
   '/admin/dashboard/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
   '/admin/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
   '/admin/integration/api-keys/~components/create-api-key': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
-  '/admin/integration/api-keys/~components/create-api-key-button': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute
+  '/admin/integration/webhooks/~components/create-webhook': typeof AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRoute
   '/admin/integration/webhooks/~components/webhooks-table': typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
   '/admin/client-detail/$clientId': typeof AppAdminPagesManagementClientDetailClientIdIndexRoute
   '/blog/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
@@ -853,7 +853,7 @@ export interface FileRoutesByTo {
   '/admin/dashboard/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
   '/admin/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
   '/admin/integration/api-keys/~components/create-api-key': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
-  '/admin/integration/api-keys/~components/create-api-key-button': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute
+  '/admin/integration/webhooks/~components/create-webhook': typeof AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRoute
   '/admin/integration/webhooks/~components/webhooks-table': typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
   '/admin/client-detail/$clientId': typeof AppAdminPagesManagementClientDetailClientIdIndexRoute
   '/blog/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
@@ -947,7 +947,7 @@ export interface FileRoutesById {
   '/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
   '/_app/admin/_pages/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
   '/_app/admin/_pages/integration/api-keys/~components/create-api-key': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
-  '/_app/admin/_pages/integration/api-keys/~components/create-api-key-button': typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute
+  '/_app/admin/_pages/integration/webhooks/~components/create-webhook': typeof AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRoute
   '/_app/admin/_pages/integration/webhooks/~components/webhooks-table': typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
   '/_app/admin/_pages/_management/client-detail/$clientId/': typeof AppAdminPagesManagementClientDetailClientIdIndexRoute
   '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
@@ -1039,7 +1039,7 @@ export interface FileRouteTypes {
     | '/admin/dashboard/~components/payed-orders-card'
     | '/admin/integration/api-keys/~components/api-keys-table'
     | '/admin/integration/api-keys/~components/create-api-key'
-    | '/admin/integration/api-keys/~components/create-api-key-button'
+    | '/admin/integration/webhooks/~components/create-webhook'
     | '/admin/integration/webhooks/~components/webhooks-table'
     | '/admin/client-detail/$clientId'
     | '/blog/$articleId/~components/content-renderer/rich-content-renderer'
@@ -1125,7 +1125,7 @@ export interface FileRouteTypes {
     | '/admin/dashboard/~components/payed-orders-card'
     | '/admin/integration/api-keys/~components/api-keys-table'
     | '/admin/integration/api-keys/~components/create-api-key'
-    | '/admin/integration/api-keys/~components/create-api-key-button'
+    | '/admin/integration/webhooks/~components/create-webhook'
     | '/admin/integration/webhooks/~components/webhooks-table'
     | '/admin/client-detail/$clientId'
     | '/blog/$articleId/~components/content-renderer/rich-content-renderer'
@@ -1218,7 +1218,7 @@ export interface FileRouteTypes {
     | '/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card'
     | '/_app/admin/_pages/integration/api-keys/~components/api-keys-table'
     | '/_app/admin/_pages/integration/api-keys/~components/create-api-key'
-    | '/_app/admin/_pages/integration/api-keys/~components/create-api-key-button'
+    | '/_app/admin/_pages/integration/webhooks/~components/create-webhook'
     | '/_app/admin/_pages/integration/webhooks/~components/webhooks-table'
     | '/_app/admin/_pages/_management/client-detail/$clientId/'
     | '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
@@ -1747,11 +1747,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
-    '/_app/admin/_pages/integration/api-keys/~components/create-api-key-button': {
-      id: '/_app/admin/_pages/integration/api-keys/~components/create-api-key-button'
-      path: '/integration/api-keys/~components/create-api-key-button'
-      fullPath: '/admin/integration/api-keys/~components/create-api-key-button'
-      preLoaderRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRouteImport
+    '/_app/admin/_pages/integration/webhooks/~components/create-webhook': {
+      id: '/_app/admin/_pages/integration/webhooks/~components/create-webhook'
+      path: '/integration/webhooks/~components/create-webhook'
+      fullPath: '/admin/integration/webhooks/~components/create-webhook'
+      preLoaderRoute: typeof AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/admin/_pages/integration/api-keys/~components/create-api-key': {
@@ -1986,7 +1986,7 @@ interface AppAdminLayoutRouteChildren {
   AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute: typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
   AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
   AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
-  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute
+  AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRoute: typeof AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRoute
   AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute: typeof AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
   AppAdminPagesManagementClientDetailClientIdIndexRoute: typeof AppAdminPagesManagementClientDetailClientIdIndexRoute
   AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute: typeof AppAdminPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
@@ -2050,8 +2050,8 @@ const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
     AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute,
   AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute:
     AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute,
-  AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute:
-    AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyButtonRoute,
+  AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRoute:
+    AppAdminPagesIntegrationWebhooksChar126componentsCreateWebhookRoute,
   AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute:
     AppAdminPagesIntegrationWebhooksChar126componentsWebhooksTableRoute,
   AppAdminPagesManagementClientDetailClientIdIndexRoute:

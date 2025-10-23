@@ -27,3 +27,12 @@ export interface User {
   state: string;
   createdAt: string;
 }
+
+export interface RegisterData extends Omit<User, "id" | "createdAt" | "role"> {
+  password: string;
+}
+
+export interface LoginData {
+  email: string;
+  password: string;
+}
