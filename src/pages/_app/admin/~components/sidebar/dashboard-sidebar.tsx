@@ -5,6 +5,8 @@ import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
+  SidebarGroup,
+  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -43,15 +45,18 @@ export function DashboardSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
           section="Transações"
         />
 
-        <SidebarMenuItem className="px-2">
-          <SidebarMenuButton
-            onClick={() => navigate({ to: "/admin/settings" })}
-            tooltip="Configurações"
-          >
-            <Settings2 />
-            <span>Configurações</span>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
+        <SidebarGroup>
+          <SidebarGroupLabel>Sistema</SidebarGroupLabel>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              onClick={() => navigate({ to: "/admin/settings" })}
+              tooltip="Configurações"
+            >
+              <Settings2 />
+              <span>Configurações</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarGroup>
       </SidebarContent>
 
       <SidebarFooter>
