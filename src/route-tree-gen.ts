@@ -73,6 +73,7 @@ import { Route as AppAdminPagesProfileChar126componentsPersonalInformationTabRou
 import { Route as AppAdminPagesProfileChar126componentsCompanyInformationTabRouteImport } from './pages/_app/admin/_pages/profile/~components/company-information-tab'
 import { Route as AppAdminPagesProfileChar126componentsAddressInformationTabRouteImport } from './pages/_app/admin/_pages/profile/~components/address-information-tab'
 import { Route as AppAdminPagesIntegrationChar126componentsInformationCardRouteImport } from './pages/_app/admin/_pages/integration/~components/information-card'
+import { Route as AppAdminPagesIntegrationChar126componentsDeleteConfirmationRouteImport } from './pages/_app/admin/_pages/integration/~components/delete-confirmation'
 import { Route as AppRelatedBlogChar126componentsPaginationBlogPaginationRouteImport } from './pages/_app/_related/blog/~components/pagination/blog-pagination'
 import { Route as AppRelatedBlogChar126componentsContentArticlesFiltersRouteImport } from './pages/_app/_related/blog/~components/content/articles-filters'
 import { Route as AppRelatedBlogChar126componentsContentArticleCardRouteImport } from './pages/_app/_related/blog/~components/content/article-card'
@@ -475,6 +476,14 @@ const AppAdminPagesIntegrationChar126componentsInformationCardRoute =
     path: '/integration/~components/information-card',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
+const AppAdminPagesIntegrationChar126componentsDeleteConfirmationRoute =
+  AppAdminPagesIntegrationChar126componentsDeleteConfirmationRouteImport.update(
+    {
+      id: '/_pages/integration/~components/delete-confirmation',
+      path: '/integration/~components/delete-confirmation',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
 const AppRelatedBlogChar126componentsPaginationBlogPaginationRoute =
   AppRelatedBlogChar126componentsPaginationBlogPaginationRouteImport.update({
     id: '/~components/pagination/blog-pagination',
@@ -724,6 +733,7 @@ export interface FileRoutesByFullPath {
   '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
   '/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
+  '/admin/integration/~components/delete-confirmation': typeof AppAdminPagesIntegrationChar126componentsDeleteConfirmationRoute
   '/admin/integration/~components/information-card': typeof AppAdminPagesIntegrationChar126componentsInformationCardRoute
   '/admin/profile/~components/address-information-tab': typeof AppAdminPagesProfileChar126componentsAddressInformationTabRoute
   '/admin/profile/~components/company-information-tab': typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRoute
@@ -809,6 +819,7 @@ export interface FileRoutesByTo {
   '/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
   '/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
+  '/admin/integration/~components/delete-confirmation': typeof AppAdminPagesIntegrationChar126componentsDeleteConfirmationRoute
   '/admin/integration/~components/information-card': typeof AppAdminPagesIntegrationChar126componentsInformationCardRoute
   '/admin/profile/~components/address-information-tab': typeof AppAdminPagesProfileChar126componentsAddressInformationTabRoute
   '/admin/profile/~components/company-information-tab': typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRoute
@@ -902,6 +913,7 @@ export interface FileRoutesById {
   '/_app/_related/blog/~components/content/article-card': typeof AppRelatedBlogChar126componentsContentArticleCardRoute
   '/_app/_related/blog/~components/content/articles-filters': typeof AppRelatedBlogChar126componentsContentArticlesFiltersRoute
   '/_app/_related/blog/~components/pagination/blog-pagination': typeof AppRelatedBlogChar126componentsPaginationBlogPaginationRoute
+  '/_app/admin/_pages/integration/~components/delete-confirmation': typeof AppAdminPagesIntegrationChar126componentsDeleteConfirmationRoute
   '/_app/admin/_pages/integration/~components/information-card': typeof AppAdminPagesIntegrationChar126componentsInformationCardRoute
   '/_app/admin/_pages/profile/~components/address-information-tab': typeof AppAdminPagesProfileChar126componentsAddressInformationTabRoute
   '/_app/admin/_pages/profile/~components/company-information-tab': typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRoute
@@ -993,6 +1005,7 @@ export interface FileRouteTypes {
     | '/blog/~components/content/article-card'
     | '/blog/~components/content/articles-filters'
     | '/blog/~components/pagination/blog-pagination'
+    | '/admin/integration/~components/delete-confirmation'
     | '/admin/integration/~components/information-card'
     | '/admin/profile/~components/address-information-tab'
     | '/admin/profile/~components/company-information-tab'
@@ -1078,6 +1091,7 @@ export interface FileRouteTypes {
     | '/blog/~components/content/article-card'
     | '/blog/~components/content/articles-filters'
     | '/blog/~components/pagination/blog-pagination'
+    | '/admin/integration/~components/delete-confirmation'
     | '/admin/integration/~components/information-card'
     | '/admin/profile/~components/address-information-tab'
     | '/admin/profile/~components/company-information-tab'
@@ -1170,6 +1184,7 @@ export interface FileRouteTypes {
     | '/_app/_related/blog/~components/content/article-card'
     | '/_app/_related/blog/~components/content/articles-filters'
     | '/_app/_related/blog/~components/pagination/blog-pagination'
+    | '/_app/admin/_pages/integration/~components/delete-confirmation'
     | '/_app/admin/_pages/integration/~components/information-card'
     | '/_app/admin/_pages/profile/~components/address-information-tab'
     | '/_app/admin/_pages/profile/~components/company-information-tab'
@@ -1669,6 +1684,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminPagesIntegrationChar126componentsInformationCardRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
+    '/_app/admin/_pages/integration/~components/delete-confirmation': {
+      id: '/_app/admin/_pages/integration/~components/delete-confirmation'
+      path: '/integration/~components/delete-confirmation'
+      fullPath: '/admin/integration/~components/delete-confirmation'
+      preLoaderRoute: typeof AppAdminPagesIntegrationChar126componentsDeleteConfirmationRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_app/_related/blog/~components/pagination/blog-pagination': {
       id: '/_app/_related/blog/~components/pagination/blog-pagination'
       path: '/~components/pagination/blog-pagination'
@@ -1941,6 +1963,7 @@ interface AppAdminLayoutRouteChildren {
   AppAdminPagesDashboardIndexRoute: typeof AppAdminPagesDashboardIndexRoute
   AppAdminPagesIntegrationIndexRoute: typeof AppAdminPagesIntegrationIndexRoute
   AppAdminPagesProfileIndexRoute: typeof AppAdminPagesProfileIndexRoute
+  AppAdminPagesIntegrationChar126componentsDeleteConfirmationRoute: typeof AppAdminPagesIntegrationChar126componentsDeleteConfirmationRoute
   AppAdminPagesIntegrationChar126componentsInformationCardRoute: typeof AppAdminPagesIntegrationChar126componentsInformationCardRoute
   AppAdminPagesProfileChar126componentsAddressInformationTabRoute: typeof AppAdminPagesProfileChar126componentsAddressInformationTabRoute
   AppAdminPagesProfileChar126componentsCompanyInformationTabRoute: typeof AppAdminPagesProfileChar126componentsCompanyInformationTabRoute
@@ -1981,6 +2004,8 @@ const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
   AppAdminPagesDashboardIndexRoute: AppAdminPagesDashboardIndexRoute,
   AppAdminPagesIntegrationIndexRoute: AppAdminPagesIntegrationIndexRoute,
   AppAdminPagesProfileIndexRoute: AppAdminPagesProfileIndexRoute,
+  AppAdminPagesIntegrationChar126componentsDeleteConfirmationRoute:
+    AppAdminPagesIntegrationChar126componentsDeleteConfirmationRoute,
   AppAdminPagesIntegrationChar126componentsInformationCardRoute:
     AppAdminPagesIntegrationChar126componentsInformationCardRoute,
   AppAdminPagesProfileChar126componentsAddressInformationTabRoute:

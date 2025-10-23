@@ -6,17 +6,6 @@ import { format } from "date-fns";
 import { Copy, MoreHorizontal, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { DataTableColumnSearch } from "@/components/data-table-column-search";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -36,6 +25,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useApiKeys } from "@/hooks/integration/use-api-keys";
+import { DeleteConfirmation } from "../../~components/delete-confirmation";
 import { CreateAPIKey } from "./create-api-key";
 
 export const Route = createFileRoute(
@@ -172,41 +162,12 @@ export const apiKeysTableColumns: ColumnDef<APIKey>[] = [
                 <p className="text-red-500 hover:text-red-500/80">Excluir</p>
               </DropdownMenuItem>
 
-              <AlertDialog onOpenChange={setOpenConfirm} open={openConfirm}>
-                <AlertDialogTrigger asChild />
-
-                <AlertDialogContent className="flex flex-col items-center justify-center rounded-lg border-0 text-center">
-                  <AlertDialogHeader className="flex flex-col py-4 text-center">
-                    <AlertDialogTitle className="flex flex-col items-center justify-center gap-4 font-bold text-white">
-                      <Trash2 stroke="red" />
-                      Tem certeza que deseja excluir essa chave?
-                    </AlertDialogTitle>
-                    <AlertDialogDescription className="text-muted-foreground">
-                      Ao confirmar, a chave API será revogada e excluída de sua
-                      conta, não podendo ser mais utilizada. Deseja realmente
-                      excluir?
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter className="flex flex-row items-center justify-center py-4">
-                    <AlertDialogCancel
-                      className="border-0 bg-inherit text-white hover:bg-inherit hover:text-white/90"
-                      onClick={() => setOpenConfirm(false)}
-                    >
-                      Cancelar
-                    </AlertDialogCancel>
-                    <AlertDialogAction
-                      className="gap-2 bg-red-500 text-white hover:bg-red-500/90"
-                      onClick={() => {
-                        revokeKey(client.id);
-                        setOpenConfirm(false);
-                      }}
-                    >
-                      <Trash2 />
-                      Excluir
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
+              <DeleteConfirmation
+                onClick={() => revokeKey(client.id)}
+                onOpenChange={setOpenConfirm}
+                open={openConfirm}
+                type="api-key"
+              />
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
