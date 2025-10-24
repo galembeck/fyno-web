@@ -1,6 +1,13 @@
 /** biome-ignore-all lint/suspicious/noExplicitAny: required by webhook operations */
 /** biome-ignore-all lint/correctness/noUnusedVariables: required by webhook operations */
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { createFileRoute } from "@tanstack/react-router";
+import { Check, Info, Plus, X } from "lucide-react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import z from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -27,13 +34,6 @@ import {
 } from "@/components/ui/tooltip";
 import { useProducts } from "@/hooks/endpoints/v1/use-product";
 import { formatCurrencyFromNumber } from "@/utils/_admin/format-currency-from-number";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { createFileRoute } from "@tanstack/react-router";
-import { Check, Info, Plus, X } from "lucide-react";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import z from "zod";
 
 export const Route = createFileRoute(
   "/_app/admin/_pages/_primary/products/~components/create-product"
@@ -183,20 +183,21 @@ export function CreateProduct() {
                   <FormLabel>Preço/valor</FormLabel>
                   <FormControl>
                     <Input
-                      value={formatCurrencyFromNumber(field.value)}
+                      className="border-none dark:bg-input-gray"
                       onChange={(e) => {
                         const digits = e.target.value
                           .replace(/\D/g, "")
                           .slice(0, 12);
-                        const cents = digits === "" ? 0 : parseInt(digits, 10);
+                        const cents =
+                          digits === "" ? 0 : Number.parseInt(digits, 10);
 
                         const numberValue = cents / 100;
 
                         field.onChange(numberValue);
                       }}
-                      className="border-none dark:bg-input-gray"
                       placeholder="R$ 0,00"
                       type="text"
+                      value={formatCurrencyFromNumber(field.value)}
                     />
                   </FormControl>
                   <FormMessage />
@@ -206,8 +207,8 @@ export function CreateProduct() {
 
             <DialogFooter className="mt-4 flex gap-4">
               <Button
-                type="reset"
                 onClick={() => setOpen(false)}
+                type="reset"
                 variant="outline"
               >
                 <div className="flex gap-4">

@@ -54,6 +54,7 @@ import { Route as AppPublicChar126componentsSectionsCompaniesMarqueeRouteImport 
 import { Route as AppPublicChar126componentsSectionsBenefitsRouteImport } from './pages/_app/_public/~components/sections/benefits'
 import { Route as AppAdminPagesIntegrationWebhooksIndexRouteImport } from './pages/_app/admin/_pages/integration/webhooks/index'
 import { Route as AppAdminPagesIntegrationApiKeysIndexRouteImport } from './pages/_app/admin/_pages/integration/api-keys/index'
+import { Route as AppAdminPagesPrimaryRoadmapIndexRouteImport } from './pages/_app/admin/_pages/_primary/roadmap/index'
 import { Route as AppAdminPagesPrimaryProductsIndexRouteImport } from './pages/_app/admin/_pages/_primary/products/index'
 import { Route as AppAdminPagesManagementClientsIndexRouteImport } from './pages/_app/admin/_pages/_management/clients/index'
 import { Route as AppAdminPagesManagementClientDetailIndexRouteImport } from './pages/_app/admin/_pages/_management/client-detail/index'
@@ -88,6 +89,9 @@ import { Route as AppAdminPagesIntegrationApiKeysChar126componentsCreateApiKeyRo
 import { Route as AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRouteImport } from './pages/_app/admin/_pages/integration/api-keys/~components/api-keys-table'
 import { Route as AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRouteImport } from './pages/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card'
 import { Route as AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRouteImport } from './pages/_app/admin/_pages/dashboard/_overview/~components/chart-area-interactive'
+import { Route as AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRouteImport } from './pages/_app/admin/_pages/_primary/roadmap/~components/roadmap-section-card'
+import { Route as AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRouteImport } from './pages/_app/admin/_pages/_primary/roadmap/~components/roadmap-content-card'
+import { Route as AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRouteImport } from './pages/_app/admin/_pages/_primary/roadmap/~components/create-roadmap-suggestion'
 import { Route as AppAdminPagesPrimaryProductsChar126componentsUpdateProductRouteImport } from './pages/_app/admin/_pages/_primary/products/~components/update-product'
 import { Route as AppAdminPagesPrimaryProductsChar126componentsProductsTableRouteImport } from './pages/_app/admin/_pages/_primary/products/~components/products-table'
 import { Route as AppAdminPagesPrimaryProductsChar126componentsCreateProductRouteImport } from './pages/_app/admin/_pages/_primary/products/~components/create-product'
@@ -358,6 +362,12 @@ const AppAdminPagesIntegrationApiKeysIndexRoute =
     path: '/integration/api-keys/',
     getParentRoute: () => AppAdminLayoutRoute,
   } as any)
+const AppAdminPagesPrimaryRoadmapIndexRoute =
+  AppAdminPagesPrimaryRoadmapIndexRouteImport.update({
+    id: '/_pages/_primary/roadmap/',
+    path: '/roadmap/',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
 const AppAdminPagesPrimaryProductsIndexRoute =
   AppAdminPagesPrimaryProductsIndexRouteImport.update({
     id: '/_pages/_primary/products/',
@@ -582,6 +592,30 @@ const AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute =
       getParentRoute: () => AppAdminLayoutRoute,
     } as any,
   )
+const AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRoute =
+  AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRouteImport.update(
+    {
+      id: '/_pages/_primary/roadmap/~components/roadmap-section-card',
+      path: '/roadmap/~components/roadmap-section-card',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRoute =
+  AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRouteImport.update(
+    {
+      id: '/_pages/_primary/roadmap/~components/roadmap-content-card',
+      path: '/roadmap/~components/roadmap-content-card',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
+const AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRoute =
+  AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRouteImport.update(
+    {
+      id: '/_pages/_primary/roadmap/~components/create-roadmap-suggestion',
+      path: '/roadmap/~components/create-roadmap-suggestion',
+      getParentRoute: () => AppAdminLayoutRoute,
+    } as any,
+  )
 const AppAdminPagesPrimaryProductsChar126componentsUpdateProductRoute =
   AppAdminPagesPrimaryProductsChar126componentsUpdateProductRouteImport.update({
     id: '/_pages/_primary/products/~components/update-product',
@@ -780,6 +814,7 @@ export interface FileRoutesByFullPath {
   '/admin/client-detail': typeof AppAdminPagesManagementClientDetailIndexRoute
   '/admin/clients': typeof AppAdminPagesManagementClientsIndexRoute
   '/admin/products': typeof AppAdminPagesPrimaryProductsIndexRoute
+  '/admin/roadmap': typeof AppAdminPagesPrimaryRoadmapIndexRoute
   '/admin/integration/api-keys': typeof AppAdminPagesIntegrationApiKeysIndexRoute
   '/admin/integration/webhooks': typeof AppAdminPagesIntegrationWebhooksIndexRoute
   '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
@@ -793,6 +828,9 @@ export interface FileRoutesByFullPath {
   '/admin/products/~components/create-product': typeof AppAdminPagesPrimaryProductsChar126componentsCreateProductRoute
   '/admin/products/~components/products-table': typeof AppAdminPagesPrimaryProductsChar126componentsProductsTableRoute
   '/admin/products/~components/update-product': typeof AppAdminPagesPrimaryProductsChar126componentsUpdateProductRoute
+  '/admin/roadmap/~components/create-roadmap-suggestion': typeof AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRoute
+  '/admin/roadmap/~components/roadmap-content-card': typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRoute
+  '/admin/roadmap/~components/roadmap-section-card': typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRoute
   '/admin/dashboard/~components/chart-area-interactive': typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute
   '/admin/dashboard/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
   '/admin/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
@@ -870,6 +908,7 @@ export interface FileRoutesByTo {
   '/admin/client-detail': typeof AppAdminPagesManagementClientDetailIndexRoute
   '/admin/clients': typeof AppAdminPagesManagementClientsIndexRoute
   '/admin/products': typeof AppAdminPagesPrimaryProductsIndexRoute
+  '/admin/roadmap': typeof AppAdminPagesPrimaryRoadmapIndexRoute
   '/admin/integration/api-keys': typeof AppAdminPagesIntegrationApiKeysIndexRoute
   '/admin/integration/webhooks': typeof AppAdminPagesIntegrationWebhooksIndexRoute
   '/blog/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
@@ -883,6 +922,9 @@ export interface FileRoutesByTo {
   '/admin/products/~components/create-product': typeof AppAdminPagesPrimaryProductsChar126componentsCreateProductRoute
   '/admin/products/~components/products-table': typeof AppAdminPagesPrimaryProductsChar126componentsProductsTableRoute
   '/admin/products/~components/update-product': typeof AppAdminPagesPrimaryProductsChar126componentsUpdateProductRoute
+  '/admin/roadmap/~components/create-roadmap-suggestion': typeof AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRoute
+  '/admin/roadmap/~components/roadmap-content-card': typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRoute
+  '/admin/roadmap/~components/roadmap-section-card': typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRoute
   '/admin/dashboard/~components/chart-area-interactive': typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute
   '/admin/dashboard/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
   '/admin/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
@@ -968,6 +1010,7 @@ export interface FileRoutesById {
   '/_app/admin/_pages/_management/client-detail/': typeof AppAdminPagesManagementClientDetailIndexRoute
   '/_app/admin/_pages/_management/clients/': typeof AppAdminPagesManagementClientsIndexRoute
   '/_app/admin/_pages/_primary/products/': typeof AppAdminPagesPrimaryProductsIndexRoute
+  '/_app/admin/_pages/_primary/roadmap/': typeof AppAdminPagesPrimaryRoadmapIndexRoute
   '/_app/admin/_pages/integration/api-keys/': typeof AppAdminPagesIntegrationApiKeysIndexRoute
   '/_app/admin/_pages/integration/webhooks/': typeof AppAdminPagesIntegrationWebhooksIndexRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-not-found': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
@@ -981,6 +1024,9 @@ export interface FileRoutesById {
   '/_app/admin/_pages/_primary/products/~components/create-product': typeof AppAdminPagesPrimaryProductsChar126componentsCreateProductRoute
   '/_app/admin/_pages/_primary/products/~components/products-table': typeof AppAdminPagesPrimaryProductsChar126componentsProductsTableRoute
   '/_app/admin/_pages/_primary/products/~components/update-product': typeof AppAdminPagesPrimaryProductsChar126componentsUpdateProductRoute
+  '/_app/admin/_pages/_primary/roadmap/~components/create-roadmap-suggestion': typeof AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRoute
+  '/_app/admin/_pages/_primary/roadmap/~components/roadmap-content-card': typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRoute
+  '/_app/admin/_pages/_primary/roadmap/~components/roadmap-section-card': typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRoute
   '/_app/admin/_pages/dashboard/_overview/~components/chart-area-interactive': typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute
   '/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card': typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
   '/_app/admin/_pages/integration/api-keys/~components/api-keys-table': typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
@@ -1064,6 +1110,7 @@ export interface FileRouteTypes {
     | '/admin/client-detail'
     | '/admin/clients'
     | '/admin/products'
+    | '/admin/roadmap'
     | '/admin/integration/api-keys'
     | '/admin/integration/webhooks'
     | '/blog/$articleId/~components/article-not-found'
@@ -1077,6 +1124,9 @@ export interface FileRouteTypes {
     | '/admin/products/~components/create-product'
     | '/admin/products/~components/products-table'
     | '/admin/products/~components/update-product'
+    | '/admin/roadmap/~components/create-roadmap-suggestion'
+    | '/admin/roadmap/~components/roadmap-content-card'
+    | '/admin/roadmap/~components/roadmap-section-card'
     | '/admin/dashboard/~components/chart-area-interactive'
     | '/admin/dashboard/~components/payed-orders-card'
     | '/admin/integration/api-keys/~components/api-keys-table'
@@ -1154,6 +1204,7 @@ export interface FileRouteTypes {
     | '/admin/client-detail'
     | '/admin/clients'
     | '/admin/products'
+    | '/admin/roadmap'
     | '/admin/integration/api-keys'
     | '/admin/integration/webhooks'
     | '/blog/$articleId/~components/article-not-found'
@@ -1167,6 +1218,9 @@ export interface FileRouteTypes {
     | '/admin/products/~components/create-product'
     | '/admin/products/~components/products-table'
     | '/admin/products/~components/update-product'
+    | '/admin/roadmap/~components/create-roadmap-suggestion'
+    | '/admin/roadmap/~components/roadmap-content-card'
+    | '/admin/roadmap/~components/roadmap-section-card'
     | '/admin/dashboard/~components/chart-area-interactive'
     | '/admin/dashboard/~components/payed-orders-card'
     | '/admin/integration/api-keys/~components/api-keys-table'
@@ -1251,6 +1305,7 @@ export interface FileRouteTypes {
     | '/_app/admin/_pages/_management/client-detail/'
     | '/_app/admin/_pages/_management/clients/'
     | '/_app/admin/_pages/_primary/products/'
+    | '/_app/admin/_pages/_primary/roadmap/'
     | '/_app/admin/_pages/integration/api-keys/'
     | '/_app/admin/_pages/integration/webhooks/'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
@@ -1264,6 +1319,9 @@ export interface FileRouteTypes {
     | '/_app/admin/_pages/_primary/products/~components/create-product'
     | '/_app/admin/_pages/_primary/products/~components/products-table'
     | '/_app/admin/_pages/_primary/products/~components/update-product'
+    | '/_app/admin/_pages/_primary/roadmap/~components/create-roadmap-suggestion'
+    | '/_app/admin/_pages/_primary/roadmap/~components/roadmap-content-card'
+    | '/_app/admin/_pages/_primary/roadmap/~components/roadmap-section-card'
     | '/_app/admin/_pages/dashboard/_overview/~components/chart-area-interactive'
     | '/_app/admin/_pages/dashboard/_overview/~components/payed-orders-card'
     | '/_app/admin/_pages/integration/api-keys/~components/api-keys-table'
@@ -1601,6 +1659,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminPagesIntegrationApiKeysIndexRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
+    '/_app/admin/_pages/_primary/roadmap/': {
+      id: '/_app/admin/_pages/_primary/roadmap/'
+      path: '/roadmap'
+      fullPath: '/admin/roadmap'
+      preLoaderRoute: typeof AppAdminPagesPrimaryRoadmapIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_app/admin/_pages/_primary/products/': {
       id: '/_app/admin/_pages/_primary/products/'
       path: '/products'
@@ -1839,6 +1904,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRouteImport
       parentRoute: typeof AppAdminLayoutRoute
     }
+    '/_app/admin/_pages/_primary/roadmap/~components/roadmap-section-card': {
+      id: '/_app/admin/_pages/_primary/roadmap/~components/roadmap-section-card'
+      path: '/roadmap/~components/roadmap-section-card'
+      fullPath: '/admin/roadmap/~components/roadmap-section-card'
+      preLoaderRoute: typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_primary/roadmap/~components/roadmap-content-card': {
+      id: '/_app/admin/_pages/_primary/roadmap/~components/roadmap-content-card'
+      path: '/roadmap/~components/roadmap-content-card'
+      fullPath: '/admin/roadmap/~components/roadmap-content-card'
+      preLoaderRoute: typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
+    '/_app/admin/_pages/_primary/roadmap/~components/create-roadmap-suggestion': {
+      id: '/_app/admin/_pages/_primary/roadmap/~components/create-roadmap-suggestion'
+      path: '/roadmap/~components/create-roadmap-suggestion'
+      fullPath: '/admin/roadmap/~components/create-roadmap-suggestion'
+      preLoaderRoute: typeof AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_app/admin/_pages/_primary/products/~components/update-product': {
       id: '/_app/admin/_pages/_primary/products/~components/update-product'
       path: '/products/~components/update-product'
@@ -2055,6 +2141,7 @@ interface AppAdminLayoutRouteChildren {
   AppAdminPagesManagementClientDetailIndexRoute: typeof AppAdminPagesManagementClientDetailIndexRoute
   AppAdminPagesManagementClientsIndexRoute: typeof AppAdminPagesManagementClientsIndexRoute
   AppAdminPagesPrimaryProductsIndexRoute: typeof AppAdminPagesPrimaryProductsIndexRoute
+  AppAdminPagesPrimaryRoadmapIndexRoute: typeof AppAdminPagesPrimaryRoadmapIndexRoute
   AppAdminPagesIntegrationApiKeysIndexRoute: typeof AppAdminPagesIntegrationApiKeysIndexRoute
   AppAdminPagesIntegrationWebhooksIndexRoute: typeof AppAdminPagesIntegrationWebhooksIndexRoute
   AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute: typeof AppAdminPagesFinancialExtractsChar126componentsFinancialSummaryRoute
@@ -2064,6 +2151,9 @@ interface AppAdminLayoutRouteChildren {
   AppAdminPagesPrimaryProductsChar126componentsCreateProductRoute: typeof AppAdminPagesPrimaryProductsChar126componentsCreateProductRoute
   AppAdminPagesPrimaryProductsChar126componentsProductsTableRoute: typeof AppAdminPagesPrimaryProductsChar126componentsProductsTableRoute
   AppAdminPagesPrimaryProductsChar126componentsUpdateProductRoute: typeof AppAdminPagesPrimaryProductsChar126componentsUpdateProductRoute
+  AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRoute: typeof AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRoute
+  AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRoute: typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRoute
+  AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRoute: typeof AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRoute
   AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute: typeof AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute
   AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute: typeof AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute
   AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute: typeof AppAdminPagesIntegrationApiKeysChar126componentsApiKeysTableRoute
@@ -2114,6 +2204,7 @@ const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
     AppAdminPagesManagementClientsIndexRoute,
   AppAdminPagesPrimaryProductsIndexRoute:
     AppAdminPagesPrimaryProductsIndexRoute,
+  AppAdminPagesPrimaryRoadmapIndexRoute: AppAdminPagesPrimaryRoadmapIndexRoute,
   AppAdminPagesIntegrationApiKeysIndexRoute:
     AppAdminPagesIntegrationApiKeysIndexRoute,
   AppAdminPagesIntegrationWebhooksIndexRoute:
@@ -2132,6 +2223,12 @@ const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
     AppAdminPagesPrimaryProductsChar126componentsProductsTableRoute,
   AppAdminPagesPrimaryProductsChar126componentsUpdateProductRoute:
     AppAdminPagesPrimaryProductsChar126componentsUpdateProductRoute,
+  AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRoute:
+    AppAdminPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggestionRoute,
+  AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRoute:
+    AppAdminPagesPrimaryRoadmapChar126componentsRoadmapContentCardRoute,
+  AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRoute:
+    AppAdminPagesPrimaryRoadmapChar126componentsRoadmapSectionCardRoute,
   AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute:
     AppAdminPagesDashboardOverviewChar126componentsChartAreaInteractiveRoute,
   AppAdminPagesDashboardOverviewChar126componentsPayedOrdersCardRoute:

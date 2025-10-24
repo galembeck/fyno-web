@@ -59,6 +59,7 @@ function Layout() {
     "/admin/integration/webhooks": "Integração > Webhooks",
 
     "/admin/products": "Produtos",
+    "/admin/roadmap": "Roadmap",
   };
 
   function derivativePaths(path: string) {

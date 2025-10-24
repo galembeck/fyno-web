@@ -125,7 +125,7 @@ export const sidebarData = {
     {
       title: "Roadmap",
       description: "Visualize nosso roadmap e sugira novas funcionalidades",
-      url: "/admin/mamagement",
+      url: "/admin/roadmap",
       icon: Menu,
     },
     {
