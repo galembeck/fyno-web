@@ -15,7 +15,7 @@ export const searchNavigationItems: NavigationItem[] = [
   {
     id: "dashboard-overview",
     title: "Dashboard",
-    url: "/admin/dashboard",
+    url: "/app/dashboard",
     description: "Visão geral do dashboard",
     group: "Consolidado",
     icon: sidebarData.consolidated.find((item) => item.title === "Dashboard")
@@ -26,7 +26,7 @@ export const searchNavigationItems: NavigationItem[] = [
   {
     id: "financial-payments",
     title: "Pagamentos",
-    url: "/admin/payments",
+    url: "/app/payments",
     description:
       "Visualize e gerencie todos os pagamentos realizados em sua plataforma",
     group: "Consolidado",
@@ -37,7 +37,7 @@ export const searchNavigationItems: NavigationItem[] = [
   // {
   // 	id: "financial-extracts",
   // 	title: "Extratos",
-  // 	url: "/admin/extracts",
+  // 	url: "/app/extracts",
   // 	description:
   // 		"Histórico de entrada x saídas e saldos (total, disponível para saque e retido)",
   // 	group: "Financeiro",
@@ -48,7 +48,7 @@ export const searchNavigationItems: NavigationItem[] = [
   {
     id: "management-clients",
     title: "Clientes",
-    url: "/admin/clients",
+    url: "/app/clients",
     description: "Visualize e gerencie todos os clientes de sua plataforma",
     group: "Consolidado",
     icon: sidebarData.consolidated.find((item) => item.title === "Gestão")
@@ -68,7 +68,7 @@ export const searchNavigationItems: NavigationItem[] = [
   {
     id: "profile",
     title: "Perfil",
-    url: "/admin/profile",
+    url: "/app/profile",
     description: "Gerenciar informações do perfil",
     group: "Conta",
     keywords: ["perfil", "usuario", "conta", "configuracoes pessoais", "dados"],
@@ -76,7 +76,7 @@ export const searchNavigationItems: NavigationItem[] = [
   {
     id: "settings",
     title: "Configurações",
-    url: "/admin/settings",
+    url: "/app/settings",
     description: "Configurações do sistema",
     group: "Sistema",
     keywords: [
@@ -94,7 +94,7 @@ export const getAllNavigationItems = (): NavigationItem[] => {
     (item) => ({
       id: `item-${item.title}`,
       title: item.title,
-      url: item.url === "#" ? "/admin/dashboard" : item.url,
+      url: item.url === "#" ? "/app/dashboard" : item.url,
       description: item.description,
       group: "Integração",
       icon: item.icon,
@@ -119,7 +119,7 @@ export const getAllNavigationItems = (): NavigationItem[] => {
     (item) => ({
       id: `item-${item.title}`,
       title: item.title,
-      url: item.url === "#" ? "/admin/dashboard" : item.url,
+      url: item.url === "#" ? "/app/dashboard" : item.url,
       description: item.description,
       group: "Transações",
       icon: item.icon,

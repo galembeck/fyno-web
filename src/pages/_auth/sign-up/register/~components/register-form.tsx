@@ -215,7 +215,7 @@ export function RegisterForm() {
         description: "Bem-vindo! Redirecionando para o dashboard...",
       });
 
-      navigate({ to: "/admin/dashboard" });
+      navigate({ to: "/app/dashboard" });
       // biome-ignore lint/suspicious/noExplicitAny: required for error handling
     } catch (error: any) {
       toast.error("Erro! :/", {
