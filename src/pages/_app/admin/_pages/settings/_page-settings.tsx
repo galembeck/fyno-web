@@ -39,7 +39,7 @@ import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { useAuth } from "@/hooks/auth/use-auth";
+import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { formatWhatsApp } from "@/lib/_auth/sign-up/format-masks";
 
 export const Route = createFileRoute(

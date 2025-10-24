@@ -57,6 +57,8 @@ function Layout() {
 
     "/admin/integration/api-keys": "Integração > API Keys",
     "/admin/integration/webhooks": "Integração > Webhooks",
+
+    "/admin/products": "Produtos",
   };
 
   function derivativePaths(path: string) {

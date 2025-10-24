@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useAuth } from "@/hooks/auth/use-auth";
+import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { formatCNPJ } from "@/lib/_auth/sign-up/format-masks";
 
 export const Route = createFileRoute(

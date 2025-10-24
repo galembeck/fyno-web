@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/suspicious/useAwait: required by webhook operations */
 
-import { fyno } from "../connections/fyno";
-import type { Webhook } from "../types/webhook";
+import { fyno } from "@/api/connections/fyno";
+import type { Webhook } from "@/pages/_app/admin/_pages/integration/webhooks/~components/webhooks-table";
 
 export const webhookModule = {
   async create(

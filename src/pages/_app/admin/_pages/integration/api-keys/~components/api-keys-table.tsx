@@ -3,7 +3,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
-import { Copy, MoreHorizontal, Trash2 } from "lucide-react";
+import { Copy, LayoutDashboard, MoreHorizontal, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { DataTableColumnSearch } from "@/components/data-table-column-search";
 import { Badge } from "@/components/ui/badge";
@@ -26,9 +26,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useApiKeys } from "@/hooks/integration/use-api-keys";
-import { DeleteConfirmation } from "../../~components/delete-confirmation";
+import { useApiKeys } from "@/hooks/endpoints/integration/use-api-keys";
 import { CreateAPIKey } from "./create-api-key";
+import { DeleteConfirmation } from "@/components/delete-confirmation";
 
 export const Route = createFileRoute(
   "/_app/admin/_pages/integration/api-keys/~components/api-keys-table"
@@ -216,6 +216,17 @@ export function APIKeysTable() {
               createdAt: key.createdAt ?? "",
             }))}
             filterableColumns={[
+              {
+                columnKey: "origin",
+                title: "Origem",
+                options: [
+                  {
+                    label: "Dashboard",
+                    value: "dashboard",
+                    icon: LayoutDashboard,
+                  },
+                ],
+              },
               {
                 columnKey: "createdAt",
                 title: "Data",

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Building2, MapPin, User } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useAuth } from "@/hooks/auth/use-auth";
+import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { AddressInformationTab } from "./~components/address-information-tab";
 import { CompanyInformationTab } from "./~components/company-information-tab";
 import { PersonalInformationTab } from "./~components/personal-information-tab";

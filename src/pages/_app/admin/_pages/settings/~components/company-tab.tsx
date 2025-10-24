@@ -31,7 +31,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
-import { useAuth } from "@/hooks/auth/use-auth";
+import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { formatCNPJ, removeFormat } from "@/lib/_auth/sign-up/format-masks";
 import { isValidCNPJ } from "@/utils/_auth/sign-up/valid-cnpj";
 

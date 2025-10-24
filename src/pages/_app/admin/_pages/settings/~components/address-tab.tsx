@@ -27,7 +27,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import { useAuth } from "@/hooks/auth/use-auth";
+import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { formatCEP } from "@/lib/_auth/sign-up/format-masks";
 import { isValidCEP } from "@/utils/_auth/sign-up/valid-cep";
 

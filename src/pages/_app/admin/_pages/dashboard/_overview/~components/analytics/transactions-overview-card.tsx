@@ -78,7 +78,7 @@ export function TransactionsOverviewCard({
 
         <CardContent className="flex justify-between">
           <article className="flex flex-col">
-            <div className="font-extrabold text-2xl">
+            <div className="font-bold font-dm-sans text-2xl">
               {type === "currency" ? "R$ " : ""}
               {title}
             </div>

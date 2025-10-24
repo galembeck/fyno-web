@@ -28,7 +28,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Spinner } from "@/components/ui/spinner";
-import { useApiKeys } from "@/hooks/integration/use-api-keys";
+import { useApiKeys } from "@/hooks/endpoints/integration/use-api-keys";
 import { ApiKeyOrigins } from "@/utils/_admin/enums/api-key-origins";
 
 export const Route = createFileRoute(

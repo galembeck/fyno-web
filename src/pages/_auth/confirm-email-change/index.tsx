@@ -14,7 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useAuth } from "@/hooks/auth/use-auth";
+import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 
 export const Route = createFileRoute("/_auth/confirm-email-change/")({
   component: ConfirmEmailChangePage,

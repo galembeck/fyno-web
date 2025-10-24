@@ -35,7 +35,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { webhookEvents } from "@/constants/_app/_admin/integrations/webhook-events";
-import { useWebhooks } from "@/hooks/integration/use-webhooks";
+import { useWebhooks } from "@/hooks/endpoints/integration/use-webhooks";
 
 export const Route = createFileRoute(
   "/_app/admin/_pages/integration/webhooks/~components/create-webhook"

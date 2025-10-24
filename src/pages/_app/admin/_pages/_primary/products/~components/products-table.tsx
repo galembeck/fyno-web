@@ -1,20 +1,8 @@
 /** biome-ignore-all lint/suspicious/noExplicitAny: required by @TanStack-Table */
 
-import { createFileRoute } from "@tanstack/react-router";
-import type { ColumnDef } from "@tanstack/react-table";
-import { format } from "date-fns";
-import {
-  BanknoteArrowDown,
-  BanknoteArrowUp,
-  BanknoteX,
-  Copy,
-  Logs,
-  MoreHorizontal,
-  Trash2,
-} from "lucide-react";
-import { useState } from "react";
+import { DataTableColumnHeader } from "@/components/data-table-column-header";
 import { DataTableColumnSearch } from "@/components/data-table-column-search";
-import { Badge } from "@/components/ui/badge";
+import { DeleteConfirmation } from "@/components/delete-confirmation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -34,25 +22,30 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useWebhooks } from "@/hooks/endpoints/integration/use-webhooks";
-import { CreateWebhook } from "./create-webhook";
-import { DeleteConfirmation } from "@/components/delete-confirmation";
+import { useProducts } from "@/hooks/endpoints/v1/use-product";
+import { createFileRoute } from "@tanstack/react-router";
+import type { ColumnDef } from "@tanstack/react-table";
+import { format } from "date-fns";
+import { Copy, Edit, MoreHorizontal, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { CreateProduct } from "./create-product";
+import { UpdateProduct } from "./update-product";
 
 export const Route = createFileRoute(
-  "/_app/admin/_pages/integration/webhooks/~components/webhooks-table"
+  "/_app/admin/_pages/_primary/products/~components/products-table"
 )({
-  component: WebhooksTable,
+  component: ProductsTable,
 });
 
-export type Webhook = {
+export type Product = {
   id: string;
   name: string;
-  events: string[];
-  url: string;
+  description: string;
+  price: string;
   createdAt: string;
 };
 
-export const webhooksTableColumns: ColumnDef<Webhook>[] = [
+export const productsTableColumns: ColumnDef<Product>[] = [
   {
     accessorKey: "id",
     header: ({ table, column }) => (
@@ -69,7 +62,7 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
         <DataTableColumnSearch
           column={column}
           placeholder="Buscar por ID..."
-          title="ID público"
+          title="ID do produto"
         />
       </div>
     ),
@@ -98,66 +91,19 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
     ),
   },
   {
-    accessorKey: "events",
+    accessorKey: "price",
     header: ({ column }) => (
-      <DataTableColumnSearch
-        column={column}
-        placeholder="Buscar por eventos..."
-        title="Eventos"
-      />
+      <DataTableColumnHeader column={column} title="Preço" />
     ),
-    // novo: filtro que entende que events é um array de strings
-    filterFn: (row: any, columnId: string, filterValue: string | string[]) => {
-      const events = (row.getValue(columnId) as string[]) || [];
-
-      if (!events || events.length === 0) {
-        return false;
-      }
-
-      // Se filterValue for array (multi-select), exige que todos os filtros estejam presentes
-      if (Array.isArray(filterValue)) {
-        return filterValue.every((fv) => events.includes(fv));
-      }
-
-      // Se for string, verifica se o evento está presente
-      return events.includes(filterValue as string);
-    },
     cell: ({ row }) => {
-      const events = (row.getValue("events") as string[]) || [];
+      const price = Number.parseFloat(row.getValue("price"));
+      const formatted = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(price);
 
-      return (
-        <div className="flex flex-wrap gap-2">
-          {events.map((event) => {
-            const lower = event.toLowerCase();
-            const badgeClass = lower.includes("billing")
-              ? "bg-emerald-600 text-white"
-              : // biome-ignore lint/style/noNestedTernary: required by webhook-events styling...
-                lower.includes("withdraw")
-                ? "bg-sky-600 text-white"
-                : "bg-slate-100 text-muted-foreground";
-
-            return (
-              <Badge
-                className={`px-2 py-0.5 text-xs ${badgeClass}`}
-                key={event}
-              >
-                {event}
-              </Badge>
-            );
-          })}
-        </div>
-      );
+      return <div className="font-bold">{formatted}</div>;
     },
-  },
-  {
-    accessorKey: "url",
-    header: ({ column }) => (
-      <DataTableColumnSearch
-        column={column}
-        placeholder="Buscar por URL..."
-        title="URL"
-      />
-    ),
   },
   {
     accessorKey: "createdAt",
@@ -187,8 +133,9 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
     cell: ({ row }) => {
       const client = row.original;
 
-      const { deleteWebhook } = useWebhooks();
+      const { deleteProduct } = useProducts();
 
+      const [openEdition, setOpenEdition] = useState(false);
       const [openConfirm, setOpenConfirm] = useState(false);
 
       return (
@@ -210,12 +157,18 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
                 onClick={() => navigator.clipboard.writeText(client.id)}
               >
                 <Copy />
-                Copiar ID (webhook)
+                Copiar ID (produto)
               </DropdownMenuItem>
 
-              <DropdownMenuItem>
-                <Logs />
-                Ver logs
+              <DropdownMenuItem
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setOpenEdition(true);
+                }}
+              >
+                <Edit />
+                <p>Editar</p>
               </DropdownMenuItem>
 
               <DropdownMenuSeparator />
@@ -230,34 +183,47 @@ export const webhooksTableColumns: ColumnDef<Webhook>[] = [
                 <Trash2 className="text-red-500" />
                 <p className="text-red-500 hover:text-red-500/80">Excluir</p>
               </DropdownMenuItem>
-
-              <DeleteConfirmation
-                onClick={() => deleteWebhook(client.id)}
-                onOpenChange={setOpenConfirm}
-                open={openConfirm}
-                type="webhook"
-              />
             </DropdownMenuContent>
           </DropdownMenu>
+
+          <UpdateProduct
+            open={openEdition}
+            onOpenChange={setOpenEdition}
+            product={{
+              id: client.id,
+              name: client.name,
+              description: client.description,
+              price: Number(client.price),
+              createdAt: client.createdAt,
+            }}
+          />
+
+          <DeleteConfirmation
+            onClick={() => deleteProduct(client.id)}
+            onOpenChange={setOpenConfirm}
+            open={openConfirm}
+            type="product"
+          />
         </div>
       );
     },
   },
 ];
 
-export function WebhooksTable() {
-  const { webhooks, isLoading } = useWebhooks();
+export function ProductsTable() {
+  const { products, isLoading } = useProducts();
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-2xl">Webhooks</CardTitle>
+        <CardTitle className="text-2xl">Produtos</CardTitle>
         <CardDescription className="text-base">
-          Visualize, gerencie e crie webhooks para fins de desenvolvimento
+          Crie, visualize e gerencie os produtos de sua loja através do botão ao
+          lado e a tabela abaixo, respectivamente
         </CardDescription>
 
         <CardAction>
-          <CreateWebhook />
+          <CreateProduct />
         </CardAction>
       </CardHeader>
 
@@ -268,36 +234,15 @@ export function WebhooksTable() {
           </div>
         ) : (
           <DataTable
-            columns={webhooksTableColumns}
-            data={(webhooks || []).map((webhook: any) => ({
-              id: webhook.id,
-              name: webhook.name ?? "",
-              events: webhook.events ?? [],
-              url: webhook.url ?? "",
-              createdAt: webhook.createdAt ?? "",
+            columns={productsTableColumns}
+            data={(products || []).map((product: any) => ({
+              id: product.id,
+              name: product.name ?? "",
+              description: product.description ?? "",
+              price: product.price ?? 0,
+              createdAt: product.createdAt ?? "",
             }))}
             filterableColumns={[
-              {
-                columnKey: "events",
-                title: "Eventos",
-                options: [
-                  {
-                    label: "billing.paid",
-                    value: "billing.paid",
-                    icon: BanknoteArrowUp,
-                  },
-                  {
-                    label: "withdraw.done",
-                    value: "withdraw.done",
-                    icon: BanknoteArrowDown,
-                  },
-                  {
-                    label: "withdraw.failed",
-                    value: "withdraw.failed",
-                    icon: BanknoteX,
-                  },
-                ],
-              },
               {
                 columnKey: "createdAt",
                 title: "Data",

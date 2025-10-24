@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/nursery/noUnknownAtRule: required by @TailwindCSS */
+
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 @import "tailwindcss";
@@ -6,6 +8,7 @@
 
 @theme {
 	--font-dm-sans: "DM Sans", sans-serif;
+	--font-inter: "Inter", sans-serif;
 
 	--color-primary-black: oklch(0.1684 0 0);
 	--color-primary-dark: oklch(0.2293 0.0078 297.22);
@@ -84,20 +87,20 @@
 			transform: translateY(calc(-100% - var(--gap)));
 		}
 	}
-  @keyframes marquee {
-  from {
-    transform: translateX(0);
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
 		}
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+		to {
+			transform: translateX(calc(-100% - var(--gap)));
 		}
 	}
-  @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+	@keyframes marquee-vertical {
+		from {
+			transform: translateY(0);
 		}
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+		to {
+			transform: translateY(calc(-100% - var(--gap)));
 		}
 	}
 }

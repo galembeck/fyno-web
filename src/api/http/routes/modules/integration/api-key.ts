@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/suspicious/useAwait: required to suppress linting errors */
 
-import { fyno } from "../connections/fyno";
-import type { ApiKey } from "../types/api-key";
+import { fyno } from "@/api/connections/fyno";
+import type { ApiKey } from "../../types/integration/api-key";
 
 export const apiKeyModule = {
   async create(

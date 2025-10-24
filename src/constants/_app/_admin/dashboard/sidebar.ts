@@ -89,7 +89,7 @@ export const sidebarData = {
     {
       title: "Produtos",
       description: "Crie e gerencie os produtos disponvéis em sua loja",
-      url: "/admin/dashboard",
+      url: "/admin/products",
       icon: ShoppingBag,
     },
     {

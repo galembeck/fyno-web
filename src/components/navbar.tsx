@@ -8,7 +8,7 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
-import { useAuth } from "@/hooks/auth/use-auth";
+import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { ProfileDropdown } from "./profile-dropdown";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";

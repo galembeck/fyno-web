@@ -18,7 +18,7 @@ import {
   secondStepFields,
   thirdStepFields,
 } from "@/constants/_auth/sign-up/register-fields";
-import { useAuth } from "@/hooks/auth/use-auth";
+import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { removeFormat } from "@/lib/_auth/sign-up/format-masks";
 import { isValidCNPJ } from "@/utils/_auth/sign-up/valid-cnpj";
 import { AddressInformationForm } from "./register-form-steps/address-information-form";

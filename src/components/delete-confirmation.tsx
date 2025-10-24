@@ -1,8 +1,5 @@
 /** biome-ignore-all lint/suspicious/noEmptyBlockStatements: required by @TanStack-Router */
 
-import { createFileRoute } from "@tanstack/react-router";
-import { Trash2 } from "lucide-react";
-import { useState } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,28 +9,39 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-
-export const Route = createFileRoute(
-  "/_app/admin/_pages/integration/~components/delete-confirmation"
-)({
-  component: () => (
-    <DeleteConfirmation
-      onClick={() => {}}
-      onOpenChange={() => {}}
-      open={false}
-      type="api-key"
-    />
-  ),
-});
+import { Trash2 } from "lucide-react";
 
 interface DeleteConfirmationProps {
-  type: "api-key" | "webhook";
+  type: "api-key" | "webhook" | "product";
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onClick: () => void;
 }
+
+const TYPE_META: Record<
+  DeleteConfirmationProps["type"],
+  {
+    title: string;
+    description: string;
+  }
+> = {
+  "api-key": {
+    title: "Excluir chave API",
+    description:
+      "Ao confirmar, a chave API será revogada e excluída de sua conta e não poderá mais ser utilizada. Deseja realmente excluir?",
+  },
+  webhook: {
+    title: "Excluir webhook",
+    description:
+      "Ao confirmar, o webhook será revogado e excluído de sua conta e não poderá mais ser utilizado. Deseja realmente excluir?",
+  },
+  product: {
+    title: "Excluir produto",
+    description:
+      "Ao confirmar, o produto será removido do seu catálogo e todas as cobranças que utilizam esse produto serão canceladas. Tem certeza que deseja continuar?",
+  },
+};
 
 export function DeleteConfirmation({
   type,
@@ -41,30 +49,24 @@ export function DeleteConfirmation({
   onOpenChange,
   onClick,
 }: DeleteConfirmationProps) {
-  const [_openConfirm, setOpenConfirm] = useState(false);
+  const meta = TYPE_META[type];
 
   return (
     <AlertDialog onOpenChange={onOpenChange} open={open}>
-      <AlertDialogTrigger asChild />
-
       <AlertDialogContent className="flex flex-col items-center justify-center rounded-lg border-0 text-center">
         <AlertDialogHeader className="flex flex-col py-4 text-center">
-          <AlertDialogTitle className="flex flex-col items-center justify-center gap-4 font-bold text-white">
+          <AlertDialogTitle className="flex flex-col items-center text-xl justify-center gap-4 font-bold text-white">
             <Trash2 stroke="red" />
-            {type === "api-key"
-              ? "Tem certeza que deseja excluir a chave API?"
-              : "Tem certeza que deseja excluir o webhook?"}
+            {meta.title}
           </AlertDialogTitle>
-          <AlertDialogDescription className="text-muted-foreground">
-            {type === "api-key"
-              ? "Ao confirmar, a chave API será revogada e excluída de sua conta, não podendo ser mais utilizada. Deseja realmente excluir?"
-              : "Ao confirmar, o webhook será revogado e excluído de sua conta, não podendo ser mais utilizado. Deseja realmente excluir?"}
+          <AlertDialogDescription className="text-muted-foreground text-base text-center">
+            {meta.description}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter className="flex flex-row items-center justify-center py-4">
           <AlertDialogCancel
             className="border-0 bg-inherit text-white hover:bg-inherit hover:text-white/90"
-            onClick={() => setOpenConfirm(false)}
+            onClick={() => onOpenChange(false)}
           >
             Cancelar
           </AlertDialogCancel>
@@ -72,7 +74,8 @@ export function DeleteConfirmation({
             className="gap-2 bg-red-500 text-white hover:bg-red-500/90"
             onClick={() => {
               onClick();
-              setOpenConfirm(false);
+              onOpenChange(false);
+              window.location.reload();
             }}
           >
             <Trash2 />

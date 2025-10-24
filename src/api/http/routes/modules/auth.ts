@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/suspicious/useAwait: required to suppress linting errors */
 /** biome-ignore-all lint/style/useBlockStatements: required by email checking */
 
-import { fyno } from "../connections/fyno";
+import { fyno } from "@/api/connections/fyno";
 import type { LoginData, RegisterData, User } from "../types/user";
 
 export const authModule = {
