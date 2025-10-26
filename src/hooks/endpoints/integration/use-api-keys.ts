@@ -4,7 +4,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import api from "@/api/api";
-import type { ApiKey } from "@/api/types/integration/api-key";
+import type { ApiKey } from "@/api/http/routes/types/integration/api-key";
 
 export function useApiKeys() {
   const queryClient = useQueryClient();

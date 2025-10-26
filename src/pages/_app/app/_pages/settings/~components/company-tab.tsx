@@ -2,7 +2,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import z from "zod";
 import { Button } from "@/components/ui/button";
 import {
@@ -30,7 +29,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Spinner } from "@/components/ui/spinner";
 import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { formatCNPJ, removeFormat } from "@/lib/_auth/sign-up/format-masks";
 import { isValidCNPJ } from "@/utils/_auth/sign-up/valid-cnpj";
@@ -80,7 +78,11 @@ const companySchema = z.object({
 type CompanyFormData = z.infer<typeof companySchema>;
 
 export function CompanyTab() {
-  const { user, updateUser, isUpdatingUser } = useAuth();
+  const {
+    user,
+    // updateUser,
+    // isUpdatingUser
+  } = useAuth();
 
   const [hasChanges, setHasChanges] = useState(false);
 
@@ -125,30 +127,30 @@ export function CompanyTab() {
     return () => subscription.unsubscribe();
   }, [form, user]);
 
-  const onSubmit = async (data: CompanyFormData) => {
-    try {
-      const cleanData = {
-        companyName: data.companyName,
-        cnpj: data.cnpj ? removeFormat(data.cnpj) : undefined,
-        storeDomain: data.storeDomain,
-        monthlyRevenue: data.monthlyRevenue,
-        businessSegment: data.businessSegment,
-        businessDescription: data.businessDescription,
-      };
+  // const onSubmit = async (data: CompanyFormData) => {
+  //   try {
+  //     const cleanData = {
+  //       companyName: data.companyName,
+  //       cnpj: data.cnpj ? removeFormat(data.cnpj) : undefined,
+  //       storeDomain: data.storeDomain,
+  //       monthlyRevenue: data.monthlyRevenue,
+  //       businessSegment: data.businessSegment,
+  //       businessDescription: data.businessDescription,
+  //     };
 
-      await updateUser(cleanData);
+  //     await updateUser(cleanData);
 
-      toast.success("Informações salvas!", {
-        description: "Dados empresariais atualizados com sucesso.",
-      });
+  //     toast.success("Informações salvas!", {
+  //       description: "Dados empresariais atualizados com sucesso.",
+  //     });
 
-      setHasChanges(false);
-      // biome-ignore lint/suspicious/noExplicitAny: handled by useAuth
-      // biome-ignore lint/correctness/noUnusedVariables: handled by useAuth
-    } catch (error: any) {
-      // Handled by useAuth hook
-    }
-  };
+  //     setHasChanges(false);
+  //     // biome-ignore lint/suspicious/noExplicitAny: handled by useAuth
+  //     // biome-ignore lint/correctness/noUnusedVariables: handled by useAuth
+  //   } catch (error: any) {
+  //     // Handled by useAuth hook
+  //   }
+  // };
 
   const handleReset = () => {
     form.reset({
@@ -167,7 +169,7 @@ export function CompanyTab() {
     <Form {...form}>
       <form
         className="flex flex-col gap-8"
-        onSubmit={form.handleSubmit(onSubmit)}
+        // onSubmit={form.handleSubmit(onSubmit)}
       >
         <Card className="w-full">
           <CardHeader>
@@ -180,22 +182,25 @@ export function CompanyTab() {
             {hasChanges && (
               <CardAction className="flex gap-2">
                 <Button
-                  disabled={isUpdatingUser}
+                  // disabled={isUpdatingUser}
                   onClick={handleReset}
                   type="button"
                   variant="outline"
                 >
                   Cancelar
                 </Button>
-                <Button disabled={isUpdatingUser} type="submit">
-                  {isUpdatingUser ? (
+                <Button
+                  // disabled={isUpdatingUser}
+                  type="submit"
+                >
+                  {/* {isUpdatingUser ? (
                     <div className="flex items-center gap-2">
                       <Spinner className="h-4 w-4" />
                       <span>Salvando...</span>
                     </div>
-                  ) : (
-                    "Salvar Alterações"
-                  )}
+                  ) : ( */}
+                  "Salvar Alterações"
+                  {/* )} */}
                 </Button>
               </CardAction>
             )}
@@ -213,7 +218,7 @@ export function CompanyTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Informe o nome da empresa"
                         />
                       </FormControl>
@@ -262,7 +267,7 @@ export function CompanyTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Informe o domínio da loja"
                         />
                       </FormControl>
@@ -358,7 +363,7 @@ export function CompanyTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Informe a descrição do negócio"
                         />
                       </FormControl>

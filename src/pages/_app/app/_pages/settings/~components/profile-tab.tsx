@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import z from "zod";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,9 +23,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Spinner } from "@/components/ui/spinner";
 import { useAuth } from "@/hooks/endpoints/auth/use-auth";
-import { formatWhatsApp, removeFormat } from "@/lib/_auth/sign-up/format-masks";
+import { formatWhatsApp } from "@/lib/_auth/sign-up/format-masks";
 
 export const Route = createFileRoute(
   "/_app/app/_pages/settings/~components/profile-tab"
@@ -56,7 +54,11 @@ const profileSchema = z.object({
 type ProfileFormData = z.infer<typeof profileSchema>;
 
 export function ProfileTab() {
-  const { user, updateUser, isUpdatingUser } = useAuth();
+  const {
+    user,
+    // updateUser,
+    // isUpdatingUser
+  } = useAuth();
 
   const [hasChanges, setHasChanges] = useState(false);
 
@@ -95,44 +97,44 @@ export function ProfileTab() {
     return () => subscription.unsubscribe();
   }, [form, user]);
 
-  const onSubmit = async (data: ProfileFormData) => {
-    try {
-      const changedData = Object.entries(data).reduce(
-        (acc, [key, value]) => {
-          if (!value) {
-            return acc;
-          }
+  // const onSubmit = async (data: ProfileFormData) => {
+  //   try {
+  //     const changedData = Object.entries(data).reduce(
+  //       (acc, [key, value]) => {
+  //         if (!value) {
+  //           return acc;
+  //         }
 
-          const userValue = user?.[key as keyof typeof user];
-          const currentValue = key.includes("Phone")
-            ? removeFormat(value as string)
-            : (value as string).trim();
+  //         const userValue = user?.[key as keyof typeof user];
+  //         const currentValue = key.includes("Phone")
+  //           ? removeFormat(value as string)
+  //           : (value as string).trim();
 
-          if (currentValue && currentValue !== userValue) {
-            acc[key] = currentValue;
-          }
+  //         if (currentValue && currentValue !== userValue) {
+  //           acc[key] = currentValue;
+  //         }
 
-          return acc;
-        },
-        {} as Record<string, string>
-      );
+  //         return acc;
+  //       },
+  //       {} as Record<string, string>
+  //     );
 
-      if (Object.keys(changedData).length === 0) {
-        return;
-      }
+  //     if (Object.keys(changedData).length === 0) {
+  //       return;
+  //     }
 
-      await updateUser(changedData);
+  //     await updateUser(changedData);
 
-      toast.success("Informações salvas!", {
-        description: "Dados pessoais atualizados com sucesso.",
-      });
+  //     toast.success("Informações salvas!", {
+  //       description: "Dados pessoais atualizados com sucesso.",
+  //     });
 
-      setHasChanges(false);
-      // biome-ignore lint/correctness/noUnusedVariables: handled by useAuth
-    } catch (error: any) {
-      // Handled by useAuth
-    }
-  };
+  //     setHasChanges(false);
+  //     // biome-ignore lint/correctness/noUnusedVariables: handled by useAuth
+  //   } catch (error: any) {
+  //     // Handled by useAuth
+  //   }
+  // };
 
   const handleReset = () => {
     form.reset({
@@ -148,7 +150,7 @@ export function ProfileTab() {
     <Form {...form}>
       <form
         className="flex flex-col gap-8"
-        onSubmit={form.handleSubmit(onSubmit)}
+        // onSubmit={form.handleSubmit(onSubmit)}
       >
         <Card className="w-full">
           <CardHeader>
@@ -161,22 +163,25 @@ export function ProfileTab() {
             {hasChanges && (
               <CardAction className="flex gap-2">
                 <Button
-                  disabled={isUpdatingUser}
+                  // disabled={isUpdatingUser}
                   onClick={handleReset}
                   type="button"
                   variant="outline"
                 >
                   Cancelar
                 </Button>
-                <Button disabled={isUpdatingUser} type="submit">
-                  {isUpdatingUser ? (
+                <Button
+                  // disabled={isUpdatingUser}
+                  type="submit"
+                >
+                  {/* {isUpdatingUser ? (
                     <div className="flex items-center gap-2">
                       <Spinner className="h-4 w-4" />
                       <span>Salvando...</span>
                     </div>
-                  ) : (
-                    "Salvar Alterações"
-                  )}
+                  ) : ( */}
+                  "Salvar Alterações"
+                  {/* )} */}
                 </Button>
               </CardAction>
             )}
@@ -194,7 +199,7 @@ export function ProfileTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Seu nome"
                         />
                       </FormControl>
@@ -212,7 +217,7 @@ export function ProfileTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Seu sobrenome"
                         />
                       </FormControl>
@@ -232,7 +237,7 @@ export function ProfileTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           onChange={(e) => {
                             const formatted = formatWhatsApp(e.target.value);
                             field.onChange(formatted);
@@ -254,7 +259,7 @@ export function ProfileTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           onChange={(e) => {
                             const formatted = formatWhatsApp(e.target.value);
                             field.onChange(formatted);

@@ -1,11 +1,7 @@
 // src/pages/confirm-email-change.tsx
-import {
-  createFileRoute,
-  useNavigate,
-  useSearch,
-} from "@tanstack/react-router";
+
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { CheckCircle, Loader2, Mail, XCircle } from "lucide-react";
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -14,7 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 
 export const Route = createFileRoute("/_auth/confirm-email-change/")({
   component: ConfirmEmailChangePage,
@@ -24,45 +19,45 @@ export const Route = createFileRoute("/_auth/confirm-email-change/")({
 });
 
 function ConfirmEmailChangePage() {
-  const { token } = useSearch({ from: "/_auth/confirm-email-change/" });
+  // const { token } = useSearch({ from: "/_auth/confirm-email-change/" });
   const navigate = useNavigate();
-  const { confirmEmailChange } = useAuth();
+  // const { confirmEmailChange } = useAuth();
 
-  const [status, setStatus] = useState<"loading" | "success" | "error">(
-    "loading"
-  );
-  const [message, setMessage] = useState("");
-  const [newEmail, setNewEmail] = useState("");
+  // const [status, setStatus] = useState<"loading" | "success" | "error">(
+  //   "loading"
+  // );
+  // const [message, setMessage] = useState("");
+  // const [newEmail, setNewEmail] = useState("");
 
-  useEffect(() => {
-    const confirm = async () => {
-      if (!token) {
-        setStatus("error");
-        setMessage("Token de confirmação não encontrado na URL");
-        return;
-      }
+  // useEffect(() => {
+  //   const confirm = async () => {
+  //     if (!token) {
+  //       setStatus("error");
+  //       setMessage("Token de confirmação não encontrado na URL");
+  //       return;
+  //     }
 
-      try {
-        const result = await confirmEmailChange(token);
+  //     try {
+  //       const result = await confirmEmailChange(token);
 
-        if (result.success) {
-          setStatus("success");
-          setNewEmail(result.newEmail || "");
-          setMessage("Email alterado com sucesso!");
+  //       if (result.success) {
+  //         setStatus("success");
+  //         setNewEmail(result.newEmail || "");
+  //         setMessage("Email alterado com sucesso!");
 
-          setTimeout(() => {
-            navigate({ to: "/app/settings" });
-          }, 3000);
-        }
-        // biome-ignore lint/suspicious/noExplicitAny: not important...
-      } catch (error: any) {
-        setStatus("error");
-        setMessage(error.message || "Erro ao confirmar alteração de email");
-      }
-    };
+  //         setTimeout(() => {
+  //           navigate({ to: "/app/settings" });
+  //         }, 3000);
+  //       }
+  //       // biome-ignore lint/suspicious/noExplicitAny: not important...
+  //     } catch (error: any) {
+  //       setStatus("error");
+  //       setMessage(error.message || "Erro ao confirmar alteração de email");
+  //     }
+  //   };
 
-    confirm();
-  }, [token, confirmEmailChange, navigate]);
+  //   confirm();
+  // }, [token, confirmEmailChange, navigate]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
@@ -102,12 +97,12 @@ function ConfirmEmailChangePage() {
                 </div>
               </div>
               <div>
-                <h3 className="mb-2 font-medium text-green-800">{message}</h3>
-                {newEmail && (
+                {/* <h3 className="mb-2 font-medium text-green-800">{message}</h3> */}
+                {/* {newEmail && (
                   <p className="mb-4 text-green-700 text-sm">
                     Seu email foi alterado para: <strong>{newEmail}</strong>
                   </p>
-                )}
+                )} */}
                 <p className="text-gray-600 text-sm">
                   Você será redirecionado para as configurações em instantes...
                 </p>
@@ -132,7 +127,7 @@ function ConfirmEmailChangePage() {
                 <h3 className="mb-2 font-medium text-red-800">
                   Erro na confirmação
                 </h3>
-                <p className="mb-4 text-red-700 text-sm">{message}</p>
+                {/* <p className="mb-4 text-red-700 text-sm">{message}</p> */}
                 <div className="space-y-2">
                   <p className="text-gray-600 text-xs">Possíveis causas:</p>
                   <ul className="list-inside list-disc space-y-1 text-left text-gray-600 text-xs">
