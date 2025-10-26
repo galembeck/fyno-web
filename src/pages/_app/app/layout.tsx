@@ -61,6 +61,7 @@ function Layout() {
     "/app/products": "Produtos",
     "/app/roadmap": "Roadmap",
     "/app/plugins": "Plugins",
+    "/app/partnership": "Programa de Parceria",
   };
 
   function derivativePaths(path: string) {
