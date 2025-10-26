@@ -12,7 +12,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { sidebarData } from "@/constants/_app/_admin/dashboard/sidebar";
+import { dashboardData } from "@/constants/_app/_admin/dashboard/sidebar";
 import { NavigationContent } from "./elements/nagivation-content";
 import { SearchSection } from "./elements/search-section";
 import { TeamSwitcher } from "./elements/team-switcher";
@@ -30,20 +30,20 @@ export function DashboardSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher />
+        <TeamSwitcher type="dashboard" />
         <SearchSection />
       </SidebarHeader>
 
       <SidebarContent>
         <NavigationContent
-          items={sidebarData.consolidated}
+          items={dashboardData.consolidated}
           section="Consolidado"
         />
         <NavigationContent
-          items={sidebarData.integration}
+          items={dashboardData.integration}
           section="Integração"
         />
-        <NavigationContent items={sidebarData.primary} section="Principal" />
+        <NavigationContent items={dashboardData.primary} section="Principal" />
 
         <SidebarGroup>
           <SidebarGroupLabel>Sistema</SidebarGroupLabel>

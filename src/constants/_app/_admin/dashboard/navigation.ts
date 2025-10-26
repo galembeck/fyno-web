@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { sidebarData } from "./sidebar";
+import { dashboardData } from "./sidebar";
 
 export interface NavigationItem {
   id: string;
@@ -18,7 +18,7 @@ export const searchNavigationItems: NavigationItem[] = [
     url: "/app/dashboard",
     description: "Visão geral do dashboard",
     group: "Consolidado",
-    icon: sidebarData.consolidated.find((item) => item.title === "Dashboard")
+    icon: dashboardData.consolidated.find((item) => item.title === "Dashboard")
       ?.icon,
     keywords: ["inicio", "home", "consolidado", "overview", "dashboard"],
   },
@@ -30,7 +30,7 @@ export const searchNavigationItems: NavigationItem[] = [
     description:
       "Visualize e gerencie todos os pagamentos realizados em sua plataforma",
     group: "Consolidado",
-    icon: sidebarData.consolidated.find((item) => item.title === "Financeiro")
+    icon: dashboardData.consolidated.find((item) => item.title === "Financeiro")
       ?.icon,
     keywords: ["financeiro", "overview", "pagamentos", "payments"],
   },
@@ -41,7 +41,7 @@ export const searchNavigationItems: NavigationItem[] = [
   // 	description:
   // 		"Histórico de entrada x saídas e saldos (total, disponível para saque e retido)",
   // 	group: "Financeiro",
-  // 	icon: sidebarData.navMain.find((item) => item.title === "Financeiro")?.icon,
+  // 	icon: dashboardData.navMain.find((item) => item.title === "Financeiro")?.icon,
   // 	keywords: ["financeiro", "overview", "extratos", "payments"],
   // },
 
@@ -51,7 +51,7 @@ export const searchNavigationItems: NavigationItem[] = [
     url: "/app/clients",
     description: "Visualize e gerencie todos os clientes de sua plataforma",
     group: "Consolidado",
-    icon: sidebarData.consolidated.find((item) => item.title === "Gestão")
+    icon: dashboardData.consolidated.find((item) => item.title === "Gestão")
       ?.icon,
     keywords: [
       "gestão",
@@ -90,7 +90,7 @@ export const searchNavigationItems: NavigationItem[] = [
 ];
 
 export const getAllNavigationItems = (): NavigationItem[] => {
-  const integrationItems: NavigationItem[] = sidebarData.integration.map(
+  const integrationItems: NavigationItem[] = dashboardData.integration.map(
     (item) => ({
       id: `item-${item.title}`,
       title: item.title,
@@ -115,7 +115,7 @@ export const getAllNavigationItems = (): NavigationItem[] => {
     })
   );
 
-  const transactionItems: NavigationItem[] = sidebarData.primary.map(
+  const transactionItems: NavigationItem[] = dashboardData.primary.map(
     (item) => ({
       id: `item-${item.title}`,
       title: item.title,

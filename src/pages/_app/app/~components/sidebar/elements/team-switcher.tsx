@@ -25,10 +25,10 @@ import { formatCNPJ } from "./../../../../../../lib/_auth/sign-up/format-masks";
 export const Route = createFileRoute(
   "/_app/app/~components/sidebar/elements/team-switcher"
 )({
-  component: TeamSwitcher,
+  component: () => <TeamSwitcher type="dashboard" />,
 });
 
-export function TeamSwitcher() {
+export function TeamSwitcher({ type }: { type: "dashboard" | "admin" }) {
   const { user, isLoading } = useAuth();
 
   const { state, isMobile } = useSidebar();
@@ -76,68 +76,78 @@ export function TeamSwitcher() {
         </Badge>
       </SidebarMenuItem>
 
-      <SidebarMenuItem>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <SidebarMenuButton
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-              size="lg"
+      {type === "dashboard" ? (
+        <SidebarMenuItem>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <SidebarMenuButton
+                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                size="lg"
+              >
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary-green text-sidebar-primary-foreground">
+                  <LayoutDashboard className="size-5" />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-medium">
+                    {user?.companyName}
+                  </span>
+                  <span className="truncate text-muted-foreground text-xs">
+                    {user?.businessDescription}
+                  </span>
+                </div>
+                <ArrowRight className="ml-auto" />
+              </SidebarMenuButton>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="start"
+              className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
+              side={isMobile ? "bottom" : "right"}
+              sideOffset={4}
             >
-              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary-green text-sidebar-primary-foreground">
-                <LayoutDashboard className="size-5" />
-              </div>
-              <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">
-                  {user?.companyName}
-                </span>
-                <span className="truncate text-muted-foreground text-xs">
-                  {user?.businessDescription}
-                </span>
-              </div>
-              <ArrowRight className="ml-auto" />
-            </SidebarMenuButton>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="start"
-            className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
-            side={isMobile ? "bottom" : "right"}
-            sideOffset={4}
-          >
-            <DropdownMenuGroup>
-              <DropdownMenuLabel className="text-muted-foreground">
-                Informações empresariais
-              </DropdownMenuLabel>
+              <DropdownMenuGroup>
+                <DropdownMenuLabel className="text-muted-foreground">
+                  Informações empresariais
+                </DropdownMenuLabel>
 
-              <DropdownMenuItem>
-                <span className="font-bold">CNPJ:</span>
-                <p className="text-white/80">{formatCNPJ(user.cnpj)}</p>
+                <DropdownMenuItem>
+                  <span className="font-bold">CNPJ:</span>
+                  <p className="text-white/80">{formatCNPJ(user.cnpj)}</p>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem>
+                  <span className="font-bold">Domínio:</span>
+                  <p className="text-white/80">{user.storeDomain}</p>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem>
+                  <span className="font-bold">Segmento:</span>
+                  <p className="text-white/80">{user.businessSegment}</p>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem>
+                  <span className="font-bold">Faturamento:</span>
+                  <p className="text-white/80">{user.monthlyRevenue}</p>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+
+              <DropdownMenuSeparator />
+
+              <DropdownMenuItem
+                onClick={() => navigate({ to: "/app/settings" })}
+              >
+                <Pencil />
+                Editar informações
               </DropdownMenuItem>
-
-              <DropdownMenuItem>
-                <span className="font-bold">Domínio:</span>
-                <p className="text-white/80">{user.storeDomain}</p>
-              </DropdownMenuItem>
-
-              <DropdownMenuItem>
-                <span className="font-bold">Segmento:</span>
-                <p className="text-white/80">{user.businessSegment}</p>
-              </DropdownMenuItem>
-
-              <DropdownMenuItem>
-                <span className="font-bold">Faturamento:</span>
-                <p className="text-white/80">{user.monthlyRevenue}</p>
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-
-            <DropdownMenuSeparator />
-
-            <DropdownMenuItem onClick={() => navigate({ to: "/app/settings" })}>
-              <Pencil />
-              Editar informações
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </SidebarMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </SidebarMenuItem>
+      ) : (
+        <SidebarMenuItem>
+          <h1 className="text-center font-bold uppercase">
+            Painel administrativo
+          </h1>
+        </SidebarMenuItem>
+      )}
     </SidebarMenu>
   );
 }

@@ -16,7 +16,7 @@ import {
   Webhook,
 } from "lucide-react";
 
-export const sidebarData = {
+export const dashboardData = {
   consolidated: [
     {
       title: "Dashboard",
@@ -132,7 +132,7 @@ export const sidebarData = {
       title: "Plugins",
       description:
         "Adicione plugins/funcionalidades de nossa plataforma em sua loja",
-      url: "/app/mamagement",
+      url: "/app/plugins",
       icon: Box,
     },
     {
@@ -147,6 +147,23 @@ export const sidebarData = {
       description: "Visualize as disputas de pagamentos realizadas em sua loja",
       url: "/app/mamagement",
       icon: Swords,
+    },
+  ],
+};
+
+export const adminData = {
+  consolidated: [
+    {
+      title: "Dashboard",
+      url: "/app/dashboard",
+      icon: SquareTerminal,
+      isActive: true,
+      items: [
+        {
+          title: "Overview",
+          url: "/app/dashboard",
+        },
+      ],
     },
   ],
 };
