@@ -4,6 +4,7 @@ import {
   Banknote,
   BookOpen,
   Box,
+  Crown,
   FolderCode,
   HandCoins,
   Link,
@@ -141,6 +142,7 @@ export const dashboardData = {
         "Saiba mais sobre o programa de parceria de nossa plataforma",
       url: "/app/partnership",
       icon: HandCoins,
+      badge: Crown,
     },
     {
       title: "Disputas",

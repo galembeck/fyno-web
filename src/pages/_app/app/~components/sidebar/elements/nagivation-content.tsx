@@ -2,6 +2,7 @@
 
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ChevronRight, type LucideIcon } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import {
   Collapsible,
   CollapsibleContent,
@@ -34,6 +35,7 @@ export function NavigationContent({
     description?: string;
     url: string;
     icon?: LucideIcon;
+    badge?: LucideIcon;
     isActive?: boolean;
     items?: {
       title: string;
@@ -87,6 +89,11 @@ export function NavigationContent({
                 >
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
+                  {item?.badge && (
+                    <Badge>
+                      <item.badge />
+                    </Badge>
+                  )}
                 </SidebarMenuButton>
               </SidebarMenuItem>
             )}
