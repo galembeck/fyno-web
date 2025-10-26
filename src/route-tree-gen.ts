@@ -60,6 +60,7 @@ import { Route as AppAppPagesIntegrationApiKeysIndexRouteImport } from './pages/
 import { Route as AppAppPagesPrimaryRoadmapIndexRouteImport } from './pages/_app/app/_pages/_primary/roadmap/index'
 import { Route as AppAppPagesPrimaryProductsIndexRouteImport } from './pages/_app/app/_pages/_primary/products/index'
 import { Route as AppAppPagesPrimaryPluginsIndexRouteImport } from './pages/_app/app/_pages/_primary/plugins/index'
+import { Route as AppAppPagesPrimaryPartnershipIndexRouteImport } from './pages/_app/app/_pages/_primary/partnership/index'
 import { Route as AppAppPagesManagementClientsIndexRouteImport } from './pages/_app/app/_pages/_management/clients/index'
 import { Route as AppAppPagesManagementClientDetailIndexRouteImport } from './pages/_app/app/_pages/_management/client-detail/index'
 import { Route as AppAppPagesFinancialPaymentsIndexRouteImport } from './pages/_app/app/_pages/_financial/payments/index'
@@ -101,6 +102,7 @@ import { Route as AppAppPagesPrimaryProductsChar126componentsProductsTableRouteI
 import { Route as AppAppPagesPrimaryProductsChar126componentsCreateProductRouteImport } from './pages/_app/app/_pages/_primary/products/~components/create-product'
 import { Route as AppAppPagesPrimaryPluginsChar126componentsPluginCardRouteImport } from './pages/_app/app/_pages/_primary/plugins/~components/plugin-card'
 import { Route as AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRouteImport } from './pages/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal'
+import { Route as AppAppPagesPrimaryPartnershipChar126componentsInformationCardRouteImport } from './pages/_app/app/_pages/_primary/partnership/~components/information-card'
 import { Route as AppAppPagesManagementClientsChar126componentsClientsTableRouteImport } from './pages/_app/app/_pages/_management/clients/~components/clients-table'
 import { Route as AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRouteImport } from './pages/_app/app/_pages/_financial/payments/~components/payments-table'
 import { Route as AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRouteImport } from './pages/_app/app/_pages/_financial/extracts/~components/financial-summary-card'
@@ -401,6 +403,12 @@ const AppAppPagesPrimaryPluginsIndexRoute =
     path: '/plugins/',
     getParentRoute: () => AppAppLayoutRoute,
   } as any)
+const AppAppPagesPrimaryPartnershipIndexRoute =
+  AppAppPagesPrimaryPartnershipIndexRouteImport.update({
+    id: '/_pages/_primary/partnership/',
+    path: '/partnership/',
+    getParentRoute: () => AppAppLayoutRoute,
+  } as any)
 const AppAppPagesManagementClientsIndexRoute =
   AppAppPagesManagementClientsIndexRouteImport.update({
     id: '/_pages/_management/clients/',
@@ -669,6 +677,14 @@ const AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute =
       getParentRoute: () => AppAppLayoutRoute,
     } as any,
   )
+const AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute =
+  AppAppPagesPrimaryPartnershipChar126componentsInformationCardRouteImport.update(
+    {
+      id: '/_pages/_primary/partnership/~components/information-card',
+      path: '/partnership/~components/information-card',
+      getParentRoute: () => AppAppLayoutRoute,
+    } as any,
+  )
 const AppAppPagesManagementClientsChar126componentsClientsTableRoute =
   AppAppPagesManagementClientsChar126componentsClientsTableRouteImport.update({
     id: '/_pages/_management/clients/~components/clients-table',
@@ -847,6 +863,7 @@ export interface FileRoutesByFullPath {
   '/app/payments': typeof AppAppPagesFinancialPaymentsIndexRoute
   '/app/client-detail': typeof AppAppPagesManagementClientDetailIndexRoute
   '/app/clients': typeof AppAppPagesManagementClientsIndexRoute
+  '/app/partnership': typeof AppAppPagesPrimaryPartnershipIndexRoute
   '/app/plugins': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/app/products': typeof AppAppPagesPrimaryProductsIndexRoute
   '/app/roadmap': typeof AppAppPagesPrimaryRoadmapIndexRoute
@@ -860,6 +877,7 @@ export interface FileRoutesByFullPath {
   '/app/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
   '/app/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
   '/app/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
+  '/app/partnership/~components/information-card': typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute
   '/app/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
   '/app/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
   '/app/products/~components/create-product': typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRoute
@@ -946,6 +964,7 @@ export interface FileRoutesByTo {
   '/app/payments': typeof AppAppPagesFinancialPaymentsIndexRoute
   '/app/client-detail': typeof AppAppPagesManagementClientDetailIndexRoute
   '/app/clients': typeof AppAppPagesManagementClientsIndexRoute
+  '/app/partnership': typeof AppAppPagesPrimaryPartnershipIndexRoute
   '/app/plugins': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/app/products': typeof AppAppPagesPrimaryProductsIndexRoute
   '/app/roadmap': typeof AppAppPagesPrimaryRoadmapIndexRoute
@@ -959,6 +978,7 @@ export interface FileRoutesByTo {
   '/app/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
   '/app/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
   '/app/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
+  '/app/partnership/~components/information-card': typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute
   '/app/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
   '/app/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
   '/app/products/~components/create-product': typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRoute
@@ -1054,6 +1074,7 @@ export interface FileRoutesById {
   '/_app/app/_pages/_financial/payments/': typeof AppAppPagesFinancialPaymentsIndexRoute
   '/_app/app/_pages/_management/client-detail/': typeof AppAppPagesManagementClientDetailIndexRoute
   '/_app/app/_pages/_management/clients/': typeof AppAppPagesManagementClientsIndexRoute
+  '/_app/app/_pages/_primary/partnership/': typeof AppAppPagesPrimaryPartnershipIndexRoute
   '/_app/app/_pages/_primary/plugins/': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/_app/app/_pages/_primary/products/': typeof AppAppPagesPrimaryProductsIndexRoute
   '/_app/app/_pages/_primary/roadmap/': typeof AppAppPagesPrimaryRoadmapIndexRoute
@@ -1067,6 +1088,7 @@ export interface FileRoutesById {
   '/_app/app/_pages/_financial/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
   '/_app/app/_pages/_financial/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
   '/_app/app/_pages/_management/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
+  '/_app/app/_pages/_primary/partnership/~components/information-card': typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute
   '/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
   '/_app/app/_pages/_primary/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
   '/_app/app/_pages/_primary/products/~components/create-product': typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRoute
@@ -1160,6 +1182,7 @@ export interface FileRouteTypes {
     | '/app/payments'
     | '/app/client-detail'
     | '/app/clients'
+    | '/app/partnership'
     | '/app/plugins'
     | '/app/products'
     | '/app/roadmap'
@@ -1173,6 +1196,7 @@ export interface FileRouteTypes {
     | '/app/extracts/~components/financial-summary-card'
     | '/app/payments/~components/payments-table'
     | '/app/clients/~components/clients-table'
+    | '/app/partnership/~components/information-card'
     | '/app/plugins/~components/configure-plugin-modal'
     | '/app/plugins/~components/plugin-card'
     | '/app/products/~components/create-product'
@@ -1259,6 +1283,7 @@ export interface FileRouteTypes {
     | '/app/payments'
     | '/app/client-detail'
     | '/app/clients'
+    | '/app/partnership'
     | '/app/plugins'
     | '/app/products'
     | '/app/roadmap'
@@ -1272,6 +1297,7 @@ export interface FileRouteTypes {
     | '/app/extracts/~components/financial-summary-card'
     | '/app/payments/~components/payments-table'
     | '/app/clients/~components/clients-table'
+    | '/app/partnership/~components/information-card'
     | '/app/plugins/~components/configure-plugin-modal'
     | '/app/plugins/~components/plugin-card'
     | '/app/products/~components/create-product'
@@ -1366,6 +1392,7 @@ export interface FileRouteTypes {
     | '/_app/app/_pages/_financial/payments/'
     | '/_app/app/_pages/_management/client-detail/'
     | '/_app/app/_pages/_management/clients/'
+    | '/_app/app/_pages/_primary/partnership/'
     | '/_app/app/_pages/_primary/plugins/'
     | '/_app/app/_pages/_primary/products/'
     | '/_app/app/_pages/_primary/roadmap/'
@@ -1379,6 +1406,7 @@ export interface FileRouteTypes {
     | '/_app/app/_pages/_financial/extracts/~components/financial-summary-card'
     | '/_app/app/_pages/_financial/payments/~components/payments-table'
     | '/_app/app/_pages/_management/clients/~components/clients-table'
+    | '/_app/app/_pages/_primary/partnership/~components/information-card'
     | '/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal'
     | '/_app/app/_pages/_primary/plugins/~components/plugin-card'
     | '/_app/app/_pages/_primary/products/~components/create-product'
@@ -1767,6 +1795,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAppPagesPrimaryPluginsIndexRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
+    '/_app/app/_pages/_primary/partnership/': {
+      id: '/_app/app/_pages/_primary/partnership/'
+      path: '/partnership'
+      fullPath: '/app/partnership'
+      preLoaderRoute: typeof AppAppPagesPrimaryPartnershipIndexRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
     '/_app/app/_pages/_management/clients/': {
       id: '/_app/app/_pages/_management/clients/'
       path: '/clients'
@@ -2054,6 +2089,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
+    '/_app/app/_pages/_primary/partnership/~components/information-card': {
+      id: '/_app/app/_pages/_primary/partnership/~components/information-card'
+      path: '/partnership/~components/information-card'
+      fullPath: '/app/partnership/~components/information-card'
+      preLoaderRoute: typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
     '/_app/app/_pages/_management/clients/~components/clients-table': {
       id: '/_app/app/_pages/_management/clients/~components/clients-table'
       path: '/clients/~components/clients-table'
@@ -2260,6 +2302,7 @@ interface AppAppLayoutRouteChildren {
   AppAppPagesFinancialPaymentsIndexRoute: typeof AppAppPagesFinancialPaymentsIndexRoute
   AppAppPagesManagementClientDetailIndexRoute: typeof AppAppPagesManagementClientDetailIndexRoute
   AppAppPagesManagementClientsIndexRoute: typeof AppAppPagesManagementClientsIndexRoute
+  AppAppPagesPrimaryPartnershipIndexRoute: typeof AppAppPagesPrimaryPartnershipIndexRoute
   AppAppPagesPrimaryPluginsIndexRoute: typeof AppAppPagesPrimaryPluginsIndexRoute
   AppAppPagesPrimaryProductsIndexRoute: typeof AppAppPagesPrimaryProductsIndexRoute
   AppAppPagesPrimaryRoadmapIndexRoute: typeof AppAppPagesPrimaryRoadmapIndexRoute
@@ -2269,6 +2312,7 @@ interface AppAppLayoutRouteChildren {
   AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute: typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
   AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute: typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
   AppAppPagesManagementClientsChar126componentsClientsTableRoute: typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
+  AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute: typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute
   AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute: typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
   AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute: typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
   AppAppPagesPrimaryProductsChar126componentsCreateProductRoute: typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRoute
@@ -2325,6 +2369,8 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
     AppAppPagesManagementClientDetailIndexRoute,
   AppAppPagesManagementClientsIndexRoute:
     AppAppPagesManagementClientsIndexRoute,
+  AppAppPagesPrimaryPartnershipIndexRoute:
+    AppAppPagesPrimaryPartnershipIndexRoute,
   AppAppPagesPrimaryPluginsIndexRoute: AppAppPagesPrimaryPluginsIndexRoute,
   AppAppPagesPrimaryProductsIndexRoute: AppAppPagesPrimaryProductsIndexRoute,
   AppAppPagesPrimaryRoadmapIndexRoute: AppAppPagesPrimaryRoadmapIndexRoute,
@@ -2340,6 +2386,8 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
     AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute,
   AppAppPagesManagementClientsChar126componentsClientsTableRoute:
     AppAppPagesManagementClientsChar126componentsClientsTableRoute,
+  AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute:
+    AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute,
   AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute:
     AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute,
   AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute:

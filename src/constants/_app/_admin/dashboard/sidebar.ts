@@ -139,7 +139,7 @@ export const dashboardData = {
       title: "Parceria",
       description:
         "Saiba mais sobre o programa de parceria de nossa plataforma",
-      url: "/app/mamagement",
+      url: "/app/partnership",
       icon: HandCoins,
     },
     {
