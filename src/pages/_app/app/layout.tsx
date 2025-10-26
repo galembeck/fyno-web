@@ -60,6 +60,7 @@ function Layout() {
 
     "/app/products": "Produtos",
     "/app/roadmap": "Roadmap",
+    "/app/plugins": "Plugins",
   };
 
   function derivativePaths(path: string) {

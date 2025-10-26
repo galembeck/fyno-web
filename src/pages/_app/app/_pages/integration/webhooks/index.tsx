@@ -4,10 +4,15 @@ import { Badge } from "@/components/ui/badge";
 import { InformationCard } from "../~components/information-card";
 import { WebhooksTable } from "./~components/webhooks-table";
 
-export const Route = createFileRoute(
-  "/_app/app/_pages/integration/webhooks/"
-)({
+export const Route = createFileRoute("/_app/app/_pages/integration/webhooks/")({
   component: WebhooksPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Webhooks | fyno.business",
+      },
+    ],
+  }),
 });
 
 export function WebhooksPage() {

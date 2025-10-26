@@ -14,11 +14,13 @@ import { Route as rootRouteImport } from './pages/__root'
 import { Route as ErrorNotFoundRouteImport } from './pages/_error/not-found'
 import { Route as AuthSignUpLayoutRouteImport } from './pages/_auth/sign-up/layout'
 import { Route as AppAppLayoutRouteImport } from './pages/_app/app/layout'
+import { Route as AppAdminLayoutRouteImport } from './pages/_app/admin/layout'
 import { Route as AppPublicLayoutRouteImport } from './pages/_app/_public/layout'
 import { Route as AuthSignUpIndexRouteImport } from './pages/_auth/sign-up/index'
 import { Route as AuthSignInIndexRouteImport } from './pages/_auth/sign-in/index'
 import { Route as AuthConfirmEmailChangeIndexRouteImport } from './pages/_auth/confirm-email-change/index'
 import { Route as AppAppIndexRouteImport } from './pages/_app/app/index'
+import { Route as AppAdminIndexRouteImport } from './pages/_app/admin/index'
 import { Route as AppPublicIndexRouteImport } from './pages/_app/_public/index'
 import { Route as AppRelatedBlogLayoutRouteImport } from './pages/_app/_related/blog/layout'
 import { Route as AppRelatedComplianceLayoutRouteImport } from './pages/_app/_related/_compliance/layout'
@@ -42,6 +44,7 @@ import { Route as AuthSignUpRegisterChar126componentsRegisterFormRouteImport } f
 import { Route as AuthSignUpRegisterChar126componentsLeaveConfirmationRouteImport } from './pages/_auth/sign-up/register/~components/leave-confirmation'
 import { Route as AppAppChar126componentsSidebarDashboardSidebarRouteImport } from './pages/_app/app/~components/sidebar/dashboard-sidebar'
 import { Route as AppAppPagesSettingsPageSettingsRouteImport } from './pages/_app/app/_pages/settings/_page-settings'
+import { Route as AppAdminChar126componentsSidebarAdminSidebarRouteImport } from './pages/_app/admin/~components/sidebar/admin-sidebar'
 import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
 import { Route as AppRelatedBlogChar126componentsBlogArticlesRouteImport } from './pages/_app/_related/blog/~components/blog-articles'
 import { Route as AppPublicChar126componentsSectionsTestimonialsRouteImport } from './pages/_app/_public/~components/sections/testimonials'
@@ -56,6 +59,7 @@ import { Route as AppAppPagesIntegrationWebhooksIndexRouteImport } from './pages
 import { Route as AppAppPagesIntegrationApiKeysIndexRouteImport } from './pages/_app/app/_pages/integration/api-keys/index'
 import { Route as AppAppPagesPrimaryRoadmapIndexRouteImport } from './pages/_app/app/_pages/_primary/roadmap/index'
 import { Route as AppAppPagesPrimaryProductsIndexRouteImport } from './pages/_app/app/_pages/_primary/products/index'
+import { Route as AppAppPagesPrimaryPluginsIndexRouteImport } from './pages/_app/app/_pages/_primary/plugins/index'
 import { Route as AppAppPagesManagementClientsIndexRouteImport } from './pages/_app/app/_pages/_management/clients/index'
 import { Route as AppAppPagesManagementClientDetailIndexRouteImport } from './pages/_app/app/_pages/_management/client-detail/index'
 import { Route as AppAppPagesFinancialPaymentsIndexRouteImport } from './pages/_app/app/_pages/_financial/payments/index'
@@ -95,6 +99,8 @@ import { Route as AppAppPagesPrimaryRoadmapChar126componentsCreateRoadmapSuggest
 import { Route as AppAppPagesPrimaryProductsChar126componentsUpdateProductRouteImport } from './pages/_app/app/_pages/_primary/products/~components/update-product'
 import { Route as AppAppPagesPrimaryProductsChar126componentsProductsTableRouteImport } from './pages/_app/app/_pages/_primary/products/~components/products-table'
 import { Route as AppAppPagesPrimaryProductsChar126componentsCreateProductRouteImport } from './pages/_app/app/_pages/_primary/products/~components/create-product'
+import { Route as AppAppPagesPrimaryPluginsChar126componentsPluginCardRouteImport } from './pages/_app/app/_pages/_primary/plugins/~components/plugin-card'
+import { Route as AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRouteImport } from './pages/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal'
 import { Route as AppAppPagesManagementClientsChar126componentsClientsTableRouteImport } from './pages/_app/app/_pages/_management/clients/~components/clients-table'
 import { Route as AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRouteImport } from './pages/_app/app/_pages/_financial/payments/~components/payments-table'
 import { Route as AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRouteImport } from './pages/_app/app/_pages/_financial/extracts/~components/financial-summary-card'
@@ -129,6 +135,11 @@ const AppAppLayoutRoute = AppAppLayoutRouteImport.update({
   path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppAdminLayoutRoute = AppAdminLayoutRouteImport.update({
+  id: '/_app/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppPublicLayoutRoute = AppPublicLayoutRouteImport.update({
   id: '/_app/_public',
   getParentRoute: () => rootRouteImport,
@@ -153,6 +164,11 @@ const AppAppIndexRoute = AppAppIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AppAppLayoutRoute,
+} as any)
+const AppAdminIndexRoute = AppAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppAdminLayoutRoute,
 } as any)
 const AppPublicIndexRoute = AppPublicIndexRouteImport.update({
   id: '/',
@@ -289,6 +305,12 @@ const AppAppPagesSettingsPageSettingsRoute =
     id: '/_page-settings',
     getParentRoute: () => AppAppPagesSettingsRoute,
   } as any)
+const AppAdminChar126componentsSidebarAdminSidebarRoute =
+  AppAdminChar126componentsSidebarAdminSidebarRouteImport.update({
+    id: '/~components/sidebar/admin-sidebar',
+    path: '/~components/sidebar/admin-sidebar',
+    getParentRoute: () => AppAdminLayoutRoute,
+  } as any)
 const AppRelatedBlogChar126componentsNavbarRoute =
   AppRelatedBlogChar126componentsNavbarRouteImport.update({
     id: '/~components/navbar',
@@ -371,6 +393,12 @@ const AppAppPagesPrimaryProductsIndexRoute =
   AppAppPagesPrimaryProductsIndexRouteImport.update({
     id: '/_pages/_primary/products/',
     path: '/products/',
+    getParentRoute: () => AppAppLayoutRoute,
+  } as any)
+const AppAppPagesPrimaryPluginsIndexRoute =
+  AppAppPagesPrimaryPluginsIndexRouteImport.update({
+    id: '/_pages/_primary/plugins/',
+    path: '/plugins/',
     getParentRoute: () => AppAppLayoutRoute,
   } as any)
 const AppAppPagesManagementClientsIndexRoute =
@@ -627,6 +655,20 @@ const AppAppPagesPrimaryProductsChar126componentsCreateProductRoute =
     path: '/products/~components/create-product',
     getParentRoute: () => AppAppLayoutRoute,
   } as any)
+const AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute =
+  AppAppPagesPrimaryPluginsChar126componentsPluginCardRouteImport.update({
+    id: '/_pages/_primary/plugins/~components/plugin-card',
+    path: '/plugins/~components/plugin-card',
+    getParentRoute: () => AppAppLayoutRoute,
+  } as any)
+const AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute =
+  AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRouteImport.update(
+    {
+      id: '/_pages/_primary/plugins/~components/configure-plugin-modal',
+      path: '/plugins/~components/configure-plugin-modal',
+      getParentRoute: () => AppAppLayoutRoute,
+    } as any,
+  )
 const AppAppPagesManagementClientsChar126componentsClientsTableRoute =
   AppAppPagesManagementClientsChar126componentsClientsTableRouteImport.update({
     id: '/_pages/_management/clients/~components/clients-table',
@@ -737,11 +779,13 @@ const AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichC
   )
 
 export interface FileRoutesByFullPath {
+  '/admin': typeof AppAdminLayoutRouteWithChildren
   '/app': typeof AppAppLayoutRouteWithChildren
   '/sign-up': typeof AuthSignUpLayoutRouteWithChildren
   '/not-found': typeof ErrorNotFoundRoute
   '/blog': typeof AppRelatedBlogLayoutRouteWithChildren
   '/': typeof AppPublicIndexRoute
+  '/admin/': typeof AppAdminIndexRoute
   '/app/': typeof AppAppIndexRoute
   '/confirm-email-change': typeof AuthConfirmEmailChangeIndexRoute
   '/sign-in': typeof AuthSignInIndexRoute
@@ -768,6 +812,7 @@ export interface FileRoutesByFullPath {
   '/~components/sections/testimonials': typeof AppPublicChar126componentsSectionsTestimonialsRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/admin/~components/sidebar/admin-sidebar': typeof AppAdminChar126componentsSidebarAdminSidebarRoute
   '/app/settings': typeof AppAppPagesSettingsPageSettingsRoute
   '/app/~components/sidebar/dashboard-sidebar': typeof AppAppChar126componentsSidebarDashboardSidebarRoute
   '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
@@ -802,6 +847,7 @@ export interface FileRoutesByFullPath {
   '/app/payments': typeof AppAppPagesFinancialPaymentsIndexRoute
   '/app/client-detail': typeof AppAppPagesManagementClientDetailIndexRoute
   '/app/clients': typeof AppAppPagesManagementClientsIndexRoute
+  '/app/plugins': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/app/products': typeof AppAppPagesPrimaryProductsIndexRoute
   '/app/roadmap': typeof AppAppPagesPrimaryRoadmapIndexRoute
   '/app/integration/api-keys': typeof AppAppPagesIntegrationApiKeysIndexRoute
@@ -814,6 +860,8 @@ export interface FileRoutesByFullPath {
   '/app/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
   '/app/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
   '/app/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
+  '/app/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
+  '/app/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
   '/app/products/~components/create-product': typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRoute
   '/app/products/~components/products-table': typeof AppAppPagesPrimaryProductsChar126componentsProductsTableRoute
   '/app/products/~components/update-product': typeof AppAppPagesPrimaryProductsChar126componentsUpdateProductRoute
@@ -837,6 +885,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/not-found': typeof ErrorNotFoundRoute
   '/': typeof AppPublicIndexRoute
+  '/admin': typeof AppAdminIndexRoute
   '/app': typeof AppAppIndexRoute
   '/confirm-email-change': typeof AuthConfirmEmailChangeIndexRoute
   '/sign-in': typeof AuthSignInIndexRoute
@@ -863,6 +912,7 @@ export interface FileRoutesByTo {
   '/~components/sections/testimonials': typeof AppPublicChar126componentsSectionsTestimonialsRoute
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/admin/~components/sidebar/admin-sidebar': typeof AppAdminChar126componentsSidebarAdminSidebarRoute
   '/app/settings': typeof AppAppPagesSettingsIndexRoute
   '/app/~components/sidebar/dashboard-sidebar': typeof AppAppChar126componentsSidebarDashboardSidebarRoute
   '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
@@ -896,6 +946,7 @@ export interface FileRoutesByTo {
   '/app/payments': typeof AppAppPagesFinancialPaymentsIndexRoute
   '/app/client-detail': typeof AppAppPagesManagementClientDetailIndexRoute
   '/app/clients': typeof AppAppPagesManagementClientsIndexRoute
+  '/app/plugins': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/app/products': typeof AppAppPagesPrimaryProductsIndexRoute
   '/app/roadmap': typeof AppAppPagesPrimaryRoadmapIndexRoute
   '/app/integration/api-keys': typeof AppAppPagesIntegrationApiKeysIndexRoute
@@ -908,6 +959,8 @@ export interface FileRoutesByTo {
   '/app/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
   '/app/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
   '/app/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
+  '/app/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
+  '/app/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
   '/app/products/~components/create-product': typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRoute
   '/app/products/~components/products-table': typeof AppAppPagesPrimaryProductsChar126componentsProductsTableRoute
   '/app/products/~components/update-product': typeof AppAppPagesPrimaryProductsChar126componentsUpdateProductRoute
@@ -931,12 +984,14 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app/_public': typeof AppPublicLayoutRouteWithChildren
+  '/_app/admin': typeof AppAdminLayoutRouteWithChildren
   '/_app/app': typeof AppAppLayoutRouteWithChildren
   '/_auth/sign-up': typeof AuthSignUpLayoutRouteWithChildren
   '/_error/not-found': typeof ErrorNotFoundRoute
   '/_app/_related/_compliance': typeof AppRelatedComplianceLayoutRouteWithChildren
   '/_app/_related/blog': typeof AppRelatedBlogLayoutRouteWithChildren
   '/_app/_public/': typeof AppPublicIndexRoute
+  '/_app/admin/': typeof AppAdminIndexRoute
   '/_app/app/': typeof AppAppIndexRoute
   '/_auth/confirm-email-change/': typeof AuthConfirmEmailChangeIndexRoute
   '/_auth/sign-in/': typeof AuthSignInIndexRoute
@@ -963,6 +1018,7 @@ export interface FileRoutesById {
   '/_app/_public/~components/sections/testimonials': typeof AppPublicChar126componentsSectionsTestimonialsRoute
   '/_app/_related/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
+  '/_app/admin/~components/sidebar/admin-sidebar': typeof AppAdminChar126componentsSidebarAdminSidebarRoute
   '/_app/app/_pages/settings': typeof AppAppPagesSettingsRouteWithChildren
   '/_app/app/_pages/settings/_page-settings': typeof AppAppPagesSettingsPageSettingsRoute
   '/_app/app/~components/sidebar/dashboard-sidebar': typeof AppAppChar126componentsSidebarDashboardSidebarRoute
@@ -998,6 +1054,7 @@ export interface FileRoutesById {
   '/_app/app/_pages/_financial/payments/': typeof AppAppPagesFinancialPaymentsIndexRoute
   '/_app/app/_pages/_management/client-detail/': typeof AppAppPagesManagementClientDetailIndexRoute
   '/_app/app/_pages/_management/clients/': typeof AppAppPagesManagementClientsIndexRoute
+  '/_app/app/_pages/_primary/plugins/': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/_app/app/_pages/_primary/products/': typeof AppAppPagesPrimaryProductsIndexRoute
   '/_app/app/_pages/_primary/roadmap/': typeof AppAppPagesPrimaryRoadmapIndexRoute
   '/_app/app/_pages/integration/api-keys/': typeof AppAppPagesIntegrationApiKeysIndexRoute
@@ -1010,6 +1067,8 @@ export interface FileRoutesById {
   '/_app/app/_pages/_financial/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
   '/_app/app/_pages/_financial/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
   '/_app/app/_pages/_management/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
+  '/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
+  '/_app/app/_pages/_primary/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
   '/_app/app/_pages/_primary/products/~components/create-product': typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRoute
   '/_app/app/_pages/_primary/products/~components/products-table': typeof AppAppPagesPrimaryProductsChar126componentsProductsTableRoute
   '/_app/app/_pages/_primary/products/~components/update-product': typeof AppAppPagesPrimaryProductsChar126componentsUpdateProductRoute
@@ -1033,11 +1092,13 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/admin'
     | '/app'
     | '/sign-up'
     | '/not-found'
     | '/blog'
     | '/'
+    | '/admin/'
     | '/app/'
     | '/confirm-email-change'
     | '/sign-in'
@@ -1064,6 +1125,7 @@ export interface FileRouteTypes {
     | '/~components/sections/testimonials'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
+    | '/admin/~components/sidebar/admin-sidebar'
     | '/app/settings'
     | '/app/~components/sidebar/dashboard-sidebar'
     | '/sign-up/register/~components/leave-confirmation'
@@ -1098,6 +1160,7 @@ export interface FileRouteTypes {
     | '/app/payments'
     | '/app/client-detail'
     | '/app/clients'
+    | '/app/plugins'
     | '/app/products'
     | '/app/roadmap'
     | '/app/integration/api-keys'
@@ -1110,6 +1173,8 @@ export interface FileRouteTypes {
     | '/app/extracts/~components/financial-summary-card'
     | '/app/payments/~components/payments-table'
     | '/app/clients/~components/clients-table'
+    | '/app/plugins/~components/configure-plugin-modal'
+    | '/app/plugins/~components/plugin-card'
     | '/app/products/~components/create-product'
     | '/app/products/~components/products-table'
     | '/app/products/~components/update-product'
@@ -1133,6 +1198,7 @@ export interface FileRouteTypes {
   to:
     | '/not-found'
     | '/'
+    | '/admin'
     | '/app'
     | '/confirm-email-change'
     | '/sign-in'
@@ -1159,6 +1225,7 @@ export interface FileRouteTypes {
     | '/~components/sections/testimonials'
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
+    | '/admin/~components/sidebar/admin-sidebar'
     | '/app/settings'
     | '/app/~components/sidebar/dashboard-sidebar'
     | '/sign-up/register/~components/leave-confirmation'
@@ -1192,6 +1259,7 @@ export interface FileRouteTypes {
     | '/app/payments'
     | '/app/client-detail'
     | '/app/clients'
+    | '/app/plugins'
     | '/app/products'
     | '/app/roadmap'
     | '/app/integration/api-keys'
@@ -1204,6 +1272,8 @@ export interface FileRouteTypes {
     | '/app/extracts/~components/financial-summary-card'
     | '/app/payments/~components/payments-table'
     | '/app/clients/~components/clients-table'
+    | '/app/plugins/~components/configure-plugin-modal'
+    | '/app/plugins/~components/plugin-card'
     | '/app/products/~components/create-product'
     | '/app/products/~components/products-table'
     | '/app/products/~components/update-product'
@@ -1226,12 +1296,14 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/_app/_public'
+    | '/_app/admin'
     | '/_app/app'
     | '/_auth/sign-up'
     | '/_error/not-found'
     | '/_app/_related/_compliance'
     | '/_app/_related/blog'
     | '/_app/_public/'
+    | '/_app/admin/'
     | '/_app/app/'
     | '/_auth/confirm-email-change/'
     | '/_auth/sign-in/'
@@ -1258,6 +1330,7 @@ export interface FileRouteTypes {
     | '/_app/_public/~components/sections/testimonials'
     | '/_app/_related/blog/~components/blog-articles'
     | '/_app/_related/blog/~components/navbar'
+    | '/_app/admin/~components/sidebar/admin-sidebar'
     | '/_app/app/_pages/settings'
     | '/_app/app/_pages/settings/_page-settings'
     | '/_app/app/~components/sidebar/dashboard-sidebar'
@@ -1293,6 +1366,7 @@ export interface FileRouteTypes {
     | '/_app/app/_pages/_financial/payments/'
     | '/_app/app/_pages/_management/client-detail/'
     | '/_app/app/_pages/_management/clients/'
+    | '/_app/app/_pages/_primary/plugins/'
     | '/_app/app/_pages/_primary/products/'
     | '/_app/app/_pages/_primary/roadmap/'
     | '/_app/app/_pages/integration/api-keys/'
@@ -1305,6 +1379,8 @@ export interface FileRouteTypes {
     | '/_app/app/_pages/_financial/extracts/~components/financial-summary-card'
     | '/_app/app/_pages/_financial/payments/~components/payments-table'
     | '/_app/app/_pages/_management/clients/~components/clients-table'
+    | '/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal'
+    | '/_app/app/_pages/_primary/plugins/~components/plugin-card'
     | '/_app/app/_pages/_primary/products/~components/create-product'
     | '/_app/app/_pages/_primary/products/~components/products-table'
     | '/_app/app/_pages/_primary/products/~components/update-product'
@@ -1328,6 +1404,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   AppPublicLayoutRoute: typeof AppPublicLayoutRouteWithChildren
+  AppAdminLayoutRoute: typeof AppAdminLayoutRouteWithChildren
   AppAppLayoutRoute: typeof AppAppLayoutRouteWithChildren
   AuthSignUpLayoutRoute: typeof AuthSignUpLayoutRouteWithChildren
   ErrorNotFoundRoute: typeof ErrorNotFoundRoute
@@ -1359,6 +1436,13 @@ declare module '@tanstack/react-router' {
       path: '/app'
       fullPath: '/app'
       preLoaderRoute: typeof AppAppLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app/admin': {
+      id: '/_app/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AppAdminLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_app/_public': {
@@ -1395,6 +1479,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/app/'
       preLoaderRoute: typeof AppAppIndexRouteImport
       parentRoute: typeof AppAppLayoutRoute
+    }
+    '/_app/admin/': {
+      id: '/_app/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AppAdminIndexRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
     }
     '/_app/_public/': {
       id: '/_app/_public/'
@@ -1564,6 +1655,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAppPagesSettingsPageSettingsRouteImport
       parentRoute: typeof AppAppPagesSettingsRoute
     }
+    '/_app/admin/~components/sidebar/admin-sidebar': {
+      id: '/_app/admin/~components/sidebar/admin-sidebar'
+      path: '/~components/sidebar/admin-sidebar'
+      fullPath: '/admin/~components/sidebar/admin-sidebar'
+      preLoaderRoute: typeof AppAdminChar126componentsSidebarAdminSidebarRouteImport
+      parentRoute: typeof AppAdminLayoutRoute
+    }
     '/_app/_related/blog/~components/navbar': {
       id: '/_app/_related/blog/~components/navbar'
       path: '/~components/navbar'
@@ -1660,6 +1758,13 @@ declare module '@tanstack/react-router' {
       path: '/products'
       fullPath: '/app/products'
       preLoaderRoute: typeof AppAppPagesPrimaryProductsIndexRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
+    '/_app/app/_pages/_primary/plugins/': {
+      id: '/_app/app/_pages/_primary/plugins/'
+      path: '/plugins'
+      fullPath: '/app/plugins'
+      preLoaderRoute: typeof AppAppPagesPrimaryPluginsIndexRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
     '/_app/app/_pages/_management/clients/': {
@@ -1935,6 +2040,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
+    '/_app/app/_pages/_primary/plugins/~components/plugin-card': {
+      id: '/_app/app/_pages/_primary/plugins/~components/plugin-card'
+      path: '/plugins/~components/plugin-card'
+      fullPath: '/app/plugins/~components/plugin-card'
+      preLoaderRoute: typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
+    '/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal': {
+      id: '/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal'
+      path: '/plugins/~components/configure-plugin-modal'
+      fullPath: '/app/plugins/~components/configure-plugin-modal'
+      preLoaderRoute: typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
     '/_app/app/_pages/_management/clients/~components/clients-table': {
       id: '/_app/app/_pages/_management/clients/~components/clients-table'
       path: '/clients/~components/clients-table'
@@ -2083,6 +2202,21 @@ const AppPublicLayoutRouteWithChildren = AppPublicLayoutRoute._addFileChildren(
   AppPublicLayoutRouteChildren,
 )
 
+interface AppAdminLayoutRouteChildren {
+  AppAdminIndexRoute: typeof AppAdminIndexRoute
+  AppAdminChar126componentsSidebarAdminSidebarRoute: typeof AppAdminChar126componentsSidebarAdminSidebarRoute
+}
+
+const AppAdminLayoutRouteChildren: AppAdminLayoutRouteChildren = {
+  AppAdminIndexRoute: AppAdminIndexRoute,
+  AppAdminChar126componentsSidebarAdminSidebarRoute:
+    AppAdminChar126componentsSidebarAdminSidebarRoute,
+}
+
+const AppAdminLayoutRouteWithChildren = AppAdminLayoutRoute._addFileChildren(
+  AppAdminLayoutRouteChildren,
+)
+
 interface AppAppPagesSettingsRouteChildren {
   AppAppPagesSettingsPageSettingsRoute: typeof AppAppPagesSettingsPageSettingsRoute
   AppAppPagesSettingsIndexRoute: typeof AppAppPagesSettingsIndexRoute
@@ -2126,6 +2260,7 @@ interface AppAppLayoutRouteChildren {
   AppAppPagesFinancialPaymentsIndexRoute: typeof AppAppPagesFinancialPaymentsIndexRoute
   AppAppPagesManagementClientDetailIndexRoute: typeof AppAppPagesManagementClientDetailIndexRoute
   AppAppPagesManagementClientsIndexRoute: typeof AppAppPagesManagementClientsIndexRoute
+  AppAppPagesPrimaryPluginsIndexRoute: typeof AppAppPagesPrimaryPluginsIndexRoute
   AppAppPagesPrimaryProductsIndexRoute: typeof AppAppPagesPrimaryProductsIndexRoute
   AppAppPagesPrimaryRoadmapIndexRoute: typeof AppAppPagesPrimaryRoadmapIndexRoute
   AppAppPagesIntegrationApiKeysIndexRoute: typeof AppAppPagesIntegrationApiKeysIndexRoute
@@ -2134,6 +2269,8 @@ interface AppAppLayoutRouteChildren {
   AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute: typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
   AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute: typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
   AppAppPagesManagementClientsChar126componentsClientsTableRoute: typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
+  AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute: typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
+  AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute: typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
   AppAppPagesPrimaryProductsChar126componentsCreateProductRoute: typeof AppAppPagesPrimaryProductsChar126componentsCreateProductRoute
   AppAppPagesPrimaryProductsChar126componentsProductsTableRoute: typeof AppAppPagesPrimaryProductsChar126componentsProductsTableRoute
   AppAppPagesPrimaryProductsChar126componentsUpdateProductRoute: typeof AppAppPagesPrimaryProductsChar126componentsUpdateProductRoute
@@ -2188,6 +2325,7 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
     AppAppPagesManagementClientDetailIndexRoute,
   AppAppPagesManagementClientsIndexRoute:
     AppAppPagesManagementClientsIndexRoute,
+  AppAppPagesPrimaryPluginsIndexRoute: AppAppPagesPrimaryPluginsIndexRoute,
   AppAppPagesPrimaryProductsIndexRoute: AppAppPagesPrimaryProductsIndexRoute,
   AppAppPagesPrimaryRoadmapIndexRoute: AppAppPagesPrimaryRoadmapIndexRoute,
   AppAppPagesIntegrationApiKeysIndexRoute:
@@ -2202,6 +2340,10 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
     AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute,
   AppAppPagesManagementClientsChar126componentsClientsTableRoute:
     AppAppPagesManagementClientsChar126componentsClientsTableRoute,
+  AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute:
+    AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute,
+  AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute:
+    AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute,
   AppAppPagesPrimaryProductsChar126componentsCreateProductRoute:
     AppAppPagesPrimaryProductsChar126componentsCreateProductRoute,
   AppAppPagesPrimaryProductsChar126componentsProductsTableRoute:
@@ -2349,6 +2491,7 @@ const AppRelatedBlogLayoutRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   AppPublicLayoutRoute: AppPublicLayoutRouteWithChildren,
+  AppAdminLayoutRoute: AppAdminLayoutRouteWithChildren,
   AppAppLayoutRoute: AppAppLayoutRouteWithChildren,
   AuthSignUpLayoutRoute: AuthSignUpLayoutRouteWithChildren,
   ErrorNotFoundRoute: ErrorNotFoundRoute,

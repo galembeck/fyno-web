@@ -6,6 +6,13 @@ import { ProductsTable } from "./~components/products-table";
 
 export const Route = createFileRoute("/_app/app/_pages/_primary/products/")({
   component: ProductsPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Produtos | fyno.business",
+      },
+    ],
+  }),
 });
 
 function ProductsPage() {

@@ -18,6 +18,13 @@ export const Route = createFileRoute(
   "/_app/app/_pages/_management/client-detail/$clientId/"
 )({
   component: ClientDetailsPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Detalhes de Cliente | fyno.business",
+      },
+    ],
+  }),
 });
 
 // biome-ignore lint/suspicious/useAwait: required by @TanStack-Router

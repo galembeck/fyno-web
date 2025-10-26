@@ -6,6 +6,13 @@ import { RoadmapSectionCard } from "./~components/roadmap-section-card";
 
 export const Route = createFileRoute("/_app/app/_pages/_primary/roadmap/")({
   component: RoadmapPage,
+  head: () => ({
+    meta: [
+      {
+        title: "Roadmap | fyno.business",
+      },
+    ],
+  }),
 });
 
 function RoadmapPage() {

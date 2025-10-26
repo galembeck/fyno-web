@@ -4,10 +4,15 @@ import { Badge } from "@/components/ui/badge";
 import { InformationCard } from "../~components/information-card";
 import { APIKeysTable } from "./~components/api-keys-table";
 
-export const Route = createFileRoute(
-  "/_app/app/_pages/integration/api-keys/"
-)({
+export const Route = createFileRoute("/_app/app/_pages/integration/api-keys/")({
   component: APIKeysPage,
+  head: () => ({
+    meta: [
+      {
+        title: "API Keys | fyno.business",
+      },
+    ],
+  }),
 });
 
 function APIKeysPage() {
