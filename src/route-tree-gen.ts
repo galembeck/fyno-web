@@ -8,8 +8,6 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createFileRoute } from '@tanstack/react-router'
-
 import { Route as rootRouteImport } from './pages/__root'
 import { Route as ErrorNotFoundRouteImport } from './pages/_error/not-found'
 import { Route as AuthSignUpLayoutRouteImport } from './pages/_auth/sign-up/layout'
@@ -43,7 +41,6 @@ import { Route as AppAppPagesDashboardIndexRouteImport } from './pages/_app/app/
 import { Route as AuthSignUpRegisterChar126componentsRegisterFormRouteImport } from './pages/_auth/sign-up/register/~components/register-form'
 import { Route as AuthSignUpRegisterChar126componentsLeaveConfirmationRouteImport } from './pages/_auth/sign-up/register/~components/leave-confirmation'
 import { Route as AppAppChar126componentsSidebarDashboardSidebarRouteImport } from './pages/_app/app/~components/sidebar/dashboard-sidebar'
-import { Route as AppAppPagesSettingsPageSettingsRouteImport } from './pages/_app/app/_pages/settings/_page-settings'
 import { Route as AppAdminChar126componentsSidebarAdminSidebarRouteImport } from './pages/_app/admin/~components/sidebar/admin-sidebar'
 import { Route as AppRelatedBlogChar126componentsNavbarRouteImport } from './pages/_app/_related/blog/~components/navbar'
 import { Route as AppRelatedBlogChar126componentsBlogArticlesRouteImport } from './pages/_app/_related/blog/~components/blog-articles'
@@ -118,10 +115,6 @@ import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZ
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
 
-const AppAppPagesSettingsRouteImport = createFileRoute(
-  '/_app/app/_pages/settings',
-)()
-
 const ErrorNotFoundRoute = ErrorNotFoundRouteImport.update({
   id: '/_error/not-found',
   path: '/not-found',
@@ -187,11 +180,6 @@ const AppRelatedComplianceLayoutRoute =
     id: '/_app/_related/_compliance',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AppAppPagesSettingsRoute = AppAppPagesSettingsRouteImport.update({
-  id: '/_pages/settings',
-  path: '/settings',
-  getParentRoute: () => AppAppLayoutRoute,
-} as any)
 const AuthSignUpTaxesNegotiationIndexRoute =
   AuthSignUpTaxesNegotiationIndexRouteImport.update({
     id: '/taxes-negotiation/',
@@ -263,9 +251,9 @@ const AppRelatedComplianceComplaintsRoute =
   } as any)
 const AppAppPagesSettingsIndexRoute =
   AppAppPagesSettingsIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AppAppPagesSettingsRoute,
+    id: '/_pages/settings/',
+    path: '/settings/',
+    getParentRoute: () => AppAppLayoutRoute,
   } as any)
 const AppAppPagesProfileIndexRoute = AppAppPagesProfileIndexRouteImport.update({
   id: '/_pages/profile/',
@@ -301,11 +289,6 @@ const AppAppChar126componentsSidebarDashboardSidebarRoute =
     id: '/~components/sidebar/dashboard-sidebar',
     path: '/~components/sidebar/dashboard-sidebar',
     getParentRoute: () => AppAppLayoutRoute,
-  } as any)
-const AppAppPagesSettingsPageSettingsRoute =
-  AppAppPagesSettingsPageSettingsRouteImport.update({
-    id: '/_page-settings',
-    getParentRoute: () => AppAppPagesSettingsRoute,
   } as any)
 const AppAdminChar126componentsSidebarAdminSidebarRoute =
   AppAdminChar126componentsSidebarAdminSidebarRouteImport.update({
@@ -489,21 +472,21 @@ const AppAppChar126componentsSidebarElementsNagivationContentRoute =
   } as any)
 const AppAppPagesSettingsChar126componentsProfileTabRoute =
   AppAppPagesSettingsChar126componentsProfileTabRouteImport.update({
-    id: '/~components/profile-tab',
-    path: '/~components/profile-tab',
-    getParentRoute: () => AppAppPagesSettingsRoute,
+    id: '/_pages/settings/~components/profile-tab',
+    path: '/settings/~components/profile-tab',
+    getParentRoute: () => AppAppLayoutRoute,
   } as any)
 const AppAppPagesSettingsChar126componentsCompanyTabRoute =
   AppAppPagesSettingsChar126componentsCompanyTabRouteImport.update({
-    id: '/~components/company-tab',
-    path: '/~components/company-tab',
-    getParentRoute: () => AppAppPagesSettingsRoute,
+    id: '/_pages/settings/~components/company-tab',
+    path: '/settings/~components/company-tab',
+    getParentRoute: () => AppAppLayoutRoute,
   } as any)
 const AppAppPagesSettingsChar126componentsAddressTabRoute =
   AppAppPagesSettingsChar126componentsAddressTabRouteImport.update({
-    id: '/~components/address-tab',
-    path: '/~components/address-tab',
-    getParentRoute: () => AppAppPagesSettingsRoute,
+    id: '/_pages/settings/~components/address-tab',
+    path: '/settings/~components/address-tab',
+    getParentRoute: () => AppAppLayoutRoute,
   } as any)
 const AppAppPagesProfileChar126componentsPersonalInformationTabRoute =
   AppAppPagesProfileChar126componentsPersonalInformationTabRouteImport.update({
@@ -829,14 +812,13 @@ export interface FileRoutesByFullPath {
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/admin/~components/sidebar/admin-sidebar': typeof AppAdminChar126componentsSidebarAdminSidebarRoute
-  '/app/settings': typeof AppAppPagesSettingsPageSettingsRoute
   '/app/~components/sidebar/dashboard-sidebar': typeof AppAppChar126componentsSidebarDashboardSidebarRoute
   '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
   '/app/dashboard': typeof AppAppPagesDashboardIndexRoute
   '/app/integration': typeof AppAppPagesIntegrationIndexRoute
   '/app/profile': typeof AppAppPagesProfileIndexRoute
-  '/app/settings/': typeof AppAppPagesSettingsIndexRoute
+  '/app/settings': typeof AppAppPagesSettingsIndexRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
@@ -931,13 +913,13 @@ export interface FileRoutesByTo {
   '/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/admin/~components/sidebar/admin-sidebar': typeof AppAdminChar126componentsSidebarAdminSidebarRoute
-  '/app/settings': typeof AppAppPagesSettingsIndexRoute
   '/app/~components/sidebar/dashboard-sidebar': typeof AppAppChar126componentsSidebarDashboardSidebarRoute
   '/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
   '/app/dashboard': typeof AppAppPagesDashboardIndexRoute
   '/app/integration': typeof AppAppPagesIntegrationIndexRoute
   '/app/profile': typeof AppAppPagesProfileIndexRoute
+  '/app/settings': typeof AppAppPagesSettingsIndexRoute
   '/rewards/~components/sections/intro': typeof AppPublicRewardsChar126componentsSectionsIntroRoute
   '/rewards/~components/sections/pictures-carousel': typeof AppPublicRewardsChar126componentsSectionsPicturesCarouselRoute
   '/rewards/~components/sections/rewards-list': typeof AppPublicRewardsChar126componentsSectionsRewardsListRoute
@@ -1039,8 +1021,6 @@ export interface FileRoutesById {
   '/_app/_related/blog/~components/blog-articles': typeof AppRelatedBlogChar126componentsBlogArticlesRoute
   '/_app/_related/blog/~components/navbar': typeof AppRelatedBlogChar126componentsNavbarRoute
   '/_app/admin/~components/sidebar/admin-sidebar': typeof AppAdminChar126componentsSidebarAdminSidebarRoute
-  '/_app/app/_pages/settings': typeof AppAppPagesSettingsRouteWithChildren
-  '/_app/app/_pages/settings/_page-settings': typeof AppAppPagesSettingsPageSettingsRoute
   '/_app/app/~components/sidebar/dashboard-sidebar': typeof AppAppChar126componentsSidebarDashboardSidebarRoute
   '/_auth/sign-up/register/~components/leave-confirmation': typeof AuthSignUpRegisterChar126componentsLeaveConfirmationRoute
   '/_auth/sign-up/register/~components/register-form': typeof AuthSignUpRegisterChar126componentsRegisterFormRoute
@@ -1148,14 +1128,13 @@ export interface FileRouteTypes {
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
     | '/admin/~components/sidebar/admin-sidebar'
-    | '/app/settings'
     | '/app/~components/sidebar/dashboard-sidebar'
     | '/sign-up/register/~components/leave-confirmation'
     | '/sign-up/register/~components/register-form'
     | '/app/dashboard'
     | '/app/integration'
     | '/app/profile'
-    | '/app/settings/'
+    | '/app/settings'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
@@ -1250,13 +1229,13 @@ export interface FileRouteTypes {
     | '/blog/~components/blog-articles'
     | '/blog/~components/navbar'
     | '/admin/~components/sidebar/admin-sidebar'
-    | '/app/settings'
     | '/app/~components/sidebar/dashboard-sidebar'
     | '/sign-up/register/~components/leave-confirmation'
     | '/sign-up/register/~components/register-form'
     | '/app/dashboard'
     | '/app/integration'
     | '/app/profile'
+    | '/app/settings'
     | '/rewards/~components/sections/intro'
     | '/rewards/~components/sections/pictures-carousel'
     | '/rewards/~components/sections/rewards-list'
@@ -1357,8 +1336,6 @@ export interface FileRouteTypes {
     | '/_app/_related/blog/~components/blog-articles'
     | '/_app/_related/blog/~components/navbar'
     | '/_app/admin/~components/sidebar/admin-sidebar'
-    | '/_app/app/_pages/settings'
-    | '/_app/app/_pages/settings/_page-settings'
     | '/_app/app/~components/sidebar/dashboard-sidebar'
     | '/_auth/sign-up/register/~components/leave-confirmation'
     | '/_auth/sign-up/register/~components/register-form'
@@ -1536,13 +1513,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedComplianceLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_app/app/_pages/settings': {
-      id: '/_app/app/_pages/settings'
-      path: '/settings'
-      fullPath: '/app/settings'
-      preLoaderRoute: typeof AppAppPagesSettingsRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
     '/_auth/sign-up/taxes-negotiation/': {
       id: '/_auth/sign-up/taxes-negotiation/'
       path: '/taxes-negotiation'
@@ -1629,10 +1599,10 @@ declare module '@tanstack/react-router' {
     }
     '/_app/app/_pages/settings/': {
       id: '/_app/app/_pages/settings/'
-      path: '/'
-      fullPath: '/app/settings/'
+      path: '/settings'
+      fullPath: '/app/settings'
       preLoaderRoute: typeof AppAppPagesSettingsIndexRouteImport
-      parentRoute: typeof AppAppPagesSettingsRoute
+      parentRoute: typeof AppAppLayoutRoute
     }
     '/_app/app/_pages/profile/': {
       id: '/_app/app/_pages/profile/'
@@ -1675,13 +1645,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/app/~components/sidebar/dashboard-sidebar'
       preLoaderRoute: typeof AppAppChar126componentsSidebarDashboardSidebarRouteImport
       parentRoute: typeof AppAppLayoutRoute
-    }
-    '/_app/app/_pages/settings/_page-settings': {
-      id: '/_app/app/_pages/settings/_page-settings'
-      path: '/settings'
-      fullPath: '/app/settings'
-      preLoaderRoute: typeof AppAppPagesSettingsPageSettingsRouteImport
-      parentRoute: typeof AppAppPagesSettingsRoute
     }
     '/_app/admin/~components/sidebar/admin-sidebar': {
       id: '/_app/admin/~components/sidebar/admin-sidebar'
@@ -1888,24 +1851,24 @@ declare module '@tanstack/react-router' {
     }
     '/_app/app/_pages/settings/~components/profile-tab': {
       id: '/_app/app/_pages/settings/~components/profile-tab'
-      path: '/~components/profile-tab'
+      path: '/settings/~components/profile-tab'
       fullPath: '/app/settings/~components/profile-tab'
       preLoaderRoute: typeof AppAppPagesSettingsChar126componentsProfileTabRouteImport
-      parentRoute: typeof AppAppPagesSettingsRoute
+      parentRoute: typeof AppAppLayoutRoute
     }
     '/_app/app/_pages/settings/~components/company-tab': {
       id: '/_app/app/_pages/settings/~components/company-tab'
-      path: '/~components/company-tab'
+      path: '/settings/~components/company-tab'
       fullPath: '/app/settings/~components/company-tab'
       preLoaderRoute: typeof AppAppPagesSettingsChar126componentsCompanyTabRouteImport
-      parentRoute: typeof AppAppPagesSettingsRoute
+      parentRoute: typeof AppAppLayoutRoute
     }
     '/_app/app/_pages/settings/~components/address-tab': {
       id: '/_app/app/_pages/settings/~components/address-tab'
-      path: '/~components/address-tab'
+      path: '/settings/~components/address-tab'
       fullPath: '/app/settings/~components/address-tab'
       preLoaderRoute: typeof AppAppPagesSettingsChar126componentsAddressTabRouteImport
-      parentRoute: typeof AppAppPagesSettingsRoute
+      parentRoute: typeof AppAppLayoutRoute
     }
     '/_app/app/_pages/profile/~components/personal-information-tab': {
       id: '/_app/app/_pages/profile/~components/personal-information-tab'
@@ -2259,41 +2222,22 @@ const AppAdminLayoutRouteWithChildren = AppAdminLayoutRoute._addFileChildren(
   AppAdminLayoutRouteChildren,
 )
 
-interface AppAppPagesSettingsRouteChildren {
-  AppAppPagesSettingsPageSettingsRoute: typeof AppAppPagesSettingsPageSettingsRoute
-  AppAppPagesSettingsIndexRoute: typeof AppAppPagesSettingsIndexRoute
-  AppAppPagesSettingsChar126componentsAddressTabRoute: typeof AppAppPagesSettingsChar126componentsAddressTabRoute
-  AppAppPagesSettingsChar126componentsCompanyTabRoute: typeof AppAppPagesSettingsChar126componentsCompanyTabRoute
-  AppAppPagesSettingsChar126componentsProfileTabRoute: typeof AppAppPagesSettingsChar126componentsProfileTabRoute
-}
-
-const AppAppPagesSettingsRouteChildren: AppAppPagesSettingsRouteChildren = {
-  AppAppPagesSettingsPageSettingsRoute: AppAppPagesSettingsPageSettingsRoute,
-  AppAppPagesSettingsIndexRoute: AppAppPagesSettingsIndexRoute,
-  AppAppPagesSettingsChar126componentsAddressTabRoute:
-    AppAppPagesSettingsChar126componentsAddressTabRoute,
-  AppAppPagesSettingsChar126componentsCompanyTabRoute:
-    AppAppPagesSettingsChar126componentsCompanyTabRoute,
-  AppAppPagesSettingsChar126componentsProfileTabRoute:
-    AppAppPagesSettingsChar126componentsProfileTabRoute,
-}
-
-const AppAppPagesSettingsRouteWithChildren =
-  AppAppPagesSettingsRoute._addFileChildren(AppAppPagesSettingsRouteChildren)
-
 interface AppAppLayoutRouteChildren {
   AppAppIndexRoute: typeof AppAppIndexRoute
   AppAppChar126componentsNotificationDropdownRoute: typeof AppAppChar126componentsNotificationDropdownRoute
-  AppAppPagesSettingsRoute: typeof AppAppPagesSettingsRouteWithChildren
   AppAppChar126componentsSidebarDashboardSidebarRoute: typeof AppAppChar126componentsSidebarDashboardSidebarRoute
   AppAppPagesDashboardIndexRoute: typeof AppAppPagesDashboardIndexRoute
   AppAppPagesIntegrationIndexRoute: typeof AppAppPagesIntegrationIndexRoute
   AppAppPagesProfileIndexRoute: typeof AppAppPagesProfileIndexRoute
+  AppAppPagesSettingsIndexRoute: typeof AppAppPagesSettingsIndexRoute
   AppAppPagesPrimaryChar126componentsAnalyticsCardRoute: typeof AppAppPagesPrimaryChar126componentsAnalyticsCardRoute
   AppAppPagesIntegrationChar126componentsInformationCardRoute: typeof AppAppPagesIntegrationChar126componentsInformationCardRoute
   AppAppPagesProfileChar126componentsAddressInformationTabRoute: typeof AppAppPagesProfileChar126componentsAddressInformationTabRoute
   AppAppPagesProfileChar126componentsCompanyInformationTabRoute: typeof AppAppPagesProfileChar126componentsCompanyInformationTabRoute
   AppAppPagesProfileChar126componentsPersonalInformationTabRoute: typeof AppAppPagesProfileChar126componentsPersonalInformationTabRoute
+  AppAppPagesSettingsChar126componentsAddressTabRoute: typeof AppAppPagesSettingsChar126componentsAddressTabRoute
+  AppAppPagesSettingsChar126componentsCompanyTabRoute: typeof AppAppPagesSettingsChar126componentsCompanyTabRoute
+  AppAppPagesSettingsChar126componentsProfileTabRoute: typeof AppAppPagesSettingsChar126componentsProfileTabRoute
   AppAppChar126componentsSidebarElementsNagivationContentRoute: typeof AppAppChar126componentsSidebarElementsNagivationContentRoute
   AppAppChar126componentsSidebarElementsSearchSectionRoute: typeof AppAppChar126componentsSidebarElementsSearchSectionRoute
   AppAppChar126componentsSidebarElementsTeamSwitcherRoute: typeof AppAppChar126componentsSidebarElementsTeamSwitcherRoute
@@ -2337,12 +2281,12 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
   AppAppIndexRoute: AppAppIndexRoute,
   AppAppChar126componentsNotificationDropdownRoute:
     AppAppChar126componentsNotificationDropdownRoute,
-  AppAppPagesSettingsRoute: AppAppPagesSettingsRouteWithChildren,
   AppAppChar126componentsSidebarDashboardSidebarRoute:
     AppAppChar126componentsSidebarDashboardSidebarRoute,
   AppAppPagesDashboardIndexRoute: AppAppPagesDashboardIndexRoute,
   AppAppPagesIntegrationIndexRoute: AppAppPagesIntegrationIndexRoute,
   AppAppPagesProfileIndexRoute: AppAppPagesProfileIndexRoute,
+  AppAppPagesSettingsIndexRoute: AppAppPagesSettingsIndexRoute,
   AppAppPagesPrimaryChar126componentsAnalyticsCardRoute:
     AppAppPagesPrimaryChar126componentsAnalyticsCardRoute,
   AppAppPagesIntegrationChar126componentsInformationCardRoute:
@@ -2353,6 +2297,12 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
     AppAppPagesProfileChar126componentsCompanyInformationTabRoute,
   AppAppPagesProfileChar126componentsPersonalInformationTabRoute:
     AppAppPagesProfileChar126componentsPersonalInformationTabRoute,
+  AppAppPagesSettingsChar126componentsAddressTabRoute:
+    AppAppPagesSettingsChar126componentsAddressTabRoute,
+  AppAppPagesSettingsChar126componentsCompanyTabRoute:
+    AppAppPagesSettingsChar126componentsCompanyTabRoute,
+  AppAppPagesSettingsChar126componentsProfileTabRoute:
+    AppAppPagesSettingsChar126componentsProfileTabRoute,
   AppAppChar126componentsSidebarElementsNagivationContentRoute:
     AppAppChar126componentsSidebarElementsNagivationContentRoute,
   AppAppChar126componentsSidebarElementsSearchSectionRoute:

@@ -3,7 +3,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import api from "@/api/api";
-import type { Webhook } from "@/api/types/integration/webhook";
+import type { Webhook } from "@/api/http/routes/types/integration/webhook";
 
 export function useWebhooks() {
   const queryClient = useQueryClient();

@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import z from "zod";
 import { SelectCombobox } from "@/components/select-combobox";
 import { Button } from "@/components/ui/button";
@@ -26,7 +25,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Spinner } from "@/components/ui/spinner";
 import { useAuth } from "@/hooks/endpoints/auth/use-auth";
 import { formatCEP } from "@/lib/_auth/sign-up/format-masks";
 import { isValidCEP } from "@/utils/_auth/sign-up/valid-cep";
@@ -70,7 +68,11 @@ const addressSchema = z.object({
 type AddressFormData = z.infer<typeof addressSchema>;
 
 export function AddressTab() {
-  const { user, updateUser, isUpdatingUser } = useAuth();
+  const {
+    user,
+    // updateUser,
+    // isUpdatingUser
+  } = useAuth();
 
   const [hasChanges, setHasChanges] = useState(false);
 
@@ -160,30 +162,30 @@ export function AddressTab() {
     return () => subscription.unsubscribe();
   }, [form, user]);
 
-  const onSubmit = async (data: AddressFormData) => {
-    try {
-      const cleanData = {
-        street: data.street,
-        number: data.number,
-        cep: data.cep,
-        complement: data.complement,
-        neighborhood: data.neighborhood,
-        city: data.city,
-        state: data.state,
-      };
+  // const onSubmit = async (data: AddressFormData) => {
+  //   try {
+  //     const cleanData = {
+  //       street: data.street,
+  //       number: data.number,
+  //       cep: data.cep,
+  //       complement: data.complement,
+  //       neighborhood: data.neighborhood,
+  //       city: data.city,
+  //       state: data.state,
+  //     };
 
-      await updateUser(cleanData);
+  //     await updateUser(cleanData);
 
-      toast.success("Informações salvas!", {
-        description: "Dados de endereço atualizados com sucesso.",
-      });
+  //     toast.success("Informações salvas!", {
+  //       description: "Dados de endereço atualizados com sucesso.",
+  //     });
 
-      setHasChanges(false);
-      // biome-ignore lint/correctness/noUnusedVariables: handled by useAuth
-    } catch (error: any) {
-      // Handled by useAuth hook
-    }
-  };
+  //     setHasChanges(false);
+  //     // biome-ignore lint/correctness/noUnusedVariables: handled by useAuth
+  //   } catch (error: any) {
+  //     // Handled by useAuth hook
+  //   }
+  // };
 
   const handleReset = () => {
     form.reset({
@@ -202,7 +204,7 @@ export function AddressTab() {
     <Form {...form}>
       <form
         className="flex flex-col gap-8"
-        onSubmit={form.handleSubmit(onSubmit)}
+        // onSubmit={form.handleSubmit(onSubmit)}
       >
         <Card className="w-full">
           <CardHeader>
@@ -215,22 +217,25 @@ export function AddressTab() {
             {hasChanges && (
               <CardAction className="flex gap-2">
                 <Button
-                  disabled={isUpdatingUser}
+                  // disabled={isUpdatingUser}
                   onClick={handleReset}
                   type="button"
                   variant="outline"
                 >
                   Cancelar
                 </Button>
-                <Button disabled={isUpdatingUser} type="submit">
-                  {isUpdatingUser ? (
+                <Button
+                  // disabled={isUpdatingUser}
+                  type="submit"
+                >
+                  {/* {isUpdatingUser ? (
                     <div className="flex items-center gap-2">
                       <Spinner className="h-4 w-4" />
                       <span>Salvando...</span>
                     </div>
-                  ) : (
-                    "Salvar Alterações"
-                  )}
+                  ) : ( */}
+                  "Salvar Alterações"
+                  {/* )} */}
                 </Button>
               </CardAction>
             )}
@@ -248,7 +253,7 @@ export function AddressTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Informe a rua"
                         />
                       </FormControl>
@@ -266,7 +271,7 @@ export function AddressTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Informe o bairro"
                         />
                       </FormControl>
@@ -286,7 +291,7 @@ export function AddressTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           onChange={(e) => {
                             const numbers = e.target.value
                               .replace(/\D/g, "")
@@ -311,7 +316,7 @@ export function AddressTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Informe o número"
                         />
                       </FormControl>
@@ -331,7 +336,7 @@ export function AddressTab() {
                       <FormControl>
                         <Input
                           {...field}
-                          disabled={isUpdatingUser}
+                          // disabled={isUpdatingUser}
                           placeholder="Informe o complemento"
                         />
                       </FormControl>
