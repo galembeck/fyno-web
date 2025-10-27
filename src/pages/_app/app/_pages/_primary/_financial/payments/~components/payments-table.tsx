@@ -44,7 +44,7 @@ import { payments } from "@/constants/_app/_admin/_financial/payments/payments";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute(
-  "/_app/app/_pages/_financial/payments/~components/payments-table"
+  "/_app/app/_pages/_primary/_financial/payments/~components/payments-table"
 )({
   component: () => <PaymentsTable type="complete" />,
 });

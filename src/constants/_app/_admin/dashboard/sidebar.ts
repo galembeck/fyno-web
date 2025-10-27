@@ -1,8 +1,6 @@
 import {
   ArrowUpDown,
-  BadgeDollarSign,
   Banknote,
-  BookOpen,
   Box,
   Crown,
   FolderCode,
@@ -24,38 +22,6 @@ export const dashboardData = {
       url: "/app/dashboard",
       icon: SquareTerminal,
       isActive: true,
-      items: [
-        {
-          title: "Overview",
-          url: "/app/dashboard",
-        },
-      ],
-    },
-    {
-      title: "Financeiro",
-      url: "/app/financial",
-      icon: BadgeDollarSign,
-      items: [
-        {
-          title: "Pagamentos",
-          url: "/app/payments",
-        },
-        // {
-        // 	title: "Extratos",
-        // 	url: "/app/extracts",
-        // },
-      ],
-    },
-    {
-      title: "Gestão",
-      url: "/app/mamagement",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Clientes",
-          url: "/app/clients",
-        },
-      ],
     },
   ],
 
@@ -94,9 +60,10 @@ export const dashboardData = {
       icon: ShoppingBag,
     },
     {
-      title: "Cobranças",
-      description: "Crie e gerencie as cobranças através de nossa plataforma",
-      url: "/app/financial",
+      title: "Pagamentos",
+      description:
+        "Crie e gerencie as cobranças/pagamentos através de nossa plataforma",
+      url: "/app/payments",
       icon: Banknote,
     },
     {
@@ -108,7 +75,7 @@ export const dashboardData = {
     {
       title: "Clientes",
       description: "Crie e gerencie os clientes de sua loja",
-      url: "/app/mamagement",
+      url: "/app/clients",
       icon: User2,
     },
     {

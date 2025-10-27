@@ -1,5 +1,10 @@
 /** biome-ignore-all lint/suspicious/noExplicitAny: required by @TanStack-Table */
 
+import { createFileRoute } from "@tanstack/react-router";
+import type { ColumnDef } from "@tanstack/react-table";
+import { format } from "date-fns";
+import { Copy, Edit, MoreHorizontal, Trash2 } from "lucide-react";
+import { useState } from "react";
 import { DataTableColumnHeader } from "@/components/data-table-column-header";
 import { DataTableColumnSearch } from "@/components/data-table-column-search";
 import { DeleteConfirmation } from "@/components/delete-confirmation";
@@ -23,11 +28,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useProducts } from "@/hooks/endpoints/v1/use-product";
-import { createFileRoute } from "@tanstack/react-router";
-import type { ColumnDef } from "@tanstack/react-table";
-import { format } from "date-fns";
-import { Copy, Edit, MoreHorizontal, Trash2 } from "lucide-react";
-import { useState } from "react";
 import { CreateProduct } from "./create-product";
 import { UpdateProduct } from "./update-product";
 
@@ -135,8 +135,8 @@ export const productsTableColumns: ColumnDef<Product>[] = [
 
       const { deleteProduct } = useProducts();
 
-      const [openEdition, setOpenEdition] = useState(false);
       const [openConfirm, setOpenConfirm] = useState(false);
+      const [openEdition, setOpenEdition] = useState(false);
 
       return (
         <div className="flex justify-center">
@@ -157,7 +157,7 @@ export const productsTableColumns: ColumnDef<Product>[] = [
                 onClick={() => navigator.clipboard.writeText(client.id)}
               >
                 <Copy />
-                Copiar ID (produto)
+                Copiar ID do produto
               </DropdownMenuItem>
 
               <DropdownMenuItem
@@ -187,8 +187,8 @@ export const productsTableColumns: ColumnDef<Product>[] = [
           </DropdownMenu>
 
           <UpdateProduct
-            open={openEdition}
             onOpenChange={setOpenEdition}
+            open={openEdition}
             product={{
               id: client.id,
               name: client.name,

@@ -46,12 +46,6 @@ function Layout() {
   const pageLabels: Record<string, string> = {
     "/app/dashboard": "Dashboard",
 
-    "/app/payments": "Pagamentos",
-    // "/app/extracts": "Extratos",
-
-    "/app/clients": "Clientes",
-    "/app/client-detail/$clientId": "Detalhes do Cliente",
-
     "/app/profile": "Perfil",
     "/app/settings": "Configurações de Conta",
 
@@ -59,6 +53,11 @@ function Layout() {
     "/app/integration/webhooks": "Integração > Webhooks",
 
     "/app/products": "Produtos",
+    "/app/payments": "Pagamentos",
+
+    "/app/clients": "Clientes",
+    "/app/client-detail/$clientId": "Detalhes do Cliente",
+
     "/app/roadmap": "Roadmap",
     "/app/plugins": "Plugins",
     "/app/partnership": "Programa de Parceria",

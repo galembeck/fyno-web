@@ -15,7 +15,7 @@ import type { Client } from "../../clients/~components/clients-table";
 import { ClientInformationTab } from "./~components/client-information-tab";
 
 export const Route = createFileRoute(
-  "/_app/app/_pages/_management/client-detail/$clientId/"
+  "/_app/app/_pages/_primary/_management/client-detail/$clientId/"
 )({
   component: ClientDetailsPage,
   head: () => ({
@@ -164,5 +164,5 @@ function ClientDetailsPage() {
         </TabsContent>
       </Tabs>
     </main>
-  );
+  )
 }

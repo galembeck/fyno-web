@@ -24,48 +24,6 @@ export const searchNavigationItems: NavigationItem[] = [
   },
 
   {
-    id: "financial-payments",
-    title: "Pagamentos",
-    url: "/app/payments",
-    description:
-      "Visualize e gerencie todos os pagamentos realizados em sua plataforma",
-    group: "Consolidado",
-    icon: dashboardData.consolidated.find((item) => item.title === "Financeiro")
-      ?.icon,
-    keywords: ["financeiro", "overview", "pagamentos", "payments"],
-  },
-  // {
-  // 	id: "financial-extracts",
-  // 	title: "Extratos",
-  // 	url: "/app/extracts",
-  // 	description:
-  // 		"Histórico de entrada x saídas e saldos (total, disponível para saque e retido)",
-  // 	group: "Financeiro",
-  // 	icon: dashboardData.navMain.find((item) => item.title === "Financeiro")?.icon,
-  // 	keywords: ["financeiro", "overview", "extratos", "payments"],
-  // },
-
-  {
-    id: "management-clients",
-    title: "Clientes",
-    url: "/app/clients",
-    description: "Visualize e gerencie todos os clientes de sua plataforma",
-    group: "Consolidado",
-    icon: dashboardData.consolidated.find((item) => item.title === "Gestão")
-      ?.icon,
-    keywords: [
-      "gestão",
-      "usuários",
-      "membros",
-      "equipe",
-      "pessoas",
-      "clientes",
-      "clients",
-      "gerenciamento",
-    ],
-  },
-
-  {
     id: "profile",
     title: "Perfil",
     url: "/app/profile",

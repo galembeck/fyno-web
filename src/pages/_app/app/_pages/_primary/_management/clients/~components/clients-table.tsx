@@ -5,11 +5,11 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
-import { Copy, Eye, MapPin, MoreHorizontal } from "lucide-react";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
+import { Copy, Edit, Eye, MapPin, MoreHorizontal, Trash2 } from "lucide-react";
+import { useState } from "react";
 import { DataTableColumnHeader } from "@/components/data-table-column-header";
 import { DataTableColumnSearch } from "@/components/data-table-column-search";
+import { DeleteConfirmation } from "@/components/delete-confirmation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -34,28 +34,30 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { clients } from "@/constants/_app/_admin/_management/clients";
+import { useCustomers } from "@/hooks/endpoints/v1/use-customer";
 import { formatCPF, formatWhatsApp } from "@/lib/_auth/sign-up/format-masks";
+import { CreateClient } from "./create-client";
+import { UpdateClient } from "./update-client";
 
 export const Route = createFileRoute(
-  "/_app/app/_pages/_management/clients/~components/clients-table"
+  "/_app/app/_pages/_primary/_management/clients/~components/clients-table"
 )({
   component: () => <ClientsTable type="complete" />,
 });
 
 export type Client = {
-  clientId: string;
+  id: string;
   name: string;
   email: string;
-  document: string;
   phone: string;
+  document: string;
   address: string;
   createdAt: string;
 };
 
 export const clientsTableColumns: ColumnDef<Client>[] = [
   {
-    accessorKey: "clientId",
+    accessorKey: "id",
     header: ({ table, column }) => (
       <div className="flex items-center gap-4">
         <Checkbox
@@ -82,7 +84,7 @@ export const clientsTableColumns: ColumnDef<Client>[] = [
           onCheckedChange={(value) => row.toggleSelected(!!value)}
         />
 
-        <span>{row.getValue("clientId")}</span>
+        <span>{row.getValue("id")}</span>
       </div>
     ),
     enableSorting: false,
@@ -177,8 +179,12 @@ export const clientsTableColumns: ColumnDef<Client>[] = [
     id: "actions",
     cell: ({ row }) => {
       const client = row.original;
+      const { deleteCustomer } = useCustomers();
 
       const navigate = useNavigate();
+
+      const [openConfirm, setOpenConfirm] = useState(false);
+      const [openEdition, setOpenEdition] = useState(false);
 
       return (
         <div className="flex justify-end">
@@ -196,7 +202,7 @@ export const clientsTableColumns: ColumnDef<Client>[] = [
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Opções</DropdownMenuLabel>
               <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(client.clientId)}
+                onClick={() => navigator.clipboard.writeText(client.id)}
               >
                 <Copy />
                 Copiar ID do cliente
@@ -206,83 +212,117 @@ export const clientsTableColumns: ColumnDef<Client>[] = [
 
               <DropdownMenuItem
                 onClick={() =>
-                  navigate({ to: `/app/client-detail/${client.clientId}` })
+                  navigate({ to: `/app/client-detail/${client.id}` })
                 }
               >
                 <Eye />
                 Ver informações do cliente
               </DropdownMenuItem>
+
+              <DropdownMenuSeparator />
+
+              <DropdownMenuItem
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setOpenEdition(true);
+                }}
+              >
+                <Edit />
+                <p>Editar</p>
+              </DropdownMenuItem>
+
+              <DropdownMenuSeparator />
+
+              <DropdownMenuItem
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setOpenConfirm(true);
+                }}
+              >
+                <Trash2 className="text-red-500" />
+                <p className="text-red-500 hover:text-red-500/80">Excluir</p>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+
+          <UpdateClient
+            client={{
+              id: client.id,
+              name: client.name,
+              email: client.email,
+              phone: client.phone,
+              document: client.document,
+              address: client.address,
+              createdAt: client.createdAt,
+            }}
+            onOpenChange={setOpenEdition}
+            open={openEdition}
+          />
+
+          <DeleteConfirmation
+            onClick={() => deleteCustomer(client.id)}
+            onOpenChange={setOpenConfirm}
+            open={openConfirm}
+            type="client"
+          />
         </div>
       );
     },
   },
 ];
 
-async function getData(): Promise<Client[]> {
-  await new Promise((resolve) => setTimeout(resolve, 100));
-
-  return clients;
-}
-
 interface ClientsTableProps {
   type: "summary" | "complete";
 }
 
 export function ClientsTable({ type }: ClientsTableProps) {
-  const [data, setData] = useState<Client[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { customers, isLoading } = useCustomers();
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        setLoading(true);
-        const result = await getData();
-        setData(result);
-      } catch (error) {
-        toast.error("Erro ao carregar dados de clientes", {
-          description: error instanceof Error ? error.message : String(error),
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
-  }, []);
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="text-2xl">Clientes</CardTitle>
         <CardDescription className="text-base">
-          Visualize e gerencie todos os clientes cadastrados em sua plataforma
-          através da tabela de clientes
+          Crie, visualize e gerencie os clientes de sua loja através do botão ao
+          lado e a tabela abaixo, respectivamente
         </CardDescription>
 
-        <CardAction>
+        <CardAction className="flex flex-row items-center gap-2">
           {type === "summary" ? (
             <Button onClick={() => navigate({ to: "/app/clients" })}>
               Ver todos
             </Button>
           ) : (
-            <Button>Exportar</Button>
+            <>
+              <Button variant="outline">Exportar</Button>
+
+              <CreateClient />
+            </>
           )}
         </CardAction>
       </CardHeader>
 
       <CardContent>
-        {loading ? (
+        {isLoading ? (
           <div className="flex items-center justify-center p-8">
             <div className="text-muted-foreground">Carregando...</div>
           </div>
         ) : (
           <DataTable
             columns={clientsTableColumns}
-            data={data}
+            data={(customers || []).map((customer: any) => ({
+              id: customer.id,
+              name: customer.name ?? "",
+              email: customer.email ?? "",
+              phone: customer.phone ?? "",
+              document: customer.document ?? "",
+              address: customer.address ?? "",
+              createdAt: customer.createdAt ?? "",
+            }))}
             filterableColumns={[
               {
                 columnKey: "createdAt",

@@ -1,7 +1,7 @@
-import api from "@/api/api";
-import type { Product } from "@/api/http/routes/types/v1/product";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
+import api from "@/api/api";
+import type { Product } from "@/api/http/routes/types/v1/product";
 
 export function useProducts() {
   const queryClient = useQueryClient();
@@ -31,7 +31,10 @@ export function useProducts() {
       description: string;
       price: number;
     }) => {
-      if (!token) return;
+      if (!token) {
+        return;
+      }
+
       return await api.products.create(token, id, name, description, price);
     },
     onSuccess: () => {
@@ -51,7 +54,10 @@ export function useProducts() {
       description: string;
       price: number;
     }) => {
-      if (!token) return;
+      if (!token) {
+        return;
+      }
+
       return await api.products.update(token, id, name, description, price);
     },
     onSuccess: () => {
@@ -61,7 +67,10 @@ export function useProducts() {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      if (!token) return;
+      if (!token) {
+        return;
+      }
+
       return await api.products.remove(token, id);
     },
     onSuccess: () => {

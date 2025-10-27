@@ -15,7 +15,7 @@ import { formatCPF, formatWhatsApp } from "@/lib/_auth/sign-up/format-masks";
 import type { Client } from "../../../clients/~components/clients-table";
 
 export const Route = createFileRoute(
-  "/_app/app/_pages/_management/client-detail/$clientId/~components/client-information-tab"
+  "/_app/app/_pages/_primary/_management/client-detail/$clientId/~components/client-information-tab"
 )({
   component: () => {
     // For demonstration, use the first client from the imported clients array.

@@ -1,5 +1,6 @@
 /** biome-ignore-all lint/suspicious/noEmptyBlockStatements: required by @TanStack-Router */
 
+import { Trash2 } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -10,10 +11,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { Trash2 } from "lucide-react";
 
 interface DeleteConfirmationProps {
-  type: "api-key" | "webhook" | "product";
+  type: "api-key" | "webhook" | "product" | "client";
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onClick: () => void;
@@ -36,10 +36,16 @@ const TYPE_META: Record<
     description:
       "Ao confirmar, o webhook será revogado e excluído de sua conta e não poderá mais ser utilizado. Deseja realmente excluir?",
   },
+
   product: {
     title: "Excluir produto",
     description:
       "Ao confirmar, o produto será removido do seu catálogo e todas as cobranças que utilizam esse produto serão canceladas. Tem certeza que deseja continuar?",
+  },
+  client: {
+    title: "Excluir cliente",
+    description:
+      "Ao confirmar, o cliente será removido do sua plataforma e todas as cobranças que utilizam esse cliente serão canceladas. Tem certeza que deseja continuar?",
   },
 };
 
@@ -55,11 +61,11 @@ export function DeleteConfirmation({
     <AlertDialog onOpenChange={onOpenChange} open={open}>
       <AlertDialogContent className="flex flex-col items-center justify-center rounded-lg border-0 text-center">
         <AlertDialogHeader className="flex flex-col py-4 text-center">
-          <AlertDialogTitle className="flex flex-col items-center text-xl justify-center gap-4 font-bold text-white">
+          <AlertDialogTitle className="flex flex-col items-center justify-center gap-4 font-bold text-white text-xl">
             <Trash2 stroke="red" />
             {meta.title}
           </AlertDialogTitle>
-          <AlertDialogDescription className="text-muted-foreground text-base text-center">
+          <AlertDialogDescription className="text-center text-base text-muted-foreground">
             {meta.description}
           </AlertDialogDescription>
         </AlertDialogHeader>

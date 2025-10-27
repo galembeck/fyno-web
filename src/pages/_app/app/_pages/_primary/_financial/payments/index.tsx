@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PaymentsTable } from "./~components/payments-table";
 
-export const Route = createFileRoute("/_app/app/_pages/_financial/payments/")(
+export const Route = createFileRoute("/_app/app/_pages/_primary/_financial/payments/")(
   {
     component: PaymentsPage,
     head: () => ({

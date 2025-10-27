@@ -7,8 +7,8 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PaymentsTable } from "../_financial/payments/~components/payments-table";
-import { ClientsTable } from "../_management/clients/~components/clients-table";
+import { PaymentsTable } from "../_primary/_financial/payments/~components/payments-table";
+import { ClientsTable } from "../_primary/_management/clients/~components/clients-table";
 import { TransactionsOverview } from "./_overview/~components/analytics/transactions-overview";
 import { ChartAreaInteractive } from "./_overview/~components/chart-area-interactive";
 import { PayedOrdersCard } from "./_overview/~components/payed-orders-card";

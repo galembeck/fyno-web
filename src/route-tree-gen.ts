@@ -58,10 +58,6 @@ import { Route as AppAppPagesPrimaryRoadmapIndexRouteImport } from './pages/_app
 import { Route as AppAppPagesPrimaryProductsIndexRouteImport } from './pages/_app/app/_pages/_primary/products/index'
 import { Route as AppAppPagesPrimaryPluginsIndexRouteImport } from './pages/_app/app/_pages/_primary/plugins/index'
 import { Route as AppAppPagesPrimaryPartnershipIndexRouteImport } from './pages/_app/app/_pages/_primary/partnership/index'
-import { Route as AppAppPagesManagementClientsIndexRouteImport } from './pages/_app/app/_pages/_management/clients/index'
-import { Route as AppAppPagesManagementClientDetailIndexRouteImport } from './pages/_app/app/_pages/_management/client-detail/index'
-import { Route as AppAppPagesFinancialPaymentsIndexRouteImport } from './pages/_app/app/_pages/_financial/payments/index'
-import { Route as AppAppPagesFinancialExtractsIndexRouteImport } from './pages/_app/app/_pages/_financial/extracts/index'
 import { Route as AppRelatedBlogArticleContentArticleIdIndexRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/index'
 import { Route as AuthSignUpRegisterChar126componentsRegisterFormStepsPersonalInformationFormRouteImport } from './pages/_auth/sign-up/register/~components/register-form-steps/personal-information-form'
 import { Route as AuthSignUpRegisterChar126componentsRegisterFormStepsCompanyInformationFormRouteImport } from './pages/_auth/sign-up/register/~components/register-form-steps/company-information-form'
@@ -84,7 +80,9 @@ import { Route as AppRelatedBlogChar126componentsContentArticleCardRouteImport }
 import { Route as AppPublicRewardsChar126componentsSectionsRewardsListRouteImport } from './pages/_app/_public/rewards/~components/sections/rewards-list'
 import { Route as AppPublicRewardsChar126componentsSectionsPicturesCarouselRouteImport } from './pages/_app/_public/rewards/~components/sections/pictures-carousel'
 import { Route as AppPublicRewardsChar126componentsSectionsIntroRouteImport } from './pages/_app/_public/rewards/~components/sections/intro'
-import { Route as AppAppPagesManagementClientDetailClientIdIndexRouteImport } from './pages/_app/app/_pages/_management/client-detail/$clientId/index'
+import { Route as AppAppPagesPrimaryManagementClientsIndexRouteImport } from './pages/_app/app/_pages/_primary/_management/clients/index'
+import { Route as AppAppPagesPrimaryManagementClientDetailIndexRouteImport } from './pages/_app/app/_pages/_primary/_management/client-detail/index'
+import { Route as AppAppPagesPrimaryFinancialPaymentsIndexRouteImport } from './pages/_app/app/_pages/_primary/_financial/payments/index'
 import { Route as AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRouteImport } from './pages/_app/app/_pages/integration/webhooks/~components/webhooks-table'
 import { Route as AppAppPagesIntegrationWebhooksChar126componentsCreateWebhookRouteImport } from './pages/_app/app/_pages/integration/webhooks/~components/create-webhook'
 import { Route as AppAppPagesIntegrationApiKeysChar126componentsCreateApiKeyRouteImport } from './pages/_app/app/_pages/integration/api-keys/~components/create-api-key'
@@ -100,20 +98,21 @@ import { Route as AppAppPagesPrimaryProductsChar126componentsCreateProductRouteI
 import { Route as AppAppPagesPrimaryPluginsChar126componentsPluginCardRouteImport } from './pages/_app/app/_pages/_primary/plugins/~components/plugin-card'
 import { Route as AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRouteImport } from './pages/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal'
 import { Route as AppAppPagesPrimaryPartnershipChar126componentsInformationCardRouteImport } from './pages/_app/app/_pages/_primary/partnership/~components/information-card'
-import { Route as AppAppPagesManagementClientsChar126componentsClientsTableRouteImport } from './pages/_app/app/_pages/_management/clients/~components/clients-table'
-import { Route as AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRouteImport } from './pages/_app/app/_pages/_financial/payments/~components/payments-table'
-import { Route as AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRouteImport } from './pages/_app/app/_pages/_financial/extracts/~components/financial-summary-card'
-import { Route as AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRouteImport } from './pages/_app/app/_pages/_financial/extracts/~components/financial-summary'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/article-not-found'
+import { Route as AppAppPagesPrimaryManagementClientDetailClientIdIndexRouteImport } from './pages/_app/app/_pages/_primary/_management/client-detail/$clientId/index'
 import { Route as AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRouteImport } from './pages/_app/app/_pages/dashboard/_overview/~components/analytics/transactions-overview-card'
 import { Route as AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRouteImport } from './pages/_app/app/_pages/dashboard/_overview/~components/analytics/transactions-overview'
-import { Route as AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport } from './pages/_app/app/_pages/_management/client-detail/$clientId/~components/client-information-tab'
+import { Route as AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRouteImport } from './pages/_app/app/_pages/_primary/_management/clients/~components/update-client'
+import { Route as AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRouteImport } from './pages/_app/app/_pages/_primary/_management/clients/~components/create-client'
+import { Route as AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRouteImport } from './pages/_app/app/_pages/_primary/_management/clients/~components/clients-table'
+import { Route as AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRouteImport } from './pages/_app/app/_pages/_primary/_financial/payments/~components/payments-table'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
 import { Route as AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport } from './pages/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
+import { Route as AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport } from './pages/_app/app/_pages/_primary/_management/client-detail/$clientId/~components/client-information-tab'
 
 const ErrorNotFoundRoute = ErrorNotFoundRouteImport.update({
   id: '/_error/not-found',
@@ -392,30 +391,6 @@ const AppAppPagesPrimaryPartnershipIndexRoute =
     path: '/partnership/',
     getParentRoute: () => AppAppLayoutRoute,
   } as any)
-const AppAppPagesManagementClientsIndexRoute =
-  AppAppPagesManagementClientsIndexRouteImport.update({
-    id: '/_pages/_management/clients/',
-    path: '/clients/',
-    getParentRoute: () => AppAppLayoutRoute,
-  } as any)
-const AppAppPagesManagementClientDetailIndexRoute =
-  AppAppPagesManagementClientDetailIndexRouteImport.update({
-    id: '/_pages/_management/client-detail/',
-    path: '/client-detail/',
-    getParentRoute: () => AppAppLayoutRoute,
-  } as any)
-const AppAppPagesFinancialPaymentsIndexRoute =
-  AppAppPagesFinancialPaymentsIndexRouteImport.update({
-    id: '/_pages/_financial/payments/',
-    path: '/payments/',
-    getParentRoute: () => AppAppLayoutRoute,
-  } as any)
-const AppAppPagesFinancialExtractsIndexRoute =
-  AppAppPagesFinancialExtractsIndexRouteImport.update({
-    id: '/_pages/_financial/extracts/',
-    path: '/extracts/',
-    getParentRoute: () => AppAppLayoutRoute,
-  } as any)
 const AppRelatedBlogArticleContentArticleIdIndexRoute =
   AppRelatedBlogArticleContentArticleIdIndexRouteImport.update({
     id: '/_article-content/$articleId/',
@@ -554,10 +529,22 @@ const AppPublicRewardsChar126componentsSectionsIntroRoute =
     path: '/rewards/~components/sections/intro',
     getParentRoute: () => AppPublicLayoutRoute,
   } as any)
-const AppAppPagesManagementClientDetailClientIdIndexRoute =
-  AppAppPagesManagementClientDetailClientIdIndexRouteImport.update({
-    id: '/_pages/_management/client-detail/$clientId/',
-    path: '/client-detail/$clientId/',
+const AppAppPagesPrimaryManagementClientsIndexRoute =
+  AppAppPagesPrimaryManagementClientsIndexRouteImport.update({
+    id: '/_pages/_primary/_management/clients/',
+    path: '/clients/',
+    getParentRoute: () => AppAppLayoutRoute,
+  } as any)
+const AppAppPagesPrimaryManagementClientDetailIndexRoute =
+  AppAppPagesPrimaryManagementClientDetailIndexRouteImport.update({
+    id: '/_pages/_primary/_management/client-detail/',
+    path: '/client-detail/',
+    getParentRoute: () => AppAppLayoutRoute,
+  } as any)
+const AppAppPagesPrimaryFinancialPaymentsIndexRoute =
+  AppAppPagesPrimaryFinancialPaymentsIndexRouteImport.update({
+    id: '/_pages/_primary/_financial/payments/',
+    path: '/payments/',
     getParentRoute: () => AppAppLayoutRoute,
   } as any)
 const AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRoute =
@@ -668,34 +655,6 @@ const AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute =
       getParentRoute: () => AppAppLayoutRoute,
     } as any,
   )
-const AppAppPagesManagementClientsChar126componentsClientsTableRoute =
-  AppAppPagesManagementClientsChar126componentsClientsTableRouteImport.update({
-    id: '/_pages/_management/clients/~components/clients-table',
-    path: '/clients/~components/clients-table',
-    getParentRoute: () => AppAppLayoutRoute,
-  } as any)
-const AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute =
-  AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRouteImport.update({
-    id: '/_pages/_financial/payments/~components/payments-table',
-    path: '/payments/~components/payments-table',
-    getParentRoute: () => AppAppLayoutRoute,
-  } as any)
-const AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute =
-  AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRouteImport.update(
-    {
-      id: '/_pages/_financial/extracts/~components/financial-summary-card',
-      path: '/extracts/~components/financial-summary-card',
-      getParentRoute: () => AppAppLayoutRoute,
-    } as any,
-  )
-const AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRoute =
-  AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRouteImport.update(
-    {
-      id: '/_pages/_financial/extracts/~components/financial-summary',
-      path: '/extracts/~components/financial-summary',
-      getParentRoute: () => AppAppLayoutRoute,
-    } as any,
-  )
 const AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute =
   AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRouteImport.update(
     {
@@ -728,6 +687,12 @@ const AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRoute
       getParentRoute: () => AppRelatedBlogLayoutRoute,
     } as any,
   )
+const AppAppPagesPrimaryManagementClientDetailClientIdIndexRoute =
+  AppAppPagesPrimaryManagementClientDetailClientIdIndexRouteImport.update({
+    id: '/_pages/_primary/_management/client-detail/$clientId/',
+    path: '/client-detail/$clientId/',
+    getParentRoute: () => AppAppLayoutRoute,
+  } as any)
 const AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute =
   AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRouteImport.update(
     {
@@ -744,11 +709,35 @@ const AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverview
       getParentRoute: () => AppAppLayoutRoute,
     } as any,
   )
-const AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute =
-  AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport.update(
+const AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRoute =
+  AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRouteImport.update(
     {
-      id: '/_pages/_management/client-detail/$clientId/~components/client-information-tab',
-      path: '/client-detail/$clientId/~components/client-information-tab',
+      id: '/_pages/_primary/_management/clients/~components/update-client',
+      path: '/clients/~components/update-client',
+      getParentRoute: () => AppAppLayoutRoute,
+    } as any,
+  )
+const AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRoute =
+  AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRouteImport.update(
+    {
+      id: '/_pages/_primary/_management/clients/~components/create-client',
+      path: '/clients/~components/create-client',
+      getParentRoute: () => AppAppLayoutRoute,
+    } as any,
+  )
+const AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRoute =
+  AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRouteImport.update(
+    {
+      id: '/_pages/_primary/_management/clients/~components/clients-table',
+      path: '/clients/~components/clients-table',
+      getParentRoute: () => AppAppLayoutRoute,
+    } as any,
+  )
+const AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRoute =
+  AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRouteImport.update(
+    {
+      id: '/_pages/_primary/_financial/payments/~components/payments-table',
+      path: '/payments/~components/payments-table',
       getParentRoute: () => AppAppLayoutRoute,
     } as any,
   )
@@ -774,6 +763,14 @@ const AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichC
       id: '/_article-content/$articleId/~components/content-renderer/rich-content-renderer',
       path: '/$articleId/~components/content-renderer/rich-content-renderer',
       getParentRoute: () => AppRelatedBlogLayoutRoute,
+    } as any,
+  )
+const AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRoute =
+  AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport.update(
+    {
+      id: '/_pages/_primary/_management/client-detail/$clientId/~components/client-information-tab',
+      path: '/client-detail/$clientId/~components/client-information-tab',
+      getParentRoute: () => AppAppLayoutRoute,
     } as any,
   )
 
@@ -841,10 +838,6 @@ export interface FileRoutesByFullPath {
   '/sign-up/register/~components/register-form-steps/company-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsCompanyInformationFormRoute
   '/sign-up/register/~components/register-form-steps/personal-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsPersonalInformationFormRoute
   '/blog/$articleId': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
-  '/app/extracts': typeof AppAppPagesFinancialExtractsIndexRoute
-  '/app/payments': typeof AppAppPagesFinancialPaymentsIndexRoute
-  '/app/client-detail': typeof AppAppPagesManagementClientDetailIndexRoute
-  '/app/clients': typeof AppAppPagesManagementClientsIndexRoute
   '/app/partnership': typeof AppAppPagesPrimaryPartnershipIndexRoute
   '/app/plugins': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/app/products': typeof AppAppPagesPrimaryProductsIndexRoute
@@ -855,10 +848,6 @@ export interface FileRoutesByFullPath {
   '/blog/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/blog/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
   '/blog/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
-  '/app/extracts/~components/financial-summary': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRoute
-  '/app/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
-  '/app/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
-  '/app/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
   '/app/partnership/~components/information-card': typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute
   '/app/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
   '/app/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
@@ -874,13 +863,20 @@ export interface FileRoutesByFullPath {
   '/app/integration/api-keys/~components/create-api-key': typeof AppAppPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
   '/app/integration/webhooks/~components/create-webhook': typeof AppAppPagesIntegrationWebhooksChar126componentsCreateWebhookRoute
   '/app/integration/webhooks/~components/webhooks-table': typeof AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
-  '/app/client-detail/$clientId': typeof AppAppPagesManagementClientDetailClientIdIndexRoute
+  '/app/payments': typeof AppAppPagesPrimaryFinancialPaymentsIndexRoute
+  '/app/client-detail': typeof AppAppPagesPrimaryManagementClientDetailIndexRoute
+  '/app/clients': typeof AppAppPagesPrimaryManagementClientsIndexRoute
   '/blog/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
   '/blog/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
   '/blog/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
-  '/app/client-detail/$clientId/~components/client-information-tab': typeof AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
+  '/app/payments/~components/payments-table': typeof AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRoute
+  '/app/clients/~components/clients-table': typeof AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRoute
+  '/app/clients/~components/create-client': typeof AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRoute
+  '/app/clients/~components/update-client': typeof AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRoute
   '/app/dashboard/~components/analytics/transactions-overview': typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute
   '/app/dashboard/~components/analytics/transactions-overview-card': typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute
+  '/app/client-detail/$clientId': typeof AppAppPagesPrimaryManagementClientDetailClientIdIndexRoute
+  '/app/client-detail/$clientId/~components/client-information-tab': typeof AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRoute
 }
 export interface FileRoutesByTo {
   '/not-found': typeof ErrorNotFoundRoute
@@ -942,10 +938,6 @@ export interface FileRoutesByTo {
   '/sign-up/register/~components/register-form-steps/company-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsCompanyInformationFormRoute
   '/sign-up/register/~components/register-form-steps/personal-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsPersonalInformationFormRoute
   '/blog/$articleId': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
-  '/app/extracts': typeof AppAppPagesFinancialExtractsIndexRoute
-  '/app/payments': typeof AppAppPagesFinancialPaymentsIndexRoute
-  '/app/client-detail': typeof AppAppPagesManagementClientDetailIndexRoute
-  '/app/clients': typeof AppAppPagesManagementClientsIndexRoute
   '/app/partnership': typeof AppAppPagesPrimaryPartnershipIndexRoute
   '/app/plugins': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/app/products': typeof AppAppPagesPrimaryProductsIndexRoute
@@ -956,10 +948,6 @@ export interface FileRoutesByTo {
   '/blog/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/blog/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
   '/blog/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
-  '/app/extracts/~components/financial-summary': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRoute
-  '/app/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
-  '/app/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
-  '/app/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
   '/app/partnership/~components/information-card': typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute
   '/app/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
   '/app/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
@@ -975,13 +963,20 @@ export interface FileRoutesByTo {
   '/app/integration/api-keys/~components/create-api-key': typeof AppAppPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
   '/app/integration/webhooks/~components/create-webhook': typeof AppAppPagesIntegrationWebhooksChar126componentsCreateWebhookRoute
   '/app/integration/webhooks/~components/webhooks-table': typeof AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
-  '/app/client-detail/$clientId': typeof AppAppPagesManagementClientDetailClientIdIndexRoute
+  '/app/payments': typeof AppAppPagesPrimaryFinancialPaymentsIndexRoute
+  '/app/client-detail': typeof AppAppPagesPrimaryManagementClientDetailIndexRoute
+  '/app/clients': typeof AppAppPagesPrimaryManagementClientsIndexRoute
   '/blog/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
   '/blog/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
   '/blog/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
-  '/app/client-detail/$clientId/~components/client-information-tab': typeof AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
+  '/app/payments/~components/payments-table': typeof AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRoute
+  '/app/clients/~components/clients-table': typeof AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRoute
+  '/app/clients/~components/create-client': typeof AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRoute
+  '/app/clients/~components/update-client': typeof AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRoute
   '/app/dashboard/~components/analytics/transactions-overview': typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute
   '/app/dashboard/~components/analytics/transactions-overview-card': typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute
+  '/app/client-detail/$clientId': typeof AppAppPagesPrimaryManagementClientDetailClientIdIndexRoute
+  '/app/client-detail/$clientId/~components/client-information-tab': typeof AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -1050,10 +1045,6 @@ export interface FileRoutesById {
   '/_auth/sign-up/register/~components/register-form-steps/company-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsCompanyInformationFormRoute
   '/_auth/sign-up/register/~components/register-form-steps/personal-information-form': typeof AuthSignUpRegisterChar126componentsRegisterFormStepsPersonalInformationFormRoute
   '/_app/_related/blog/_article-content/$articleId/': typeof AppRelatedBlogArticleContentArticleIdIndexRoute
-  '/_app/app/_pages/_financial/extracts/': typeof AppAppPagesFinancialExtractsIndexRoute
-  '/_app/app/_pages/_financial/payments/': typeof AppAppPagesFinancialPaymentsIndexRoute
-  '/_app/app/_pages/_management/client-detail/': typeof AppAppPagesManagementClientDetailIndexRoute
-  '/_app/app/_pages/_management/clients/': typeof AppAppPagesManagementClientsIndexRoute
   '/_app/app/_pages/_primary/partnership/': typeof AppAppPagesPrimaryPartnershipIndexRoute
   '/_app/app/_pages/_primary/plugins/': typeof AppAppPagesPrimaryPluginsIndexRoute
   '/_app/app/_pages/_primary/products/': typeof AppAppPagesPrimaryProductsIndexRoute
@@ -1064,10 +1055,6 @@ export interface FileRoutesById {
   '/_app/_related/blog/_article-content/$articleId/~components/article-sharing': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSharingRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleSkeletonRoute
   '/_app/_related/blog/_article-content/$articleId/~components/article-with-error': typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleWithErrorRoute
-  '/_app/app/_pages/_financial/extracts/~components/financial-summary': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRoute
-  '/_app/app/_pages/_financial/extracts/~components/financial-summary-card': typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
-  '/_app/app/_pages/_financial/payments/~components/payments-table': typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
-  '/_app/app/_pages/_management/clients/~components/clients-table': typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
   '/_app/app/_pages/_primary/partnership/~components/information-card': typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute
   '/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal': typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
   '/_app/app/_pages/_primary/plugins/~components/plugin-card': typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
@@ -1083,13 +1070,20 @@ export interface FileRoutesById {
   '/_app/app/_pages/integration/api-keys/~components/create-api-key': typeof AppAppPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
   '/_app/app/_pages/integration/webhooks/~components/create-webhook': typeof AppAppPagesIntegrationWebhooksChar126componentsCreateWebhookRoute
   '/_app/app/_pages/integration/webhooks/~components/webhooks-table': typeof AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
-  '/_app/app/_pages/_management/client-detail/$clientId/': typeof AppAppPagesManagementClientDetailClientIdIndexRoute
+  '/_app/app/_pages/_primary/_financial/payments/': typeof AppAppPagesPrimaryFinancialPaymentsIndexRoute
+  '/_app/app/_pages/_primary/_management/client-detail/': typeof AppAppPagesPrimaryManagementClientDetailIndexRoute
+  '/_app/app/_pages/_primary/_management/clients/': typeof AppAppPagesPrimaryManagementClientsIndexRoute
   '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer': typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRoute
   '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticleCardRoute
   '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles': typeof AppRelatedBlogArticleContentArticleIdChar126componentsDynamicZoneRelatedArticlesRoute
-  '/_app/app/_pages/_management/client-detail/$clientId/~components/client-information-tab': typeof AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
+  '/_app/app/_pages/_primary/_financial/payments/~components/payments-table': typeof AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRoute
+  '/_app/app/_pages/_primary/_management/clients/~components/clients-table': typeof AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRoute
+  '/_app/app/_pages/_primary/_management/clients/~components/create-client': typeof AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRoute
+  '/_app/app/_pages/_primary/_management/clients/~components/update-client': typeof AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRoute
   '/_app/app/_pages/dashboard/_overview/~components/analytics/transactions-overview': typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute
   '/_app/app/_pages/dashboard/_overview/~components/analytics/transactions-overview-card': typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute
+  '/_app/app/_pages/_primary/_management/client-detail/$clientId/': typeof AppAppPagesPrimaryManagementClientDetailClientIdIndexRoute
+  '/_app/app/_pages/_primary/_management/client-detail/$clientId/~components/client-information-tab': typeof AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -1157,10 +1151,6 @@ export interface FileRouteTypes {
     | '/sign-up/register/~components/register-form-steps/company-information-form'
     | '/sign-up/register/~components/register-form-steps/personal-information-form'
     | '/blog/$articleId'
-    | '/app/extracts'
-    | '/app/payments'
-    | '/app/client-detail'
-    | '/app/clients'
     | '/app/partnership'
     | '/app/plugins'
     | '/app/products'
@@ -1171,10 +1161,6 @@ export interface FileRouteTypes {
     | '/blog/$articleId/~components/article-sharing'
     | '/blog/$articleId/~components/article-skeleton'
     | '/blog/$articleId/~components/article-with-error'
-    | '/app/extracts/~components/financial-summary'
-    | '/app/extracts/~components/financial-summary-card'
-    | '/app/payments/~components/payments-table'
-    | '/app/clients/~components/clients-table'
     | '/app/partnership/~components/information-card'
     | '/app/plugins/~components/configure-plugin-modal'
     | '/app/plugins/~components/plugin-card'
@@ -1190,13 +1176,20 @@ export interface FileRouteTypes {
     | '/app/integration/api-keys/~components/create-api-key'
     | '/app/integration/webhooks/~components/create-webhook'
     | '/app/integration/webhooks/~components/webhooks-table'
-    | '/app/client-detail/$clientId'
+    | '/app/payments'
+    | '/app/client-detail'
+    | '/app/clients'
     | '/blog/$articleId/~components/content-renderer/rich-content-renderer'
     | '/blog/$articleId/~components/dynamic-zone/related-article-card'
     | '/blog/$articleId/~components/dynamic-zone/related-articles'
-    | '/app/client-detail/$clientId/~components/client-information-tab'
+    | '/app/payments/~components/payments-table'
+    | '/app/clients/~components/clients-table'
+    | '/app/clients/~components/create-client'
+    | '/app/clients/~components/update-client'
     | '/app/dashboard/~components/analytics/transactions-overview'
     | '/app/dashboard/~components/analytics/transactions-overview-card'
+    | '/app/client-detail/$clientId'
+    | '/app/client-detail/$clientId/~components/client-information-tab'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/not-found'
@@ -1258,10 +1251,6 @@ export interface FileRouteTypes {
     | '/sign-up/register/~components/register-form-steps/company-information-form'
     | '/sign-up/register/~components/register-form-steps/personal-information-form'
     | '/blog/$articleId'
-    | '/app/extracts'
-    | '/app/payments'
-    | '/app/client-detail'
-    | '/app/clients'
     | '/app/partnership'
     | '/app/plugins'
     | '/app/products'
@@ -1272,10 +1261,6 @@ export interface FileRouteTypes {
     | '/blog/$articleId/~components/article-sharing'
     | '/blog/$articleId/~components/article-skeleton'
     | '/blog/$articleId/~components/article-with-error'
-    | '/app/extracts/~components/financial-summary'
-    | '/app/extracts/~components/financial-summary-card'
-    | '/app/payments/~components/payments-table'
-    | '/app/clients/~components/clients-table'
     | '/app/partnership/~components/information-card'
     | '/app/plugins/~components/configure-plugin-modal'
     | '/app/plugins/~components/plugin-card'
@@ -1291,13 +1276,20 @@ export interface FileRouteTypes {
     | '/app/integration/api-keys/~components/create-api-key'
     | '/app/integration/webhooks/~components/create-webhook'
     | '/app/integration/webhooks/~components/webhooks-table'
-    | '/app/client-detail/$clientId'
+    | '/app/payments'
+    | '/app/client-detail'
+    | '/app/clients'
     | '/blog/$articleId/~components/content-renderer/rich-content-renderer'
     | '/blog/$articleId/~components/dynamic-zone/related-article-card'
     | '/blog/$articleId/~components/dynamic-zone/related-articles'
-    | '/app/client-detail/$clientId/~components/client-information-tab'
+    | '/app/payments/~components/payments-table'
+    | '/app/clients/~components/clients-table'
+    | '/app/clients/~components/create-client'
+    | '/app/clients/~components/update-client'
     | '/app/dashboard/~components/analytics/transactions-overview'
     | '/app/dashboard/~components/analytics/transactions-overview-card'
+    | '/app/client-detail/$clientId'
+    | '/app/client-detail/$clientId/~components/client-information-tab'
   id:
     | '__root__'
     | '/_app/_public'
@@ -1365,10 +1357,6 @@ export interface FileRouteTypes {
     | '/_auth/sign-up/register/~components/register-form-steps/company-information-form'
     | '/_auth/sign-up/register/~components/register-form-steps/personal-information-form'
     | '/_app/_related/blog/_article-content/$articleId/'
-    | '/_app/app/_pages/_financial/extracts/'
-    | '/_app/app/_pages/_financial/payments/'
-    | '/_app/app/_pages/_management/client-detail/'
-    | '/_app/app/_pages/_management/clients/'
     | '/_app/app/_pages/_primary/partnership/'
     | '/_app/app/_pages/_primary/plugins/'
     | '/_app/app/_pages/_primary/products/'
@@ -1379,10 +1367,6 @@ export interface FileRouteTypes {
     | '/_app/_related/blog/_article-content/$articleId/~components/article-sharing'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-skeleton'
     | '/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
-    | '/_app/app/_pages/_financial/extracts/~components/financial-summary'
-    | '/_app/app/_pages/_financial/extracts/~components/financial-summary-card'
-    | '/_app/app/_pages/_financial/payments/~components/payments-table'
-    | '/_app/app/_pages/_management/clients/~components/clients-table'
     | '/_app/app/_pages/_primary/partnership/~components/information-card'
     | '/_app/app/_pages/_primary/plugins/~components/configure-plugin-modal'
     | '/_app/app/_pages/_primary/plugins/~components/plugin-card'
@@ -1398,13 +1382,20 @@ export interface FileRouteTypes {
     | '/_app/app/_pages/integration/api-keys/~components/create-api-key'
     | '/_app/app/_pages/integration/webhooks/~components/create-webhook'
     | '/_app/app/_pages/integration/webhooks/~components/webhooks-table'
-    | '/_app/app/_pages/_management/client-detail/$clientId/'
+    | '/_app/app/_pages/_primary/_financial/payments/'
+    | '/_app/app/_pages/_primary/_management/client-detail/'
+    | '/_app/app/_pages/_primary/_management/clients/'
     | '/_app/_related/blog/_article-content/$articleId/~components/content-renderer/rich-content-renderer'
     | '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-article-card'
     | '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles'
-    | '/_app/app/_pages/_management/client-detail/$clientId/~components/client-information-tab'
+    | '/_app/app/_pages/_primary/_financial/payments/~components/payments-table'
+    | '/_app/app/_pages/_primary/_management/clients/~components/clients-table'
+    | '/_app/app/_pages/_primary/_management/clients/~components/create-client'
+    | '/_app/app/_pages/_primary/_management/clients/~components/update-client'
     | '/_app/app/_pages/dashboard/_overview/~components/analytics/transactions-overview'
     | '/_app/app/_pages/dashboard/_overview/~components/analytics/transactions-overview-card'
+    | '/_app/app/_pages/_primary/_management/client-detail/$clientId/'
+    | '/_app/app/_pages/_primary/_management/client-detail/$clientId/~components/client-information-tab'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1765,34 +1756,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAppPagesPrimaryPartnershipIndexRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
-    '/_app/app/_pages/_management/clients/': {
-      id: '/_app/app/_pages/_management/clients/'
-      path: '/clients'
-      fullPath: '/app/clients'
-      preLoaderRoute: typeof AppAppPagesManagementClientsIndexRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
-    '/_app/app/_pages/_management/client-detail/': {
-      id: '/_app/app/_pages/_management/client-detail/'
-      path: '/client-detail'
-      fullPath: '/app/client-detail'
-      preLoaderRoute: typeof AppAppPagesManagementClientDetailIndexRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
-    '/_app/app/_pages/_financial/payments/': {
-      id: '/_app/app/_pages/_financial/payments/'
-      path: '/payments'
-      fullPath: '/app/payments'
-      preLoaderRoute: typeof AppAppPagesFinancialPaymentsIndexRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
-    '/_app/app/_pages/_financial/extracts/': {
-      id: '/_app/app/_pages/_financial/extracts/'
-      path: '/extracts'
-      fullPath: '/app/extracts'
-      preLoaderRoute: typeof AppAppPagesFinancialExtractsIndexRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
     '/_app/_related/blog/_article-content/$articleId/': {
       id: '/_app/_related/blog/_article-content/$articleId/'
       path: '/$articleId'
@@ -1947,11 +1910,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppPublicRewardsChar126componentsSectionsIntroRouteImport
       parentRoute: typeof AppPublicLayoutRoute
     }
-    '/_app/app/_pages/_management/client-detail/$clientId/': {
-      id: '/_app/app/_pages/_management/client-detail/$clientId/'
-      path: '/client-detail/$clientId'
-      fullPath: '/app/client-detail/$clientId'
-      preLoaderRoute: typeof AppAppPagesManagementClientDetailClientIdIndexRouteImport
+    '/_app/app/_pages/_primary/_management/clients/': {
+      id: '/_app/app/_pages/_primary/_management/clients/'
+      path: '/clients'
+      fullPath: '/app/clients'
+      preLoaderRoute: typeof AppAppPagesPrimaryManagementClientsIndexRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
+    '/_app/app/_pages/_primary/_management/client-detail/': {
+      id: '/_app/app/_pages/_primary/_management/client-detail/'
+      path: '/client-detail'
+      fullPath: '/app/client-detail'
+      preLoaderRoute: typeof AppAppPagesPrimaryManagementClientDetailIndexRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
+    '/_app/app/_pages/_primary/_financial/payments/': {
+      id: '/_app/app/_pages/_primary/_financial/payments/'
+      path: '/payments'
+      fullPath: '/app/payments'
+      preLoaderRoute: typeof AppAppPagesPrimaryFinancialPaymentsIndexRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
     '/_app/app/_pages/integration/webhooks/~components/webhooks-table': {
@@ -2059,34 +2036,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
-    '/_app/app/_pages/_management/clients/~components/clients-table': {
-      id: '/_app/app/_pages/_management/clients/~components/clients-table'
-      path: '/clients/~components/clients-table'
-      fullPath: '/app/clients/~components/clients-table'
-      preLoaderRoute: typeof AppAppPagesManagementClientsChar126componentsClientsTableRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
-    '/_app/app/_pages/_financial/payments/~components/payments-table': {
-      id: '/_app/app/_pages/_financial/payments/~components/payments-table'
-      path: '/payments/~components/payments-table'
-      fullPath: '/app/payments/~components/payments-table'
-      preLoaderRoute: typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
-    '/_app/app/_pages/_financial/extracts/~components/financial-summary-card': {
-      id: '/_app/app/_pages/_financial/extracts/~components/financial-summary-card'
-      path: '/extracts/~components/financial-summary-card'
-      fullPath: '/app/extracts/~components/financial-summary-card'
-      preLoaderRoute: typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
-    '/_app/app/_pages/_financial/extracts/~components/financial-summary': {
-      id: '/_app/app/_pages/_financial/extracts/~components/financial-summary'
-      path: '/extracts/~components/financial-summary'
-      fullPath: '/app/extracts/~components/financial-summary'
-      preLoaderRoute: typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRouteImport
-      parentRoute: typeof AppAppLayoutRoute
-    }
     '/_app/_related/blog/_article-content/$articleId/~components/article-with-error': {
       id: '/_app/_related/blog/_article-content/$articleId/~components/article-with-error'
       path: '/$articleId/~components/article-with-error'
@@ -2115,6 +2064,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsArticleNotFoundRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
     }
+    '/_app/app/_pages/_primary/_management/client-detail/$clientId/': {
+      id: '/_app/app/_pages/_primary/_management/client-detail/$clientId/'
+      path: '/client-detail/$clientId'
+      fullPath: '/app/client-detail/$clientId'
+      preLoaderRoute: typeof AppAppPagesPrimaryManagementClientDetailClientIdIndexRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
     '/_app/app/_pages/dashboard/_overview/~components/analytics/transactions-overview-card': {
       id: '/_app/app/_pages/dashboard/_overview/~components/analytics/transactions-overview-card'
       path: '/dashboard/~components/analytics/transactions-overview-card'
@@ -2129,11 +2085,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
-    '/_app/app/_pages/_management/client-detail/$clientId/~components/client-information-tab': {
-      id: '/_app/app/_pages/_management/client-detail/$clientId/~components/client-information-tab'
-      path: '/client-detail/$clientId/~components/client-information-tab'
-      fullPath: '/app/client-detail/$clientId/~components/client-information-tab'
-      preLoaderRoute: typeof AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport
+    '/_app/app/_pages/_primary/_management/clients/~components/update-client': {
+      id: '/_app/app/_pages/_primary/_management/clients/~components/update-client'
+      path: '/clients/~components/update-client'
+      fullPath: '/app/clients/~components/update-client'
+      preLoaderRoute: typeof AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
+    '/_app/app/_pages/_primary/_management/clients/~components/create-client': {
+      id: '/_app/app/_pages/_primary/_management/clients/~components/create-client'
+      path: '/clients/~components/create-client'
+      fullPath: '/app/clients/~components/create-client'
+      preLoaderRoute: typeof AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
+    '/_app/app/_pages/_primary/_management/clients/~components/clients-table': {
+      id: '/_app/app/_pages/_primary/_management/clients/~components/clients-table'
+      path: '/clients/~components/clients-table'
+      fullPath: '/app/clients/~components/clients-table'
+      preLoaderRoute: typeof AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRouteImport
+      parentRoute: typeof AppAppLayoutRoute
+    }
+    '/_app/app/_pages/_primary/_financial/payments/~components/payments-table': {
+      id: '/_app/app/_pages/_primary/_financial/payments/~components/payments-table'
+      path: '/payments/~components/payments-table'
+      fullPath: '/app/payments/~components/payments-table'
+      preLoaderRoute: typeof AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRouteImport
       parentRoute: typeof AppAppLayoutRoute
     }
     '/_app/_related/blog/_article-content/$articleId/~components/dynamic-zone/related-articles': {
@@ -2156,6 +2133,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/$articleId/~components/content-renderer/rich-content-renderer'
       preLoaderRoute: typeof AppRelatedBlogArticleContentArticleIdChar126componentsContentRendererRichContentRendererRouteImport
       parentRoute: typeof AppRelatedBlogLayoutRoute
+    }
+    '/_app/app/_pages/_primary/_management/client-detail/$clientId/~components/client-information-tab': {
+      id: '/_app/app/_pages/_primary/_management/client-detail/$clientId/~components/client-information-tab'
+      path: '/client-detail/$clientId/~components/client-information-tab'
+      fullPath: '/app/client-detail/$clientId/~components/client-information-tab'
+      preLoaderRoute: typeof AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRouteImport
+      parentRoute: typeof AppAppLayoutRoute
     }
   }
 }
@@ -2242,20 +2226,12 @@ interface AppAppLayoutRouteChildren {
   AppAppChar126componentsSidebarElementsSearchSectionRoute: typeof AppAppChar126componentsSidebarElementsSearchSectionRoute
   AppAppChar126componentsSidebarElementsTeamSwitcherRoute: typeof AppAppChar126componentsSidebarElementsTeamSwitcherRoute
   AppAppChar126componentsSidebarElementsUserProfileRoute: typeof AppAppChar126componentsSidebarElementsUserProfileRoute
-  AppAppPagesFinancialExtractsIndexRoute: typeof AppAppPagesFinancialExtractsIndexRoute
-  AppAppPagesFinancialPaymentsIndexRoute: typeof AppAppPagesFinancialPaymentsIndexRoute
-  AppAppPagesManagementClientDetailIndexRoute: typeof AppAppPagesManagementClientDetailIndexRoute
-  AppAppPagesManagementClientsIndexRoute: typeof AppAppPagesManagementClientsIndexRoute
   AppAppPagesPrimaryPartnershipIndexRoute: typeof AppAppPagesPrimaryPartnershipIndexRoute
   AppAppPagesPrimaryPluginsIndexRoute: typeof AppAppPagesPrimaryPluginsIndexRoute
   AppAppPagesPrimaryProductsIndexRoute: typeof AppAppPagesPrimaryProductsIndexRoute
   AppAppPagesPrimaryRoadmapIndexRoute: typeof AppAppPagesPrimaryRoadmapIndexRoute
   AppAppPagesIntegrationApiKeysIndexRoute: typeof AppAppPagesIntegrationApiKeysIndexRoute
   AppAppPagesIntegrationWebhooksIndexRoute: typeof AppAppPagesIntegrationWebhooksIndexRoute
-  AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRoute: typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRoute
-  AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute: typeof AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute
-  AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute: typeof AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute
-  AppAppPagesManagementClientsChar126componentsClientsTableRoute: typeof AppAppPagesManagementClientsChar126componentsClientsTableRoute
   AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute: typeof AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute
   AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute: typeof AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute
   AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute: typeof AppAppPagesPrimaryPluginsChar126componentsPluginCardRoute
@@ -2271,10 +2247,17 @@ interface AppAppLayoutRouteChildren {
   AppAppPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute: typeof AppAppPagesIntegrationApiKeysChar126componentsCreateApiKeyRoute
   AppAppPagesIntegrationWebhooksChar126componentsCreateWebhookRoute: typeof AppAppPagesIntegrationWebhooksChar126componentsCreateWebhookRoute
   AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRoute: typeof AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRoute
-  AppAppPagesManagementClientDetailClientIdIndexRoute: typeof AppAppPagesManagementClientDetailClientIdIndexRoute
-  AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute: typeof AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute
+  AppAppPagesPrimaryFinancialPaymentsIndexRoute: typeof AppAppPagesPrimaryFinancialPaymentsIndexRoute
+  AppAppPagesPrimaryManagementClientDetailIndexRoute: typeof AppAppPagesPrimaryManagementClientDetailIndexRoute
+  AppAppPagesPrimaryManagementClientsIndexRoute: typeof AppAppPagesPrimaryManagementClientsIndexRoute
+  AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRoute: typeof AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRoute
+  AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRoute: typeof AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRoute
+  AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRoute: typeof AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRoute
+  AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRoute: typeof AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRoute
   AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute: typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute
   AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute: typeof AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute
+  AppAppPagesPrimaryManagementClientDetailClientIdIndexRoute: typeof AppAppPagesPrimaryManagementClientDetailClientIdIndexRoute
+  AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRoute: typeof AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRoute
 }
 
 const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
@@ -2311,14 +2294,6 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
     AppAppChar126componentsSidebarElementsTeamSwitcherRoute,
   AppAppChar126componentsSidebarElementsUserProfileRoute:
     AppAppChar126componentsSidebarElementsUserProfileRoute,
-  AppAppPagesFinancialExtractsIndexRoute:
-    AppAppPagesFinancialExtractsIndexRoute,
-  AppAppPagesFinancialPaymentsIndexRoute:
-    AppAppPagesFinancialPaymentsIndexRoute,
-  AppAppPagesManagementClientDetailIndexRoute:
-    AppAppPagesManagementClientDetailIndexRoute,
-  AppAppPagesManagementClientsIndexRoute:
-    AppAppPagesManagementClientsIndexRoute,
   AppAppPagesPrimaryPartnershipIndexRoute:
     AppAppPagesPrimaryPartnershipIndexRoute,
   AppAppPagesPrimaryPluginsIndexRoute: AppAppPagesPrimaryPluginsIndexRoute,
@@ -2328,14 +2303,6 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
     AppAppPagesIntegrationApiKeysIndexRoute,
   AppAppPagesIntegrationWebhooksIndexRoute:
     AppAppPagesIntegrationWebhooksIndexRoute,
-  AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRoute:
-    AppAppPagesFinancialExtractsChar126componentsFinancialSummaryRoute,
-  AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute:
-    AppAppPagesFinancialExtractsChar126componentsFinancialSummaryCardRoute,
-  AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute:
-    AppAppPagesFinancialPaymentsChar126componentsPaymentsTableRoute,
-  AppAppPagesManagementClientsChar126componentsClientsTableRoute:
-    AppAppPagesManagementClientsChar126componentsClientsTableRoute,
   AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute:
     AppAppPagesPrimaryPartnershipChar126componentsInformationCardRoute,
   AppAppPagesPrimaryPluginsChar126componentsConfigurePluginModalRoute:
@@ -2366,14 +2333,28 @@ const AppAppLayoutRouteChildren: AppAppLayoutRouteChildren = {
     AppAppPagesIntegrationWebhooksChar126componentsCreateWebhookRoute,
   AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRoute:
     AppAppPagesIntegrationWebhooksChar126componentsWebhooksTableRoute,
-  AppAppPagesManagementClientDetailClientIdIndexRoute:
-    AppAppPagesManagementClientDetailClientIdIndexRoute,
-  AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute:
-    AppAppPagesManagementClientDetailClientIdChar126componentsClientInformationTabRoute,
+  AppAppPagesPrimaryFinancialPaymentsIndexRoute:
+    AppAppPagesPrimaryFinancialPaymentsIndexRoute,
+  AppAppPagesPrimaryManagementClientDetailIndexRoute:
+    AppAppPagesPrimaryManagementClientDetailIndexRoute,
+  AppAppPagesPrimaryManagementClientsIndexRoute:
+    AppAppPagesPrimaryManagementClientsIndexRoute,
+  AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRoute:
+    AppAppPagesPrimaryFinancialPaymentsChar126componentsPaymentsTableRoute,
+  AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRoute:
+    AppAppPagesPrimaryManagementClientsChar126componentsClientsTableRoute,
+  AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRoute:
+    AppAppPagesPrimaryManagementClientsChar126componentsCreateClientRoute,
+  AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRoute:
+    AppAppPagesPrimaryManagementClientsChar126componentsUpdateClientRoute,
   AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute:
     AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewRoute,
   AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute:
     AppAppPagesDashboardOverviewChar126componentsAnalyticsTransactionsOverviewCardRoute,
+  AppAppPagesPrimaryManagementClientDetailClientIdIndexRoute:
+    AppAppPagesPrimaryManagementClientDetailClientIdIndexRoute,
+  AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRoute:
+    AppAppPagesPrimaryManagementClientDetailClientIdChar126componentsClientInformationTabRoute,
 }
 
 const AppAppLayoutRouteWithChildren = AppAppLayoutRoute._addFileChildren(

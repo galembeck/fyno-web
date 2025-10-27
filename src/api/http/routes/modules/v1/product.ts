@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/suspicious/useAwait: required by API */
+
 import { fyno } from "@/api/connections/fyno";
 import type { Product } from "../../types/v1/product";
 
