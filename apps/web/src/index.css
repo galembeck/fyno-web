@@ -4,9 +4,3 @@
 @import '@fyno/ui/styles.css';
 
 @source "../../../packages/ui/src";
-
-@theme {
-  --color-primary: #1ebcc5;
-  --color-secondary: #162655;
-  --color-accent: #c9da2a;
-}
